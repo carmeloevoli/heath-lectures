@@ -1,5 +1,107 @@
-% !TEX root = ../main.tex
+% !TEX root = ../..//lectures.tex
 \section{Thermodynamics of Adiabatic Processes}
+\label{app:thermo}
+
+An \emph{adiabatic process} is characterized by the absence of heat exchange between the system and its surroundings, mathematically expressed as \( \delta Q = 0 \). From the \emph{first law of thermodynamics}, we have:
+\begin{equation}
+\label{eq:firstlaw}
+d\mathcal{U} + P dV = 0,
+\end{equation}
+where \( \mathcal{U} \) is the internal energy of the system, \( P \) is the pressure, and \( V \) is the volume. This implies that work done by the system (\( P dV \)) must be entirely compensated by a change in its internal energy (\( d\mathcal{U} \)).
+
+For an ideal gas, which follows the equation of state \( P V = n R T \) (\( R \) is the universal gas constant), the internal energy is solely a function of temperature and is given by:
+\begin{equation}
+\label{eq:nrt}
+\mathcal{U} = \alpha n R T = \alpha P V,
+\end{equation}
+where \( n \) is the number of moles, and \( \alpha = \frac{f}{2} \), with \( f \) being the number of degrees of freedom.
+
+Differentiating \( \mathcal{U} \):
+\begin{equation}
+\label{eq:dunrdt}
+d\mathcal{U} = \alpha n R dT = \alpha (P dV + V dP),
+\end{equation}
+where we used the ideal gas law to relate \( dT \) to changes in \( P \) and \( V \).
+
+Substituting \( d\mathcal{U} \) from Equation~\ref{eq:dunrdt} into the first law (Equation~\ref{eq:firstlaw}), we get:
+\begin{equation}
+- P dV = \alpha (P dV + V dP).
+\end{equation}
+Rearranging terms:
+\begin{equation}
+-(\alpha + 1) \frac{dV}{V} = \alpha \frac{dP}{P}.
+\end{equation}
+
+Integrating both sides:
+\begin{equation}
+\ln \left( \frac{P}{P_0} \right) = - \frac{\alpha + 1}{\alpha} \ln \left( \frac{V}{V_0} \right),
+\end{equation}
+or equivalently:
+\begin{equation}
+P V^{\gamma_g} = \text{constant},
+\end{equation}
+where \( \gamma_g = \frac{\alpha + 1}{\alpha} = \frac{c_P}{c_V} \) is the \emph{heat capacity ratio}. 
+%
+This relationship, known as the \emph{polytropic equation}, characterizes a reversible adiabatic process.
+
+\end{document}
+
+#### Ideal Gas Internal Energy
+#### Derivation of Adiabatic Condition
+
+#### Internal Energy in Terms of Volume and Pressure
+The internal energy for an ideal gas can also be expressed as:
+\begin{equation}
+\mathcal{U} = n c_V T = \frac{P V}{\gamma_g - 1}.
+\end{equation}
+Dividing by volume, we get the **internal energy density**:
+\begin{equation}
+u = \frac{\mathcal{U}}{V} = \frac{P}{\gamma_g - 1}.
+\end{equation}
+
+#### Enthalpy and Specific Enthalpy
+The **enthalpy** \( \mathcal{H} \) is defined as:
+\[
+\mathcal{H} = \mathcal{U} + P V.
+\]
+Dividing by volume, the **enthalpy density** becomes:
+\[
+\frac{\mathcal{H}}{V} = u + P.
+\]
+
+To express enthalpy per unit mass, we introduce the specific internal energy \( \epsilon = \frac{u}{\rho} \), where \( \rho \) is the density. The **specific enthalpy** is:
+\begin{equation}
+h = \epsilon + \frac{P}{\rho}.
+\end{equation}
+
+#### Entropy in Adiabatic Processes
+In a reversible adiabatic process, entropy remains constant. The specific entropy \( s \) satisfies:
+\[
+\frac{\partial s}{\partial t} + \vec{u} \cdot \nabla s = 0.
+\]
+For a compressible fluid, the conservation of entropy per unit volume (\( \rho s \)) can be expressed as:
+\begin{equation}
+\frac{\partial (\rho s)}{\partial t} + \nabla \cdot (\rho s \vec{u}) = 0.
+\end{equation}
+
+#### Momentum and Energy Conservation
+Using the ideal gas law and the specific internal energy:
+\[
+\epsilon = \frac{1}{\gamma_g - 1} \frac{P}{\rho},
+\]
+the momentum conservation equation links pressure gradients to the acceleration of the fluid:
+\begin{equation}
+\frac{\partial \vec{u}}{\partial t} + \vec{u} \cdot \nabla \vec{u} = -\frac{\nabla P}{\rho}.
+\end{equation}
+
+---
+
+This version enhances pedagogical clarity by:
+1. Explicitly linking each step to physical principles.
+2. Clarifying symbols and constants.
+3. Highlighting key results with boxed equations.
+4. Improving the narrative flow with better transitions and explanatory text.
+
 
 An adiabatic process is defined by the absence of heat transfer to or from the system \( \delta Q = 0 \). According to the first law of thermodynamics:
 \begin{equation}

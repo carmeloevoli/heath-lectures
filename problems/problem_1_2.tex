@@ -1,16 +1,12 @@
 % !TEX root = ../exercises.tex
-\section{Synchrotron energetics and Electron Cooling}
-
-Consider a population of electrons described by a power-law distribution in terms of their Lorentz factor $\gamma$, given as $N(\gamma)d\gamma = \gamma^{-p}d\gamma$, where $p$ is the power-law index and the distribution extends from $\gamma_{\text{min}}$ to $\gamma_{\text{max}}$.
+\section{Energy Loss and Diffusion of Electrons in the Galactic Environments}
 
 \begin{itemize}
-\item Derive the expression for the total energy density $U_e$ of electrons within the specified $\gamma$ range. Show that it can be approximated (assuming $\gamma_{\rm max} \gg \gamma_{\rm min}$) by $$U_e = \left(\frac{p-1}{p-2}\right) \gamma_{\text{min}} n_e m_e c^2$$
-%
-where $n_e$ is the physical number density.
+\item Determine the magnetic field strength that would result in \emph{synchrotron} energy losses for an electron equivalent to those experienced via Inverse Compton (IC) scattering on the CMB. Then, using this magnetic field strength, calculate the synchrotron energy loss timescale for a relativistic electron as a function of its energy $E$.
 
-\item With $p = 2.5$, calculate the energy loss timescale (incorrectly known as \emph{cooling time}) for electrons due to synchrotron radiation or inverse Compton scattering. Express your answer in terms of $\gamma_{\text{min}}$ and $\gamma_{\text{max}}$, presenting the timescale in Myr and the energy density in $10^{-10}$~erg/cm$^3$ (\emph{Hint:} compute $\tau_{\rm loss} = U_e / P$ where $P$ is the power per unit of volume emitted via IC or synchrotron).
+\item Assuming that the interstellar radiation field (ISRF) can be described as the sum of 3 gray-bodies: UV ($\rho_{\rm UV} = 0.37$~eV/cm$^3$, $T_{\rm UV} = 3000$~K), Optical ($\rho_{\star} = 0.055$~eV/cm$^3$, $T_{\star} = 300$~K) and IR ($\rho_{\rm IR} = 0.25$~eV/cm$^3$, $T_{\rm IR} = 30$~K), compute the total energy loss rate assuming Thomson scattering. 
 
-\item Calculate the loss timescale for mildly-relativistic electrons ($\gamma_{\rm min} \simeq \gamma_{\rm max} \sim 1$) via inverse Compton scattering off of CMB photons. Estimate at what redshift this timescale becomes shorter than the age of the Universe (\emph{Hints}: Approximate the age of the universe at redshift $z$ as $t_{\rm age} = t_0 (1+z)^{-3/2}$, where $t_0$ is the current age).
+\item Identify the component of the ISRF where the transition to the Klein-Nishina (KN) scattering regime occurs at the \emph{lowest} electron energy. Calculate the specific electron energy threshold at which this transition to the KN regime is expected.
 
-%\item For the radio lobes of Cygnus A, which span approximately 50 kpc and emit a total luminosity of $\sim 10^{45}$ erg/s at radio frequencies around several GHz, assume a magnetic field strength of $\sim 10^{-4}$ G. Determine the power radiated per electron. Using your result, calculate the electron energy density. Compare this with the magnetic energy density to discuss the energetics of the radio lobes.
+\item Calculate the maximum distance an electron with energy $E$ can diffuse before significantly losing its energy through synchrotron radiation and IC scattering, under the assumption of Bohm diffusion. Given that electrons are observed via their synchrotron emission approximately a kpc away from the galactic disc, infer implications for the diffusion coefficient in the Milky Way.
 \end{itemize}

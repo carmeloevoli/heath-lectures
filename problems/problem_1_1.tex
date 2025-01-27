@@ -1,14 +1,16 @@
 % !TEX root = ../exercises.tex
-\section{Diffuse Synchrotron Emission from Galactic Cosmic Ray Electrons}
+\section{Synchrotron energetics and Electron Cooling}
 
-The brightness temperature $T_b$ of synchrotron emission from the Galactic plane is observed within the frequency range of 8 GHz to 480 MHz, and is approximately given by:
-$$T_b \approx 250 \left( \frac{\nu}{480~\text{MHz}} \right)^{-2.8}~\text{K}$$
-
-This emission is attributed to cosmic ray electrons gyrating around the Galactic magnetic field, which has an average strength of approximately $3~\mu$G. 
+Consider a population of electrons described by a power-law distribution in terms of their Lorentz factor $\gamma$, given as $N(\gamma)d\gamma = \gamma^{-p}d\gamma$, where $p$ is the power-law index and the distribution extends from $\gamma_{\text{min}}$ to $\gamma_{\text{max}}$.
 
 \begin{itemize}
-\item Derive an approximate formula for the differential energy spectrum of the cosmic ray electrons. Clearly specify the range of energies for which your derived expression is applicable. Consider here that the emitting region spans about 10 kpc and is optically thin.
-\item Compare the derived differential energy spectrum of cosmic ray electrons to that of cosmic ray protons~\footnote{\url{https://pdg.lbl.gov/2023/reviews/rpp2023-rev-cosmic-rays.pdf}}.
-\item Quantitatively estimate the \emph{relative} contribution of cosmic ray protons to the overall Galactic synchrotron emission. 
-\item Estimate the gyro-radii of cosmic ray electrons and protons at the minimum $E_{\rm min}$ and maximum $E_{\rm max}$ energy values. Compare these estimates to the overall size of the Galaxy.
+\item Derive the expression for the total energy density $U_e$ of electrons within the specified $\gamma$ range. Show that it can be approximated (assuming $\gamma_{\rm max} \gg \gamma_{\rm min}$) by $$U_e = \left(\frac{p-1}{p-2}\right) \gamma_{\text{min}} n_e m_e c^2$$
+%
+where $n_e$ is the physical number density.
+
+\item With $p = 2.5$, calculate the energy loss timescale (incorrectly known as \emph{cooling time}) for electrons due to synchrotron radiation or inverse Compton scattering. Express your answer in terms of $\gamma_{\text{min}}$ and $\gamma_{\text{max}}$, presenting the timescale in Myr and the energy density in $10^{-10}$~erg/cm$^3$ (\emph{Hint:} compute $\tau_{\rm loss} = U_e / P$ where $P$ is the power per unit of volume emitted via IC or synchrotron).
+
+\item Calculate the loss timescale for mildly-relativistic electrons ($\gamma_{\rm min} \simeq \gamma_{\rm max} \sim 1$) via inverse Compton scattering off of CMB photons. Estimate at what redshift this timescale becomes shorter than the age of the Universe (\emph{Hints}: Approximate the age of the universe at redshift $z$ as $t_{\rm age} = t_0 (1+z)^{-3/2}$, where $t_0$ is the current age).
+
+%\item For the radio lobes of Cygnus A, which span approximately 50 kpc and emit a total luminosity of $\sim 10^{45}$ erg/s at radio frequencies around several GHz, assume a magnetic field strength of $\sim 10^{-4}$ G. Determine the power radiated per electron. Using your result, calculate the electron energy density. Compare this with the magnetic energy density to discuss the energetics of the radio lobes.
 \end{itemize}

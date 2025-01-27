@@ -1,11 +1,10 @@
 % !TEX root = ../exercises.tex
-\section{Low diffusivity around TeV halos}
+\section{Luminosity Ratio of Cosmic Ray Protons and Electrons}
 
-TeV halos, extended regions of very high-energy ($E_\gamma \sim$~TeV) gamma-ray emission, have been observed surrounding few middle-aged pulsars, such as Geminga~\cite{2017Sci...358..911A}.
+Consider a cosmic source, like a supernova remnant, with a gas density of approximately \(n \sim 3 \) cm\(^{-3}\). This source contains cosmic ray protons and electrons, each with an identical spectral energy distribution. Protons have a spectrum \(N_p(E) = N_{0, p} (E/\text{TeV})^{-2.4}\) for \(E \gtrsim m_p c^2\), while electrons have a spectrum \(N_e(E) = N_{0, e} (E/\text{TeV})^{-2.4}\) for \(E \gtrsim m_e c^2\). 
+%
+The total energies contained in cosmic ray protons and electrons within the source are \(W_{CR, p}\) and \(W_{CR, e}\), respectively.
 
-\begin{itemize}
-\item Utilizing the known distance to Geminga\footnote{\url{https://en.wikipedia.org/wiki/Geminga}} and given that the angular extension of its TeV halo is approximately \(\theta \sim 5.5^\circ\), calculate the halo's physical size.
-\item Assuming electrons are initially emitted from the center of the halo, estimate the local diffusion coefficient, $D$, using the formula $D \sim H^2/\tau$, where $H$ represents the halo size, and $\tau$ is the energy loss timescale. Consider energy losses primarily due to IC scattering on CMB.
-\item Compare the result with the Bohm diffusion coefficient in a $\sim 1 \mu$G magnetic field, which is the smaller possible diffusion coefficient.
-\item Discuss the scenario in which the gamma-ray emission occurs in the Klein-Nishina regime. Explain the conditions under which the photon field would result in this regime being applicable.
-\end{itemize}
+Cosmic ray protons produce gamma rays due to proton-proton interactions in the ambient gas, and the resulting luminosity is \(Q_{p\gamma}(E_\gamma)E_\gamma^2\). Cosmic ray electrons produce gamma rays due to inverse Compton scattering in the CMB radiation, and the resulting luminosity is \(Q_{e\gamma}(E_\gamma)E_\gamma^2\).
+
+Compute the ratio \( W_e / W_p \) that would satisfy the condition: \(Q_{p\gamma}(E_\gamma)E_\gamma^2 = Q_{e\gamma}(E_\gamma)E_\gamma^2\) at \( E_\gamma = 1 \)~TeV.
