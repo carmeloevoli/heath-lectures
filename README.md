@@ -17,23 +17,10 @@ The course material will be drawn from a combination of textbooks, journal liter
 
 ## Lecture Notes
 
-Lecture notes can be found [here](https://carmeloevoli.github.io/heath-2324/files/CEvoli_HEATh24_lectures.pdf)
+Lecture notes can be found [here](files/CEvoli_HEATh24_lectures.pdf)
 
 For feedback or to report any mistakes, please use the GitHub [issues](https://github.com/carmeloevoli/heath-2324/issues)
 
 ## Proposed exercises
 
-Exercise sets are available as a single booklet [here](https://carmeloevoli.github.io/heath-2324/files/CEvoli_HEATh24_exercises.pdf)
-
-Exercises solved (✅) and work in progress (🤔):
-
-- 🤔 Diffuse Synchrotron Emission from Galactic Cosmic Ray Electrons
-- ✅ Synchrotron energetics and Electron Cooling
-- ✅ Energy Loss and Diffusion of Electrons in the Galactic Environments
-- ✅ Characteristic Energy Loss Time for Cosmic Ray Electrons
-- ✅ Low diffusivity around TeV halos
-- 🤔 Constraints on the ExtraGalactic Background Light from very-high-energy observations of blazars
-- ✅ Universe reionization
-- 🤔 Luminosity Ratio of Cosmic Ray Protons and Electrons
-- ✅ Threshold of UHECR Photo-Disintegration
-- 😱 Threshold of Anti-proton secondary production
+Exercise sets are available as a single booklet [here](files/CEvoli_HEATh24_exercises.pdf)
