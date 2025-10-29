@@ -1,10 +1,247 @@
 % !TEX root = ../exercises.tex
 \section{Cosmic Ray Dynamics in a Starburst Galaxy Nucleus}
 
-Consider a starburst galaxy nucleus modeled as a cylindrical region with a radius \(R = 500\)~pc, a height \(H = 500\)~pc, and a mean particle density \(n = 300~\text{cm}^{-3}\). Within this volume, supernovae occur at a rate of \(0.1~\text{yr}^{-1}\), each releasing \(10^{50}\)~erg of energy primarily as cosmic ray protons. The inelastic scattering cross-section for proton-proton collisions is given as \(\sigma = 3 \times 10^{-26}~\text{cm}^2\), assumed constant across energyies. The diffusion coefficient is modeled as \(D(E) = 3 \times 10^{26} (E/\text{GeV})^{1/3}~\text{cm}^2/\text{s}\), with diffusion occurring solely along the cylinder's axis.
+\begin{exercise}
+Consider a starburst galaxy nucleus approximated as a cylinder of radius \(R = 500\,\mathrm{pc}\) and half‐height \(H = 500\,\mathrm{pc}\), filled with gas of uniform density \(n = 300\,\mathrm{cm}^{-3}\). Supernovae occur at a rate of \(0.1\,\mathrm{yr}^{-1}\), each depositing \(10^{50}\,\mathrm{erg}\) into cosmic‐ray (CR) protons. The proton–proton inelastic cross section is 
+\(
+\sigma_{pp} = 3 \times 10^{-26}\,\mathrm{cm}^2
+\)
+(assumed constant with energy). CR diffusion along the \(z\)–axis (perpendicular to the disk) is described by
+\(
+D(E) \;=\; 3 \times 10^{26} \left(\frac{E}{\mathrm{GeV}}\right)^{1/3} \,\mathrm{cm}^2\,\mathrm{s}^{-1}.
+\)
 
+\begin{enumerate}
+\item[(a)] Assume that CRs are injected in an infinitely thin disk at \(z = 0\) and solve the transport equation in the \(z\) direction under a free escape boundary condition at \(|z| = H\).
+\item[(b)] From your result in part (a), compute the spectrum of CRs escaping at \(|z| = H\) and discuss the two limiting regimes:
 \begin{itemize}
-\item Derive the equilibrium spectrum of cosmic rays within the starburst nucleus. Solve the transport equation in the \(z\) direction (perpendicular to the disk) under a free escape boundary condition at \(|z| = H\). 
-\item Determine the spectrum of cosmic rays escaping from the starburst nucleus. 
-\item Compare the diffusive escape timescale with the inelastic loss timescale of an Iron nucleus within the same environment, considering its spallation cross-section is \(45 \text{ mb} \times A^{0.7}\). 
+\item \emph{Inelastic‐loss dominated:} \(\tau_{\rm loss} \ll \tau_{\rm esc}\).
+\item \emph{Escape dominated:} \(\tau_{\rm esc} \ll \tau_{\rm loss}\).
 \end{itemize}
+\item[(c)] Compare the diffusive escape timescale with the inelastic loss timescale of an Iron nucleus within the same environment, considering its spallation cross-section is \(45 \text{ mb} \times A^{0.7}\). What does this imply about their survival in the starburst nucleus?
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\begin{itemize}
+\item[(a)] We wish to solve for the steady–state proton density \(N(E,z)\) (number of protons per unit energy per unit volume) in one dimension (along \(z\)) inside a cylindrical starburst nucleus of half‐height \(H\).  The transport equation reads
+\begin{equation}\label{eq:transport21}
+- \frac{\partial}{\partial z} \Bigl[\,D(E)\,\frac{\partial N}{\partial z}\Bigr]
+\;=\;  
+Q(E)\,\delta(z) - \frac{N}{\tau_{\rm in}}
+\end{equation}
+subject to the boundary conditions
+\[
+N\bigl(E,\,z = \pm H\bigr) \;=\; 0.
+\]
+Here \(Q(E)\,\delta(z)\) represents CR injection in an infinitely thin disk at \(z=0\) and \( \tau_{\rm in} = (n\,c\,\sigma_{pp})^{-1} \) is the inelastic loss timescale.
+
+For \(z \neq 0\), the delta‐function vanishes, so the steady–state equation becomes
+\[
+\frac{\partial^2 N}{\partial z^2} \;=\; \underbrace{\frac{\tau^{-1}_{\rm in}}{D(E)}}_{\displaystyle \alpha^2(E)}\,N 
+\, \longrightarrow \, 
+\frac{\partial^2N}{\partial z^2} \;=\; \alpha^2\,N.
+\]
+
+Over \(0 < z < H\), the homogeneous equation 
+\(\tfrac{d^2N}{dz^2} = \alpha^2\,N\)
+has the general solution
+\[
+N(E,z)\;=\; A\,e^{+\alpha\,z} \;+\; B\,e^{-\alpha\,z}, 
+\qquad 0<z<H.
+\]
+We now impose the boundary condition at \(z=H\):
+\[
+N\bigl(E,\,z=H\bigr) \;=\; A\,e^{\alpha H} \;+\; B\,e^{-\alpha H} \;=\; 0 
+\;\;\longrightarrow\;\; 
+B \;=\; -\,A\,e^{2\alpha H}.
+\]
+Hence for \(0 < z < H\),
+\[
+N(E,z) 
+\;=\; A\,\bigl[e^{\alpha z} - e^{2\alpha H}\,e^{-\alpha z}\bigr] 
+%\;=\; A\,e^{\alpha (H - z)}\,\bigl[e^{\alpha (\,z - H\,)} - e^{-\alpha (\,z - H\,)}\bigr]
+\;=\; A\,\Bigl[e^{\alpha (H - z)} - e^{-\alpha (H - z)}\Bigr].
+\]
+
+It is more convenient to rewrite this in terms of hyperbolic functions:
+\[
+\sinh[x] \;=\; \frac{e^{x} - e^{-x}}{2}, 
+\quad\cosh[x] \;=\; \frac{e^{x} + e^{-x}}{2}.
+\]
+Then one finds
+\[
+N(E,z) \;=\; 2\,A\,\sinh\bigl[\alpha\,(H - z)\bigr].
+\]
+
+We now enforce the matching at \(z=0\).  
+%
+Since the distribution is even in \(z\), for \(z<0\) we have the same functional form with \(|z|\).  In particular, the value at the midplane is
+\[
+N\bigl(E,z=0\bigr) 
+\;=\; 2\,A\,\sinh\bigl[\alpha\,H\bigr]
+\;\equiv\; N_0(E).
+\]
+Therefore,
+\[
+A \;=\; \frac{N_0(E)}{2\,\sinh\bigl[\alpha\,H\bigr]}.
+\]
+
+Hence, for \(\lvert z\rvert \le H\), the solution holds
+\begin{equation}\label{eq:NZ21}
+\boxed{N(E,z) \;=\; N_0(E)\, \frac{\sinh\bigl[\alpha(E)\,\bigl(H - \lvert z\rvert\bigr)\bigr]}{\sinh\bigl[\alpha(E)\,H\bigr]}\,.}
+\end{equation}
+
+Our remaining task is to determine \(N_0(E)\) by integrating the transport equation~\eqref{eq:transport21} across the delta‐function source at \(z=0\).
+
+Concretely, we integrate equation~\eqref{eq:transport21} over an infinitesimal interval \(\bigl[-\varepsilon,\,+\varepsilon\bigr]\).
+%
+%all terms that do not involve \(\delta(z)\) remain finite as \(\varepsilon\to 0\), except the first term, which becomes a jump in the diffusive flux.  
+%
+The first term
+\[
+\int_{-\varepsilon}^{+\varepsilon} 
+\!\!\! -\,\frac{\partial}{\partial z}\Bigl[D\,\partial_{z}N\Bigr] \,dz 
+=
+-\,\Bigl[D\,\partial_{z}N\Bigr]_{-\varepsilon}^{+\varepsilon}
+\;\xrightarrow{\;\varepsilon\to 0\;} 
+-\,\Bigl[D\,\partial_{z}N\bigl(E,\,0^{+}\bigr)\Bigr] 
++ \Bigl[D\,\partial_{z}N\bigl(E,\,0^{-}\bigr)\Bigr].
+\]
+Because \(N(E,z)\) is even in \(z\), we know
+\[
+\partial_{z}N\bigl(E,\,0^{-}\bigr) 
+\;=\; -\,\partial_{z}N\bigl(E,\,0^{+}\bigr).
+\]
+Hence the jump in the first term becomes
+\[
+-\,\bigl[D\,\partial_{z}N\bigl(E,\,0^{+}\bigr)\bigr] \;-\; \bigl[-D\,\partial_{z}N\bigl(E,\,0^{+}\bigr)\bigr]
+\;=\; -\,2\,D(E)\,\partial_{z}N\bigl(E,\,0^{+}\bigr).
+\]
+The inelastic‐loss term is continuous over \( z = 0 \) so the integral gives 0, meanwhile,
+\[
+\int_{-\varepsilon}^{+\varepsilon} Q(E)\,\delta(z)\,dz \;=\; Q(E).
+\]
+
+Therefore, matching across \(z=0\) gives
+\[
+-2\,D(E)\,\left.\frac{\partial N}{\partial z}\right\lvert_{z=0^{+}} 
+\;=\; Q(E).
+\]
+
+We now compute \(\partial_{z}N\) at \(z \to 0^{+}\).  
+%
+Differentiating with respect to \(z\):
+\[
+\frac{\partial N}{\partial z} 
+%\;=\; N_0(E)\,\frac{d}{dz}\Bigl[\sinh\bigl(\alpha(H - z)\bigr)\Bigr]\,
+%\frac{1}{\sinh(\alpha H)}
+\;=\; N_0(E)
+\,\Bigl[-\,\alpha\cosh\bigl(\alpha\,[H - z]\bigr)\Bigr]
+\,\frac{1}{\sinh(\alpha H)}.
+\]
+Therefore, at \(z \to 0^{+}\):
+\[
+\left.\frac{\partial N}{\partial z}\right\lvert_{0^{+}}
+\;=\; -\,\frac{\alpha\,N_0(E)\;\cosh\bigl[\alpha\,H\bigr]}
+          {\sinh\bigl[\alpha\,H\bigr]}
+\;=\; -\,\alpha\,N_0(E)\,\coth\bigl[\alpha\,H\bigr].
+\]
+Plugging into the jump condition \(2\,D\,(\partial_{z}N|_{0^{+}})=Q(E)\) gives
+\begin{equation}\label{eq:N021}
+\boxed{N_0(E)\;=\;\frac{Q(E)}{2\,D(E)\,\alpha(E)\,\coth\bigl[\alpha(E)\,H\bigr]}\,.}
+\end{equation}
+
+Hence, combining~\eqref{eq:NZ21} and \eqref{eq:N021}, the full solution becomes 
+%
+\begin{equation}
+\boxed{
+N(E,z) \;=\; Q(E) \; \frac{H}{2\,D(E)} \; 
+\frac{\sinh\bigl[\alpha H \,\bigl(1 - \tfrac{\lvert z\rvert}{H})\bigr]}{\alpha H \coth(\alpha H) \sinh(\alpha H )}\,.
+}
+\end{equation}
+
+\item[(b)] The (one‐dimensional) diffusive flux of protons at the boundaries \(z = \pm H\) is
+\[
+\Phi_{\rm esc}(E) \;=\; 
+-\,D(E)\,\left.\frac{\partial N}{\partial z}\right\lvert_{z=H^{-}}
+\;=\; 
+N\bigl(E,0\bigr) \frac{D(E)\,\alpha(E)}{\sinh\bigl[\alpha(E)\,H\bigr]}.
+\]
+
+Using~\eqref{eq:N021}, one can derive
+\[
+\Phi_{\rm esc}(E) \;=\; \frac{Q(E)}{2}\,\mathrm{sech}\!\bigl[\alpha(E)\,H\bigr]~.
+\]
+
+Recall the two characteristic timescales:
+\[
+\tau_{\rm loss}(E) 
+\;=\; \frac{1}{n\,c\,\sigma_{pp}}, 
+\quad
+\tau_{\rm esc}(E) 
+\;\sim\; \frac{H^2}{D(E)}
+\quad
+\longrightarrow 
+\quad
+\alpha(E)\,H 
+\;=\; \sqrt{\frac{\tau_{\rm esc}(E)}{\tau_{\rm loss}(E)}}.
+\]
+
+(i) Inelastic‐loss‐dominated regime: \(\tau_{\rm loss} \ll \tau_{\rm esc}\)
+
+In this limit \(\alpha\,H = \sqrt{\tau_{\rm esc}/\tau_{\rm loss}} \gg 1\).  
+%
+Hence
+\[
+\alpha H \,\gg 1 
+\;\Longrightarrow\; 
+\cosh(\alpha H) \approx \tfrac{1}{2}\,e^{\alpha H} \rightarrow \infty~.
+\]
+%
+Therefore
+\[
+\Phi_{\rm esc}(E) 
+\;=\; \frac{Q(E)}{2\,\cosh(\alpha H)}
+\;\approx\; Q(E)\,\frac{1}{2}\,e^{-\alpha H}
+\;\approx\; \frac{Q(E)}{2}\,e^{-\sqrt{\tau_{\rm esc}/\tau_{\rm loss}}}\;\ll\;Q(E)\,. 
+\]
+Because \(\alpha H \gg 1\), essentially almost all CR protons lose energy before escaping (i.e.\ they “die” to inelastic collisions), and the escaping flux is exponentially suppressed.
+
+(ii) Escape‐dominated regime: \(\tau_{\rm esc} \ll \tau_{\rm loss}\)
+
+In this opposite limit \(\alpha H = \sqrt{\tau_{\rm esc}/\tau_{\rm loss}} \ll 1\).  
+%
+Then
+\[
+\cosh(\alpha H)\approx 1 + \tfrac{1}{2}(\alpha H)^2\approx 1 
+\quad(\text{to leading order}).
+\]
+Hence
+\[
+\Phi_{\rm esc}(E) \;=\; \frac{Q(E)}{2\,\cosh(\alpha H)} 
+\;\approx\; \frac{Q(E)}{2}\,\bigl[1 - \tfrac12\,(\alpha H)^2 + \cdots\bigr]
+\;\approx\; \frac{Q(E)}{2}\,.
+\]
+Physically, almost all injected CR protons escape before undergoing any inelastic collision.  
+
+If \(Q(E)\propto E^{-p}\), then 
+\[
+\Phi_{\rm esc}(E)\;\propto\; E^{-p}.
+\]
+
+Recap:
+\begin{itemize}
+\item \(\tau_{\rm loss} \ll \tau_{\rm esc}\) (inelastic‐loss dominated):
+\begin{equation}
+\boxed{\Phi_{\rm esc}(E)\;\approx\;\frac{Q(E)}{2}\,\exp\left[-\,\sqrt{\frac{\tau_{\rm esc}}{\tau_{\rm loss}}} \; \right]}
+\end{equation}
+\item \(\tau_{\rm esc} \ll \tau_{\rm loss}\) (escape dominated):
+\begin{equation}
+\boxed{\Phi_{\rm esc}(E)\;\approx\;\frac{Q(E)}{2}}
+\end{equation}
+\end{itemize}
+
+\end{itemize}
+\end{solution}
+\end{document}
