@@ -187,6 +187,15 @@
 %]{thmgreenbox}
 
 \declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{Red!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=Red, backgroundcolor=Red!5,
+    }
+]{thmredbox}
+
+\declaretheoremstyle[
     headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
     mdframed={
         linewidth=2pt,
@@ -235,7 +244,8 @@
 %]{thmexplanationbox}
 
 %\declaretheorem[style=thmgreenbox, name=Definition]{definition}
-\declaretheorem[style=thmbluebox, numbered=no, name=Problem]{problem}
+\declaretheorem[style=thmbluebox, numbered=no, name=Exercise]{exercise}
+\declaretheorem[style=thmredbox, numbered=no, name=Solution]{solution}
 %\declaretheorem[style=thmredbox, name=Proposition]{prop}
 %\declaretheorem[style=thmredbox, name=Theorem]{theorem}
 %\declaretheorem[style=thmredbox, name=Lemma]{lemma}
