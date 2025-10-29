@@ -1,0 +1,212 @@
+% !TEX root = ../../lectures.tex
+%Awesome—your slides are spot-on in spirit: “bend the frozen-in field → magnetic tension pulls back,” exactly like a vibrating string. Below is the detailed, nuts-and-bolts derivation that makes the analogy precise and explains why the Alfvén speed follows the “(tension)/(linear density)” rule (actually (v^2=T/\mu)). I’ll also map each step to what you sketched in the slides. 
+
+\section{Alfven waves in a mechanical analogy}
+
+Start with a uniform plasma at rest with a uniform background field \(\mathbf B_0\). In ideal MHD, the field is \emph{frozen} into the plasma, so if you nudge a fluid element sideways to \(\mathbf B_0\), you bend the field lines. That bend stores magnetic energy, and the field develops a \emph{tension} that tries to straighten the lines, pushing the plasma back — this is the restoring force that launches a wave along \(\mathbf B_0\). 
+
+%# 2) Magnetic tension from Maxwell stress (why there is a “tension”)
+
+The magnetic force density can be written as
+\[
+\mathbf f = \underbrace{\frac{1}{4\pi}(\mathbf B\cdot\nabla)\mathbf B}_{\text{\tiny magnetic tension}} \underbrace{- \nabla\!\left(\frac{B^2}{8\pi}\right)}_{\text{\tiny gradient of magnetic pressure}}~.
+\]
+The second term is the \emph{magnetic pressure} (perpendicular squeezing), the first is the \emph{magnetic tension} (pulling \emph{along} field lines). When a field line is curved with radius of curvature (R), the tension produces a sideways restoring force
+\[
+f_{\perp} \sim \frac{B_0^2}{4\pi} \, \frac{1}{R}.
+\]
+This is the magnetic analog of a taut string that resists curvature.
+
+%# 3) Reduce to a “string” (flux-tube) model
+
+%Consider a thin flux tube of cross-section (A), mass density (\rho), and let (s) be the coordinate along the unperturbed field ((\hat{\mathbf b}*0\parallel\mathbf B_0)). Give it a small transverse displacement (\xi*\perp(s,t)) (say, in (y)). For small deflections, the curvature is (\kappa \approx \partial^2\xi_\perp/\partial s^2). The **total tension force** on a short segment of length (\Delta s) is then
+%\[
+%F_\perp ;=; \bigg(\frac{B_0^2}{4\pi}\bigg)A;\frac{\partial^2\xi_\perp}{\partial s^2},\Delta s,
+%\]
+%because the “tension per unit area along the field” is (B_0^2/4\pi) (cgs), and the geometric factor (\partial^2\xi_\perp/\partial s^2) measures how much the tension vectors at the two ends fail to cancel.
+%
+%\end{document}
+%
+%The **mass** of the segment is (\rho,A,\Delta s), so Newton’s 2nd law gives
+%[
+%\rho A,\Delta s;\frac{\partial^2\xi_\perp}{\partial t^2}
+%;=;
+%\bigg(\frac{B_0^2}{4\pi}\bigg)A;\frac{\partial^2\xi_\perp}{\partial s^2},\Delta s.
+%]
+%Cancel (A\Delta s) to obtain the transverse wave equation
+%[
+%\frac{\partial^2\xi_\perp}{\partial t^2}
+%;=;
+%\frac{B_0^2}{4\pi \rho},\frac{\partial^2\xi_\perp}{\partial s^2}.
+%]
+
+%# 4) Identify (T) and (\mu) → the “string formula”
+
+Compare now with the standard string equation 
+\( \partial_t^2 \xi = (T/\mu),\partial_s^2\xi \).
+You can read off:
+%
+\begin{description}
+\item[Tension] \(T = (B_0^2/4\pi),A \) — the magnetic tension times the tube area.
+\item[Linear mass density] \(\mu = \rho,A\).
+\end{description}
+
+Therefore
+\[
+v_A^2 ;=; \frac{T}{\mu} ;=; \frac{B_0^2}{4\pi\rho}
+\qquad\Rightarrow\qquad
+\boxed{,v_A=\frac{B_0}{\sqrt{4\pi\rho}},}\quad\text{(cgs)}.
+\]
+%In SI units the same reasoning gives (v_A=B_0/\sqrt{\mu_0\rho}) because (B^2/4\pi) (cgs) ↔ (B^2/\mu_0) (SI). 
+
+This is exactly the “tension over linear density” rule in your slide (with the square understood: \(c_w^2=T/\mu)\). 
+
+Why propagation is \emph{along} \(\mathbf B_0\) only?
+
+The restoring force comes from \emph{field-line curvature}, so the wave \emph{needs} variation along (s) (the direction of \(\mathbf B_0)\). 
+%
+If \(k_\parallel=0 \), there’s no curvature, hence no tension restoring force $\rightarrow$ no Alfvén propagation. That yields the dispersion
+\[
+\omega = \pm k_\parallel v_A,
+\]
+as you noted on the slide. 
+
+Energy perspective (what’s doing “work”)
+
+Bending the tube increases magnetic energy (magnetic pressure is unchanged to leading order for a pure Alfvén mode; it’s the **tension** piece that matters). During oscillation, magnetic energy and kinetic energy exchange and are equal on average—again matching the lossless string picture you referenced (“kinetic energy” ↔ “field-line bending”). 
+
+Back to your numbers/remarks
+
+%Your slide’s ISM estimate (v_A \simeq B/\sqrt{4\pi\rho_i}) (taking the ion mass density) and the remark that SNR shocks are super-Alfvénic, (v_{\rm SNR}\gg v_A), are exactly the standard scalings. With (B\sim \mathrm{few},\mu\mathrm G) and (n\sim 0.1\text{–}1,\mathrm{cm^{-3}}), one gets (v_A) of order (10\text{–}20,\mathrm{km,s^{-1}}), far below typical SNR shock speeds and of course (\ll c), as you wrote. 
+
+\section{A primer on Alfven waves}
+
+\subsection{Alfv\'en Waves (vs.\ Sound Waves)}
+
+\paragraph{Setting and assumptions.}
+We work in (ideal) MHD with a uniform equilibrium:
+\[
+\mathbf{B}_0=\text{const},\qquad \rho_0=\text{const},\qquad \mathbf{v}_0=\mathbf{0},\qquad p_0=\text{const}.
+\]
+Small perturbations $\delta \rho,\,\delta p,\,\delta \mathbf{v},\,\delta \mathbf{B}$ vary as $\exp[i(\mathbf{k}\!\cdot\!\mathbf{x}-\omega t)]$.
+The ideal MHD equations we linearize are
+\[
+\begin{aligned}
+&\partial_t \rho + \nabla\!\cdot(\rho \mathbf{v}) = 0,\\
+&\rho\,\partial_t \mathbf{v} = -\nabla p + \frac{1}{\mu_0}(\nabla\times \mathbf{B})\times \mathbf{B},\\
+&\partial_t \mathbf{B} = \nabla\times(\mathbf{v}\times \mathbf{B}),\qquad \nabla\!\cdot\!\mathbf{B}=0,\\
+&\delta p = c_s^2\,\delta \rho\quad(\text{adiabatic closure, }c_s^2=\gamma p_0/\rho_0).
+\end{aligned}
+\]
+
+\paragraph{Alfv\'en waves: definition and dispersion.}
+Alfv\'en waves are \emph{transverse, incompressible} MHD waves whose restoring force is the magnetic tension of the background field $\mathbf{B}_0$.
+They satisfy
+\[
+\delta \rho = 0,\qquad \delta p = 0,\qquad \mathbf{k}\cdot \delta\mathbf{v}=0,
+\]
+with polarization $\delta\mathbf{v}\perp\mathbf{B}_0$ and $\delta\mathbf{B}\perp\mathbf{B}_0$.
+Writing $\mathbf{k}=k_\parallel \hat{\mathbf{b}}_0 + \mathbf{k}_\perp$ with $\hat{\mathbf{b}}_0=\mathbf{B}_0/B_0$, the dispersion relation is
+\[
+\boxed{\ \omega = \pm k_\parallel v_A\ ,\qquad v_A=\frac{B_0}{\sqrt{\mu_0 \rho_0}}\ } \quad
+\text{(SI)}\qquad\text{or}\qquad v_A=\frac{B_0}{\sqrt{4\pi \rho_0}}\ \text{(cgs)}.
+\]
+Key features:
+\begin{itemize}
+\item Propagate \emph{along field lines}: no propagation if $k_\parallel=0$.
+\item \emph{Transverse} polarization: $\delta\mathbf{v}\perp \mathbf{k}$ and $\delta\mathbf{v}\perp \mathbf{B}_0$ (shear Alfv\'en mode).
+\item \emph{Incompressible}: no density/pressure perturbations at leading order.
+\item Energy equipartition in linear waves: kinetic and magnetic perturbation energies are equal on average.
+\item Group and phase velocities are $\pm v_A\,\hat{\mathbf{b}}_0$ (purely along $\mathbf{B}_0$).
+\end{itemize}
+
+\paragraph{Physical picture.}
+Imagine a taut magnetic ``string'' (field line). A sideways displacement bends it, creating curvature and a \emph{tension} force $\propto B_0^2$ that pulls the plasma back; inertia is provided by $\rho_0$. The wave speed therefore scales as $v_A\propto B_0/\sqrt{\rho_0}$.
+
+\paragraph{Sound waves: contrast.}
+Ordinary sound waves in a neutral or weakly magnetized fluid have
+\[
+\boxed{\ \omega = \pm k\,c_s\ ,\qquad \delta\mathbf{v}\parallel \mathbf{k}\ ,\qquad \text{compressive}~(\delta\rho,\delta p\neq 0)\ }.
+\]
+They are longitudinal, isotropic (no preferred direction), and the restoring force is the \emph{gas pressure gradient}, not magnetic tension.
+
+\paragraph{Magnetized plasma taxonomy (for context).}
+In a magnetized plasma there are three linear MHD modes:
+\begin{enumerate}
+\item \textbf{Alfv\'en} (transverse, incompressible, $\omega=\pm k_\parallel v_A$).
+\item \textbf{Slow magnetosonic} (compressive, generally sub-$\min\{c_s,v_A\}$, strongly field-aligned at low $\beta$).
+\item \textbf{Fast magnetosonic} (compressive, more isotropic, super-$\max\{c_s,v_A\}$ at low $\beta$).
+\end{enumerate}
+The relative importance of these modes depends on the plasma beta
+\[
+\beta \equiv \frac{2\mu_0 p_0}{B_0^2} \quad \text{(SI)}\qquad \Big(\text{or } \beta=8\pi p_0/B_0^2\ \text{in cgs}\Big).
+\]
+Low-$\beta$ plasmas ($\beta\ll1$) are tension-dominated ($v_A\gg c_s$); high-$\beta$ plasmas behave more like ordinary fluids ($c_s\gtrsim v_A$).
+
+\paragraph{Polarization and correlations.}
+For linear Alfv\'en waves,
+\[
+\delta\mathbf{B} = \pm \sqrt{\mu_0 \rho_0}\,\delta\mathbf{v}\times \hat{\mathbf{b}}_0,\qquad
+\delta\mathbf{E} = -\,\delta\mathbf{v}\times \mathbf{B}_0,
+\]
+and the Poynting flux $\mathbf{S}=\mu_0^{-1}\,\delta\mathbf{E}\times \delta\mathbf{B}$ points along $\pm\hat{\mathbf{b}}_0$.
+
+\paragraph{Damping (very brief).}
+Ideal MHD is dissipationless. In real plasmas, Alfv\'en waves can damp via:
+viscosity/resistivity (Ohmic), ion–neutral friction (partially ionized media), phase mixing and resonant absorption (inhomogeneous $v_A$), and at smaller scales via kinetic effects (e.g.\ Landau/cyclotron damping; ``kinetic Alfv\'en'' regime when $k_\perp \rho_i\!\sim\!1$).
+%
+\paragraph{Worked numbers.}
+\begin{itemize}
+\item \emph{Warm ISM:} $B_0\!\sim\!5~\mu\text{G}$, $n\!\sim\!1~\text{cm}^{-3}$ $\Rightarrow$ 
+$v_A \approx 2.18\,\frac{B_{[\mu\text{G}]}}{\sqrt{n_{[\text{cm}^{-3}]}}}\,\text{km s}^{-1} \approx 11~\text{km s}^{-1}$.
+For $T\!\sim\!8000$ K, $c_s\!\approx\!9~\text{km s}^{-1}$, so Alfv\'en and sound speeds are comparable.
+\item \emph{Solar corona:} $B_0\!\sim\!10~\text{G}$, $n\!\sim\!10^9~\text{cm}^{-3}$ $\Rightarrow$
+$v_A \approx 2.18\,\frac{10^7}{\sqrt{10^9}} \approx 690~\text{km s}^{-1}$, typically $\gg c_s$ ($\beta\ll1$).
+\end{itemize}
+
+\paragraph{At-a-glance comparison.}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+ & \textbf{Alfv\'en wave} & \textbf{Sound wave} \\
+\midrule
+Restoring force & Magnetic tension ($\propto B_0^2$) & Gas pressure gradient \\
+Compressibility & Incompressible ($\delta \rho=0$) & Compressive ($\delta \rho\neq 0$) \\
+Polarization & Transverse ($\delta\mathbf{v}\perp \mathbf{k},\mathbf{B}_0$) & Longitudinal ($\delta\mathbf{v}\parallel \mathbf{k}$) \\
+Dispersion & $\omega=\pm k_\parallel v_A$ & $\omega=\pm k\,c_s$ \\
+Anisotropy & Propagates along $\mathbf{B}_0$ & Isotropic \\
+Energy flux & Along field lines & Along $\mathbf{k}$ \\
+Key parameter & $v_A=B_0/\sqrt{\mu_0\rho_0}$ & $c_s=\sqrt{\gamma p_0/\rho_0}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Derivation sketch.}
+Taking $\mathbf{k}$ in the $x$–$z$ plane with $\mathbf{B}_0=B_0\hat{\mathbf{z}}$ and seeking a transverse solution with $\delta v_y\neq 0$, the linearized momentum and induction equations give
+\[
+-i\omega \rho_0\,\delta v_y = \frac{i k_\parallel B_0}{\mu_0}\,\delta B_y,\qquad
+-i\omega\,\delta B_y = i k_\parallel B_0\,\delta v_y,
+\]
+which combine to yield $\omega^2 = k_\parallel^2 v_A^2$ and the phase relation 
+$\delta B_y = \pm \sqrt{\mu_0\rho_0}\,\delta v_y$.
+
+\paragraph{Where they matter.}
+Alfv\'en waves are ubiquitous in magnetized astrophysical plasmas: solar wind/corona, planetary magnetospheres, interstellar turbulence, and accretion/ejection environments. They mediate energy and momentum transport along field lines and are central to plasma heating, turbulence cascades, and cosmic-ray scattering.
+
+\paragraph{Exercises.}
+\begin{enumerate}
+\item Show that the time-averaged kinetic and magnetic perturbation energies of a linear Alfv\'en wave are equal.
+\item For a plasma with $\beta=0.1$ and $c_s=100~\text{km s}^{-1}$, estimate $v_A$ and discuss which linear mode transports energy most efficiently across vs.\ along the mean field.
+\item Starting from the linearized MHD system, derive the full magnetosonic dispersion relation for arbitrary angle between $\mathbf{k}$ and $\mathbf{B}_0$, and identify the slow/fast branches in the limits $\beta\ll1$ and $\beta\gg1$.
+\end{enumerate}
+
+
+\end{document}
+
+%---
+%
+%## One-line takeaway
+%
+%Treat a thin flux tube as a string: magnetic tension (T\sim B_0^2 A/4\pi) pulls it taut; inertia is the tube’s linear density (\mu=\rho A); the transverse wave speed is (v_A=\sqrt{T/\mu}=B_0/\sqrt{4\pi\rho}) (or (B_0/\sqrt{\mu_0\rho}) in SI). That’s why your “tension / linear density” rule works for Alfvén waves. 
+%
+%If you want, I can turn this into a small annotated figure (string vs. flux-tube) to drop straight into the slides.
