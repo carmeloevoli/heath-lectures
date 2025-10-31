@@ -122,6 +122,116 @@ shows that only a \(\sim\!2\text{–}3\%\) coupling of SN mechanical energy into
 
 \subsection{Self–generated Alfv\'en waves: Kulsrud’s argument}
 
+Cosmic rays (CRs) move individually at \(v\simeq c\), but on average they drift slightly
+along the large–scale magnetic field \(\mathbf B_0\) with bulk speed \(v_D\) set by their
+pressure gradient. If \(v_D>v_A\), a small pitch–angle anisotropy develops that
+resonantly excites forward–propagating Alfv\'en waves. Those waves scatter the CRs in
+pitch angle until, in the wave frame, the distribution becomes nearly isotropic. During
+this relaxation the CRs lose \emph{parallel} momentum to the waves/plasma and their bulk
+drift relaxes from \(v_D\) toward \(v_A\). In this way, super–Alfv\'enic CR streaming
+\emph{self–generates} the very Alfv\'enic turbulence that ultimately limits the
+streaming speed.
+
+\paragraph{Momentum bookkeeping (step by step).}
+Kulsrud’s argument quantifies the transfer without detailed wave–particle kinetics by
+tracking the parallel momentum budget.
+
+\emph{(i) CR parallel momentum before/after isotropization.}
+Let \(P_{\rm cr}\) denote the CR parallel momentum density (per unit volume) for the
+particles that resonate with waves of wavenumber \(k\), i.e.\ those with
+\(p>p_{\rm res}(k)\).
+Before isotropization (bulk drift \(v_D\)),
+\[
+P_{\rm cr}^{\rm before} \;=\; n_{\rm CR}(>p_{\rm res})\,m_p\,\gamma\,v_D,
+\]
+and after isotropization in the wave frame (which corresponds to net parallel velocity
+\(v_A\) in the lab frame),
+\[
+P_{\rm cr}^{\rm after} \;=\; n_{\rm CR}(>p_{\rm res})\,m_p\,\gamma\,v_A.
+\]
+Hence the change (with \(n_{\rm CR}\equiv n_{\rm CR}(>p_{\rm res})\) for brevity) is
+\[
+\Delta P_{\rm cr} \;=\; n_{\rm CR}\,m_p\,\gamma\,(v_A - v_D)\;<\;0\qquad (v_D>v_A).
+\]
+
+\emph{(ii) Relaxation rate from pitch–angle scattering.}
+Pitch–angle diffusion with coefficient \(D_{\mu\mu}\) isotropizes the distribution at
+rate \(\tau^{-1}\!\sim\!D_{\mu\mu}\). Therefore the CR parallel momentum decays as
+\[
+\frac{dP_{\rm cr}}{dt}
+\;\simeq\;
+-\,D_{\mu\mu}\,n_{\rm CR}\,m_p\,\gamma\,(v_D - v_A).
+\]
+
+\emph{(iii) Waves gain the lost momentum; relate momentum to wave energy.}
+By momentum conservation the waves/plasma gain the same amount:
+\[
+\frac{dP_{w}}{dt}
+\;=\;
+-\,\frac{dP_{\rm cr}}{dt}.
+\]
+For a (linear) Alfv\'en wave, magnetic and kinetic perturbation energies are equal on
+average, so if \(W\equiv \delta B^2/(8\pi)\) is the magnetic part of the wave energy
+density, the total wave energy density is \(E_{\rm tot}=2W\). The wave momentum density
+is then \(P_w=E_{\rm tot}/v_A=2W/v_A\). Differentiating gives
+\[
+\frac{dW}{dt}\;=\;\frac{v_A}{2}\,D_{\mu\mu}\,n_{\rm CR}\,m_p\,\gamma\,(v_D - v_A)\;>\;0\~.
+\]
+
+\emph{(iv) From \(D_{\mu\mu}\) to a growth rate \(\Gamma_w(k)\).}
+At resonance, quasi–linear theory gives
+\(D_{\mu\mu}(k)\propto \Omega_p\,(\delta B_k/B_0)^2\), with \(\delta B_k\) the wave amplitude near \(k\).
+Writing the spectral energy growth in the standard linear form
+\(\partial_t W_k=2\,\Gamma_w(k)\,W_k\) and using \(W_k\propto \delta B_k^2\) yields
+\begin{remark}
+\[
+\Gamma_w(k)
+\;\propto\;
+\Omega\,
+\frac{n_{\rm CR}(>p_{\rm res})}{n_i}\,
+\Bigl(\frac{v_D}{v_A}-1\Bigr),
+\quad
+p_{\rm res}=\frac{Ze\,B_0}{k\,c}~.
+\]
+\end{remark}
+%
+with \(\Omega_p=eB_0/(m_pc)\) and \(n_i\) the ion number density.
+
+%Including the order–unity angular/spectral factors restores the familiar coefficient,
+%\[
+%\Gamma_w(k)
+%\;=\;
+%\frac{\pi}{4}\,\Omega_p\,
+%\frac{n_{\rm CR}(>p_{\rm res})}{n_i}\,
+%\Bigl(\frac{v_D}{v_A}-1\Bigr),
+%\]
+%with \(\Omega_p=eB_0/(m_pc)\) and \(n_i\) the ion number density.
+
+\paragraph{ISM scale estimate.}
+As a reference for the warm ISM, take \(B_0=5~\mu\mathrm{G}\) and \(n_i\simeq
+1~\mathrm{cm^{-3}}\), giving \(\Omega_p\simeq 0.05~\mathrm{s^{-1}}\).
+For resonant CRs near a few GeV, a representative integrated density is
+\(n_{\rm CR}(>p_{\rm res})\sim 10^{-10}~\mathrm{cm^{-3}}\).
+If streaming is moderately super–Alfv\'enic, \(v_D\simeq 2v_A\), then
+\[
+\Gamma_w \;\approx\; 1.3\times10^{-4}~\mathrm{yr^{-1}},
+\]
+so the growth time \(\Gamma_w^{-1}\sim 10~\mathrm{kyr}\) is orders of magnitude shorter
+than CR residence times. Where damping is not dominant, CRs can therefore
+\emph{self–generate} the Alfv\'enic turbulence that regulates their drift to \(v_A\).
+
+\paragraph{Takeaway.}
+Super–Alfv\'enic CR streaming is unstable. Parallel momentum lost by CRs on the
+scattering time is transferred to Alfv\'en waves, whose energy grows until balanced by
+damping. The steady amplitude at each \(k\) satisfies
+\(\Gamma_w(k)=\Gamma_{\rm damp}(k)\); the resulting spectrum sets the scattering rate
+\(D_{\mu\mu}(p)\) and the parallel diffusion coefficient \(\kappa_\parallel(p)\), thus
+closing the feedback loop between CR transport and their self–generated turbulence.
+
+\end{document}
+
+\subsection{Self–generated Alfv\'en waves: Kulsrud’s argument}
+
 Cosmic rays (CRs) move individually at \(v\simeq c\), but on average they drift a little along the large–scale magnetic field \(\mathbf B_0\) with bulk speed \(v_D\) set by their
 pressure gradient. If \(v_D>v_A\), the CR pitch–angle distribution acquires a small anisotropy that resonantly excites forward–propagating Alfv\'en waves. Those waves
 scatter the CRs in pitch angle until, in the wave frame, the distribution becomes nearly isotropic. During this relaxation the CRs lose \emph{parallel} momentum to the
@@ -135,73 +245,51 @@ Kulsrud’s argument captures the transfer of energy from cosmic rays to Alfv\'e
 Let \(P_{\rm cr}\) denote the cosmic ray parallel momentum density before the isotropization when they stream with a drift velocity \( v_D \)
 %
 \[
-P_{\rm cr}^{\rm before} = n(>p) m_p \gamma v_D
+P_{\rm cr}^{\rm before} = n_{\rm CR}(p > p_{\rm res}) m_p \gamma v_D
 \]
 after isotropization in the wave frame, they have (in the Galaxy frame) a net velocity of \(v_A\), then their momentum is
 \[
-P_{\rm cr}^{\rm after} = n(>p) m_p \gamma v_A
+P_{\rm cr}^{\rm after} = n_{\rm CR}(p > p_{\rm res}) m_p \gamma v_A
 \]
+%
+where \( n_{\rm CR}(p > p_{\rm res}) \) is the number density of CRs above the resonant momentum.
 
-We use the fact that only CRs near the \emph{gyroresonant} momentum
-\(p_{\rm res}=Ze\,B_0/(k\,c)\) efficiently exchange momentum with waves at wavenumber
-\(k\). 
-
-i.e.\ number density of CRs above the resonant momentum
-
-Then this process implies a parallel momentum change of the order of
+Then this process implies a parallel momentum change of the order of (I simplify the notation for \( n_CR \) by dropping \( p > p_res \)):
 %
 \[
-dP_{\rm cr} = n(>p) m_p \gamma (v_A - v_D) < 0
+dP_{\rm cr} = n_{\rm CR} m_p \gamma (v_A - v_D) < 0
 \]
 
 We remind that pitch–angle scattering with diffusion coefficient \(D_{\mu\mu}\) isotropizes
-the distribution at a rate
+the distribution at a rate \( \tau^{-1} \;\sim\; D_{\mu\mu} \), which implies that the momentum lost per isotropization time is 
 \[
-\nu_s \;\equiv\; \tau^{-1} \;\sim\; D_{\mu\mu}
-\quad\rightarrow\quad
-\frac{dP_{\rm cr}}{dt}\;\simeq\; -\nu_s\,n(>p) m_p \gamma (v_D - v_A)
+\frac{dP_{\rm cr}}{dt}\;\simeq\; -  D_{\mu\mu}  n_{\rm CR} m_p \gamma (v_D - v_A)
 \]
-
-This is just “momentum lost per isotropization time.’’
 
 By momentum conservation the waves gain the same parallel momentum:
 \[
 \frac{dP_{w}}{dt}\;=-\frac{dP_{\rm cr}}{dt}
 \]
-For a (linear) Alfv\'en wave, the \emph{wave momentum density} and \emph{magnetic energy
-density} are related by
+
+Remember that for a Alfv\'en wave, the \emph{wave momentum density} and \emph{magnetic energy
+density} \( W \equiv \frac{\delta B^2}{8\pi}  \) are related by
 \[
 P_{w} \;=\; \frac{E_{\rm tot}}{v_A} \;=\; \frac{2W}{v_A},
-\qquad
-W \equiv \frac{\delta B^2}{8\pi},
 \]
-because magnetic and kinetic energies are equal on average
-(\(E_{\rm tot}=2W\)) and the Alfv\'en Poynting flux is \(S=v_A E_{\rm tot}\).
-Therefore
-\[
-\frac{dW}{dt}\;=\;\frac{v_A}{2}\,\nu_s\,n(>p) m_p \gamma (v_D - v_A)~.
-\]
-This already gives the \emph{power per unit volume} that goes into waves.
+because magnetic and kinetic energies are equal on average (\(E_{\rm tot}=2W\)) and the Alfv\'en Poynting flux is \(S=v_A E_{\rm tot}\).
 
-At resonance, quasi–linear theory gives
+Therefore the \emph{power per unit volume} that goes into waves becomes
 \[
-\nu_s \;\sim\; D_{\mu\mu}(k)
-\;\propto\; \Omega\,\left(\frac{\delta B_k}{B_0}\right)^{\!2},
-\]
-with \(\Omega=eB_0/(m_pc)\) for protons, and \(\delta B_k\) the wave amplitude around
-wavenumber \(k\). 
-
-\[
-\frac{dW_k}{dt}\;\propto\;
-v_A\,\Omega\,
-\left(\frac{\delta B_k}{B_0}\right)^{\!2}\;
-n_{\rm cr}(>p_{\rm res})\;\frac{p_{\rm res}}{c}\;
-\bigl(v_D - v_A\bigr).
+\frac{dW}{dt}\;=\; -\frac{v_A}{2} \frac{dP_{\rm cr}}{dt}
 \]
 
 Writing the growth in the standard linear form
-\(\partial_t W_k = 2\,\Gamma_w(k)\,W_k\) with \(W_k\propto \delta B_k^2\) immediately
-yields
+\(\partial_t W_k = 2\,\Gamma_w(k)\,W_k\) with \(W_k\propto \delta B_k^2\)
+and reminding that quasi–linear theory gives
+\(
+D_{\mu\mu}(k) \;\propto\; \Omega\,\left(\frac{\delta B_k}{B_0}\right)^{\!2},
+\)
+immediately yields
 \begin{remark}
 \[
 \Gamma_w(k)\;\propto\;\Omega\,
@@ -217,16 +305,10 @@ For resonant CRs near a few GeV, a typical integrated density is
 \(n_{\rm cr}(>p_{\rm res})\sim 10^{-10}~\mathrm{cm^{-3}}\).
 If streaming is moderately super–Alfv\'enic, say \(v_D\simeq 2v_A\), then
 \[
-\gamma \;\sim\;
-\frac{\pi}{4}\,(0.05~\mathrm{s^{-1}})
-\left(\frac{10^{-10}}{1}\right)(1)
-\;\approx\; 4\times10^{-12}~\mathrm{s^{-1}}
-\;\approx\; 1.3\times10^{-4}~\mathrm{yr^{-1}}.
+\Gamma_w \;\approx\; 1.3\times10^{-4}~\mathrm{yr^{-1}}.
 \]
-The corresponding growth time, \( \gamma^{-1}\sim 8\times 10^{3}~\mathrm{yr}\),
-is orders of magnitude shorter than CR residence times in the Galaxy, so in regions
-where damping is not overwhelming the CRs can indeed \emph{self–generate} the
-Alfv\'enic turbulence that regulates their own drift to \(v_A\).
+The corresponding growth time, \( \Gamma_w^{-1}\sim 10~\mathrm{kyr}\), is orders of magnitude shorter than CR residence times in the Galaxy, so in regions
+where damping is not overwhelming the CRs can indeed \emph{self–generate} the Alfv\'enic turbulence that regulates their own drift to \(v_A\).
 
 \paragraph{Takeaway.}
 Super–Alfv\'enic CR streaming is unstable. Resonant wave growth taps the CR pressure
