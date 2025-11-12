@@ -1,10 +1,357 @@
-% !TEX root = ../lectures.tex
-\section{The Multi-Messenger View of Astroparticle Physics}
+% !TEX root = ../../lectures.tex
+\section{The Multi-Messenger View of Astroparticle Physics}\label{sec:mm_intro}
 
-The investigation of secondary messengers emitted by high-energy particles and their absorption in space plays a crucial role in astroparticle physics, shedding light on diverse cosmic phenomena. 
+Astroparticle physics is inherently \emph{multi-messenger}: we learn about high-energy processes in the Universe by combining information from charged cosmic rays (CRs), photons across the electromagnetic spectrum (from radio to TeV–PeV $\gamma$-rays), neutrinos, and—when relevant—gravitational waves. Each messenger samples different interactions and environmental scales; together they allow us to disentangle acceleration, transport, and radiation in complex sources and along their lines of sight.
 
-A key aspect of radiative processes is their influence on the energy spectrum of high-energy events. Interactions between particles, electromagnetic fields, and matter, involving mechanisms like synchrotron radiation, bremsstrahlung, and inverse Compton scattering, can lead to significant energy losses. These losses modify the energy distribution of particles, affecting the spectrum observed from these high-energy sources.
+\paragraph{Why radiative processes matter.}
+Radiative processes both \emph{encode} conditions in the source/medium and \emph{reshape} the underlying particle populations. Interactions of energetic particles with magnetic and radiation fields or with matter—most notably synchrotron, bremsstrahlung, inverse Compton (IC), and hadronic interactions leading to pion production—cause energy losses that can be competitive with acceleration and escape. These losses modify particle spectra (cooling breaks, cutoffs), and therefore the photon and neutrino spectra we observe. For leptons, synchrotron and IC cooling often dominate; for hadrons, inelastic $pp$ and photo-hadronic processes are usually sub-dominant in the diffuse interstellar medium (ISM) but can be decisive in dense or radiation-rich environments (e.g., starbursts, AGN cores).
 
-Furthermore, secondary emissions serve as powerful diagnostic tools for understanding the physical properties and behaviors of astrophysical systems, even when the radiative process is subdominant. 
+\paragraph{Secondary emission as a diagnostic.}
+Even when a particular channel is energetically sub-dominant for transport, its byproducts can be exceptionally informative. A prime example is the diffuse Galactic $\gamma$-ray emission: photons from $\pi^0$ decay (produced in CR proton–gas collisions), plus bremsstrahlung and IC from CR electrons, map the spatial distribution of CR densities, gas, and interstellar radiation fields. In the Milky Way’s ISM, pion production contributes little to the \emph{transport} of CR protons (loss times exceed significantly escape at GeV–TeV energies), yet the resulting $\gamma$-rays are one of our cleanest tracers of hadronic CRs on kiloparsec scales. Analogously, high-energy neutrinos directly tag hadronic interactions in environments opaque to $\gamma$-rays.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{MultiMessengerMilkyWay.pdf}
+\caption{The Milky Way in photons and neutrinos. All panels are Galactic coordinates ($\pm15^\circ$ in latitude, $\pm180^\circ$ in longitude).
+(A) Optical image—partly obscured by dust (credit: A.~Mellinger)~\cite{optical}.
+(B) \textit{Fermi}-LAT diffuse $\gamma$-ray flux integrated over $1$\,GeV (12-year map)~\cite{12yr-gammamap}.
+(C) Expected neutrino template from a $\pi^0$ model matched to the \textit{Fermi}-LAT diffuse emission.
+(D) Template folded with IceCube cascade response.
+(E) IceCube pre-trial significance from an all-sky cascade search; contours overlay the hadronic template predicted from $\gamma$ rays as in (D). Spatial overlap with hot spots is suggestive, but not conclusive without a robust post-trial significance.}
+%Gray line in (C)–(E) marks the IceCube horizon.}}
+\end{figure}
+
+%\begin{astrobox}{How to read panel (E): IceCube pre-trial significance}
+%\begin{itemize}
+%  \item \textbf{What is shown?} A sky map of \emph{local} significances from a grid scan for point-like neutrino excesses using cascade events (median $\sim7^\circ$).
+%  \item \textbf{How is it computed?} At each grid point, a likelihood ratio
+%        $\mathrm{TS}=2\ln\!\big[\mathcal{L}(n_s)/\mathcal{L}(n_s\!=\!0)\big]$
+%        is converted to a local $p$-value assuming the background null.
+%  \item \textbf{Pre-trial vs.\ post-trial.} “Pre-trial” means no correction for scanning many positions. After accounting for the \emph{trials factor}, global (post-trial) significances are lower; isolated $2$–$3\sigma$ spots are expected.
+%  \item \textbf{Horizon line.} The gray curve is the IceCube horizon; atmospheric backgrounds and veto efficiency differ across it, slightly changing sensitivity north/south.
+%  \item \textbf{Contours from (D).} The 20\%/50\% contours overlay a hadronic template predicted from $\gamma$ rays. Spatial overlap with hot spots is suggestive, but not conclusive without a robust post-trial significance or corroboration (stacking, time dependence, spectrum).
+%\end{itemize}
+%\end{astrobox}
+
+%\paragraph{From intuition to formalism (roadmap).}
+%In the rest of this chapter we will:
+%\begin{enumerate}
+%  \item build intuition for key processes (synchrotron, IC, bremsstrahlung, and hadronic channels), 
+%  \item derive their emissivities and characteristic cooling times, 
+%  \item identify spectral imprints (cooling breaks, KN suppression, calorimetric limits), and 
+%  \item apply these tools to Galactic and extragalactic environments (SNRs, PWNe, star-forming regions, AGN, and clusters).
+%\end{enumerate}
+%Along the way, we will emphasize regimes: optically thin vs.\ thick, Thomson vs.\ Klein–Nishina, escape-dominated vs.\ calorimetric.
 %
-For instance, the Galaxy's diffuse gamma-ray emission offers crucial information about cosmic ray densities, sources, and propagation, although the emission of these photons is due to a process, pion production, which is sub-leading when describing the transport of protons in the ISM.
+%\paragraph{Back-of-the-envelope anchors.}
+%Two quick scales we will reuse:
+%\begin{itemize}
+%  \item \emph{Electron synchrotron/IC cooling} is typically fast in $\mu$G–mG fields or intense radiation fields, imprinting observable breaks within source lifetimes and along Galactic propagation.
+%  \item \emph{Proton hadronic losses} in the diffuse ISM are slow compared with escape, so $\gamma$ rays from $\pi^0$-decay act mainly as tracers of CR \emph{density} and gas, not as regulators of CR \emph{transport}; this hierarchy can invert in dense targets.
+%\end{itemize}
+
+\paragraph{Takeaways.}
+Multi-messenger observations transform radiative byproducts into diagnostics of acceleration sites and propagation. The same processes that light up the sky also modify the parent particle distributions. A careful accounting of energy loss, target fields, and escape is therefore the backbone of any high-energy astroparticle inference.
+
+{\color{red}ADD HERE THE COSMIC RAY PLOT.}
+
+%See \autoref{box:scales} for a compact “scale atlas”—a reminder of just how vast a terrain we’re about to survey.
+%
+%\begin{center}
+%{\textbf{Messengers and characteristic energies}}
+%\begin{tabular}{cc}
+%\toprule
+%Radio--optical photons & $\nu \sim \text{MHz--PHz}$  ($E_\gamma \sim 10^{-9}\text{--}1\,\mathrm{eV}$) \\
+%X rays / $\gamma$ rays & $E_\gamma \sim \mathrm{keV}$--$\mathrm{TeV}\text{--}\mathrm{PeV}$ \\
+%Neutrinos              & $E_\nu \sim 10\,\mathrm{GeV}$--$10\,\mathrm{PeV}$ (up to $\mathrm{EeV}$ searches) \\
+%Cosmic rays (Galactic) & $E \sim \mathrm{GeV}$--$\mathrm{PeV}$ (knee at $\sim4\,\mathrm{PeV}$) \\
+%UHECRs (extragalactic) & $E \sim 1$--$100\,\mathrm{EeV}$ (GZK/photopion horizon $\sim 100\,\mathrm{Mpc}$) \\
+%\bottomrule
+%\end{tabular}
+%\end{center}
+%
+%\vspace{0.6em}
+%
+%\begin{center}
+%{\textbf{Environments, fields, and targets}}
+%\begin{tabular}{cc}
+%\toprule
+%Magnetic fields        & ISM: $1$--$10\,\mu\mathrm{G}$; SNR/PWNe: $10^2$--$10^3\,\mu\mathrm{G}$; IGM: $\mathrm{pG}$--$\mathrm{nG}$ \\
+%Radiation fields       & CMB: $U_{\rm CMB}\!\simeq\!0.26\,\mathrm{eV\,cm^{-3}}$;\, ISRF: $\sim 0.5$--$5\,\mathrm{eV\,cm^{-3}}$ \\
+%Gas densities          & Hot halo: $10^{-3}\,\mathrm{cm^{-3}}$; ISM: $0.1$--$1\,\mathrm{cm^{-3}}$; MCs: $10^2$--$10^4\,\mathrm{cm^{-3}}$ \\
+%Geometric scales    & SNR/PWN: $1$--$10\,\mathrm{pc}$; Galaxy: $\sim 10\,\mathrm{kpc}$; Clusters: $\sim \mathrm{Mpc}$; Universe: Gpc \\
+%\bottomrule
+%\end{tabular}
+%\end{center}
+
+%\vspace{0.6em}
+
+%\begin{rulesbox}
+%\begin{itemize}
+%  \item \emph{Larmor radius:} $r_L \!\simeq\! 1\,\mathrm{pc}\,\dfrac{E/\mathrm{PeV}}{Z\,B_{\mu\mathrm{G}}}$.
+%  \item \emph{Electron cooling time (synch+IC, Thomson):} 
+%        $t_{\rm cool} \!\approx\! 300\,\mathrm{Myr}\,\dfrac{1\,\mathrm{GeV}}{E_e}\,\dfrac{1\,\mathrm{eV\,cm^{-3}}}{U_B+U_{\rm rad}}$.
+%        For $E_e\!=\!1\,\mathrm{TeV}$ and $U_B\!+\!U_{\rm rad}\!\sim\!1\,\mathrm{eV\,cm^{-3}}$, $t_{\rm cool}\!\sim\!0.3\,\mathrm{Myr}$.
+%  \item \emph{Proton hadronic loss time (diffuse ISM):} 
+%        $t_{pp}\!\sim\!(n\,\kappa\sigma_{pp}c)^{-1}\!\approx\!30$--$50\,\mathrm{Myr}$ for $n\!\sim\!1\,\mathrm{cm^{-3}}$.
+%  \item \emph{Synchrotron characteristic photon energy:} 
+%        $\varepsilon_{\rm syn}\!\approx\!0.3\,\mathrm{keV}\,\big(\dfrac{B}{100\,\mu\mathrm{G}}\big)\big(\dfrac{E_e}{10\,\mathrm{TeV}}\big)^2$.
+%  \item \emph{IC (Thomson) upscatter:} $\varepsilon_{\rm IC}\!\sim\!\gamma^2 \varepsilon_{\rm seed}$; 
+%        Klein–Nishina suppression when $\gamma \varepsilon_{\rm seed}\!\gtrsim\! m_ec^2$.
+%  \item \emph{$\gamma\gamma$ absorption:} PeV $\gamma$ rays are attenuated on the CMB on Galactic scales; 
+%        TeV–100 TeV $\gamma$ rays by the EBL on extragalactic scales.
+%\end{itemize}
+%\end{rulesbox}
+
+\section{Kinetic equation for particles with radiative losses}
+\label{sec:kinetic_losses}
+
+We begin with a minimal model to show how continuous energy losses lead to a kinetic (continuity) equation for the particle distribution, such that the steady state differs from the injected spectrum, producing observable spectral imprints that diagnose regions of particle acceleration. {\color{red}CITE LONGAIR}.
+
+Let \(N(E,t)\) be the differential \emph{number density} per unit energy (\(\mathrm{L^{-3}\,E^{-1}}\)), and \(Q(E,t)\) the \emph{injection rate density} (\(\mathrm{L^{-3}\,T^{-1}\,E^{-1}}\)). Energy losses are 
+\[
+\dot{E}\equiv\frac{dE}{dt}=-\,b(E),\qquad b(E)>0,
+\]
+and optional escape is parameterized by a residence time \(\tau_{\rm esc}(E)\).
+
+\paragraph{Continuity equation in energy space.}
+Consider the bin \([E,E+\Delta E]\) at time \(t\). The particles in this bin came, a short time \(\Delta t\) earlier, from \([E',E'+\Delta E']\) with the backward map
+\begin{equation}
+E' = E + b(E)\,\Delta t,
+\qquad
+E'+\Delta E' = (E+\Delta E) + b(E+\Delta E)\,\Delta t .
+\end{equation}
+A first–order Taylor expansion in \(\Delta E\) gives the Jacobian factor
+\begin{equation}
+\Delta E' = \Delta E + \frac{\partial b}{\partial E}\,\Delta E\,\Delta t .
+\end{equation}
+
+Number conservation between \(t\) and \(t+\Delta t\) implies
+\begin{equation}\label{eq:nconservation}
+N(E,t+\Delta t)\,\Delta E = N(E',t)\,\Delta E' .
+\end{equation}
+Expand to first order in \(\Delta t\):
+\begin{equation}\label{eq:netdeltat}
+N(E,t+\Delta t) = N(E,t) + \frac{\partial N}{\partial t}\,\Delta t,
+\qquad
+N(E',t) = N(E,t) + \frac{\partial N}{\partial E}\,b(E)\,\Delta t .
+\end{equation}
+Insert \eqref{eq:netdeltat} into \eqref{eq:nconservation}, keep only \(\mathcal{O}(\Delta t)\), and cancel the common \(N\,\Delta E\):
+\begin{equation}
+\frac{\partial N}{\partial t}\,\Delta t\,\Delta E
+=
+\frac{\partial N}{\partial E}\,b\,\Delta t\,\Delta E
++ N\,\frac{\partial b}{\partial E}\,\Delta t\,\Delta E .
+\end{equation}
+Divide by \(\Delta t\,\Delta E\) and take \(\Delta t\to 0\):
+\begin{remark}
+\begin{equation}\label{eq:klosses}
+\frac{\partial N}{\partial t}
+=
+\frac{\partial}{\partial E}\!\left[b(E)\,N(E,t)\right] .
+\end{equation}
+\end{remark}
+This is the continuity equation in energy space (with no sources/sink yet): the term \(\partial_E[bN]\) is the energy–space flux that advects particles from high to low energy. The origin of the \(\partial_E b\) piece is the Jacobian \(\Delta E'/\Delta E = 1 + (\partial_E b)\Delta t\).
+
+\paragraph{Adding sources and sinks.}
+Injection adds \(Q(E,t)\,\Delta E\,\Delta t\) particles to the bin, while escape removes \(\big[N(E,t)/\tau_{\rm esc}(E)\big]\Delta E\,\Delta t\).
+Repeating the same first–order expansion yields the full kinetic (continuity) equation
+\begin{remark}
+\begin{equation}
+\frac{\partial N}{\partial t}
+=
+\frac{\partial}{\partial E}\!\left[b(E)\,N(E,t)\right]
+\;-\;\frac{N(E,t)}{\tau_{\rm esc}(E)}
+\;+\;Q(E,t)\,.
+\label{eq:kinetic}
+\end{equation}
+\end{remark}
+%
+This equation \emph{describes} how a particle distribution, sourced by \(Q\), evolves under radiative losses and escape. One can obtain~\eqref{eq:kinetic} equivalently by angle– and volume–integrating the phase–space Vlasov equation and projecting onto energy; the bin–mapping derivation above is, however, the most transparent for a first exposure. 
+
+\paragraph{Equilibrium spectrum with radiative losses.}
+%
+In steady state (\(\partial_t N=0\)) the kinetic equation~\eqref{eq:kinetic} solves to
+\begin{equation}
+N(E)=\frac{1}{b(E)}\int_E^\infty Q(E')\,dE'~,
+\label{eq:ss_noescape}
+\end{equation}
+%
+if escape is neglected, i.e.~\(\tau_{\rm esc}\to\infty\),
+%
+and
+%
+\begin{equation}
+N(E)
+= \frac{1}{\mu(E)}\int_E^{\infty}\!\frac{\mu(E')\,Q(E')}{b(E')}\,dE',\quad
+\mu(E)\equiv\exp\!\left[\int^E\frac{dE''}{b(E'')\,\tau_{\rm esc}(E'')}\right]~,
+\label{eq:ss_escape}
+\end{equation}
+%
+if escape is competitive with losses.
+
+\paragraph{Monoenergetic injection.}
+For continuous, monoenergetic injection \(Q(E)=Q_0\,\delta(E-E_{\rm inj})\) and no escape, equation~\eqref{eq:ss_noescape} gives
+%
+\begin{equation}
+N(E)=\frac{Q_0}{b(E)}\,,\quad \text{for}~E < E_{\rm inj}~.
+\label{eq:mono_cont}
+\end{equation}
+Thus the steady spectrum below \(E_{\rm inj}\) mirrors the loss law: if \(b(E)\propto E^m\), with \( m > 0 \), then 
+\[
+N(E)\propto E^{-m}\,,\quad \text{for}~E<E_{\rm inj}~.
+\]
+
+\paragraph{Spectral steepening.}
+For a power–law injection \(Q(E)=Q_0 E^{-p}\) (\(p>1\)) and losses \(b(E)=b_0 E^{m}\) (\(m>0\)), equation~\eqref{eq:ss_noescape} gives
+%
+\begin{equation}\label{eq:nsteepening}
+%\int_E^\infty Q_0 E'^{-p}\,dE'=\frac{Q_0}{p-1}\,E^{-(p-1)} \;\Rightarrow\;
+N(E)\propto \frac{E^{-(p-1)}}{E^{m}}=E^{-(p+m-1)}.
+\end{equation}
+%
+Thereby radiative cooling steepens the index by \(m-1\) relative to the injection index \(p\).
+%
+For synchrotron/IC in the Thomson regime (see section~X) \(m=2\): an injected spectrum with \(p=2\) yields an equilibrium spectrum \(N\propto E^{-3}\) in the cooling–dominated range.
+
+\paragraph{The \emph{cooling} break.}
+%
+If particles are continuously injected for a time $t_*$ \emph{without} radiative losses, the spectrum simply accumulates:
+\begin{equation}
+N(E)\;\simeq\;Q(E)\,t_{\rm res}(E), 
+\qquad 
+t_{\rm res}(E)=\min\!\big[t_*,\,\tau_{\rm esc}(E)\big].
+\end{equation}
+This “reservoir’’ picture shows that when $t_* \ll \tau_{\rm esc}(E)$ the equilibrium spectrum follows the injected slope: $N(E)\approx Q(E)\,t_*$.
+
+Radiative losses introduce an energy–dependent residence time. When cooling is the fastest process, particles are advected through energy too quickly to accumulate, and the steady state is no longer $Q\times t_*$ but instead from equation~\eqref{eq:nsteepening} we derive
+\begin{equation}
+N(E)\;=\;\frac{1}{b(E)}\int_E^\infty Q(E')\,dE' 
+\;\approx\; Q(E)\,\frac{E}{b(E)} 
+\;=\; Q(E)\,t_{\rm cool}(E),
+\end{equation}
+where $t_{\rm cool}(E)\equiv E/b(E)$ and the approximation holds for smooth $Q$.
+
+The transition between the two regimes occurs at the \emph{cooling break}\footnote{The term “cooling break” is in common use but potentially misleading: the particles are non-thermal and no well-defined temperature exists for the power-law population. What we call “cooling” is really phase-space \emph{advection in energy} due to continuous radiative losses, not thermodynamic cooling of a Maxwellian gas. A more precise term would be “radiative-loss break’’ (or simply “loss break’’). We keep the conventional nomenclature for continuity with the literature.} $E_{\rm c}$ defined by
+\[
+t_{\rm cool}(E_{\rm c})\;\simeq\;\min\!\left[t_*,\,\tau_{\rm esc}(E_{\rm c})\right].
+\]
+For power-law losses $b(E)=b_0 E^m$ with $m>1$, and age-limited cooling:
+\begin{equation}
+E_{\rm c}\;\simeq\;\left[\frac{1}{(m-1)\,b_0\,t_*}\right]^{\!1/(m-1)} ,
+\quad (m=2:\;E_{\rm c}\simeq 1/(b_0 t_*)).
+\end{equation}
+
+Assuming a power-law injection $Q(E)\propto E^{-p}$, we then have the canonical broken behavior:
+\[
+N(E)\propto
+\begin{cases}
+E^{-p}, & E\ll E_{\rm c}\quad(\text{no significant cooling; age/escape limited}),\\[2pt]
+E^{-(p+m-1)}, & E\gg E_{\rm c}\quad(\text{cooling dominated}).
+\end{cases}
+\]
+Thus the spectral index steepens by $\Delta \alpha = m -1$ across the break; in particular, for synchrotron/IC in the Thomson regime ($m=2$) the steepening is $+1$. Locating $E_{\rm c}$ is therefore highly diagnostic: it ties together the source age (or escape time) and the strength of the target fields that set $b(E)$. {\color{red}Exercise for Crab.} %, letting us to get an estimate of the age of an object from the identification of the break energy.
+
+% resulting in the equilibrium spectrum we obtained in equation~\eqref{eq:nsteepening}.
+%%
+%When they are dominant 
+%%
+%So, as long as $t_{\rm cool}\!\gg\! t_*$, particles hardly cool and $N(E)\!\approx\!Q(E)\,t_*$ reproduces the injected slope.
+%When $t_{\rm cool}$ becomes the \emph{shortest} timescale, particles are advected through energy too fast to accumulate: the equilibrium spectrum is instead
+%\[
+%N(E)\;=\;\frac{1}{b(E)}\int_E^\infty Q(E')\,dE' \;\approx\; Q(E) \frac{E}{b(E)} \quad\text{(for smooth $Q$),}
+%\]
+%i.e.\ “supply’’ divided by the \emph{flow speed} in energy space.
+
+
+\paragraph{Injection burst and cooling cutoff.}
+For a burst at $t=0$, radiative losses \emph{advect} particles through energy. The characteristic relation is
+\begin{equation}
+\int_{E(t)}^{E_i}\frac{dE'}{b(E')}=t, \qquad \text{with}\quad \dot E=-b(E).
+\end{equation}
+For power-law losses $b(E)=b_0 E^{m}$ with $m>1$,
+\begin{equation}
+E_i(E,t)\,=\,\left[E^{\,1-m}+(1-m)\,b_0\,t\right]^{\!1/(1-m)}.
+\end{equation}
+This inversion only exists if the bracket is positive. For $m>1$ this implies
+\begin{equation}
+E^{1-m} > (m-1)\,b_0\,t \;\;\rightarrow\;\; E < E_{\rm cut}(t)~,
+\end{equation}
+with the \emph{cooling cutoff}
+\begin{remark}
+\begin{equation}
+E_{\rm cut}(t)= \left[(m-1)\,b_0\,t\right]^{-1/(m-1)}\,, \qquad (m=2:\;E_{\rm cut}=1/(b_0 t))~.
+\end{equation}
+\end{remark}
+
+Physically, the spectrum is emptied above $E_{\rm cut}(t)$ because, for super-linear losses, particles traverse those energies in a \emph{finite} time. Once the elapsed time exceeds the passage time to cool from $\infty$ down to $E$,
+%\[
+%t_{\rm pass}(E)\;=\;\int_{E}^{\infty}\frac{dE'}{b(E')}\;=\;\frac{1}{(m-1)\,b_0\,E^{\,m-1}}\quad (m>1),
+%\]
+no initial energy $E_i$ exists that could have cooled to $E$ by time $t$ ($\rightarrow$ the inversion $E_i(E,t)$ has no solution), hence $N(E,t)=0$ for $E\ge E_{\rm cut}(t)$. Under \emph{continuous} injection, this sharp cutoff is replaced by a \emph{cooling break}; for a \emph{single burst} it remains a time-dependent high-energy cutoff at $E_{\rm cut}(t)$.
+
+\paragraph{Takeaway.}
+Radiative losses advect particles through energy space, leading to the continuity (kinetic) equation 
+$\partial_t N=\partial_E[b(E)N]-N/\tau_{\rm esc}+Q$.
+In steady state with no escape, the \emph{master formula} is 
+$N(E)=b(E)^{-1}\!\int_E^\infty Q(E')\,dE'$.
+A $\delta$–function injection yields $N(E)=Q_0/b(E)$ for $E<E_{\rm inj}$ and zero above—i.e. a loss-shaped spectrum with a sharp cutoff for a burst and a $1/b$ tail for continuous injection. 
+For a power-law injection $Q\propto E^{-p}$ and losses $b\propto E^{m}$, the cooled steady state is $N\propto E^{-(p+m-1)}$, i.e. a spectral steepening by $\Delta \alpha=m-1$ (synch/IC in Thomson: $m=2\Rightarrow +1$). 
+The \emph{cooling break} marks the transition where $t_{\rm cool}(E)=E/b(E)$ becomes the shortest timescale: 
+$t_{\rm cool}(E_{\rm c})\simeq \min[t_*,\tau_{\rm esc}(E_{\rm c})]$.
+Below $E_{\rm c}$ the spectrum tracks injection (reservoir regime), above it the spectrum reflects energy-loss advection. 
+Locating $E_{\rm c}$ thus constrains a combination of age/escape and the target fields that set $b(E)$, and maps directly to observable photon/neutrino breaks. % (e.g., a $+0.5$ change in synchrotron photon index for $m=2$).
+
+%\begin{astrobox}{Exercise: The cooling break in the Crab Nebula}
+%\textbf{Setup.} The Crab Nebula (age $t_*\!\approx\!10^3$ yr) hosts relativistic electrons radiating in a roughly uniform magnetic field $B\simeq 200$--$300~\mu$G. Assume synchrotron losses dominate over IC ($U_B\gg U_{\rm rad}$), so that
+%\[
+%\dot E \equiv \frac{dE}{dt} = -\,aE^2,\qquad 
+%a=\frac{4}{3}\,\frac{\sigma_T c}{(m_ec^2)^2}\,U_B, \quad U_B=\frac{B^2}{8\pi}.
+%\]
+%
+%\textbf{Tasks.}
+%\begin{enumerate}
+%  \item Show that the synchrotron cooling time is $t_{\rm cool}(E)=1/(aE)$ and derive the break energy $E_c$ by solving $t_{\rm cool}(E_c)=t_*$.
+%  \item Evaluate $E_c$ numerically for $B=200~\mu$G and $t_*=10^3$ yr. (Use $\sigma_T=6.65\times 10^{-25}\,\mathrm{cm^2}$, $m_ec^2=8.19\times10^{-7}\,$erg.)
+%  \item Convert $E_c$ into a synchrotron break photon energy $\varepsilon_c$ (or frequency $\nu_c$). You may use
+%  \[
+%  \varepsilon_{\rm syn}\!\approx\!0.3~\mathrm{keV}\,\Big(\frac{B}{100~\mu\mathrm{G}}\Big)\Big(\frac{E_e}{10~\mathrm{TeV}}\Big)^{\!2}
+%  \quad\text{or}\quad
+%  \nu_c=\frac{3eB}{4\pi m_ec}\,\gamma^2,\ \gamma=\frac{E}{m_ec^2}.
+%  \]
+%  \item For an injected electron index $p$, the uncooled synchrotron slope is $F_\nu\propto \nu^{-\alpha_1}$ with $\alpha_1=(p-1)/2$. Show that synchrotron cooling ($b\propto E^2$) steepens the electron index by $+1$, hence $\alpha_2=\alpha_1+0.5$ above the break. Compare with typical radio vs X-ray slopes of the Crab and discuss possible reasons for any mismatch with the simple $+0.5$ expectation.
+%\end{enumerate}
+%
+%\textbf{Solution (sketch).}
+%\begin{enumerate}
+%  \item With $\dot E=-aE^2$, $t_{\rm cool}(E)=E/|\,\dot E\,|=1/(aE)$. Setting $t_{\rm cool}(E_c)=t_*$ gives
+%  \[
+%  E_c=\frac{1}{a\,t_*}
+%  =\frac{(m_ec^2)^2}{\tfrac{4}{3}\sigma_T c\,U_B\,t_*}.
+%  \]
+%  \item For $B=200~\mu$G, $U_B=B^2/(8\pi)\simeq 1.6\times10^{-9}\,$erg\,cm$^{-3}$ ($\simeq 10^3$ eV\,cm$^{-3}$). With $t_*\!\approx\!10^3$ yr,
+%  \[
+%  E_c \approx 0.3~\mathrm{TeV}\quad (\text{more precisely } \sim 0.32~\mathrm{TeV}),
+%  \]
+%  and for $B=300~\mu$G one finds $E_c\sim 0.14$~TeV (cooling is stronger).
+%  \item Using the shortcut formula,
+%  \[
+%  \varepsilon_c \approx 0.3~\mathrm{keV}\,\Big(\frac{B}{100~\mu\mathrm{G}}\Big)\Big(\frac{E_c}{10~\mathrm{TeV}}\Big)^{\!2}
+%  \approx 0.6\text{--}1~\mathrm{eV}\quad (B=200\text{--}300~\mu\mathrm{G}),
+%  \]
+%  i.e.\ $\nu_c \sim (3\text{--}5)\times 10^{14}\,$Hz, in the IR/optical band—consistent with the observed broad synchrotron break of the Crab.
+%  \item Since $b\propto E^2$ steepens $N(E)$ by $+1$, the synchrotron spectral index steepens by $+0.5$: $\alpha_2=\alpha_1+0.5$. The Crab’s X-ray slope is often steeper than this simple prediction; plausible reasons include spatially varying $B$, advection/expansion losses, inhomogeneous/energy-dependent injection, and integration over regions with different ages and fields.
+%\end{enumerate}
+%\end{astrobox}
+
+
+%\begin{astrobox}{Numbers to keep handy (electrons)}
+%For synch/IC in Thomson: \(b(E)=b_0 E^2\Rightarrow t_{\rm cool}=1/(b_0E)\).
+%With \(U_B+U_{\rm rad}=1~\mathrm{eV\,cm^{-3}}\) (ISM-like),
+%\[
+%t_{\rm cool}\simeq 0.3\,\mathrm{Myr}\,\left(\frac{E}{1\,\mathrm{TeV}}\right)^{-1}.
+%\]
+%Hence a source of age \(t_*=10^4\,\mathrm{yr}\) has \(E_{\rm c}\sim 30\,\mathrm{TeV}\).
+%Above \(E_{\rm c}\): \(N\) steepens by \(+1\) and the synchrotron/IC spectra steepen accordingly
+%(e.g., photon index \(\Gamma\to\Gamma+0.5\) for synchrotron from a cooled electron power law).
+%\end{astrobox}

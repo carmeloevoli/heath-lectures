@@ -1,80 +1,205 @@
-% !TEX root = ../main.tex
-\section{Motion of a Charged Particle in a Constant Magnetic Field}
+% !TEX root = ../../lectures.tex
+\section{Motion of a Charged Particle in a Uniform Magnetic Field}
+\label{app:motion-in-B}
 
-Let's start from the Lorentz force
-%
-\begin{equation*}
-\frac{d}{dt} \left( m \gamma \vb v\right) = q \frac{\vb v}{c} \times \vb B \longrightarrow m \gamma \frac{d\vb v}{dt} = \frac{q}{c} \, \vb v \times \vb B
-\end{equation*}
-%
-where I used the fact that in the absence of electric fields, $\gamma$ is constant with time % (in fact, $d/dt(\gamma m c^2) = q \vec v \cdot \vec E$)
+We work in c.g.s.\ Gaussian units. A particle of charge $q$ and rest mass $m$ moves with velocity $\vb v$ in a constant magnetic field $\vb B$.
+We denote $\beta\equiv v/c$, $\gamma=(1-\beta^2)^{-1/2}$, and $\hat{\vb b}\equiv \vb B/B$ (the unit vector along the field).
 
-The projection along $z$ of $\vb v \times \vb B$ is null, therefore
-%
-\begin{equation*}
-m \gamma \frac{d}{dt} v_z = \frac{d}{dt} p_z = 0
-\end{equation*}
-
-% $\frac{d}{dt} v_z = 0$ and $v_z =$~const and $p_z = m \gamma v_z =$~const
-
-from this it follows $p_z / p = \mu =$~const (is the \emph{pitch angle}) and 
-%
-\begin{equation*}
-p_\perp = (p^2 - p_z^2)^{1/2} = (p_x^2 + p_y^2)^{1/2} = (1-\mu^2)^{1/2} =~\text{const}
-\end{equation*}
-
-in the orthogonal projection
-%
-\begin{equation*}
-m \gamma \frac{d}{dt} v_\perp = \frac{q}{c} v B \sin \theta = \frac{q v_\perp B}{c}  
-\longrightarrow \frac{d}{dt} v_\perp = \frac{q v_\perp B}{m \gamma c}  = \frac{v_\perp^2}{r_{\rm L}}
-\end{equation*}
-%
-where I introduced the \emph{Larmor radius}:
-%
-\begin{remark}
+The starting point is the Lorentz force,
 \[
-r_{\rm L} = \gamma r_g = \frac{{\color{red}\gamma} m c  v_\perp}{q B} \simeq \frac{\gamma m c^2}{qB}
+\dot{\vb p} \equiv \frac{d}{dt}(\gamma m \vb v)
+= q\!\left(\vb E + \frac{\vb v}{c}\times \vb B\right).
 \]
+Throughout this appendix we set $\vb E=0$. This is a good idealization in many astrophysical plasmas: in the fluid rest frame the electric field vanishes because of the extremely high conductivity (ideal MHD). % , and on gyration scales the $\vb v\times \vb B$ term dominates.
+
+A first and very useful observation is that a magnetic field does no work:
+\[
+\frac{dE}{dt}=\vb v\!\cdot\!\dot{\vb p}=q\,\vb v\!\cdot\!\vb E=0
+\quad\Rightarrow\quad
+E=\gamma mc^{2}=\text{const}.
+\]
+Hence, both $\gamma$ and the speed $|\vb v|$ are constant in time. The acceleration is therefore purely geometric: it can only \emph{change the direction} of $\vb v$, not its magnitude.
+
+With $\vb E=0$ the equation $\gamma m\,\vb a=\frac{q}{c}\,\vb v\times\vb B$ immediately gives
+\[
+\vb v\!\cdot\!\vb a=\frac{q}{\gamma mc}\,\vb v\!\cdot\!(\vb v\times\vb B)=0,
+\]
+so $\vb a\perp \vb v$: the acceleration is centripetal (curvature) rather than tangential (speed change).
+
+To describe the motion, decompose the velocity into components parallel and perpendicular to $\vb B$,
+\[
+\vb v = v_\parallel \hat{\vb b} + \vb v_\perp.
+\]
+Projecting the Lorentz equation along $\vb B$ yields
+\[
+\frac{d}{dt}(\gamma m v_\parallel)=\frac{q}{c}\,\vb B\cdot(\vb v\times \vb B)=0
+\quad\Rightarrow\quad
+p_\parallel=\gamma m v_\parallel=\text{const}.
+\]
+Because $p=\gamma m v$ is also constant (the speed is fixed), the \emph{perpendicular} component is constant as well:
+\[
+p_\perp=\sqrt{p^2-p_\parallel^2}=p\,\sqrt{1-\mu^2}=\text{const},\qquad
+\mu\equiv \frac{p_\parallel}{p}=\cos\theta.
+\]
+In other words, the \emph{pitch angle} $\theta$ between the momentum and the field line is conserved. 
+
+In the plane orthogonal to $\vb B$ we have
+\[
+\gamma m\,\frac{d\vb v_\perp}{dt}=\frac{q}{c}\,\vb v_\perp\times \vb B,
+\qquad
+\frac{dv_\parallel}{dt}=0,
+\]
+i.e.\ uniform circular motion plus uniform drift along $\vb B$. Choosing coordinates with $\vb B=B\,\hat{\vb z}$ and introducing an initial phase $\phi_0$, an explicit solution is
+\[
+\begin{aligned}
+v_x(t)&=-\,v_\perp \sin(\Omega_B t+\phi_0),&
+\quad x(t)&=x_g + r_g \cos(\Omega_B t+\phi_0),\\
+v_y(t)&=\phantom{-}\,v_\perp \cos(\Omega_B t+\phi_0),&
+\quad y(t)&=y_g + r_g \sin(\Omega_B t+\phi_0),\\
+v_z(t)&=v_\parallel=\beta c\,\mu,&
+\quad z(t)&=z_g + v_\parallel t,
+\end{aligned}
+\]
+where $(x_g,y_g,z_g)$ are the guiding–center coordinates, and $v_\perp=\Omega_B r_g$ ties the speed to the radius as in any circular motion. The path is a \emph{helix} of fixed radius and constant pitch.
+
+These results introduce two natural scales. The \emph{gyro} (relativistic) angular frequency and the gyroradius are
+\begin{remark}
+\begin{equation}
+\Omega_B=\frac{qB}{\gamma m c}=\frac{\Omega_0}{\gamma},
+\qquad
+r_g=\frac{v_\perp}{\Omega_B}=\frac{\gamma m c\, v_\perp}{qB}
+=\frac{p_\perp c}{qB}~.
+\label{eq:omegaB-rg}
+\end{equation}
 \end{remark}
-%
-notice that this is the same as the gyro-radius with the difference of this $\gamma$ factor
+Here
+\[
+\Omega_0\equiv \frac{qB}{m c}
+\]
+is the \emph{cyclotron} (non-relativistic) angular frequency; dividing by $2\pi$ gives ordinary frequencies $\nu_0$ and $\nu_B=\nu_0/\gamma$. The factor of $\gamma$ has a clear interpretation: relativity \emph{slows} the rotation as seen in the lab frame (time dilation), so the frequency drops by $1/\gamma$ while the radius grows by $\gamma$ at fixed $v_\perp$.
 
-(reminder: centripetal force is $\frac{m v_\perp^2}{r_g}$)
+Cosmic particles are often relativistic ($v_\perp\simeq c$), for which
+\[
+r_g\simeq \frac{\gamma m c^2}{qB}\;\approx\;\frac{E}{qB}\,.
+\]
 
-The corresponding Larmor angular frequency is
+\begin{remark}\textbf{Magnetic rigidity.}
 %
-\begin{equation*}
-\Omega_{\rm L} = \frac{v_\perp}{r_{\rm L}} = \frac{qB}{\gamma m c} = \frac{\Omega_0}{\gamma}
-\end{equation*}
+It is often convenient to define the \emph{magnetic rigidity} $R\equiv pc/|q|$, so that
+\[
+r_g=\frac{R}{B}~.
+\]
+For ultra-relativistic particles ($p\simeq E/c$) and charge number $Z=|q|/e$,
+\[
+r_g \simeq 1.08~\text{pc}\;
+\left(\frac{E}{\text{PeV}}\right)
+\left(\frac{Z\,B}{\mu\text{G}}\right)^{-1},
+\]
+a handy back-of-the-envelope rule for Galactic and extragalactic settings.
+\end{remark}
 
-The equation of motion after integrating becomes
-%
-\begin{eqnarray}
-v_x & = & v_\perp \cos \left(\Omega t\right) \\
-v_y & = & v_\perp \sin \left(\Omega t\right) \\
-v_z & = & v \mu
-\end{eqnarray}
-%
-and for the trajectory
-%
-\begin{eqnarray}
-x(t) & = & x_g + r_L \sin \left(\Omega t\right) \\
-y(t) & = & y_g + r_L \cos \left(\Omega t\right) \\
-z(t) & = & z_g + v \mu t
-\end{eqnarray}
+For quick reference, Table~\ref{tab:magneticterms} recaps the symbols and their relativistic/non-relativistic forms, and Table~\ref{tab:magneticnumbers} provides order-of-magnitude scales relevant to cosmic-ray physics.
 
-where $(x_g, y_g, z_g)$ are the coordinates of the guiding centre.
+\vspace{0.5cm}
 
-Recap of quantity defined here: 
-%
+\begin{table}[h!]
+\renewcommand{\arraystretch}{1.40}
 \begin{center}
-\begin{tabular}{|l|c|c|}
+\setlength{\tabcolsep}{15pt} 
+\begin{tabular}{@{} lll @{}}
 \toprule
-radius & $r_g = \frac{m c v_\perp}{qB}$ & $r_L = \gamma r_g$ \\
-angular frequency & $\Omega_0 = \frac{v_\perp}{r_g} = \frac{qB}{m c}$ & $\Omega_L =  \frac{v_\perp}{r_L} = \frac{\Omega_0}{\gamma} $\\
-frequency & $\nu_g = \frac{\Omega_0}{2\pi} = \frac{qB}{2 \pi m c}$ & $\nu_L =  \frac{\nu_g}{\gamma} $\\
+\textbf{Quantity} & \textbf{Non-relativistic} & \textbf{Relativistic} \\
+\midrule
+Angular frequency
+& $\displaystyle \Omega_0=\frac{qB}{m c}$
+& $\displaystyle \Omega_B=\frac{qB}{\gamma m c}=\frac{\Omega_0}{\gamma}$ \\[6pt]
+Ordinary frequency
+& $\displaystyle \nu_0=\frac{\Omega_0}{2\pi}=\frac{1}{2\pi}\frac{qB}{m c}$
+& $\displaystyle \nu_B=\frac{\Omega_B}{2\pi}=\frac{\nu_0}{\gamma}$ \\[6pt]
+Gyroradius
+& $\displaystyle r_0=\frac{m c\, v_\perp}{qB}$
+& $\displaystyle r_g=\frac{\gamma m c\, v_\perp}{qB}=\gamma r_0$ \\
 \bottomrule
 \end{tabular}
+\caption{\textit{Notation used in these notes.} Here $v_\perp$ is the speed perpendicular to $\vb B$; $p_\perp=\gamma m v_\perp$. For $v_\perp\simeq c$, $r_g\simeq \gamma m c^2/(qB)$.}
+\label{tab:magneticterms}
 \end{center}
+\end{table}
 
+\begin{table}[h!]
+\renewcommand{\arraystretch}{1.40}
+\begin{center}
+\setlength{\tabcolsep}{10pt} 
+\begin{tabular}{@{} lll @{}}
+\toprule
+\textbf{Quantity} & \textbf{Galactic CR} & \textbf{UHECR} \\
+& $B \sim 1~\mu\mathrm{G}$,\; $E \sim 10~\mathrm{GeV}$ & $B \sim 1~\mathrm{nG}$,\; $E \sim 1~\mathrm{EeV}$ \\
+\midrule
+Angular freq.\ $\displaystyle \Omega_B$
+& $\sim 10^{-3}\ \mathrm{s^{-1}}$
+& $\sim 10^{-14}\ \mathrm{s^{-1}}$ \\[4pt]
+Ordinary freq.\ $\displaystyle \nu_B$
+& $\sim 10^{-4}\ \mathrm{Hz}$
+& $\sim 10^{-15}\ \mathrm{Hz}$ \\[4pt]
+Gyroradius $\displaystyle r_g$
+& $\sim 3\times 10^{13}\ \mathrm{cm}\ \approx\ 10^{-5}\ \mathrm{pc}$
+& $\sim 3\times 10^{24}\ \mathrm{cm}\ \approx\ \mathrm{Mpc}$ \\
+\bottomrule
+\end{tabular}
+\caption{\textit{Representative scales} for a proton (\(Z=1\)) with $v_\perp\simeq c$. For general $Z$, $r_g\propto 1/Z$ and $\Omega_B,\nu_B\propto Z$.}
+\label{tab:magneticnumbers}
+\end{center}
+\end{table}
+
+%\paragraph{Covariant derivation of the Liénard power.}
+%Let $u^\mu=\gamma(c,\mathbf{v})$ be the four–velocity and 
+%\[
+%a^\mu \equiv \dv{u^\mu}{\tau}
+%\]
+%the four–acceleration ($\tau$ proper time). A standard covariant statement of Larmor’s result is that the rate of radiated four–momentum is parallel to $u^\mu$ and proportional to the invariant $a^\nu a_\nu$:
+%\begin{equation}
+%\dv{P^\mu_{\rm rad}}{\,\tau} \;=\; \frac{2}{3}\,\frac{q^2}{c^3}\,\big(a^\nu a_\nu\big)\,\frac{u^\mu}{c}\,.
+%\label{eq:cov-larmor}
+%\end{equation}
+%Taking the temporal component and converting $d/d\tau$ to $d/dt$ gives
+%\begin{equation}
+%P \;\equiv\; \dv{E}{t} \;=\; -\,\frac{2}{3}\,\frac{q^2}{c^3}\,a^\nu a_\nu\,,
+%\label{eq:P_scalar}
+%\end{equation}
+%since $u^0=\gamma c$ and $dt=\gamma\,d\tau$. Thus the radiated power in any inertial frame is minus the Lorentz scalar $a^\nu a_\nu$ times $2q^2/c^3$.
+%
+%To make \eqref{eq:P_scalar} explicit, express $a^\nu a_\nu$ in terms of the lab three–acceleration $\mathbf{a}=d\mathbf{v}/dt$, decomposed into components parallel and perpendicular to $\mathbf{v}$:
+%\[
+%\mathbf{a}=a_\parallel\,\hat{\mathbf{v}}+ \mathbf{a}_\perp,\qquad 
+%a_\parallel\equiv \mathbf{a}\!\cdot\!\hat{\mathbf{v}},\quad 
+%\mathbf{a}_\perp\!\cdot\!\hat{\mathbf{v}}=0.
+%\]
+%A straightforward computation using $u^\mu=(\gamma c,\gamma \mathbf{v})$ yields the invariant
+%\begin{equation}
+%a^\nu a_\nu \;=\; -\,\gamma^{4}\!\left(a_\perp^{2}+\gamma^{2}a_\parallel^{2}\right).
+%\label{eq:ainv_components}
+%\end{equation}
+%Substituting \eqref{eq:ainv_components} into \eqref{eq:P_scalar} immediately gives the \textbf{Liénard power}:
+%\begin{equation}
+%\boxed{\;
+%P \;=\; \frac{2}{3}\,\frac{q^{2}}{c^{3}}\,\gamma^{4}\!\left(a_\perp^{2}+\gamma^{2}a_\parallel^{2}\right)
+%\;=\; \frac{2}{3}\,\frac{q^{2}}{c^{3}}\,\gamma^{6}\!\left(a^{2}-\big(\boldsymbol{\beta}\times\mathbf{a}\big)^{2}\right)\,,
+%}
+%\label{eq:lienard_power}
+%\end{equation}
+%where $\boldsymbol{\beta}=\mathbf{v}/c$. This is exactly Liénard’s formula. In the instantaneous rest frame ($\gamma=1$, $a_\parallel=0$, $a_\perp=a'$) one recovers the Larmor result $P'=(2/3)(q^2/c^3)\,a'^2$.
+
+%\paragraph{Invariant way to view it.}
+%Introduce the four-velocity \(u^\mu=\gamma(c,\vb v)\) and the four-acceleration \(a^\mu\equiv \dv{u^\mu}{\tau}\) (\(\tau\) proper time). The contraction
+%\[
+%a^\mu a_\mu \equiv \eta_{\mu\nu} a^\mu a^\nu
+%\]
+%is a Lorentz scalar (see proof below). In the instantaneous rest frame (IRF) of the particle one has \(a^\mu=(0,\vb a_{\rm IRF})\) and \(a^\mu a_\mu=-a_{\rm IRF}^2\), so \(|a^\mu a_\mu|\) equals the square of the \emph{proper} acceleration. Eq.~\eqref{eq:lienard} can be obtained by evaluating the Larmor power in the IRF and transforming to the lab frame.
+%
+%\begin{remark}Relativistic invariance of \(a^\mu a_\mu\)
+%Let \(a'^\mu=\Lambda^\mu{}_\nu a^\nu\) under any Lorentz transformation \(\Lambda\) with \(\Lambda^T \eta \Lambda=\eta\). Then
+%\[
+%a'^\mu a'_\mu=(\Lambda a)^T \eta (\Lambda a)=a^T(\Lambda^T\eta \Lambda)a=a^T\eta a=a^\mu a_\mu\, .
+%\]
+%Hence \(a^\mu a_\mu\) is invariant. (Additionally, \(u^\mu a_\mu=0\) by differentiating \(u^\mu u_\mu=c^2\).)
+%\end{remark}

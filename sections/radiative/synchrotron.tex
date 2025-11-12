@@ -1,283 +1,425 @@
-% !TEX root = ../lectures.tex
+% !TEX root = ../../lectures.tex
 \section{Synchrotron Radiation}
 
-Synchrotron radiation, denoted by the process \( e + B \rightarrow e + \gamma + B \), is emitted by relativistic charged particles as they undergo acceleration in a static magnetic field. In the non-relativistic regime, this is known as 
-\textbf{cyclotron emission}.
+Synchrotron radiation, schematically \(e + B \rightarrow e + \gamma + B\), is emitted when a \emph{relativistic} charged particle is accelerated in the presence of a magnetic field. In the non-relativistic limit this is known as \emph{cyclotron emission}.
 
-Starting with the basic Larmor formula, the total power emitted by an accelerating or decelerating electron (or any charged particle) in c.g.s. units is:
+In c.g.s.\ units, the non-relativistic Larmor power radiated by a charge \(q\) with acceleration magnitude \(a=\|\vb a\|\) is
+\begin{equation}\label{eq:larmor}
+P_{\rm Larmor}=\frac{2}{3}\,\frac{q^{2}a^{2}}{c^{3}}\, .
+\end{equation}
+
+Notice that radiative effects scale as \(q^2\), since cross sections go like the square of the amplitude and e.m.\ amplitudes are \(\propto q\).
+
+Relativistically, the correct generalization is the \emph{Liénard} formula,
+\begin{equation}
+P=\frac{2}{3}\frac{q^{2}\gamma^{6}}{c^{3}}\Big(a^{2}-(\vb \beta\times \vb a)^{2}\Big)
+=\frac{2}{3}\frac{q^{2}\gamma^{4}}{c^{3}}\Big(a_{\perp}^{2}+\gamma^{2}a_{\parallel}^{2}\Big),
+\label{eq:lienard}
+\end{equation}
+where \( \vb \beta=\vb v/c \), and \(a_{\perp}\) and \(a_{\parallel}\) are the components of \(\vb a\) perpendicular and parallel to \(\vb v\), respectively.
+
+\paragraph{Motion in a magnetic field and synchrotron power for a single charge.}
 %
+For a purely magnetic field the Lorentz force does no work and the acceleration is perpendicular to \(\vb v\)~(appendix~\ref{app:motion-in-B}). Using \(\dot{\vb p}=q\, \vb v\times \vb B/c\) with \(\vb p=\gamma m \vb v\), the \emph{perpendicular} acceleration is
+\begin{equation}
+a_{\perp}=\frac{q\, v_{\perp}\, B}{\gamma\, m\, c} = \frac{q\, B}{\gamma\, m\, c}\, v \sin\theta ,
+\end{equation}
+where \(\theta\) is the pitch angle. Substituting \(a_\parallel=0\) and this \(a_\perp\) into \eqref{eq:lienard} gives the radiated power of a single relativistic particle:
+\begin{equation}
+P_{\rm s}=\frac{2}{3}\,\frac{q^{4} B^{2}}{m^{2} c^{3}}\,\gamma^{2}\,\beta^{2}\,\sin^{2}\theta
+\;\xrightarrow{\ \beta\to 1\ }\;
+\frac{2}{3}\,\frac{q^{4} B^{2}}{m^{2} c^{3}}\,\gamma^{2}\,\sin^{2}\theta .
+\label{eq:Ps-single}
+\end{equation}
+
+For an isotropic distribution of pitch angles,
 \[
-P = \frac{2}{3} q^2 \frac{a^2}{c^3}
+\langle \sin^{2}\theta\rangle=\frac{1}{4\pi}\int d\Omega\,\sin^{2}\theta=\frac{2}{3}.
 \]
-%
-where \( a = \| \vb a \|\) is the acceleration.
-
-The heuristic derivation of this formula includes: a) Radiative processes are proportional to \( q^2 \), as the cross-section \( \sigma \) is the square of the amplitude which for e.m. process is \( \propto q \), b) Consistency with relativity requires dependence only on acceleration, not velocity, since power is a relativistic invariant being the ratio of two time-like components, and c) Dimensional analysis justifies the \( a^2 \) term.
-
-In relativistic scenarios, the Larmor formula is valid if \( a^2 \) is replaced by \( a^\mu a_\mu \), the invariant square of the four-acceleration. 
-
-\begin{problem}
-Demonstrate that \( a^\mu a_\mu \)  is a relativistic invariant.
-\end{problem}
-
-Considering the Lorentz force, the acceleration is perpendicular to velocity:
-%
-\[
-\vb a = \frac{\vb F}{m} = \frac{\gamma q}{m} \left(\frac{\vb v}{c} \times \vb B \right)
-\]
-%
-leading to:
-%
-\[
-a^2 = \frac{q^2}{m^2} \frac{v_\perp^2}{c^2} \gamma^2 B^2 \longrightarrow a^2 = \frac{q^2}{m^2} \gamma^2 \beta^2 B^2 \sin^2 \theta
-\]
-
-The power emitted by synchrotron radiation in the limit \( \beta \rightarrow 1 \) is then:
-%
-\[
-P_{\rm s} = \frac{2}{3} \frac{q^4 B^2}{m^2 c^3} \gamma^2 \sin^2 \theta
-\]
-
-Notably, synchrotron radiation is predominantly significant for leptons rather than nuclei, as \( P_{\rm s} \propto 1/m^4 \).
-
-For an isotropic particle distribution, the average emitted power becomes:
-%
+Averaging \eqref{eq:Ps-single} and using \(U_B=B^{2}/(8\pi)\) and \(\sigma_T=\frac{8\pi}{3}\left(\frac{q^{2}}{m_{e}c^{2}}\right)^{2}\) yields the familiar compact form
 \begin{remark}
-\[
-\langle P_{\rm s} \rangle = \frac{4}{9} \frac{q^4 B^2}{m^2 c^3} \gamma^2 = \frac{4}{3} c \sigma_{\rm T} \left(\frac{m_e}{m}\right)^2 \gamma^2 U_{\rm B}
-\]
+\begin{equation}
+\langle P_{\rm s}\rangle=\frac{4}{9}\,\frac{q^{4} B^{2}}{m^{2} c^{3}}\,\gamma^{2}
+= \frac{4}{3}\, c\, \sigma_T \left(\frac{m_e}{m}\right)^{2}\gamma^{2}\, U_B\;~.
+\label{eq:Ps-avg}
+\end{equation}
 \end{remark}
 
-using \( U_{\text{B}} = \frac{B^2}{8\pi} \) and \( \sigma_{\text{T}} = \frac{8\pi}{3} \left( \frac{q^2}{m_e c^2} \right)^2 \), and the average over the angle
-%
-\[
-\langle \sin^2 \theta \rangle = \frac{1}{4\pi} \int d\Omega \sin^2 \theta = \frac{1}{4\pi} \int_0^{2\pi} \int_0^\pi \sin^2 \theta \sin \theta d\theta = \frac{2}{3}
-\]
+Notice that at \emph{fixed particle energy} \(E=\gamma mc^{2}\), one has \(\gamma \propto 1/m\), hence \(P_{\rm s}\propto \gamma^{2}/m^{2}\propto m^{-4}\). This steep mass dependence makes synchrotron losses overwhelmingly important for electrons and positrons compared to nuclei.
+Moreover, the energy loss is proportional to the magnetic field energy density \( U_B \).
 
-The electron energy loss timescale, important for understanding cooling rates, is:
-%
-\begin{remark}
-\[
-\tau_{\text{loss}} (\gamma) \simeq \frac{E}{| dE/dt |} = \frac{\gamma m_e c^2}{\langle P_s \rangle} = \frac{3}{4} \frac{m_e c}{\sigma_{\text{T}}} \frac{1}{\gamma U_{\text{B}}} \propto \frac{1}{E}
-\]
-\end{remark}
-%
-leading to the notable result that more energetic particles have shorter lifetimes.
+\paragraph{Cooling time.}
 
-\begin{problem}
-The CRAB.
-\end{problem}
-
-To determine the emission spectrum of an electron with a specific energy, we consider the spectrum \( P_\nu \) as the frequency power spectrum of \( P(t) \), proportional to \( |a(t)|^2 \). To derive \( P_\nu \), we employ a Fourier transform, which translates the time-domain signal into its frequency components.
-
-In synchrotron radiation, the effect of relativistic beaming is crucial. This phenomenon, combined with the fundamental gyromotion of electrons in a magnetic field, results in the emitted power being concentrated at frequencies much higher than the gyrofrequency \( \nu_g \) (see derivation in appendix).
-
-Let's first derive the aberration formula, assuming the primed frame is seen from the unprimed frame as moving with speed $\beta = v/c$ along the x-axis:
-%
-\begin{eqnarray*}
-c t^\prime & = & \gamma (c t - \beta x) \\
-x^\prime & = & \gamma (x - \beta c t) \\
-y^\prime & = & y 
-\end{eqnarray*}
-
-The velocity components transform as follows:
-%
-\begin{eqnarray*}
-u_x & = & \frac{u'_x + \beta c}{1+\beta u'_x / c} \\
-u_y & = & \frac{u'_y}{\gamma(1+\beta u'_x / c)} 
-\end{eqnarray*}
-
-Therefore, the emission angle \( \theta \) is given by:
-%
-\[
-\tan \theta = \frac{u_y}{u_x} = \frac{u^\prime_y}{\gamma(u^\prime_x + \beta c)} = \frac{u^\prime \sin \theta^\prime}{\gamma(\beta c + u^\prime \cos \theta^\prime)} 
-\]
-
-For light (with \( u^\prime = c \)), the aberration formula becomes:
+For electrons (\(m=m_e\)) the synchrotron loss time is
+\begin{equation}
+\tau_{\rm loss}(\gamma)\;=\;\frac{E}{|dE/dt|}=\frac{\gamma m_e c^{2}}{\langle P_{\rm s}\rangle}
+=\frac{3}{4}\,\frac{m_e c}{\sigma_T}\,\frac{1}{\gamma\, U_B}
+\;\propto\; \frac{1}{E}\, .
+\label{eq:tau-loss}
+\end{equation}
+Thus~\emph{higher-energy} electrons cool~\emph{faster}, a key driver of spectral steepening in synchrotron-dominated sources.
+ 
+Numerically, we can estimate for electrons
 %
 \begin{remark}
+\begin{equation}
+\tau_{\rm loss}(E_e) \simeq 0.3~\text{Myr}~\left( \frac{U_B}{\text{eV}~\text{cm}^{-3}} \right)^{-1} \left( \frac{E}{\rm TeV} \right)^{-1}
+\end{equation}
+\end{remark}
+ 
+\paragraph{From beaming to the single-electron spectrum.}
+
+To obtain the spectrum of a single electron at fixed energy, we view \(P_\nu\) as the Fourier transform of the time-domain power \(P(t)\), which in turn tracks \(|\vb a(t)|^2\). Relativistic beaming is the key ingredient: the emission is confined within a cone of half-angle \(\sim 1/\gamma\) centered on \(\vb v\). As the electron gyrates, an observer sees short pulses whenever the beam sweeps across the line of sight; the Fourier transform of these pulses yields a broad spectrum extending to frequencies \(\gg\) the gyrofrequency.
+
+%To determine the emission spectrum of an electron with a specific energy, we consider the spectrum \( P_\nu \) as the frequency power spectrum of \( P(t) \), proportional to \( |a(t)|^2 \). To derive \( P_\nu \), we employ a Fourier transform, which translates the time-domain signal into its frequency components.
+%In synchrotron radiation, the effect of relativistic beaming is crucial. This phenomenon, combined with the fundamental gyromotion of electrons in a magnetic field, results in the emitted power being concentrated at frequencies much higher than the gyrofrequency \( \nu_g \) (see derivation in appendix).
+
+\paragraph{Relativistic aberration.}
+Assume the primed frame moves with speed \(\beta c\) along \(x\) relative to the unprimed (observer) frame. Lorentz transforms:
 \[
-\tan \theta = \frac{\sin \theta^\prime}{\gamma(\beta + \cos \theta^\prime)} 
+ct'=\gamma(ct-\beta x),\quad x'=\gamma(x-\beta ct),\quad y'=y \, .
+\]
+Velocity components transform as
+\[
+u_x=\frac{u'_x+\beta c}{1+\beta u'_x/c},\qquad
+u_y=\frac{u'_y}{\gamma\!\left(1+\beta u'_x/c\right)}.
+\]
+Hence the emission angle \(\theta\) satisfies
+\[
+\tan\theta=\frac{u_y}{u_x}
+=\frac{u'_y}{\gamma(u'_x+\beta c)}
+=\frac{u'\sin\theta'}{\gamma(\beta c+u'\cos\theta')}.
+\]
+For light (\(u'=c\)) one obtains the standard aberration formula
+\begin{remark}
+\[
+\tan\theta=\frac{\sin\theta'}{\gamma\left(\beta+\cos\theta'\right)}.
 \]
 \end{remark}
+A photon emitted at \(\theta'=0\) is seen at \(\theta=0\), while a photon emitted at \(\theta'=\pi/2\) is seen at \(\theta\simeq 1/\gamma\) for \(\gamma\gg 1\). Thus emission that is isotropic in the emitter frame becomes forward-beamed in the observer frame—a fact central to synchrotron pulses and to strongly beamed phenomena such as GRB jets.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{aberration.jpg}
-\caption{aberration}
+\includegraphics[width=0.8\textwidth]{synchro_aberration.pdf}
+\caption{An isotropic pattern in the emitter frame is concentrated into a narrow cone $\sim 1 / \gamma$ about the velocity in the observer frame.}
 \end{figure}
 
-A photon emitted at \( \theta^\prime = 0 \) in the primed frame travels at \( \theta = 0 \) in the observer's frame. Conversely, a photon emitted at \( \theta^\prime = \frac{\pi}{2} \) travels at an angle \( \theta \) approximated by \( \theta \simeq \frac{1}{\gamma} \).
+\paragraph{Pulse duration and characteristic frequency.}
+In the non-relativistic limit the emission is essentially mono-chromatic at the gyrofrequency \(\nu_B\), because the charge executes uniform circular motion and the radiation pattern is broad. 
 
-This indicates that emission isotropic at the source is not perceived as isotropic by an observer if there is a relativistic boost between them. This is particularly relevant for phenomena like gamma-ray bursts (GRBs), which are strongly beamed in the forward direction, forming a cone with an opening angle of approximately \( \sim \frac{2}{\gamma} \).
+For relativistic particles, beaming squeezes the emission into a cone of half–opening \(\sim 1/\gamma\) about the instantaneous velocity. An observer only “sees” the electron while this cone sweeps across the line of sight, so the continuous emission is received as a train of short pulses. The spectrum we measure is the Fourier transform of this time-domain signal, and it is therefore controlled by the \emph{observed} pulse width \(\Delta t_{\rm obs}\): the characteristic frequency scales like \(\nu_{\rm s}\sim 1/\Delta t_{\rm obs}\).
 
-In the non-relativistic limit, the frequency of the emitted radiation corresponds to the gyro-frequency, leading to a mono-chromatic spectrum at this frequency.
-
-However, in the relativistic regime, continuous emission is altered by the beaming effect. The signal is visible only at specific angles due to this effect. The resulting spectrum is still a Fourier transform of the time-dependent emission, but now it has a characteristic timescale \(  \Delta t \), giving a frequency spectrum peaked around \( \sim \frac{1}{\Delta t} \).
+Let the line of sight be nearly aligned with the velocity at the time the beam points toward the observer (see Fig.~\ref{fig:synchro_opening}). The visibility condition \(|\Delta\phi|\lesssim 1/\gamma\) translates into a small orbital phase window
+\[
+\Delta\phi \sim \frac{2}{\gamma}.
+\]
+The \emph{emission} duration in the lab frame is then
+\[
+\Delta t \;\sim\; \frac{\Delta\phi}{\Omega_B} \;=\; \frac{2/\gamma}{\Omega_0/\gamma}
+\;=\; \frac{2}{\Omega_0}\,,
+\]
+using \(\Omega_B=\Omega_0/\gamma\) with \(\Omega_0\equiv qB/(mc)\).
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{opening.png}
-\caption{opening}
+\includegraphics[width=0.8\textwidth]{synchro_opening.pdf}
+\caption{As the electron gyrates, its emission is confined to a cone of half–opening $\sim 1/\gamma$ about the instantaneous velocity. The observer only receives radiation while the cone sweeps across the line of sight (between points A and B), a phase interval $\Delta\phi\!\sim\!2/\gamma$.}
+\label{fig:synchro_opening}
 \end{figure}
 
-To determine the duration of emission as perceived by a distant observer, consider the time taken for an electron to move from point A to B. This segment of the trajectory corresponds to the period during which the radiation emitted by the electron falls within the observer's view because of the emitted cone:
+Because later photons start closer to the observer, their travel times are shorter ($\delta t_i$ is the time for the \emph{photon} to reach the observer):
 %
-\[
-\Delta t = \frac{\text{AB}}{v}
-\]
+\begin{equation}
+\Delta t_{\rm obs} = t_B + \delta t_B - (t_A  + \delta t_A) = (t_B - t_A) + (\delta t_B - \delta t_A) = \frac{\text{AB}}{v} - \frac{\text{AB}}{c} = \Delta t (1-\beta)~,
+\end{equation}
+%
+this compresses the received pulse by roughly a factor \(2\gamma^2\):
+\begin{equation}
+\Delta t_{\rm obs} \;=\; \Delta t\,(1-\beta)\;\simeq\;\frac{\Delta t}{2\gamma^2}
+\;\;\Rightarrow\;\;
+\Delta t_{\rm obs}\;\sim\;\frac{1}{\gamma^{2}\,\Omega_0}\,.
+\end{equation}
 
-At the observer ($\delta t_i$ is the time for the \emph{photon} to reach the observer): 
-%
-\[
-\Delta t_{\rm obs} = t_B + \delta t_B - (t_A  + \delta t_A) = (t_B - t_A) + (\delta t_B - \delta t_A) = \frac{\text{AB}}{v} - \frac{\text{AB}}{c} = \frac{\text{AB}}{v} (1-\beta)
-\]
+Equivalently, using \(r_g=v_\perp/\Omega_B\),
+\begin{equation}
+\Delta t_{\rm obs}\;\sim\;\frac{r_g}{\gamma^{3}\,v_\perp}\,,
+\end{equation}
+so an ultra-relativistic electron (\(v_\perp\simeq c\)) produces narrow pulses whose width shrinks like \(\gamma^{-3}\) at fixed \(r_g\).
 
-Using AB~$= \frac{2}{\gamma}r_{\rm L}$, we get:
-%
-\[
-\Delta t_{\rm obs} = \frac{\text{AB}}{v} (1-\beta) \frac{1+\beta}{1+\beta} \overset{\beta \sim 1}{\simeq} \frac{\text{AB}}{v} \frac{1}{2\gamma^2} \simeq {\color{red}\frac{r_{\rm L}}{\gamma^3}}
-\]
+The observer therefore measures a broadband spectrum peaked at
+\begin{remark}
+\begin{equation}
+\nu_{\rm s}\sim \frac{1}{\Delta t_{\rm obs}}
+\;\sim\; \gamma^{2}\,\nu_0\,,
+\end{equation}
+\end{remark}
+i.e. boosted by \(\gamma^{2}\) relative to the cyclotron frequency \(\nu_0\). The pulses recur every gyroperiod \(T=2\pi/\Omega_B=\gamma/\nu_0\).
 
-An observer sees a sequence of pulses of width:
-%
-\[
-\Delta t_{\rm obs} \simeq \frac{1}{v \gamma^2 \nu_g} %\simeq \frac{1}{\gamma^3 \nu_L} 
-\]
+\paragraph{Single–electron spectrum (full calculation).}
+A rigorous way to derive the synchrotron spectrum is to treat the motion \emph{locally} as curvature radiation: over the short visibility arc the trajectory is well approximated by a circle of curvature radius \(\rho=r_g/\sin\theta\) (only the perpendicular acceleration radiates). This fixes the \emph{characteristic} or \emph{critical} frequency at which most power is concentrated,
+\begin{equation}
+\nu_c=\frac{\omega_c}{2\pi}=\frac{3}{2}\,\gamma^2\,\nu_0\,\sin\theta
+=\frac{3}{4\pi}\,\frac{qB}{mc}\,\gamma^2\sin\theta.
+\end{equation}
 
-These pulses are separated by a gyration time 
+Numerically, the critical frequency for a GeV electron in a typical ISM field is in the \emph{radio waves}:
 %
+\begin{equation}
+\nu_c \simeq 16~\text{Mhz}~\left( \frac{E}{\text{GeV}} \right)^2 \left( \frac{B}{\mu\text{G}}\right) 
+\end{equation}
+
+The remarkable fact—derived by a full Fourier analysis of the Liénard–Wiechert fields—is that the entire single–electron spectrum takes a compact, universal form:
+\begin{remark}
+\begin{equation}
+P_\nu(\nu,\gamma,\theta)=\frac{\sqrt{3}\,q^{3}B}{m_e c^{2}}\;\sin\theta\;
+F\!\left(\frac{\nu}{\nu_c}\right) \qquad
+F(x)=x\!\int_{x}^{\infty}\!K_{5/3}(x')\,dx'.
+\end{equation}
+\end{remark}
+Here \(F\) is the \emph{synchrotron kernel} (built from the modified Bessel function \(K_{5/3}\)), which encodes the spectral \emph{shape}, while the prefactor sets the \emph{amplitude} via \(B\) and the radiating component of the acceleration (\(\propto \sin\theta\)). Two asymptotic limits reproduce the canonical look of synchrotron spectra,
 \[
-T \simeq \frac{1}{\nu_L} = \frac{\gamma}{\nu_g}
+F(x)\simeq
+\begin{cases}
+2.15\,x^{1/3}, & x\equiv \nu/\nu_c \ll 1,\\[4pt]
+\sqrt{\dfrac{\pi x}{2}}\,e^{-x}, & x\gg 1,
+\end{cases}
 \]
+yielding the familiar low–frequency behaviour \(P_\nu\propto \nu^{1/3}\) and an exponential suppression above \(\nu_c\). Between these regimes the energy–weighted curve \(\nu P_\nu\) attains a well–defined maximum at \(\nu_{\rm max}\simeq 0.29\,\nu_c\); in practice, one often plots spectra against \(\nu/\nu_c\) and reads the shape off once and for all. 
+
+As useful checks: 
+%
+\begin{itemize}
+\item integrating \(P_\nu\) over \(\nu\) returns the Larmor/Liénard total power (and, after pitch–angle averaging, the standard factor \(\langle\sin^{2}\theta\rangle=2/3\)), confirming the kernel’s normalization; 
+\item for back-of-the-envelope estimates, the “delta approximation” \(F(x)\approx \delta(x-1)\) collapses the spectrum to \(P_\nu\simeq P_{\rm s}\,\delta(\nu-\nu_c)\) and immediately reproduces the correct scalings with \(B\), \(\gamma\), and \(\theta\); 
+\item the explicit \(\sin\theta\) reminds us that synchrotron is powered by the \emph{perpendicular} acceleration: no pitch angle, no radiation.
+\end{itemize}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{observedelectricfield.png}
-\caption{observedelectricfield}
+\includegraphics[width=0.85\textwidth]{synchrotron_kernel_Fx.pdf}
+\caption{\textbf{Synchrotron kernel $F(x)$ vs. fits.} Exact $F(x)=x\!\int_x^\infty K_{5/3}$ (solid) with low-/high-$x$ asymptotes and the heuristic $1.8\,x^{1/3}e^{-x}$.}
+\label{fig:synchro_kernel}
 \end{figure}
 
-Thus, in the relativistic limit, the spectrum experiences a \( \gamma^2 \) boost compared to the cyclotron frequency:
+\subsection*{Synchrotron emission by an electron population.}
+
+In most sources the radiating electrons span a broad range of energies. A simple and very useful idealization is a power–law in Lorentz factor,
+\[
+n(\gamma)\,d\gamma = n_0\,\gamma^{-q}\,d\gamma,
+\qquad
+\gamma_{\min}<\gamma<\gamma_{\max},
+\]
+with slopes $q\simeq2$–$3$ in many astrophysical environments. The specific emissivity (power per unit volume and frequency) follows by summing the single–electron spectra over the population and pitch angles,
+\[
+j_\nu \;=\; \int_{\gamma_{\min}}^{\gamma_{\max}}\!\!\langle P_\nu(\gamma,\theta)\rangle\,n(\gamma)\,d\gamma,
+\]
+where $\langle\cdots\rangle$ denotes an average over pitch angle (isotropic unless stated).
+
+To expose the scalings, we approximate each spectrum by a delta-function at its critical frequency,
+\[
+P_\nu(\gamma,\theta)\;\simeq\;\langle P_{\rm s}\rangle\,\delta\!\big(\nu-\nu_c(\gamma,\theta)\big),
+%\quad
+%\langle P_{\rm s}\rangle=\frac{4}{3}\,c\,\sigma_{\rm T}\,U_B\,\gamma^{2}\,\langle\sin^2\theta\rangle,
+%\quad
+%\nu_c=\frac{3}{2}\,\gamma^2\,\nu_0\,\sin\theta,
+\]
+%with $U_B=B^2/(8\pi)$ and $\nu_0\equiv qB/(2\pi m_ec)$. 
+Inserting the $\delta$–function and using $d\nu/d\gamma=2\,(\tfrac{3}{2}\nu_0\sin\theta)\,\gamma$ gives
+\[
+j_\nu
+= n_0\,\frac{\langle P_{\rm s}\rangle\,\gamma^{1-p}}{2\,(\tfrac{3}{2}\nu_0\langle\sin\theta\rangle)}
+\bigg|_{\gamma=\sqrt{\nu/\,( \tfrac{3}{2}\nu_0\langle\sin\theta\rangle )}}
+\;\propto\;
+U_B\,\nu^{-\frac{p-1}{2}}\,
+\Big(\nu_0\Big)^{-\frac{p+1}{2}}
+\;\propto\;
+B^{\frac{p+1}{2}}\,\nu^{-\frac{p-1}{2}}.
+\]
+
+Thus we recover the synchrotron law:
 %
 \begin{remark}
 \[
-\nu_s \sim \frac{1}{\Delta t_{\rm obs}} = \frac{\gamma^3}{r_{\rm L}} = \gamma^2 \nu_g
+j_\nu \;\propto\; n_0\,B^{\frac{p+1}{2}}\;\nu^{-\frac{p-1}{2}}
+\quad\text{for}\quad
+\nu_{\min}<\nu<\nu_{\max},
 \]
 \end{remark}
 
-\begin{problem}
-Compute the properties of the Galactic radio emission.
-\end{problem}
-
-The full result for a single electron with Lorentz factor \( \gamma \) is:
-%
+where the validity band is set by the lowest and highest electrons that can radiate at $\nu$,
 \[
-P_\nu(\nu, \gamma, \theta) = \frac{\sqrt 3 q^3 B}{m_e c^2} \sin \theta F\left(\frac{\nu}{\nu_c}\right)
-\]
-%
-where $P_\nu$ is the power per \emph{unit of frequency}, the characteristic frequency $\nu_c = \frac{3}{4\pi} \gamma^2 \frac{qB}{m_e c} \sin \theta$, and the synchrotron function is
-%
-\[
-F(x) = x \int_x^\infty K_{5/3} (x^\prime) dx^\prime
+\nu_{\min}\equiv \nu_c(\gamma_{\min})\simeq \frac{3}{2}\,\gamma_{\min}^2\,\nu_0\,\langle\sin\theta\rangle,
+\qquad
+\nu_{\max}\equiv \nu_c(\gamma_{\max}).
 \]
 
-A useful approximation for \( P_\nu \) is 
-%
+Below the band, the low–frequency tail of the single–electron kernel dominates:
 \[
-P_\nu \simeq 1.8 \left(\frac{\nu}{\nu_c}\right)^{1/3} \exp\left(-\frac{\nu}{\nu_c}\right)
+j_\nu \;\propto\; \nu^{1/3}\qquad (\nu\ll \nu_{\min}).
 \]
-%
-notice that the \emph{peak} frequency is approximately  \( \nu_{\rm max} \simeq 0.29 \nu_c \).
-
-\subsection{Quantum correction}
-
-In our previous analysis of synchrotron radiation, we assumed that the motion of electrons does not change significantly due to photon emission. However, considering that photons carry momentum, there should be some recoil effect on the emitting electron. This aspect becomes particularly relevant when the energy of the emitted synchrotron photon, \( h \nu_s \), approaches the electron's relativistic energy, \( \gamma m_e c^2 \). Given that \( \nu_s \propto \gamma^2 \), this effect is more pronounced at higher energies.
-
-To quantify this, we introduce the parameter \( \chi \):
-%
+Above the band, the high–frequency tail is exponentially suppressed by the kernel of the \emph{highest} electrons present:
 \[
-\chi = \frac{B}{B_q}\frac{p}{mc} \sim \frac{h\nu_s}{\gamma mc^2}
+j_\nu \;\propto\; \exp\!\left(-\frac{\nu}{\nu_{\max}}\right)\qquad (\nu\gg \nu_{\max}).
 \]
 
-Here, \( p \) is the electron momentum, and \( B_q = \frac{m^2 c^3}{e \hbar} \approx 4.4 \times 10^{13} \) G is a characteristic magnetic field strength.
+In conclusion, an electron index $p$ produces a synchrotron index $\alpha\equiv -d\ln j_\nu/d\ln\nu=(p-1)/2$.  
+The amplitude scales as $B^{(p+1)/2}$, not $B^2$, because the characteristic frequency of each electron also shifts with $B$. Replacing the $\delta$-function with the full kernel leaves the $\nu$– and $B$–scalings unchanged and only multiplies $j_\nu$ by a smooth function of $p$.
 
-For \( \chi \ll 1 \), the motion can be considered Newtonian, while for \( \chi \gg 1 \), quantum effects dominate. In extremely strong magnetic fields, like those found in pulsar atmospheres (\( \sim 10^{15} \) G), quantum effects become significant even for relatively low electron momenta.
+\vspace{0.6cm}
 
-According to Landau, the power radiated in the quantum regime (\( \chi \gg 1 \)) is:
-%
+%Typical values of s:
+%Milky Way ∼0.7
+%Radio Galaxy 0.7
+%Pulsar -3 to -2
+%AGN -1 to +1
+% Measuring the spectral index of the radiation (s) gives an indication of the distribution of particle energies (p)
+
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.25}
+\centering
+\begin{tabular}{@{} lcc @{}}
+\toprule
+& \textbf{Source: monochromatic} & \textbf{Source: power-law} \\
+& \(\,Q(E)=Q_0\,\delta(E-E_0)\) & \(\,Q(E)=Q_0\,E^{-p}\) \\
+\midrule
+\textbf{Equilibrium electron spectrum} 
+& \(N(E)\propto E^{-2}\)
+& \(N(E)\propto E^{-(p+1)}\) \\[6pt]
+\textbf{Synchrotron spectrum}
+& \(j_\nu\propto \nu^{-1/2}\) 
+& \(j_\nu\propto \nu^{-p/2}\) \\[4pt]
+\bottomrule
+\end{tabular}
+\caption{Electron and synchrotron slopes for cooling–dominated steady state (assuming \(b(E)=aE^{2}\), no escape).} 
+\label{tab:source-to-spectrum}
+\end{table}
+
+{\color{red}Galaxy synchrotron spectrum: frequency vs energy / slope}
+
+\begin{comment}
+
+\subsection{Minimum Energy and Equipartition}
+
+A synchrotron source must contain relativistic electrons with energy density \(U_e\) and a magnetic field with energy density \(U_B=B^2/(8\pi)\).
+Given an observed (radio) luminosity, what is the \emph{minimum total energy} in particles and fields required?
+
+\paragraph{Setup and assumptions.}
+Assume an optically thin source of volume \(V\), isotropic pitch angles, and a power–law electron distribution
+\(n(\gamma)=n_0\,\gamma^{-p}\) between \(\gamma_{\min}\) and \(\gamma_{\max}\) (\(p>2\) so the electron energy converges).
+The electron energy density is
 \[
-P_q \propto \frac{e^2 m^2 c^3}{\hbar^2} \left( \frac{B}{B_q}\right)^{2/3} \gamma^{2/3}
+U_e=\int_{\gamma_{\min}}^{\gamma_{\max}} \gamma m_ec^2\, n(\gamma)\,d\gamma
+\simeq \frac{n_0 m_ec^2}{p-2}\,\gamma_{\min}^{\,2-p}
+\quad (\gamma_{\max}\gg\gamma_{\min}).
 \]
 
-This indicates that the power dependency shifts from \( \gamma^2 \) to \( \gamma^{2/3} \) in the quantum regime.
-
-The spectrum in this regime peaks broadly and almost flatly around a frequency that satisfies:
-%
+Each electron radiates (classically) \(P_{\rm s}=\frac{4}{3}c\sigma_T U_B\,\gamma^2\) (angle–averaged). The bolometric synchrotron luminosity is
 \[
-\frac{h\nu}{E - h\nu} \sim \chi
+\mathcal{L}=V\int_{\gamma_{\min}}^{\gamma_{\max}} P_{\rm s}(\gamma)\,n(\gamma)\,d\gamma
+\simeq \frac{4}{3}c\sigma_T U_B\, V\, n_0 \int_{\gamma_{\min}}^{\gamma_{\max}}\gamma^{2-p}\,d\gamma
+\simeq \frac{4}{3}c\sigma_T U_B\, V\, n_0 \frac{\gamma_{\min}^{\,3-p}}{3-p}.
 \]
 
-For \( \chi \ll 1 \), the emitted frequency \( \nu \) is approximately equal to the synchrotron frequency \( \nu_s \). In contrast, for \( \chi \gg 1 \), \( h\nu \) is comparable to the initial energy \( E \), indicating that the emitted photon carries away a significant portion of the electron's energy. This results in catastrophic energy losses and a non-continuous process, necessitating a \emph{Monte Carlo} approach for accurate modeling.
-
-\subsection{Synchrotron emission by an electron population}
-
-Assume to have a population of electrons with a power-law distribution in energy within some given range:
-%
+Taking the ratio eliminates \(n_0\) and isolates the magnetic dependence:
 \[
-n(\gamma) d\gamma = n_0 \gamma^{-p} d\gamma \quad \gamma_{\rm min} < \gamma < \gamma_{\rm max} 
-\]	
-%
-where $n(\gamma) d\gamma$ is the electron volume density, and usually the slope is $p \sim 2-3$.
-
-The specific emissivity is given by
-%
-\begin{equation*}
-j_\nu = \int_1^\infty \langle P_\nu(\gamma) \rangle n(\gamma) d\gamma
-\end{equation*}
-%
-where $P_\nu$ is the power emitted per unit frequency.
-
-We simplify our calculations assuming a $\delta$-function for $P_\nu$:
-%
-\begin{equation*}
-P_\nu(\gamma) \simeq \langle P_s \rangle \delta(\nu - \nu_c)
-\end{equation*}
-%
-follows
-%
-\begin{equation*}
-j_\nu = \frac{4}{3} c \sigma_{\rm T} U_{\rm B} n_0 \int_{\gamma_{\rm min}}^{\gamma_{\rm max}} \gamma^{2-p} \delta(\nu - \gamma^2 \nu_{\rm L}) d\gamma
-\end{equation*}
-%
-finally
-%
-\begin{remark}
-\[ 
-j_\nu = \frac{2}{3} c \sigma_{\rm T} n_0 \frac{U_{\rm B}}{\nu_{\rm L}} \left( \frac{\nu}{\nu_{\rm L}} \right)^{\color{red}-\frac{p-1}{2}}
+\frac{U_e}{\mathcal{L}}
+\simeq \frac{1}{U_B}\,
+\frac{(3-p)}{(p-2)}\,
+\frac{\gamma_{\min}^{\,2-p}}{\gamma_{\min}^{\,3-p}}
+\;=\;
+\frac{3-p}{p-2}\,\frac{1}{U_B\,\gamma_{\min}}.
 \]
-\end{remark}
-%
-which is valid in the range $\gamma^2_{\rm min} \nu_{\rm L} < \nu < \gamma^2_{\rm max} \nu_{\rm L}$
 
-%\begin{center}
-%\includegraphics[scale=0.18]{figures/synchropowerlaw.png}
-%\end{center}
+\paragraph{Fixing the observable.}
+For a fixed observing frequency \(\nu\) in the power–law band, the electrons that dominate \(j_\nu\) have \(\nu\sim\nu_c\propto \gamma^2 B\), hence \(\gamma\propto B^{-1/2}\). Identifying \(\gamma_{\min}\) with the electrons responsible for the lowest observed frequency (or simply keeping \(\nu\) fixed), we get \(\gamma_{\min}\propto B^{-1/2}\). Therefore
+\[
+\frac{U_e}{\mathcal{L}} \propto \frac{1}{U_B}\,B^{+1/2}
+\;\;\Rightarrow\;\;
+U_e \propto \mathcal{L}\,B^{-3/2}.
+\]
+Intuitively: stronger \(B\) makes each electron more luminous (fewer electrons are needed), so the required particle energy drops as \(B^{-3/2}\).
 
-Outside the validity limits we have to use the complete expression and we obtain 
-%
-\begin{equation*}
-j_\nu \propto \nu^{1/3} \quad\text{ for }\quad \nu < \nu_{\rm min}
-\end{equation*}
-%
-and
-%
-\begin{equation*}
-j_\nu \propto \exp \left(-\frac{\nu}{\nu_{\rm max}}\right) \quad\text{ for }\quad \nu > \nu_{\rm max}
-\end{equation*}
+\paragraph{Minimizing the total energy.}
+The total energy density is \(U(B)=U_e(B)+U_B\). With \(U_e\propto B^{-3/2}\) and \(U_B\propto B^{2}\),
+\[
+\frac{dU}{dB}=0
+\;\;\Longrightarrow\;\;
+-\frac{3}{2}\frac{U_e}{B}+2\frac{U_B}{B}=0
+\;\;\Longrightarrow\;\;
+\boxed{\;\frac{U_e}{U_B}=\frac{4}{3}\; }.
+\]
+Thus, at minimum energy the system is close to \emph{equipartition}—comparable energy in particles and magnetic field (particles larger by \(4/3\) in this simplified treatment).
 
-\subsection{Kinetic equation for electron evolution}
+\paragraph{A useful generalization (slide–ready).}
+If you work with a measured monochromatic luminosity \(L_\nu\) (or a band–integrated \(L\) across \(\nu_1\)–\(\nu_2\) that do not vary with \(B\)), the \(\delta\)-approximation with \(j_\nu\propto n_0 B^{(p+1)/2}\nu^{-(p-1)/2}\) gives
+\[
+B_{\min}\ \propto\ \Big(\tfrac{L}{V}\Big)^{\frac{2}{p+5}} ,
+\qquad
+U_{\min}\ \propto\ V\,B_{\min}^{\,2}
+\ \propto\ V^{\frac{p+1}{p+5}}\,L^{\frac{4}{p+5}}.
+\]
+For \(p=2\) this reduces to the classic \(B_{\min}\propto (L/V)^{2/7}\) (Pacholczyk’s formula up to order–unity factors for filling factor, proton–to–electron energy \(k\), and frequency cutoffs). These refinements do not change the key message: the minimum–energy configuration places comparable energy in particles and magnetic field.
 
-TO BE DONE
+
+%\begin{problem}
+%The CRAB.
+%\end{problem}
+
+%\begin{figure}[t]
+%\centering
+%\includegraphics[width=0.8\textwidth]{observedelectricfield.png}
+%\caption{observedelectricfield}
+%\end{figure}
+%
+%\begin{problem}
+%Compute the properties of the Galactic radio emission.
+%\end{problem}
+
+\subsection{Quantum corrections}
+
+So far we have treated synchrotron emission in the \emph{classical} (continuous–loss) limit, implicitly assuming that each emitted photon carries only a tiny fraction of the electron’s energy. Quantum recoil becomes relevant once individual photons are energetic enough to noticeably sap the emitter’s momentum during a single emission event. A clean way to diagnose this is with the \emph{quantum nonlinearity parameter}
+\[
+\chi \;\equiv\; \frac{e\hbar}{m_e^3c^4}\,\sqrt{-\,(F_{\mu\nu}p^\nu)^2}
+\;\;\xrightarrow[\;\vb E=0\;]{}\;\;
+\chi \;=\; \gamma\,\frac{B_\perp}{B_Q}\,,
+\qquad
+B_Q \;\equiv\; \frac{m_e^2 c^3}{e\hbar}\simeq 4.4\times 10^{13}\,\mathrm{G},
+\]
+where $B_\perp\equiv B\sin\theta$ is the field component perpendicular to the motion. Equivalently, in terms of the classical critical frequency
+\[
+h\nu_c=\frac{3}{2}\,\gamma^2\,\frac{e\hbar B_\perp}{m_ec}
+\quad\Rightarrow\quad
+\chi \;=\; \frac{2}{3}\,\frac{h\nu_c}{\gamma m_ec^2}\,.
+\]
+Thus $\chi$ measures (up to a factor of order unity) the ratio of a \emph{typical} synchrotron photon energy to the electron’s energy \emph{in the electron rest frame}. 
+
+We can identify the following regimes:
+\begin{itemize}
+\item \(\chi \ll 1\) (classical): many soft photons per gyroperiod, smooth radiation reaction; total power $P_{\rm cl}=\frac{4}{3}\,c\,\sigma_T\,U_B\,\gamma^2\sin^2\theta$.
+\item \(\chi \sim 0.1\!-\!1\) (onset of quantum effects): recoil starts to matter; the total power is reduced by a \emph{Gaunt factor} $g(\chi)$, commonly written $P=P_{\rm cl}\,g(\chi)$ with $g(\chi)=1-\frac{55\sqrt{3}}{16}\chi+\mathcal{O}(\chi^2)$ for $\chi\ll1$.
+\item \(\chi \gg 1\) (quantum synchrotron): emission is \emph{discrete and stochastic}, single photons can carry a large fraction of the energy; the average power scales more slowly with energy,
+\[
+\boxed{\;
+P_q \;\simeq\; C\,\frac{e^2 m_e^2 c^3}{\hbar^2}\,\chi^{2/3}
+\;=\; C\,\frac{e^2 m_e^2 c^3}{\hbar^2}\,
+\Big(\gamma\,\frac{B_\perp}{B_Q}\Big)^{2/3}
+\;,}
+\]
+with $C\simeq 0.37$ (order–unity constant; precise value depends on the chosen averaging).\footnote{This reproduces the classic Landau–Lifshitz asymptotic $P\propto \gamma^{2/3}B_\perp^{2/3}$, in contrast to the classical $P\propto \gamma^2 B_\perp^2$.}
+\end{itemize}
+
+\paragraph{Spectrum and recoil.}
+In the classical limit the spectrum peaks near $\nu_{\max}\simeq 0.29\,\nu_c$ with an exponential tail. Quantum recoil hardens the photon distribution and broadens the peak. A useful rule of thumb is that the \emph{typical} photon energy fraction grows with $\chi$; in particular,
+\[
+\text{for }\chi\ll1:\quad h\nu\sim h\nu_c\ll \gamma m_ec^2,
+\qquad
+\text{for }\chi\gg1:\quad \langle h\nu\rangle \sim \mathcal{O}(0.1\!-\!1)\,E,
+\]
+so single emissions can remove a substantial fraction of the electron energy.
+
+Because $\chi=\gamma B_\perp/B_Q$, quantum synchrotron can be realized either by \emph{enormous} fields (e.g.\ magnetars with $B\sim10^{14-15}\,\mathrm{G}$) or by very large Lorentz factors in more modest fields (inner pulsar magnetospheres, reconnection layers, laser–plasma experiments). Once $\chi\gtrsim 0.1$, cooling is no longer well described by a smooth $dE/dt$: emission is intermittent, with large shot–to–shot variance. Accurate evolution then requires a \emph{Monte Carlo} treatment of photon emission (sampling the quantum synchrotron kernel) plus energy–momentum updates to the emitting particle; this is the proper way to incorporate \emph{quantum radiation reaction}.
+
+\subsection*{Polarization}
 
 \subsection{Synchrotron Self-Absorption}
 
@@ -408,3 +550,5 @@ Cygnus A (3C 405)
 \end{problem}
 
 %Physical motivated.
+
+\end{comment}
