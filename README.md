@@ -6,6 +6,10 @@ This course provides a comprehensive introduction to cosmic ray physics and astr
 
 A detailed syllabus can be found [here](syllabus.md).
 
+## Introduction slides
+
+Introduction slides for an overview of the field and key questions can be found [here](files/CEvoli_HEATH_intro.pdf)
+
 ## Suggested textbooks
 
 The course material will be drawn from a combination of textbooks, journal literature, and my own lecture notes. The following textbooks provide excellent topical coverage:
