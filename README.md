@@ -8,7 +8,7 @@ A detailed syllabus can be found [here](syllabus.md).
 
 ## Introduction slides
 
-Introduction slides for an overview of the field and key questions can be found [here](files/CEvoli_HEATH_intro.pdf)
+Introduction slides for an overview of the field and key questions can be found [here](slides/CEvoli_HEATH_intro.pdf)
 
 ## Suggested textbooks
 
