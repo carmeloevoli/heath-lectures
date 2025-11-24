@@ -1,15 +1,16 @@
 % !TEX root = ../../lectures.tex
 \section{Pair production and gamma-ray absorption}
 
-\begin{figure}[t]
+
+High-energy $\gamma$ rays emitted by distant sources (AGN, GRBs, star-forming galaxies) do not travel through a vacuum. Along their way, they encounter photons of the diffuse extragalactic radiation fields: the cosmic microwave background (CMB) and the extragalactic background light (EBL) from integrated starlight and dust emission (see Fig.~\ref{fig:ebl}). 
+
+\begin{figure}[!t]
 \centering
-\includegraphics[width=0.5\textwidth]{figures/aa21639-13-fig6.pdf}
-\caption{$\gamma$-ray horizon for different EBL models. Some lower limits from AGN spectra measurements are shown~\cite{HESS2013aa}.}
+\includegraphics[width=0.85\textwidth]{photonBackgroundInEnergy.pdf}
+\caption{Photon field energy density of the CMB and the extragalactic background light (EBL) as a function of photon energy. 
+For the EBL we show three recent models from the literature~\cite{Domingues,Saldana,Gilmore}.}
+\label{fig:ebl}
 \end{figure}
-
-High-energy $\gamma$ rays emitted by distant sources (AGN, GRBs, star-forming galaxies) do not travel through a vacuum. Along their way, they encounter photons of the diffuse extragalactic radiation fields: the cosmic microwave background (CMB) and the extragalactic background light (EBL) from integrated starlight and dust emission. 
-
-{\color{red}Add a plot with photon backgrounds in eV cm-3}
 
 When a $\gamma$ ray of energy $E_\gamma$ interacts with a background photon of energy $\epsilon$, it can produce an $e^+e^-$ pair,
 %
@@ -17,7 +18,7 @@ When a $\gamma$ ray of energy $E_\gamma$ interacts with a background photon of e
 \gamma + \gamma \;\rightarrow\; e^+ + e^-,
 \]
 %
-provided that the center-of-mass (CoM) energy exceeds the rest mass of the pair. This process leads to \emph{attenuation} of the primary $\gamma$-ray flux, and defines an effective ``$\gamma$-ray horizon'' as shown in Fig.~\ref{fig:aa21639-13-fig6}.
+provided that the center-of-mass (CoM) energy exceeds the rest mass of the pair. This process leads to \emphit{attenuation} of the primary $\gamma$-ray flux, and defines an effective \emphit{$\gamma$-ray horizon}. % as shown in Fig.~\ref{fig:aa21639-13-fig6}.
 
 \paragraph{Threshold condition and target photon energies.}
 
@@ -35,7 +36,7 @@ s = 2 E_\gamma \epsilon (1 - \cos\theta),
 %
 in units where $c=1$. The threshold for producing an $e^+e^-$ pair is when the CoM energy is just enough to create two electrons at rest in the CoM frame,
 %
-\[
+\[ 
 s_{\rm th} = (2m_e c^2)^2 = 4 m_e^2 c^4.
 \]
 %
@@ -68,7 +69,6 @@ E_\gamma (\text{TeV})\,\epsilon(\text{eV}) \;\gtrsim\; 0.26.
 \]
 
 For example:
-\TODO{TO BE CHECKED}
 \begin{itemize}
 \item A $1$~TeV photon ($E_\gamma=10^{12}$~eV) interacts at threshold with photons of \(  \epsilon_{\rm th} \simeq 0.26~\text{eV} \), i.e.\ near-infrared photons.
 \item A $10$~TeV photon primarily interacts with optical photons ($\epsilon_{\rm th} \sim \text{few eV}$).
@@ -133,9 +133,6 @@ for CoM energies a few times above threshold (\(s \sim \text{few}\times 4m_e^2 c
 
 Physically, this means that $\gamma$ rays can in principle interact with all target photons above the threshold, but the interaction is \emphit{most efficient} when the product $E_\gamma \epsilon$ is only a few times the threshold value. At much higher energies, the cross-section shrinks, and the Universe becomes more transparent again.
 
-\TODO{do this} This property combined with that one...
-A particularly useful rule of thumb: a $1$~TeV photon interacts \emphit{most efficiently} with target photons of energy $\epsilon \sim 1$~eV (optical/near-IR), not with much higher-energy photons, even though they are well above threshold. This “near-threshold preference” is what ties the TeV $\gamma$-ray horizon so directly to the EBL spectrum. This is why TeV $\gamma$-rays are good probes of the infrared/optical EBL: the EBL photons provide exactly the right energies to trigger pair production and evenutally absorb primary photons on cosmological scales.
-
 \paragraph{Optical depth and the $\gamma$-ray horizon.}
 
 The cumulative effect of $\gamma\gamma$ interactions \emphit{along the line of sight} is encoded in the optical depth $\tau_{\gamma\gamma}(E_\gamma)$, defined as the integral over path length, angles, and target photon energies:
@@ -154,7 +151,7 @@ Here:
   \item $x$ is the distance along the line of sight (or, in cosmological applications, a redshift coordinate),
   \item $n_\gamma(\epsilon,\Omega,x)$ is the differential number density of background photons at position $x$ with energy $\epsilon$ and direction $\Omega$,
   \item \TODO{capire meglio, chi e theta}$(1 - \cos\theta)$ accounts for the angular dependence of the CoM energy,
-  \item $\epsilon_{\rm th}$ is the local threshold energy from Eq.~\eqref{eq:pair-thr-general}.
+  \item $\epsilon_{\rm th}$ is the local threshold energy from~\eqref{eq:pair-thr-general}.
 \end{itemize}
 
 The observed flux is then attenuated as
@@ -166,17 +163,19 @@ F_{\rm obs}(E_\gamma) = F_{\rm int}(E_\gamma)\,
 %
 where $F_{\rm int}$ is the intrinsic source spectrum.
 
+\TODO{add a plot of tau}
+
 However, an order-of-magnitude $\gamma\gamma$ optical depth can be estimated photon from a source at cosmological distance using the simple approximation
 \[
 \tau_{\gamma\gamma} \;\sim\; \sigma_{\gamma\gamma}\,n_\gamma\,L \, .
 \]
-Assuming a TeV photon, Using the head-on threshold condition for $\gamma\gamma\to e^+e^-$, at the dominant target photons have energies
+Assuming a TeV photon, Using the head-on threshold condition for pair production, at the dominant target photons have energies
 \[
-\epsilon_{\rm th} \simeq 0.26~{\rm eV}\,,
+\epsilon_{\rm th} \simeq~{\rm eV}\,,
 \]
 i.e.\ in the optical/near-IR band. Assume that the extragalactic background light (EBL) around $\epsilon\sim 1~{\rm eV}$ has a typical \emph{energy density}
 \[
-u_{\rm EBL} \sim 10^{-3}~{\rm eV\,cm^{-3}}
+u_{\rm EBL} \sim 3 \times 10^{-3}~{\rm eV\,cm^{-3}}
 \]
 (comparable to a few percent of the CMB energy density).
 
@@ -184,6 +183,9 @@ The exact pair-production cross-section $\sigma_{\gamma\gamma}(s)$ peaks at a va
 \[
 \sigma_{\gamma\gamma}^{\rm max} \sim 0.1\,\sigma_{\rm T}.
 \]
+
+Therefore % \tau_\gamma
+
 %For an order-of-magnitude estimate, take
 %\[
 %\sigma_{\gamma\gamma} \;\sim\; 0.1\,\sigma_{\rm T},
@@ -193,6 +195,16 @@ The exact pair-production cross-section $\sigma_{\gamma\gamma}(s)$ peaks at a va
 
 
 \end{document}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/aa21639-13-fig6.pdf}
+\caption{$\gamma$-ray horizon for different EBL models. Some lower limits from AGN spectra measurements are shown~\cite{HESS2013aa}.}
+\end{figure}
+
+\TODO{do this} This property combined with that one...
+A particularly useful rule of thumb: a $1$~TeV photon interacts \emphit{most efficiently} with target photons of energy $\epsilon \sim 1$~eV (optical/near-IR), not with much higher-energy photons, even though they are well above threshold. This “near-threshold preference” is what ties the TeV $\gamma$-ray horizon so directly to the EBL spectrum. This is why TeV $\gamma$-rays are good probes of the infrared/optical EBL: the EBL photons provide exactly the right energies to trigger pair production and evenutally absorb primary photons on cosmological scales.
+
 
 Therefore an optical depth \tau \sim 1 is obtained for sources at a distance L \sim ... which in a  flat $\Lambda$CDM cosmology, the proper distance to $z\sim 1$ 
 
