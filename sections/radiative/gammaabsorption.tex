@@ -103,6 +103,13 @@ From this,
 = \sqrt{1 - \frac{2 m_e^2 c^4}{E_\gamma \epsilon (1-\cos\theta)}}.
 \]
 
+\begin{figure}
+\centering
+\includegraphics[width=0.65\textwidth]{pair_sigma.pdf}
+\label{fig:pairsigma}
+\caption{.}
+\end{figure}
+
 The exact $\gamma\gamma\to e^+e^-$ cross-section in terms of $\beta^*$ is derived by QED~\TODO{add citation}:
 %
 \begin{equation}
@@ -120,7 +127,7 @@ A few key features of $\sigma_{\gamma\gamma}$:
 \begin{itemize}
 \item \emph{Near threshold} ($\beta^* \ll 1$), the cross-section rises steeply from zero.
 \item It reaches a maximum value of order
-\[ \sigma_{\gamma\gamma}^{\rm max} \simeq 0.2\text{--}0.3\,\sigma_{\rm T}~, \]
+\[ \sigma_{\gamma\gamma}^{\rm max} \simeq 0.25\,\sigma_{\rm T}~, \]
 for CoM energies a few times above threshold (\(s \sim \text{few}\times 4m_e^2 c^4\)).
 \item In the \emph{high-energy limit} ($\beta^* \to 1$, $s\gg 4m_e^2 c^4$), the cross-section falls off roughly as $1/s$, i.e.\ as the inverse of the product $E_\gamma\epsilon$. A standard asymptotic expression is
 \begin{equation}
@@ -150,7 +157,7 @@ Here:
 \begin{itemize}
   \item $x$ is the distance along the line of sight (or, in cosmological applications, a redshift coordinate),
   \item $n_\gamma(\epsilon,\Omega,x)$ is the differential number density of background photons at position $x$ with energy $\epsilon$ and direction $\Omega$,
-  \item \TODO{capire meglio, chi e theta}$(1 - \cos\theta)$ accounts for the angular dependence of the CoM energy,
+  \item $(1 - \cos\theta)$ accounts for the angular dependence of the CoM energy,
   \item $\epsilon_{\rm th}$ is the local threshold energy from~\eqref{eq:pair-thr-general}.
 \end{itemize}
 
@@ -163,63 +170,52 @@ F_{\rm obs}(E_\gamma) = F_{\rm int}(E_\gamma)\,
 %
 where $F_{\rm int}$ is the intrinsic source spectrum.
 
-\TODO{add a plot of tau}
-
-However, an order-of-magnitude $\gamma\gamma$ optical depth can be estimated photon from a source at cosmological distance using the simple approximation
-\[
-\tau_{\gamma\gamma} \;\sim\; \sigma_{\gamma\gamma}\,n_\gamma\,L \, .
-\]
-Assuming a TeV photon, Using the head-on threshold condition for pair production, at the dominant target photons have energies
-\[
-\epsilon_{\rm th} \simeq~{\rm eV}\,,
-\]
-i.e.\ in the optical/near-IR band. Assume that the extragalactic background light (EBL) around $\epsilon\sim 1~{\rm eV}$ has a typical \emph{energy density}
-\[
-u_{\rm EBL} \sim 3 \times 10^{-3}~{\rm eV\,cm^{-3}}
-\]
-(comparable to a few percent of the CMB energy density).
-
-The exact pair-production cross-section $\sigma_{\gamma\gamma}(s)$ peaks at a value
-\[
-\sigma_{\gamma\gamma}^{\rm max} \sim 0.1\,\sigma_{\rm T}.
-\]
-
-Therefore % \tau_\gamma
-
-%For an order-of-magnitude estimate, take
-%\[
-%\sigma_{\gamma\gamma} \;\sim\; 0.1\,\sigma_{\rm T},
-%\qquad
-%\sigma_{\rm T} = 6.65\times 10^{-25}~{\rm cm^2}.
-%\]
-
-
-\end{document}
+For extragalactic sources at redshift $z$, one typically defines the \emph{$\gamma$-ray horizon} $E_{\gamma,\,\rm hor}(z)$ as the energy at which $\tau_{\gamma\gamma}(E_\gamma,z) = 1$. For $E_\gamma \gg E_{\gamma,\,\rm hor}(z)$ the flux is exponentially suppressed. Different EBL models predict different $\tau_{\gamma\gamma}(E_\gamma,z)$ curves; comparisons with AGN spectra yield constraints on the EBL, as illustrated in Fig.~\ref{fig:aa21639-13-fig6}.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{figures/aa21639-13-fig6.pdf}
+\includegraphics[width=0.5\textwidth]{aa21639-13-fig6.pdf}
 \caption{$\gamma$-ray horizon for different EBL models. Some lower limits from AGN spectra measurements are shown~\cite{HESS2013aa}.}
+\label{fig:aa21639-13-fig6}
 \end{figure}
 
-\TODO{do this} This property combined with that one...
-A particularly useful rule of thumb: a $1$~TeV photon interacts \emphit{most efficiently} with target photons of energy $\epsilon \sim 1$~eV (optical/near-IR), not with much higher-energy photons, even though they are well above threshold. This “near-threshold preference” is what ties the TeV $\gamma$-ray horizon so directly to the EBL spectrum. This is why TeV $\gamma$-rays are good probes of the infrared/optical EBL: the EBL photons provide exactly the right energies to trigger pair production and evenutally absorb primary photons on cosmological scales.
-
-
-Therefore an optical depth \tau \sim 1 is obtained for sources at a distance L \sim ... which in a  flat $\Lambda$CDM cosmology, the proper distance to $z\sim 1$ 
-
-For extragalactic sources at redshift $z$, one typically defines the \emph{$\gamma$-ray horizon} $E_{\gamma,\,\rm hor}(z)$ as the energy at which $\tau_{\gamma\gamma}(E_\gamma,z) = 1$. For $E_\gamma \gg E_{\gamma,\,\rm hor}(z)$ the flux is exponentially suppressed. Different EBL models predict different $\tau_{\gamma\gamma}(E_\gamma,z)$ curves; comparisons with AGN spectra yield constraints on the EBL, as illustrated in Fig.~\ref{fig:aa21639-13-fig6}.
-
-%\begin{exercise}[
-
-%Order-of-magnitude $\gamma\gamma$ optical depth from a source at $z\sim 1$
-
-\end{document}
-
-An Order-of-magnitude $\gamma\gamma$ optical depth can be estimates the $\gamma\gamma$ optical depth for a TeV photon from a source at cosmological distance using the simple approximation
+However, an order-of-magnitude $\gamma\gamma$ optical depth can be estimated for a photon from a source at cosmological distance using the simple approximation
 \[
 \tau_{\gamma\gamma} \;\sim\; \sigma_{\gamma\gamma}\,n_\gamma\,L \, .
 \]
+Assuming a TeV photon, the head-on threshold condition for pair production implies that the dominant target photons have energies
+\[
+\epsilon_{\rm th} \simeq 1~{\rm eV},
+\]
+i.e.\ in the optical/near-IR band. Let us assume that the extragalactic background light (EBL) around $\epsilon\sim 1~{\rm eV}$ has a typical \emph{energy density} (see Fig.~\ref{}):
+\[
+u_{\rm EBL} \sim 3 \times 10^{-3}~{\rm eV\,cm^{-3}},
+\]
+comparable to a few percent of the CMB energy density. The corresponding photon number density is then
+\[
+n_\gamma \sim \frac{u_{\rm EBL}}{\epsilon_{\rm th}} 
+\sim 3\times 10^{-3}~{\rm cm^{-3}}.
+\]
+
+The pair-production cross-section $\sigma_{\gamma\gamma}(s)$ peaks at a value
+\[
+\sigma_{\gamma\gamma}^{\rm max} \sim 0.25\,\sigma_{\rm T}
+\sim 1.7\times 10^{-25}~{\rm cm^2}.
+\]
+Requiring $\tau_{\gamma\gamma}\sim 1$ gives a characteristic interaction length
+\[
+L \sim \frac{1}{\sigma_{\gamma\gamma}\,n_\gamma}
+\sim \frac{1}{(1.7\times 10^{-25}~{\rm cm^2})\,(3\times 10^{-3}~{\rm cm^{-3}})}
+\sim 2\times 10^{27}~{\rm cm}
+\sim 0.6~{\rm Gpc}.
+\]
+
+Thus, up to factors of a few, an optical depth $\tau_{\gamma\gamma}\sim 1$ is expected on distance scales of order a gigaparsec. In a flat $\Lambda$CDM cosmology, this is the right ballpark for the proper distance to sources at $z\sim 1$, explaining why TeV $\gamma$ rays from such redshifts are strongly attenuated by pair production on the EBL.
+
+\end{document}
+
+
+\end{document}
 
 \paragraph{(a) Threshold target photons.}
 Consider a $\gamma$ ray of observed energy $E_\gamma = 1~{\rm TeV}$.
@@ -283,7 +279,6 @@ Briefly discuss how your estimate would change if:
   \item the effective cross-section were closer to $0.2\,\sigma_{\rm T}$ instead of $0.1\,\sigma_{\rm T}$.
 \end{itemize}
 Would these changes affect your qualitative conclusion (transparent vs opaque)?
-
 
 Optical depth for $\gamma\gamma$ absorption from a source at $z\simeq 1$
 
