@@ -15,10 +15,7 @@ def sigma_KN(x):
     F -= (1. + 3. * x) / (1. + 2. * x)**2.
     return sigma * F
 
-#def F_low(x):
-#    return 2.15 * np.power(x, 1/3.0)
-#
-def sigma_high(x):
+def sigma_approx(x):
     return 3. / 8. / x * (np.log(2. * x) + 0.5)
 
 # Set up figure
@@ -27,15 +24,14 @@ ax = fig.add_subplot(111)
 
 # Axes limits
 ax.set_xlim(1e-3, 1e3)
-ax.set_ylim(1e-3, 1e1)
+ax.set_ylim(1e-3, 3)
 
 x = np.logspace(-4, 4, 1000)
 s_KN = sigma_KN(x)
-x_hi = np.logspace(0, 4, 1000)
-s_hi = sigma_high(x_hi)
+s_approx = sigma_approx(x)
 
 ax.loglog(x, s_KN, lw=5, label=r" ")
-ax.loglog(x_hi, s_hi, lw=3, ls=':', label=r" ")
+ax.loglog(x, s_approx, lw=3, ls=':', label=r" ")
 
 ax.hlines(1., 1e-4, 1e4, ls=':', color='tab:gray')
 #ax.text(0.19, 1e-3, r'$\nu_{\rm max}$', rotation=90, color='tab:gray')

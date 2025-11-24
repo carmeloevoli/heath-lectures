@@ -16,9 +16,14 @@ def chapter1():
         nu = 3. / 4. / math.pi * gamma_electron**2.0
         nu *= constants.elementary_charge * B / constants.electron_mass / constants.c_light
         print(f'nu_c : {nu/1e6:3.1f} Mhz')
-    
+    def kn_energy():
+        epsilon_i = 1. * constants.eV
+        E = constants.electron_mass_c2**2. / epsilon_i
+        print(f'E : {E/1e9/constants.eV} GeV')
+ 
     tau_cooling()
     critical_frequency()
+    kn_energy()
     
 # Chapter 3
 def shockmfp():

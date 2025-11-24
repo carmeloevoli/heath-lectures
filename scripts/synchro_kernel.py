@@ -76,15 +76,6 @@ def synchrotron_kernel_F(x, tail_split: float = 20.0):
         out[it.multi_index] = _F_integral_scalar(float(xi), tail_split=tail_split)
     return out
 
-#def F_fit(x):
-#    # Accurate single-piece fit (Aharonian-style)
-#    # F(x) ≈ 1.808 x^{1/3} / (1 + 3.4 x^{2/3} + 1.7 x + 0.6 x^{4/3}) * exp(-x)
-#    x13 = np.power(x, 1/3.0)
-#    x23 = np.power(x, 2/3.0)
-#    x43 = np.power(x, 4/3.0)
-#    denom = 1.0 + 3.4*x23 + 1.7*x + 0.6*x43
-#    return 1.808 * x13 * np.exp(-x) / denom
-
 def F_heuristic(x):
     return 1.8 * np.power(x, 1/3.0) * np.exp(-x)
 
@@ -95,7 +86,7 @@ def F_high(x):
     return np.sqrt(np.pi * x / 2.0) * np.exp(-x)
 
 # Set up figure
-fig = plt.figure(figsize=(15.5, 8.5))
+fig = plt.figure(figsize=(11.5, 8.0))
 ax = fig.add_subplot(111)
 
 # Axes limits
@@ -103,7 +94,7 @@ ax.set_xlim(1e-4, 1e1)
 ax.set_ylim(1e-4, 1e1)
 
 x = np.logspace(-4, 1, 100)
-F_fit_vals = synchrotron_kernel_F(x) # F_fit(x)
+F_fit_vals = F_heuristic(x) # synchrotron_kernel_F(x) # F_fit(x)
 F_heu_vals = F_heuristic(x)
 F_low_vals = F_low(x)
 F_high_vals = F_high(x)
@@ -114,10 +105,10 @@ ax.loglog(x, F_high_vals, lw=3, linestyle='-.', label=r"High-$x$ asymptote $\sqr
 ax.loglog(x, F_heu_vals, lw=3, linestyle=':', label=r"Heuristic $1.8\,x^{1/3}e^{-x}$")
 
 ax.vlines(0.29, 1e-4, 1e1, ls=':', color='tab:gray')
-ax.text(0.19, 1e-3, r'$\nu_{\rm max}$', rotation=90, color='tab:gray')
+ax.text(0.17, 1e-3, r'$\nu_{\rm max}$', rotation=90, color='tab:gray', fontsize=22)
 ax.set_xlabel(r'$x\,=\,\nu/\nu_c$')
 ax.set_ylabel(r'Synchrotron kernel $F(x)$')
-ax.legend(loc="lower left")
+ax.legend(loc="lower left", fontsize=17)
 #ax.grid(True, which="both")
 
 out_path = "synchrotron_kernel_Fx.pdf"
