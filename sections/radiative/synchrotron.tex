@@ -18,6 +18,8 @@ P=\frac{2}{3}\frac{q^{2}\gamma^{6}}{c^{3}}\Big(a^{2}-(\vb \beta\times \vb a)^{2}
 \end{equation}
 where \( \vb \beta=\vb v/c \), and \(a_{\perp}\) and \(a_{\parallel}\) are the components of \(\vb a\) perpendicular and parallel to \(\vb v\), respectively.
 
+\TODO{add the full derivation from the covariant expression of Larmor?}
+
 \paragraph{Motion in a magnetic field and synchrotron power for a single charge.}
 %
 For a purely magnetic field the Lorentz force does no work and the acceleration is perpendicular to \(\vb v\)~(appendix~\ref{app:motion-in-B}). Using \(\dot{\vb p}=q\, \vb v\times \vb B/c\) with \(\vb p=\gamma m \vb v\), the \emph{perpendicular} acceleration is
@@ -45,8 +47,8 @@ Averaging \eqref{eq:Ps-single} and using \(U_B=B^{2}/(8\pi)\) and \(\sigma_T=\fr
 \end{equation}
 \end{tcolorbox}
 
-Notice that at \emph{fixed particle energy} \(E=\gamma mc^{2}\), one has \(\gamma \propto 1/m\), hence \(P_{\rm s}\propto \gamma^{2}/m^{2}\propto m^{-4}\). This steep mass dependence makes synchrotron losses overwhelmingly important for electrons and positrons compared to nuclei.
-Moreover, the energy loss is proportional to the magnetic field energy density \( U_B \).
+Notice that at \emphit{fixed particle energy} \(E=\gamma mc^{2}\), one has \(\gamma \propto 1/m\), hence \(P_{\rm s}\propto \gamma^{2}/m^{2}\propto m^{-4}\). This steep mass dependence makes synchrotron losses overwhelmingly important for electrons and positrons compared to nuclei.
+Moreover, it is important to remark that the energy loss is \emphit{proportional to the magnetic field energy density \( U_B \)}.
 
 \paragraph{Cooling time.}
 
@@ -57,7 +59,7 @@ For electrons (\(m=m_e\)) the synchrotron loss time is
 \;\propto\; \frac{1}{E}\, .
 \label{eq:tau-loss}
 \end{equation}
-Thus~\emph{higher-energy} electrons cool~\emph{faster}, a key driver of spectral steepening in synchrotron-dominated sources.
+Thus~\emphit{higher-energy} electrons cool~\emphit{faster}, a key driver of spectral steepening in synchrotron-dominated sources.
  
 Numerically, we can estimate for electrons
 %
@@ -90,7 +92,7 @@ Hence the emission angle \(\theta\) satisfies
 =\frac{u'_y}{\gamma(u'_x+\beta c)}
 =\frac{u'\sin\theta'}{\gamma(\beta c+u'\cos\theta')}.
 \]
-For light (\(u'=c\)) one obtains the standard aberration formula
+For light (\(u'=c\)) one obtains the standard \emphit{aberration formula}:
 \begin{equation}
 \tan\theta=\frac{\sin\theta'}{\gamma\left(\beta+\cos\theta'\right)}.
 \end{equation}
@@ -104,7 +106,9 @@ A photon emitted at \(\theta'=0\) is seen at \(\theta=0\), while a photon emitte
 \end{figure}
 
 \paragraph{Pulse duration and characteristic frequency.}
-In the non-relativistic limit the emission is essentially mono-chromatic at the gyrofrequency \(\nu_B\), because the charge executes uniform circular motion and the radiation pattern is broad. 
+In the non-relativistic limit the emission is essentially mono-chromatic at the gyrofrequency \(\nu_0\), because the charge executes uniform circular motion and the radiation pattern is broad. 
+
+\TODO{add a plot with a(t) and frequency}
 
 For relativistic particles, beaming squeezes the emission into a cone of half–opening \(\sim 1/\gamma\) about the instantaneous velocity. An observer only “sees” the electron while this cone sweeps across the line of sight, so the continuous emission is received as a train of short pulses. The spectrum we measure is the Fourier transform of this time-domain signal, and it is therefore controlled by the \emph{observed} pulse width \(\Delta t_{\rm obs}\): the characteristic frequency scales like \(\nu_{\rm s}\sim 1/\Delta t_{\rm obs}\).
 
@@ -156,7 +160,7 @@ i.e. boosted by \(\gamma^{2}\) relative to the cyclotron frequency \(\nu_0\). Th
 
 \paragraph{Single–electron spectrum (full calculation).}
 A rigorous way to derive the synchrotron spectrum is to treat the motion \emph{locally} as curvature radiation: over the short visibility arc the trajectory is well approximated by a circle of curvature radius \(\rho=r_g/\sin\theta\) (only the perpendicular acceleration radiates). This fixes the \emph{characteristic} or \emph{critical} frequency at which most power is concentrated,
-\begin{equation}
+\begin{equation}\label{eq:nuc-full}
 \nu_c=\frac{\omega_c}{2\pi}=\frac{3}{2}\,\gamma^2\,\nu_0\,\sin\theta
 =\frac{3}{4\pi}\,\frac{qB}{mc}\,\gamma^2\sin\theta.
 \end{equation}
@@ -183,32 +187,32 @@ F(x)\simeq
 \sqrt{\dfrac{\pi x}{2}}\,e^{-x}, & x\gg 1,
 \end{cases}
 \]
-yielding the familiar low–frequency behaviour \(P_\nu\propto \nu^{1/3}\) and an exponential suppression above \(\nu_c\). Between these regimes the energy–weighted curve \(\nu P_\nu\) attains a well–defined maximum at \(\nu_{\rm max}\simeq 0.29\,\nu_c\); in practice, one often plots spectra against \(\nu/\nu_c\) and reads the shape off once and for all. 
+yielding the familiar low–frequency behaviour \(P_\nu\propto \nu^{1/3}\) and an exponential suppression above \(\nu_c\). Between these regimes the energy–weighted curve \(\nu P_\nu\) attains a well–defined maximum at \(\nu_{\rm max}\simeq 0.29\,\nu_c\) (see Fig.~\ref{fig:synchro_kernel}); in practice, one often plots spectra against \(\nu/\nu_c\) and reads the shape off once and for all. 
 
 As useful checks: 
 %
 \begin{itemize}
 \item integrating \(P_\nu\) over \(\nu\) returns the Larmor/Liénard total power (and, after pitch–angle averaging, the standard factor \(\langle\sin^{2}\theta\rangle=2/3\)), confirming the kernel’s normalization; 
-\item for back-of-the-envelope estimates, the “delta approximation” \(F(x)\approx \delta(x-1)\) collapses the spectrum to \(P_\nu\simeq P_{\rm s}\,\delta(\nu-\nu_c)\) and immediately reproduces the correct scalings with \(B\), \(\gamma\), and \(\theta\); 
-\item the explicit \(\sin\theta\) reminds us that synchrotron is powered by the \emph{perpendicular} acceleration: no pitch angle, no radiation.
+\item for back-of-the-envelope estimates, the \emphit{delta approximation} collapses the spectrum to \(P_\nu\simeq P_{\rm s}\,\delta(\nu-\nu_c)\) and reproduces the correct scalings with \(B\), \(\gamma\), and \(\theta\); 
+\item the explicit \(\sin\theta\) reminds us that synchrotron is powered by the \emphit{perpendicular} acceleration: no pitch angle, no radiation.
 \end{itemize}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.85\textwidth]{synchrotron_kernel_Fx.pdf}
-\caption{\textbf{Synchrotron kernel $F(x)$ vs. fits.} Exact $F(x)=x\!\int_x^\infty K_{5/3}$ (solid) with low-/high-$x$ asymptotes and the heuristic $1.8\,x^{1/3}e^{-x}$.}
+\includegraphics[width=0.65\textwidth]{synchrotron_kernel_Fx.pdf}
+\caption{The synchrotron kernel $F(x)$ describing the synchrotron spectrum emitted by the single electron. Exact $F(x)=x\!\int_x^\infty K_{5/3}$ (solid) with low-/high-$x$ asymptotes and the heuristic $1.8\,x^{1/3}e^{-x}$.}
 \label{fig:synchro_kernel}
 \end{figure}
 
 \section{Synchrotron emission by an electron population.}
 
-In most sources the radiating electrons span a broad range of energies. The most common modelization is a power–law in Lorentz factor,
+In most sources the radiating electrons span a broad range of energies. The most common modelization of the parent electron population is a power–law in Lorentz factor,
 \[
 n(\gamma)\,d\gamma = n_0\,\gamma^{-p}\,d\gamma,
 \qquad
 \gamma_{\min}<\gamma<\gamma_{\max},
 \]
-with slopes $p\simeq2$–$3$ in many astrophysical environments. 
+where $n$ is the differential number density (L$^{-3}$) and the typical slopes in many astrophysical environments ranges in $p\simeq2$–$3$ . 
 %
 The specific emissivity (power per unit volume and frequency) follows by summing the single–electron spectra over the population and pitch angles,
 \[
@@ -220,44 +224,47 @@ To expose the scalings, we approximate each spectrum by a delta-function at its 
 \[
 P_\nu(\gamma,\theta)\;\simeq\;\langle P_{\rm s}(\gamma)\rangle \; \delta\!\big(\nu-\nu_c(\gamma,\theta)\big),
 \]
-with
-\[
-\langle P_{\rm s}(\gamma)\rangle=\frac{4}{3}\,c\,\sigma_{\rm T}\,U_B\,\gamma^{2},
-\qquad
-\nu_c(\gamma,\theta)=\frac{3}{2}\,\gamma^2\,\nu_0\,\sin\theta,
-\qquad
-\nu_0\equiv \frac{qB}{2\pi m_e c},
-\]
-and $U_B=B^2/(8\pi)$ as before.  
+with \( \langle P_{\rm s}(\gamma)\rangle \) as in~\ref{eq:Ps-avg}, and \( \nu_c(\gamma,\theta) \) as in~\ref{eq:nuc-full}.
+
+%\[
+%\langle P_{\rm s}(\gamma)\rangle=\frac{4}{3}\,c\,\sigma_{\rm T}\,U_B\,\gamma^{2},
+%\qquad
+%\nu_c(\gamma,\theta)=\frac{3}{2}\,\gamma^2\,\nu_0\,\sin\theta,
+%\qquad
+%\nu_0\equiv \frac{qB}{2\pi m_e c},
+%\]
+%and $U_B=B^2/(8\pi)$ as before.  
 
 Inserting the $\delta$–function, and using the identity
-\[
+%
+\begin{equation}
 \delta\big(\nu-\nu_c(\gamma)\big)
 = \frac{\delta\big(\gamma-\gamma_\nu\big)}{\big|\frac{d\nu_c}{d\gamma}\big|_{\gamma_\nu}},
 \qquad
 \gamma_\nu \;\equiv\; \sqrt{\frac{\nu}{\tfrac{3}{2}\nu_0\sin\theta}},
-\]
+\end{equation}
+%
 we obtain
-\begin{align*}
+%
+\begin{equation}
 j_\nu
-&= \int_{\gamma_{\min}}^{\gamma_{\max}}\!\!n_0\,\gamma^{-p}\,
+= \int_{\gamma_{\min}}^{\gamma_{\max}}\!\!n_0\,\gamma^{-p}\,
 \langle P_{\rm s}(\gamma)\rangle\,
-\delta\big(\nu-\nu_c(\gamma)\big)\,d\gamma \\
+\delta\big(\nu-\nu_c(\gamma)\big)\,d\gamma 
 %&\simeq n_0\,
 %\frac{\langle P_{\rm s}(\gamma_\nu)\rangle\,\gamma_\nu^{-p}}
 %     {\left|\dfrac{d\nu_c}{d\gamma}\right|_{\gamma_\nu}} \\
-&= n_0\,
+= n_0\,
 \frac{\tfrac{4}{3}c\sigma_{\rm T}U_B\,\gamma_\nu^{2-p}}
-     {2\,(\tfrac{3}{2}\nu_0\sin\theta)\,\gamma_\nu} \\
+     {2\,(\tfrac{3}{2}\nu_0\sin\theta)\,\gamma_\nu} 
 %&\propto U_B\,\gamma_\nu^{1-p}\,\nu_0^{-1}
 %\;\propto\;
 %U_B\,\nu^{-\frac{p-1}{2}}\,
 %\Big(\nu_0\Big)^{-\frac{p+1}{2}} \\
-&\propto
-B^{\frac{p+1}{2}}\,\nu^{-\frac{p-1}{2}}.
-\end{align*}
+\propto B^{\frac{p+1}{2}}\,\nu^{-\frac{p-1}{2}}~.
+\end{equation}
 
-Thus we recover the synchrotron law:
+Thus we recover the \emphit{synchrotron law}:
 %
 \begin{tcolorbox}
 \[
@@ -289,7 +296,7 @@ In conclusion, an electron index $p$ produces a synchrotron index
 \]
 The amplitude scales as $B^{(p+1)/2}$, not $B^2$, because the characteristic frequency of each electron also shifts with $B$. Replacing the $\delta$-function with the full kernel leaves the $\nu$– and $B$–scalings unchanged and only multiplies $j_\nu$ by a smooth function of $p$.
 
-\begin{table}[h]
+\begin{table}[!t]
 \renewcommand{\arraystretch}{1.25}
 \centering
 \begin{tabular}{@{} lcc @{}}
@@ -309,7 +316,9 @@ The amplitude scales as $B^{(p+1)/2}$, not $B^2$, because the characteristic fre
 \label{tab:source-to-spectrum}
 \end{table}
 
-{\color{red}Galaxy synchrotron spectrum: frequency vs energy / slope}
+\TODO{Add example for Galaxy synchrotron spectrum: frequency vs energy / slope}
+
+\TODO{say something about polarization}
 
 %Typical values of s:
 %Milky Way ∼0.7
