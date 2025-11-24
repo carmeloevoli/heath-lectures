@@ -1,0 +1,120 @@
+% !TEX root = lectures.tex
+
+% theorems
+\makeatother
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+\theoremstyle{definition}
+
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
+%    }
+%]{thmgreenbox}
+
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{Red!70!black}, bodyfont=\normalfont,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=Red, backgroundcolor=Red!5,
+%    }
+%]{thmredbox}
+
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
+%    }
+%]{thmbluebox}
+
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=NavyBlue
+%    }
+%]{thmblueline}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=RawSienna, backgroundcolor=RawSienna!5,
+    }
+]{thmredbox}
+
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+%    numbered=no,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=RawSienna, backgroundcolor=RawSienna!1,
+%    },
+%    qed=\qedsymbol
+%]{thmproofbox}
+
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+%    numbered=no,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
+%    },
+%]{thmexplanationbox}
+
+%\declaretheorem[style=thmgreenbox, name=Definition]{definition}
+%\declaretheorem[style=thmbluebox, numbered=no, name=Exercise]{exercise}
+%\declaretheorem[style=thmredbox, numbered=no, name=Solution]{solution}
+%\declaretheorem[style=thmredbox, name=Proposition]{prop}
+%\declaretheorem[style=thmredbox, name=Theorem]{theorem}
+%\declaretheorem[style=thmredbox, name=Lemma]{lemma}
+%\declaretheorem[style=thmredbox, numbered=no, name=Corollary]{corollary}
+%\declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
+
+%\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+%\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+%\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
+%\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+\declaretheorem[style=thmredbox, numbered=no]{remark}
+
+%\newmdenv[  
+%topline=false,  
+%rightline=false,  
+%bottomline=false,  
+%leftline=true,  
+%linecolor=RawSienna!95!black,  
+%linewidth=3pt,  
+%backgroundcolor=RawSienna!10,  
+%]{remark} 
+
+% new \oset macro:
+\makeatletter
+\newcommand{\oset}[3][1.4ex]{%
+  \mathrel{\mathop{#3}\limits^{
+    \vbox to#1{\kern-2\ex@
+    \hbox{$\scriptstyle#2$}\vss}}}}
+\makeatother
+
+%\newtheorem*{uovt}{UOVT}
+%\newtheorem*{notation}{Notation}
+%\newtheorem*{previouslyseen}{As previously seen}
+%\newtheorem*{problem}{Problem}
+%\newtheorem*{observe}{Observe}
+%\newtheorem*{property}{Property}
+%\newtheorem*{intuition}{Intuition}
+
+
+
