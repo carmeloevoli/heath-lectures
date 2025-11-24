@@ -37,13 +37,13 @@ For an isotropic distribution of pitch angles,
 \langle \sin^{2}\theta\rangle=\frac{1}{4\pi}\int d\Omega\,\sin^{2}\theta=\frac{2}{3}.
 \]
 Averaging \eqref{eq:Ps-single} and using \(U_B=B^{2}/(8\pi)\) and \(\sigma_T=\frac{8\pi}{3}\left(\frac{q^{2}}{m_{e}c^{2}}\right)^{2}\) yields the familiar compact form
-\begin{remark}
+\begin{tcolorbox}
 \begin{equation}
 \langle P_{\rm s}\rangle=\frac{4}{9}\,\frac{q^{4} B^{2}}{m^{2} c^{3}}\,\gamma^{2}
 = \frac{4}{3}\, c\, \sigma_T \left(\frac{m_e}{m}\right)^{2}\gamma^{2}\, U_B\;~.
 \label{eq:Ps-avg}
 \end{equation}
-\end{remark}
+\end{tcolorbox}
 
 Notice that at \emph{fixed particle energy} \(E=\gamma mc^{2}\), one has \(\gamma \propto 1/m\), hence \(P_{\rm s}\propto \gamma^{2}/m^{2}\propto m^{-4}\). This steep mass dependence makes synchrotron losses overwhelmingly important for electrons and positrons compared to nuclei.
 Moreover, the energy loss is proportional to the magnetic field energy density \( U_B \).
@@ -61,11 +61,11 @@ Thus~\emph{higher-energy} electrons cool~\emph{faster}, a key driver of spectral
  
 Numerically, we can estimate for electrons
 %
-\begin{remark}
+\begin{tcolorbox}
 \begin{equation}
 \tau_{\rm loss}(E_e) \simeq 0.3~\text{Myr}~\left( \frac{U_B}{\text{eV}~\text{cm}^{-3}} \right)^{-1} \left( \frac{E}{\rm TeV} \right)^{-1}
 \end{equation}
-\end{remark}
+\end{tcolorbox}
  
 \paragraph{From beaming to the single-electron spectrum.}
 
@@ -91,11 +91,10 @@ Hence the emission angle \(\theta\) satisfies
 =\frac{u'\sin\theta'}{\gamma(\beta c+u'\cos\theta')}.
 \]
 For light (\(u'=c\)) one obtains the standard aberration formula
-\begin{remark}
-\[
+\begin{equation}
 \tan\theta=\frac{\sin\theta'}{\gamma\left(\beta+\cos\theta'\right)}.
-\]
-\end{remark}
+\end{equation}
+
 A photon emitted at \(\theta'=0\) is seen at \(\theta=0\), while a photon emitted at \(\theta'=\pi/2\) is seen at \(\theta\simeq 1/\gamma\) for \(\gamma\gg 1\). Thus emission that is isotropic in the emitter frame becomes forward-beamed in the observer frame—a fact central to synchrotron pulses and to strongly beamed phenomena such as GRB jets.
 
 \begin{figure}[t]
@@ -147,12 +146,12 @@ Equivalently, using \(r_g=v_\perp/\Omega_B\),
 so an ultra-relativistic electron (\(v_\perp\simeq c\)) produces narrow pulses whose width shrinks like \(\gamma^{-3}\) at fixed \(r_g\).
 
 The observer therefore measures a broadband spectrum peaked at
-\begin{remark}
+\begin{tcolorbox}
 \begin{equation}
 \nu_{\rm s}\sim \frac{1}{\Delta t_{\rm obs}}
 \;\sim\; \gamma^{2}\,\nu_0\,,
 \end{equation}
-\end{remark}
+\end{tcolorbox}
 i.e. boosted by \(\gamma^{2}\) relative to the cyclotron frequency \(\nu_0\). The pulses recur every gyroperiod \(T=2\pi/\Omega_B=\gamma/\nu_0\).
 
 \paragraph{Single–electron spectrum (full calculation).}
@@ -169,13 +168,13 @@ Numerically, the critical frequency for a GeV electron in a typical ISM field is
 \end{equation}
 
 The remarkable fact—derived by a full Fourier analysis of the Liénard–Wiechert fields—is that the entire single–electron spectrum takes a compact, universal form:
-\begin{remark}
+\begin{tcolorbox}
 \begin{equation}
 P_\nu(\nu,\gamma,\theta)=\frac{\sqrt{3}\,q^{3}B}{m_e c^{2}}\;\sin\theta\;
-F\!\left(\frac{\nu}{\nu_c}\right) \qquad
+F\!\left(\frac{\nu}{\nu_c}\right) \,, \qquad
 F(x)=x\!\int_{x}^{\infty}\!K_{5/3}(x')\,dx'.
 \end{equation}
-\end{remark}
+\end{tcolorbox}
 Here \(F\) is the \emph{synchrotron kernel} (built from the modified Bessel function \(K_{5/3}\)), which encodes the spectral \emph{shape}, while the prefactor sets the \emph{amplitude} via \(B\) and the radiating component of the acceleration (\(\propto \sin\theta\)). Two asymptotic limits reproduce the canonical look of synchrotron spectra,
 \[
 F(x)\simeq
@@ -201,15 +200,17 @@ As useful checks:
 \label{fig:synchro_kernel}
 \end{figure}
 
-\subsection*{Synchrotron emission by an electron population.}
+\section{Synchrotron emission by an electron population.}
 
-In most sources the radiating electrons span a broad range of energies. A simple and very useful idealization is a power–law in Lorentz factor,
+In most sources the radiating electrons span a broad range of energies. The most common modelization is a power–law in Lorentz factor,
 \[
-n(\gamma)\,d\gamma = n_0\,\gamma^{-q}\,d\gamma,
+n(\gamma)\,d\gamma = n_0\,\gamma^{-p}\,d\gamma,
 \qquad
 \gamma_{\min}<\gamma<\gamma_{\max},
 \]
-with slopes $q\simeq2$–$3$ in many astrophysical environments. The specific emissivity (power per unit volume and frequency) follows by summing the single–electron spectra over the population and pitch angles,
+with slopes $p\simeq2$–$3$ in many astrophysical environments. 
+%
+The specific emissivity (power per unit volume and frequency) follows by summing the single–electron spectra over the population and pitch angles,
 \[
 j_\nu \;=\; \int_{\gamma_{\min}}^{\gamma_{\max}}\!\!\langle P_\nu(\gamma,\theta)\rangle\,n(\gamma)\,d\gamma,
 \]
@@ -217,35 +218,55 @@ where $\langle\cdots\rangle$ denotes an average over pitch angle (isotropic unle
 
 To expose the scalings, we approximate each spectrum by a delta-function at its critical frequency,
 \[
-P_\nu(\gamma,\theta)\;\simeq\;\langle P_{\rm s}\rangle\,\delta\!\big(\nu-\nu_c(\gamma,\theta)\big),
-%\quad
-%\langle P_{\rm s}\rangle=\frac{4}{3}\,c\,\sigma_{\rm T}\,U_B\,\gamma^{2}\,\langle\sin^2\theta\rangle,
-%\quad
-%\nu_c=\frac{3}{2}\,\gamma^2\,\nu_0\,\sin\theta,
+P_\nu(\gamma,\theta)\;\simeq\;\langle P_{\rm s}(\gamma)\rangle \; \delta\!\big(\nu-\nu_c(\gamma,\theta)\big),
 \]
-%with $U_B=B^2/(8\pi)$ and $\nu_0\equiv qB/(2\pi m_ec)$. 
-Inserting the $\delta$–function and using $d\nu/d\gamma=2\,(\tfrac{3}{2}\nu_0\sin\theta)\,\gamma$ gives
+with
 \[
-j_\nu
-= n_0\,\frac{\langle P_{\rm s}\rangle\,\gamma^{1-p}}{2\,(\tfrac{3}{2}\nu_0\langle\sin\theta\rangle)}
-\bigg|_{\gamma=\sqrt{\nu/\,( \tfrac{3}{2}\nu_0\langle\sin\theta\rangle )}}
-\;\propto\;
-U_B\,\nu^{-\frac{p-1}{2}}\,
-\Big(\nu_0\Big)^{-\frac{p+1}{2}}
-\;\propto\;
-B^{\frac{p+1}{2}}\,\nu^{-\frac{p-1}{2}}.
+\langle P_{\rm s}(\gamma)\rangle=\frac{4}{3}\,c\,\sigma_{\rm T}\,U_B\,\gamma^{2},
+\qquad
+\nu_c(\gamma,\theta)=\frac{3}{2}\,\gamma^2\,\nu_0\,\sin\theta,
+\qquad
+\nu_0\equiv \frac{qB}{2\pi m_e c},
 \]
+and $U_B=B^2/(8\pi)$ as before.  
+
+Inserting the $\delta$–function, and using the identity
+\[
+\delta\big(\nu-\nu_c(\gamma)\big)
+= \frac{\delta\big(\gamma-\gamma_\nu\big)}{\big|\frac{d\nu_c}{d\gamma}\big|_{\gamma_\nu}},
+\qquad
+\gamma_\nu \;\equiv\; \sqrt{\frac{\nu}{\tfrac{3}{2}\nu_0\sin\theta}},
+\]
+we obtain
+\begin{align*}
+j_\nu
+&= \int_{\gamma_{\min}}^{\gamma_{\max}}\!\!n_0\,\gamma^{-p}\,
+\langle P_{\rm s}(\gamma)\rangle\,
+\delta\big(\nu-\nu_c(\gamma)\big)\,d\gamma \\
+%&\simeq n_0\,
+%\frac{\langle P_{\rm s}(\gamma_\nu)\rangle\,\gamma_\nu^{-p}}
+%     {\left|\dfrac{d\nu_c}{d\gamma}\right|_{\gamma_\nu}} \\
+&= n_0\,
+\frac{\tfrac{4}{3}c\sigma_{\rm T}U_B\,\gamma_\nu^{2-p}}
+     {2\,(\tfrac{3}{2}\nu_0\sin\theta)\,\gamma_\nu} \\
+%&\propto U_B\,\gamma_\nu^{1-p}\,\nu_0^{-1}
+%\;\propto\;
+%U_B\,\nu^{-\frac{p-1}{2}}\,
+%\Big(\nu_0\Big)^{-\frac{p+1}{2}} \\
+&\propto
+B^{\frac{p+1}{2}}\,\nu^{-\frac{p-1}{2}}.
+\end{align*}
 
 Thus we recover the synchrotron law:
 %
-\begin{remark}
+\begin{tcolorbox}
 \[
 j_\nu \;\propto\; n_0\,B^{\frac{p+1}{2}}\;\nu^{-\frac{p-1}{2}}
 \quad\text{for}\quad
 \nu_{\min}<\nu<\nu_{\max},
 \]
-\end{remark}
-
+\end{tcolorbox}
+%
 where the validity band is set by the lowest and highest electrons that can radiate at $\nu$,
 \[
 \nu_{\min}\equiv \nu_c(\gamma_{\min})\simeq \frac{3}{2}\,\gamma_{\min}^2\,\nu_0\,\langle\sin\theta\rangle,
@@ -262,17 +283,11 @@ Above the band, the high–frequency tail is exponentially suppressed by the ker
 j_\nu \;\propto\; \exp\!\left(-\frac{\nu}{\nu_{\max}}\right)\qquad (\nu\gg \nu_{\max}).
 \]
 
-In conclusion, an electron index $p$ produces a synchrotron index $\alpha\equiv -d\ln j_\nu/d\ln\nu=(p-1)/2$.  
+In conclusion, an electron index $p$ produces a synchrotron index 
+\[
+\alpha\equiv -\frac{d\ln j_\nu}{d\ln\nu}=\frac{p-1}{2}.  
+\]
 The amplitude scales as $B^{(p+1)/2}$, not $B^2$, because the characteristic frequency of each electron also shifts with $B$. Replacing the $\delta$-function with the full kernel leaves the $\nu$– and $B$–scalings unchanged and only multiplies $j_\nu$ by a smooth function of $p$.
-
-\vspace{0.6cm}
-
-%Typical values of s:
-%Milky Way ∼0.7
-%Radio Galaxy 0.7
-%Pulsar -3 to -2
-%AGN -1 to +1
-% Measuring the spectral index of the radiation (s) gives an indication of the distribution of particle energies (p)
 
 \begin{table}[h]
 \renewcommand{\arraystretch}{1.25}
@@ -290,11 +305,18 @@ The amplitude scales as $B^{(p+1)/2}$, not $B^2$, because the characteristic fre
 & \(j_\nu\propto \nu^{-p/2}\) \\[4pt]
 \bottomrule
 \end{tabular}
-\caption{Electron and synchrotron slopes for cooling–dominated steady state (assuming \(b(E)=aE^{2}\), no escape).} 
+\caption{Electron and synchrotron slopes for cooling–dominated steady state (assuming no escape).} 
 \label{tab:source-to-spectrum}
 \end{table}
 
 {\color{red}Galaxy synchrotron spectrum: frequency vs energy / slope}
+
+%Typical values of s:
+%Milky Way ∼0.7
+%Radio Galaxy 0.7
+%Pulsar -3 to -2
+%AGN -1 to +1
+% Measuring the spectral index of the radiation (s) gives an indication of the distribution of particle energies (p)
 
 \begin{comment}
 

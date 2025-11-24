@@ -108,13 +108,13 @@ Multi-messenger observations transform radiative byproducts into diagnostics of 
 
 We begin with a minimal model to show how continuous energy losses lead to a kinetic (continuity) equation for the particle distribution, such that the steady state differs from the injected spectrum, producing observable spectral imprints that diagnose regions of particle acceleration. {\color{red}CITE LONGAIR}.
 
-Let \(N(E,t)\) be the differential \emph{number density} per unit energy (\(\mathrm{L^{-3}\,E^{-1}}\)), and \(Q(E,t)\) the \emph{injection rate density} (\(\mathrm{L^{-3}\,T^{-1}\,E^{-1}}\)). Energy losses are 
+Let \(N(E,t)\) be the differential \emphit{number density} per unit energy (\(\mathrm{L^{-3}\,E^{-1}}\)), and \(Q(E,t)\) the \emphit{injection rate density} (\(\mathrm{L^{-3}\,T^{-1}\,E^{-1}}\)). Energy losses are 
 \[
 \dot{E}\equiv\frac{dE}{dt}=-\,b(E),\qquad b(E)>0,
 \]
 and optional escape is parameterized by a residence time \(\tau_{\rm esc}(E)\).
 
-\paragraph{Continuity equation in energy space.}
+%\paragraph{Continuity equation in energy space.}
 Consider the bin \([E,E+\Delta E]\) at time \(t\). The particles in this bin came, a short time \(\Delta t\) earlier, from \([E',E'+\Delta E']\) with the backward map
 \begin{equation}
 E' = E + b(E)\,\Delta t,
@@ -144,19 +144,19 @@ Insert \eqref{eq:netdeltat} into \eqref{eq:nconservation}, keep only \(\mathcal{
 + N\,\frac{\partial b}{\partial E}\,\Delta t\,\Delta E .
 \end{equation}
 Divide by \(\Delta t\,\Delta E\) and take \(\Delta t\to 0\):
-\begin{remark}
+\begin{tcolorbox}
 \begin{equation}\label{eq:klosses}
 \frac{\partial N}{\partial t}
 =
 \frac{\partial}{\partial E}\!\left[b(E)\,N(E,t)\right] .
 \end{equation}
-\end{remark}
-This is the continuity equation in energy space (with no sources/sink yet): the term \(\partial_E[bN]\) is the energy–space flux that advects particles from high to low energy. The origin of the \(\partial_E b\) piece is the Jacobian \(\Delta E'/\Delta E = 1 + (\partial_E b)\Delta t\).
+\end{tcolorbox}
+This is the continuity equation in energy space (with no sources/sink yet): the term \(\partial_E[bN]\) is the energy–space flux that \emphit{advects} particles from high to low energy. The origin of the \(\partial_E b\) piece is the Jacobian \(\Delta E'/\Delta E = 1 + (\partial_E b)\Delta t\).
 
-\paragraph{Adding sources and sinks.}
-Injection adds \(Q(E,t)\,\Delta E\,\Delta t\) particles to the bin, while escape removes \(\big[N(E,t)/\tau_{\rm esc}(E)\big]\Delta E\,\Delta t\).
+%\paragraph{Adding sources and sinks.}
+Injection adds \(Q(E,t)\,\Delta E\,\Delta t\) particles to the bin, while escape removes \(\left[N(E,t) \tau_{\rm esc}^{-1}(E)\right]\Delta E\,\Delta t\).
 Repeating the same first–order expansion yields the full kinetic (continuity) equation
-\begin{remark}
+\begin{tcolorbox}
 \begin{equation}
 \frac{\partial N}{\partial t}
 =
@@ -165,12 +165,12 @@ Repeating the same first–order expansion yields the full kinetic (continuity) 
 \;+\;Q(E,t)\,.
 \label{eq:kinetic}
 \end{equation}
-\end{remark}
+\end{tcolorbox}
 %
-This equation \emph{describes} how a particle distribution, sourced by \(Q\), evolves under radiative losses and escape. One can obtain~\eqref{eq:kinetic} equivalently by angle– and volume–integrating the phase–space Vlasov equation and projecting onto energy; the bin–mapping derivation above is, however, the most transparent for a first exposure. 
+This equation describes how a particle distribution, sourced by \(Q\), evolves under radiative losses and escape. One can obtain~\eqref{eq:kinetic} equivalently by angle– and volume–integrating the phase–space Vlasov equation and projecting onto energy; the bin–mapping derivation above is, however, the most transparent for a first exposure. 
 
 \paragraph{Equilibrium spectrum with radiative losses.}
-%
+
 In steady state (\(\partial_t N=0\)) the kinetic equation~\eqref{eq:kinetic} solves to
 \begin{equation}
 N(E)=\frac{1}{b(E)}\int_E^\infty Q(E')\,dE'~,
@@ -190,8 +190,8 @@ N(E)
 %
 if escape is competitive with losses.
 
-\paragraph{Monoenergetic injection.}
-For continuous, monoenergetic injection \(Q(E)=Q_0\,\delta(E-E_{\rm inj})\) and no escape, equation~\eqref{eq:ss_noescape} gives
+%\paragraph{Monoenergetic injection.}
+For continuous, \emphit{monoenergetic injection} \(Q(E)=Q_0\,\delta(E-E_{\rm inj})\) and no escape, equation~\eqref{eq:ss_noescape} gives
 %
 \begin{equation}
 N(E)=\frac{Q_0}{b(E)}\,,\quad \text{for}~E < E_{\rm inj}~.
@@ -202,8 +202,8 @@ Thus the steady spectrum below \(E_{\rm inj}\) mirrors the loss law: if \(b(E)\p
 N(E)\propto E^{-m}\,,\quad \text{for}~E<E_{\rm inj}~.
 \]
 
-\paragraph{Spectral steepening.}
-For a power–law injection \(Q(E)=Q_0 E^{-p}\) (\(p>1\)) and losses \(b(E)=b_0 E^{m}\) (\(m>0\)), equation~\eqref{eq:ss_noescape} gives
+%\paragraph{Spectral steepening.}
+For a \emphit{power–law injection} \(Q(E)=Q_0 E^{-p}\) (\(p>1\)) and losses \(b(E)=b_0 E^{m}\) (\(m>0\)), equation~\eqref{eq:ss_noescape} gives
 %
 \begin{equation}\label{eq:nsteepening}
 %\int_E^\infty Q_0 E'^{-p}\,dE'=\frac{Q_0}{p-1}\,E^{-(p-1)} \;\Rightarrow\;
@@ -214,9 +214,9 @@ Thereby radiative cooling steepens the index by \(m-1\) relative to the injectio
 %
 For synchrotron/IC in the Thomson regime (see section~X) \(m=2\): an injected spectrum with \(p=2\) yields an equilibrium spectrum \(N\propto E^{-3}\) in the cooling–dominated range.
 
-\paragraph{The \emph{cooling} break.}
-%
-If particles are continuously injected for a time $t_*$ \emph{without} radiative losses, the spectrum simply accumulates:
+\paragraph{The cooling break.}
+
+If particles are continuously injected for a time $t_*$ \emphit{without} radiative losses, the spectrum simply accumulates:
 \begin{equation}
 N(E)\;\simeq\;Q(E)\,t_{\rm res}(E), 
 \qquad 
@@ -232,7 +232,7 @@ N(E)\;=\;\frac{1}{b(E)}\int_E^\infty Q(E')\,dE'
 \end{equation}
 where $t_{\rm cool}(E)\equiv E/b(E)$ and the approximation holds for smooth $Q$.
 
-The transition between the two regimes occurs at the \emph{cooling break}\footnote{The term “cooling break” is in common use but potentially misleading: the particles are non-thermal and no well-defined temperature exists for the power-law population. What we call “cooling” is really phase-space \emph{advection in energy} due to continuous radiative losses, not thermodynamic cooling of a Maxwellian gas. A more precise term would be “radiative-loss break’’ (or simply “loss break’’). We keep the conventional nomenclature for continuity with the literature.} $E_{\rm c}$ defined by
+The transition between the two regimes occurs at the \emphit{cooling break}\footnote{The term “cooling break” is in common use but potentially misleading: the particles are non-thermal and no well-defined temperature exists for the power-law population. What we call “cooling” is really phase-space \emph{advection in energy} due to continuous radiative losses, not thermodynamic cooling of a Maxwellian gas. A more precise term would be “radiative-loss break’’ (or simply “loss break’’). We keep the conventional nomenclature for continuity with the literature.} $E_{\rm c}$ defined by
 \[
 t_{\rm cool}(E_{\rm c})\;\simeq\;\min\!\left[t_*,\,\tau_{\rm esc}(E_{\rm c})\right].
 \]
@@ -277,27 +277,27 @@ This inversion only exists if the bracket is positive. For $m>1$ this implies
 \begin{equation}
 E^{1-m} > (m-1)\,b_0\,t \;\;\rightarrow\;\; E < E_{\rm cut}(t)~,
 \end{equation}
-with the \emph{cooling cutoff}
-\begin{remark}
+with the \emphit{cooling cutoff}:
+\begin{tcolorbox}
 \begin{equation}
 E_{\rm cut}(t)= \left[(m-1)\,b_0\,t\right]^{-1/(m-1)}\,, \qquad (m=2:\;E_{\rm cut}=1/(b_0 t))~.
 \end{equation}
-\end{remark}
+\end{tcolorbox}
 
 Physically, the spectrum is emptied above $E_{\rm cut}(t)$ because, for super-linear losses, particles traverse those energies in a \emph{finite} time. Once the elapsed time exceeds the passage time to cool from $\infty$ down to $E$,
 %\[
 %t_{\rm pass}(E)\;=\;\int_{E}^{\infty}\frac{dE'}{b(E')}\;=\;\frac{1}{(m-1)\,b_0\,E^{\,m-1}}\quad (m>1),
 %\]
-no initial energy $E_i$ exists that could have cooled to $E$ by time $t$ ($\rightarrow$ the inversion $E_i(E,t)$ has no solution), hence $N(E,t)=0$ for $E\ge E_{\rm cut}(t)$. Under \emph{continuous} injection, this sharp cutoff is replaced by a \emph{cooling break}; for a \emph{single burst} it remains a time-dependent high-energy cutoff at $E_{\rm cut}(t)$.
+no initial energy $E_i$ exists that could have cooled to $E$ by time $t$ ($\rightarrow$ the inversion $E_i(E,t)$ has no solution), hence $N(E,t)=0$ for $E\ge E_{\rm cut}(t)$. Under \emphit{continuous} injection, this sharp cutoff is replaced by a \emphit{cooling break}; for a \emphit{single burst} it remains a time-dependent high-energy cutoff at $E_{\rm cut}(t)$.
 
 \paragraph{Takeaway.}
 Radiative losses advect particles through energy space, leading to the continuity (kinetic) equation 
 $\partial_t N=\partial_E[b(E)N]-N/\tau_{\rm esc}+Q$.
-In steady state with no escape, the \emph{master formula} is 
+In steady state with no escape, the \emphit{master formula} is 
 $N(E)=b(E)^{-1}\!\int_E^\infty Q(E')\,dE'$.
 A $\delta$–function injection yields $N(E)=Q_0/b(E)$ for $E<E_{\rm inj}$ and zero above—i.e. a loss-shaped spectrum with a sharp cutoff for a burst and a $1/b$ tail for continuous injection. 
 For a power-law injection $Q\propto E^{-p}$ and losses $b\propto E^{m}$, the cooled steady state is $N\propto E^{-(p+m-1)}$, i.e. a spectral steepening by $\Delta \alpha=m-1$ (synch/IC in Thomson: $m=2\Rightarrow +1$). 
-The \emph{cooling break} marks the transition where $t_{\rm cool}(E)=E/b(E)$ becomes the shortest timescale: 
+The cooling break marks the transition where $t_{\rm cool}(E)=E/b(E)$ becomes the shortest timescale: 
 $t_{\rm cool}(E_{\rm c})\simeq \min[t_*,\tau_{\rm esc}(E_{\rm c})]$.
 Below $E_{\rm c}$ the spectrum tracks injection (reservoir regime), above it the spectrum reflects energy-loss advection. 
 Locating $E_{\rm c}$ thus constrains a combination of age/escape and the target fields that set $b(E)$, and maps directly to observable photon/neutrino breaks. % (e.g., a $+0.5$ change in synchrotron photon index for $m=2$).

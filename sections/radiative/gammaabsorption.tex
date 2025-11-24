@@ -1,5 +1,454 @@
-% !TEX root = ../lectures.tex
-\section{Gamma-ray Absorption}
+% !TEX root = ../../lectures.tex
+\section{Pair production and gamma-ray absorption}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/aa21639-13-fig6.pdf}
+\caption{$\gamma$-ray horizon for different EBL models. Some lower limits from AGN spectra measurements are shown~\cite{HESS2013aa}.}
+\end{figure}
+
+High-energy $\gamma$ rays emitted by distant sources (AGN, GRBs, star-forming galaxies) do not travel through a vacuum. Along their way, they encounter photons of the diffuse extragalactic radiation fields: the cosmic microwave background (CMB) and the extragalactic background light (EBL) from integrated starlight and dust emission. 
+
+{\color{red}Add a plot with photon backgrounds in eV cm-3}
+
+When a $\gamma$ ray of energy $E_\gamma$ interacts with a background photon of energy $\epsilon$, it can produce an $e^+e^-$ pair,
+%
+\[
+\gamma + \gamma \;\rightarrow\; e^+ + e^-,
+\]
+%
+provided that the center-of-mass (CoM) energy exceeds the rest mass of the pair. This process leads to \emph{attenuation} of the primary $\gamma$-ray flux, and defines an effective ``$\gamma$-ray horizon'' as shown in Fig.~\ref{fig:aa21639-13-fig6}.
+
+\paragraph{Threshold condition and target photon energies.}
+
+The pair-production kinematics are controlled by the Lorentz-invariant squared CoM energy,
+%
+\[
+s = (P_a + P_b)^2 = m_a^2 + m_b^2 + 2(E_a E_b - \vb p_a \cdot \vb p_b).
+\]
+%
+For two photons ($m_a = m_b = 0$, $|\vb p| = E/c$) with energies $E_\gamma$ and $\epsilon$ and angle $\theta$ between their momenta,
+%
+\[
+s = 2 E_\gamma \epsilon (1 - \cos\theta),
+\]
+%
+in units where $c=1$. The threshold for producing an $e^+e^-$ pair is when the CoM energy is just enough to create two electrons at rest in the CoM frame,
+%
+\[
+s_{\rm th} = (2m_e c^2)^2 = 4 m_e^2 c^4.
+\]
+%
+Thus the threshold condition is
+%
+\begin{equation}
+2 E_\gamma \epsilon (1 - \cos\theta) \;\ge\; 4 m_e^2 c^4.
+\label{eq:pair-thr-general}
+\end{equation}
+For a head-on collision ($\theta = \pi$, $1 - \cos\theta = 2$),
+%
+\[
+4 E_\gamma \epsilon \;\ge\; 4 m_e^2 c^4
+\quad\Rightarrow\quad
+E_\gamma \epsilon \;\ge\; m_e^2 c^4,
+\]
+or
+%
+\begin{tcolorbox}
+\begin{equation}
+E_\gamma \;\gtrsim\; \frac{(m_e c^2)^2}{\epsilon}.
+\label{eq:pair-thr-headon}
+\end{equation}
+\end{tcolorbox}
+
+As very useful rule-of-thumb, high-energy $\gamma$-rays mainly interact with target photons whose energy satisfies
+%
+\[
+E_\gamma (\text{TeV})\,\epsilon(\text{eV}) \;\gtrsim\; 0.26.
+\]
+
+For example:
+\TODO{TO BE CHECKED}
+\begin{itemize}
+\item A $1$~TeV photon ($E_\gamma=10^{12}$~eV) interacts at threshold with photons of \(  \epsilon_{\rm th} \simeq 0.26~\text{eV} \), i.e.\ near-infrared photons.
+\item A $10$~TeV photon primarily interacts with optical photons ($\epsilon_{\rm th} \sim \text{few eV}$).
+\item A $100$~GeV photon interacts most efficiently with UV photons ($\epsilon_{\rm th} \sim \mathcal O (10~\text{eV})$).
+\end{itemize}
+
+\paragraph{Center-of-mass velocity and cross-section.}
+
+To describe the pair-production cross-section, it is convenient to introduce the velocity $\beta^*$ of the produced electron (or positron) in the CoM frame. In that frame, the electron and positron have equal and opposite momenta, and each has energy
+%
+\[
+E_e^* = \gamma^* m_e c^2,
+\]
+%
+with
+%
+\[
+\gamma^* = \frac{1}{\sqrt{1-\beta^{*2}}}.
+\]
+The total CoM energy is
+%
+\[
+\sqrt{s} = 2 E_e^* = 2 \gamma^* m_e c^2
+\quad\Rightarrow\quad
+\gamma^* = \frac{\sqrt{s}}{2m_e c^2}.
+\]
+From this,
+%
+\[
+\beta^* = \sqrt{1 - \frac{1}{\gamma^{*2}}}
+= \sqrt{1 - \frac{4 m_e^2 c^4}{s}}
+= \sqrt{1 - \frac{2 m_e^2 c^4}{E_\gamma \epsilon (1-\cos\theta)}}.
+\]
+
+The exact $\gamma\gamma\to e^+e^-$ cross-section in terms of $\beta^*$ is derived by QED~\TODO{add citation}:
+%
+\begin{equation}
+\sigma_{\gamma \gamma}(\beta^*) 
+= \frac{3}{16} \sigma_{\rm T}\, (1-\beta^{*2})
+\left[
+2 \beta^* (\beta^{*2}-2) 
++ (3-\beta^{*4}) \ln \left( \frac{1+\beta^*}{1-\beta^*} \right)
+\right],
+\end{equation}
+%
+where $\sigma_{\rm T}$ is the Thomson cross-section. The threshold corresponds to $\beta^* \to 0$, while the ultra-relativistic limit of the pair corresponds to $\beta^* \to 1$.
+
+A few key features of $\sigma_{\gamma\gamma}$:
+\begin{itemize}
+\item \emph{Near threshold} ($\beta^* \ll 1$), the cross-section rises steeply from zero.
+\item It reaches a maximum value of order
+\[ \sigma_{\gamma\gamma}^{\rm max} \simeq 0.2\text{--}0.3\,\sigma_{\rm T}~, \]
+for CoM energies a few times above threshold (\(s \sim \text{few}\times 4m_e^2 c^4\)).
+\item In the \emph{high-energy limit} ($\beta^* \to 1$, $s\gg 4m_e^2 c^4$), the cross-section falls off roughly as $1/s$, i.e.\ as the inverse of the product $E_\gamma\epsilon$. A standard asymptotic expression is
+\begin{equation}
+\sigma_{\gamma\gamma}(\beta^*) \simeq \frac{3}{8} \frac{\sigma_{\rm T}}{\gamma^{*2}}
+\left[ \ln(4\gamma^{*2}) - 1\right] 
+\propto \frac{1}{\gamma^{*2}} 
+\simeq \frac{1}{E_\gamma \epsilon(1-\cos\theta)}.
+\end{equation}
+\end{itemize}
+
+Physically, this means that $\gamma$ rays can in principle interact with all target photons above the threshold, but the interaction is \emphit{most efficient} when the product $E_\gamma \epsilon$ is only a few times the threshold value. At much higher energies, the cross-section shrinks, and the Universe becomes more transparent again.
+
+\TODO{do this} This property combined with that one...
+A particularly useful rule of thumb: a $1$~TeV photon interacts \emphit{most efficiently} with target photons of energy $\epsilon \sim 1$~eV (optical/near-IR), not with much higher-energy photons, even though they are well above threshold. This “near-threshold preference” is what ties the TeV $\gamma$-ray horizon so directly to the EBL spectrum. This is why TeV $\gamma$-rays are good probes of the infrared/optical EBL: the EBL photons provide exactly the right energies to trigger pair production and evenutally absorb primary photons on cosmological scales.
+
+\paragraph{Optical depth and the $\gamma$-ray horizon.}
+
+The cumulative effect of $\gamma\gamma$ interactions \emphit{along the line of sight} is encoded in the optical depth $\tau_{\gamma\gamma}(E_\gamma)$, defined as the integral over path length, angles, and target photon energies:
+%
+\begin{equation}
+\tau_{\gamma\gamma}(E_\gamma) 
+= \int_0^R \!\!dx 
+\int_{4\pi} d\Omega\,(1-\cos\theta)
+\int_{\epsilon_{\rm th}}^\infty\! d\epsilon\,
+n_\gamma(\epsilon,\Omega,x)\,
+\sigma_{\gamma\gamma}(E_\gamma,\epsilon,\cos\theta).
+\end{equation}
+%
+Here:
+\begin{itemize}
+  \item $x$ is the distance along the line of sight (or, in cosmological applications, a redshift coordinate),
+  \item $n_\gamma(\epsilon,\Omega,x)$ is the differential number density of background photons at position $x$ with energy $\epsilon$ and direction $\Omega$,
+  \item \TODO{capire meglio, chi e theta}$(1 - \cos\theta)$ accounts for the angular dependence of the CoM energy,
+  \item $\epsilon_{\rm th}$ is the local threshold energy from Eq.~\eqref{eq:pair-thr-general}.
+\end{itemize}
+
+The observed flux is then attenuated as
+%
+\[
+F_{\rm obs}(E_\gamma) = F_{\rm int}(E_\gamma)\,
+\exp\!\big[-\tau_{\gamma\gamma}(E_\gamma)\big],
+\]
+%
+where $F_{\rm int}$ is the intrinsic source spectrum.
+
+However, an order-of-magnitude $\gamma\gamma$ optical depth can be estimated photon from a source at cosmological distance using the simple approximation
+\[
+\tau_{\gamma\gamma} \;\sim\; \sigma_{\gamma\gamma}\,n_\gamma\,L \, .
+\]
+Assuming a TeV photon, Using the head-on threshold condition for $\gamma\gamma\to e^+e^-$, at the dominant target photons have energies
+\[
+\epsilon_{\rm th} \simeq 0.26~{\rm eV}\,,
+\]
+i.e.\ in the optical/near-IR band. Assume that the extragalactic background light (EBL) around $\epsilon\sim 1~{\rm eV}$ has a typical \emph{energy density}
+\[
+u_{\rm EBL} \sim 10^{-3}~{\rm eV\,cm^{-3}}
+\]
+(comparable to a few percent of the CMB energy density).
+
+The exact pair-production cross-section $\sigma_{\gamma\gamma}(s)$ peaks at a value
+\[
+\sigma_{\gamma\gamma}^{\rm max} \sim 0.1\,\sigma_{\rm T}.
+\]
+%For an order-of-magnitude estimate, take
+%\[
+%\sigma_{\gamma\gamma} \;\sim\; 0.1\,\sigma_{\rm T},
+%\qquad
+%\sigma_{\rm T} = 6.65\times 10^{-25}~{\rm cm^2}.
+%\]
+
+Therefore an optical depth \tau \sim 1 is obtained for sources at a distance L \sim ... which in a  flat $\Lambda$CDM cosmology, the proper distance to $z\sim 1$ 
+
+For extragalactic sources at redshift $z$, one typically defines the \emph{$\gamma$-ray horizon} $E_{\gamma,\,\rm hor}(z)$ as the energy at which $\tau_{\gamma\gamma}(E_\gamma,z) = 1$. For $E_\gamma \gg E_{\gamma,\,\rm hor}(z)$ the flux is exponentially suppressed. Different EBL models predict different $\tau_{\gamma\gamma}(E_\gamma,z)$ curves; comparisons with AGN spectra yield constraints on the EBL, as illustrated in Fig.~\ref{fig:aa21639-13-fig6}.
+
+%\begin{exercise}[
+
+%Order-of-magnitude $\gamma\gamma$ optical depth from a source at $z\sim 1$
+
+\end{document}
+
+An Order-of-magnitude $\gamma\gamma$ optical depth can be estimates the $\gamma\gamma$ optical depth for a TeV photon from a source at cosmological distance using the simple approximation
+\[
+\tau_{\gamma\gamma} \;\sim\; \sigma_{\gamma\gamma}\,n_\gamma\,L \, .
+\]
+
+\paragraph{(a) Threshold target photons.}
+Consider a $\gamma$ ray of observed energy $E_\gamma = 1~{\rm TeV}$.
+Using the head-on threshold condition for $\gamma\gamma\to e^+e^-$,
+\[
+E_\gamma\,\epsilon_{\rm th} \simeq (m_e c^2)^2 \, ,
+\]
+show that the dominant target photons have energies
+\[
+\epsilon_{\rm th} \simeq 0.26~{\rm eV}\,,
+\]
+i.e.\ in the optical/near-IR band.  (Numerically evaluate using
+$m_e c^2 = 0.511~{\rm MeV}$.)
+
+\paragraph{(b) Number density of target photons.}
+Assume that the extragalactic background light (EBL) around $\epsilon\sim 1~{\rm eV}$ has a typical \emph{energy density}
+\[
+u_{\rm EBL} \sim 10^{-3}~{\rm eV\,cm^{-3}}
+\]
+(comparable to a few percent of the CMB energy density).
+Using $u_{\rm EBL} \simeq n_\gamma\,\epsilon$ with $\epsilon\sim 1~{\rm eV}$, estimate the corresponding photon number density $n_\gamma$ of the target EBL photons.
+
+\paragraph{(c) Cross-section near threshold.}
+The exact pair-production cross-section $\sigma_{\gamma\gamma}(s)$ peaks at a value
+\[
+\sigma_{\gamma\gamma}^{\rm max} \sim 0.1\text{--}0.3\,\sigma_{\rm T}.
+\]
+For an order-of-magnitude estimate, take
+\[
+\sigma_{\gamma\gamma} \;\sim\; 0.1\,\sigma_{\rm T},
+\qquad
+\sigma_{\rm T} = 6.65\times 10^{-25}~{\rm cm^2}.
+\]
+Compute $\sigma_{\gamma\gamma}$ numerically in cm$^2$.
+
+\paragraph{(d) Distance to a $z\sim 1$ source.}
+For a flat $\Lambda$CDM cosmology, the proper distance to $z\sim 1$ is of order a few Gpc. For an order-of-magnitude estimate, take
+\[
+L \;\sim\; 3~{\rm Gpc}
+\qquad\Rightarrow\qquad
+L \sim 10^{28}~{\rm cm}.
+\]
+(You may check that $1~{\rm Gpc} \simeq 3\times 10^{27}~{\rm cm}$.)
+
+\paragraph{(e) Optical depth and transparency.}
+Using
+\[
+\tau_{\gamma\gamma}(E_\gamma) \sim \sigma_{\gamma\gamma}\,n_\gamma\,L,
+\]
+combine your estimates from parts (b)--(d) and compute $\tau_{\gamma\gamma}$ for a $1$~TeV photon from a source at $z\sim 1$.
+
+\begin{itemize}
+  \item Is $\tau_{\gamma\gamma}\ll 1$, $\sim 1$, or $\gg 1$?
+  \item Would you expect the Universe to be transparent or opaque to such photons?
+\end{itemize}
+
+\paragraph{(f) Sensitivity to assumptions.}
+Briefly discuss how your estimate would change if:
+\begin{itemize}
+  \item the EBL energy density were larger/smaller by a factor of $3$,
+  \item the effective cross-section were closer to $0.2\,\sigma_{\rm T}$ instead of $0.1\,\sigma_{\rm T}$.
+\end{itemize}
+Would these changes affect your qualitative conclusion (transparent vs opaque)?
+
+
+Optical depth for $\gamma\gamma$ absorption from a source at $z\simeq 1$
+
+In this exercise you will estimate the optical depth for $\gamma\gamma$ absorption,
+$\tau_{\gamma\gamma}(E_0,z_0)$, for gamma rays emitted by a source at cosmological
+redshift $z_0\simeq 1$ and observed with energy $E_0$.
+
+\paragraph{1. General expression.}
+Consider a flat $\Lambda$CDM cosmology with
+\[
+H_0 = 70~{\rm km\,s^{-1}\,Mpc^{-1}},\qquad
+\Omega_m = 0.3,\qquad
+\Omega_\Lambda = 0.7.
+\]
+(a) Show that the $\gamma\gamma$ optical depth for a photon observed with energy $E_0$
+from a source at redshift $z_0$ can be written as
+\[
+\tau_{\gamma\gamma}(E_0,z_0)
+= \int_0^{z_0} dz\,
+\frac{dl}{dz} \int_{-1}^{1} d\mu\,\frac{1-\mu}{2}
+\int_{\epsilon_{\rm th}}^\infty d\epsilon\,
+n_\gamma(\epsilon,z)\,
+\sigma_{\gamma\gamma}\!\big(s(E(z),\epsilon,\mu)\big),
+\]
+where
+\[
+\frac{dl}{dz} = \frac{c}{H_0}\,
+\frac{1}{(1+z)\sqrt{\Omega_m(1+z)^3+\Omega_\Lambda}}
+\]
+is the line element, $E(z)=E_0(1+z)$ is the gamma-ray energy at redshift $z$,
+$\mu=\cos\theta$ is the angle between the $\gamma$ ray and the target photon, and
+$s=2E\epsilon(1-\mu)$ is the squared CoM energy (in units with $c=1$). Derive the
+threshold condition
+\[
+\epsilon_{\rm th}(E,\mu,z)
+= \frac{(m_e c^2)^2}{E(z)(1-\mu)},
+\]
+starting from the condition $s\ge 4m_e^2c^4$.
+
+\paragraph{2. Toy EBL model and simplifying assumptions.}
+To make progress, adopt the following \emph{highly simplified} model for the
+extragalactic background light (EBL):
+
+\begin{itemize}
+\item[(i)] The target photon spectrum is monochromatic in energy and isotropic in angle:
+\[
+n_\gamma(\epsilon,z) = n_0\,(1+z)^3\,\delta(\epsilon-\epsilon_0),
+\]
+with present-day number density $n_0 = 10^{-2}~{\rm cm^{-3}}$ at $\epsilon_0=1~{\rm eV}$.
+\item[(ii)] The cross-section is approximated as a ``box'':
+\[
+\sigma_{\gamma\gamma}(s) \simeq
+\begin{cases}
+\sigma_{\rm max} \simeq 0.2\,\sigma_{\rm T}, & s \ge 4 m_e^2 c^4, \\
+0, & s < 4 m_e^2 c^4.
+\end{cases}
+\]
+\end{itemize}
+
+(b) Using this toy model, show that the $\epsilon$-integral reduces to a condition on
+the angle $\mu$:
+\[
+\epsilon_0 \ge \epsilon_{\rm th}(E(z),\mu,z)
+\quad\Longleftrightarrow\quad
+1-\mu \ge \frac{(m_e c^2)^2}{E(z)\,\epsilon_0}.
+\]
+Interpret this condition in terms of which collision angles contribute to the
+absorption at a given $E(z)$.
+
+(c) For fixed $z$ and $E(z)$, define $\mu_{\max}(z)$ as the largest value of $\mu$
+that still allows pair production:
+\[
+\mu_{\max}(z) = 1 - \frac{(m_e c^2)^2}{E(z)\,\epsilon_0}.
+\]
+Show that the angular integral reduces to
+\[
+\int_{-1}^1 d\mu\,\frac{1-\mu}{2}\,
+\Theta\!\big(\mu_{\max}(z)-\mu\big)
+= \frac{1}{2}
+\int_{-1}^{\mu_{\max}(z)} (1-\mu)\,d\mu,
+\]
+and perform the integral explicitly in terms of $\mu_{\max}(z)$.
+
+\paragraph{3. Redshift dependence and energy scaling.}
+
+(d) Combining parts (a)--(c), show that the optical depth in this toy model can be
+written as
+\[
+\tau_{\gamma\gamma}(E_0,z_0)
+\simeq \sigma_{\rm max}\,n_0\,\frac{c}{H_0}\,
+\int_0^{z_0} dz\,
+\frac{(1+z)^2}{\sqrt{\Omega_m(1+z)^3+\Omega_\Lambda}}\,
+\mathcal{A}\!\left[\frac{E_0(1+z)\,\epsilon_0}{(m_e c^2)^2}\right],
+\]
+where $\mathcal{A}(y)$ is a dimensionless angular factor you should derive explicitly
+from part (c), and $y$ encodes how far above threshold the interaction is.
+
+(e) Evaluate $\tau_{\gamma\gamma}(E_0,z_0)$ numerically (or by a rough analytical
+estimate) for:
+\begin{itemize}
+  \item $z_0 = 1$ and $E_0 = 100~{\rm GeV}$,
+  \item $z_0 = 1$ and $E_0 = 1~{\rm TeV}$.
+\end{itemize}
+In each case, first check whether the head-on threshold condition
+$E_0(1+z)\,\epsilon_0 \gtrsim (m_e c^2)^2$ is satisfied over a significant fraction of
+the redshift range. (You may approximate the redshift integral by evaluating the
+integrand at a representative $z\simeq z_0/2$ and multiplying by an effective path
+length.)
+
+(f) Compare your estimates to the heuristic statement that the Universe becomes
+optically thick ($\tau_{\gamma\gamma}\gtrsim 1$) to TeV photons from sources at
+$z\sim 1$. Does your toy model produce optical depths of the right order of
+magnitude? Discuss at least two limitations of the model (e.g.\ monocromatic EBL,
+neglect of EBL evolution, box-shaped cross-section) and how each might change
+$\tau_{\gamma\gamma}(E_0,z_0)$ in a more realistic calculation.
+
+\subsection{Electromagnetic cascades}
+
+Pair production does not simply \emph{destroy} $\gamma$ rays: it transfers their energy into relativistic $e^\pm$ pairs. These pairs, in turn, radiate via inverse Compton scattering on the same background photon fields (CMB, EBL), generating secondary $\gamma$ rays, which can again undergo pair production if sufficiently energetic. This feedback loop gives rise to \emph{electromagnetic (EM) cascades}.
+
+\paragraph{Basic cascade cycle.}
+
+Consider a primary $\gamma$ ray of energy $E_{\gamma,0}$ injected into an isotropic photon background:
+\begin{enumerate}
+  \item \textbf{Pair production:} 
+  \[
+  \gamma(E_{\gamma,0}) + \gamma_{\rm b}(\epsilon) \to e^+ + e^-.
+  \]
+  Typically, the $e^\pm$ share the energy roughly equally, so each has Lorentz factor
+  \[
+  \gamma_e \sim \frac{E_{\gamma,0}}{2 m_e c^2}.
+  \]
+  \item \textbf{Inverse Compton:} Each $e^\pm$ up-scatters background photons via IC. In the Thomson regime (with respect to the background photons), the characteristic energy of the up-scattered photons is
+  \[
+  E_\gamma^{\rm (IC)} \sim \frac{4}{3}\,\gamma_e^2\,\epsilon_{\rm b},
+  \]
+  where $\epsilon_{\rm b}$ is a typical background photon energy (e.g.\ CMB or EBL).
+  \item \textbf{Further pair production:} If $E_\gamma^{\rm (IC)}$ is still above the pair-production threshold with the background, the newly produced $\gamma$ rays can again convert into $e^+e^-$, and the cycle repeats.
+\end{enumerate}
+
+This chain continues until the photon energies fall below the pair-production threshold on the dominant background. At that point, the cascade ``dies out'' and the remaining photons can propagate freely to the observer.
+
+\paragraph{Characteristic energies and universality.}
+
+Consider a primary $\gamma$ ray interacting with the CMB (mean photon energy $\epsilon_{\rm CMB}\sim 6\times 10^{-4}$~eV). For very high primary energies, the first generation of pairs is extremely energetic, and the IC scattering may enter the Klein--Nishina regime. However, after a few generations, the cascade typically settles into the Thomson regime for IC on the CMB, with a characteristic energy where
+%
+\[
+E_\gamma^{\rm (IC)} \lesssim E_{\rm thr}^{(\gamma\gamma)}(\epsilon_{\rm CMB}).
+\]
+Below this energy, further pair production on the CMB is suppressed, and the cascade saturates. The emergent spectrum tends to a quasi-universal power law (for 1D cascades in a homogeneous background, $dN_\gamma/dE_\gamma \propto E_\gamma^{-1.5}$ is a classic result), largely independent of the detailed shape of the injected spectrum, as long as the injection is sufficiently high in energy.
+
+In more realistic situations (expansion, evolving backgrounds, magnetic fields) the exact spectral shape is modified, but the key qualitative picture remains:
+\begin{itemize}
+  \item the cascade \emph{reprocesses} very high-energy photons into a broader band of lower-energy photons,
+  \item the total energy is conserved (up to adiabatic losses), so the cascade spectrum has a characteristic hardness,
+  \item the final $\gamma$ rays form part of the diffuse extragalactic $\gamma$-ray background.
+\end{itemize}
+
+\paragraph{Role of magnetic fields.}
+
+Intergalactic magnetic fields influence EM cascades primarily by deflecting the $e^\pm$ pairs:
+\begin{itemize}
+  \item If the magnetic field is extremely weak, the pairs remain nearly collinear with the original $\gamma$ ray, and the cascade develops in a narrow cone (\emph{1D cascade}). The secondary $\gamma$ rays point back to the source.
+  \item If the magnetic field is stronger, the pairs are significantly deflected before they up-scatter photons. The cascade becomes \emph{extended} and \emph{delayed}: the secondary $\gamma$ rays arrive over a broader angular region and a longer timescale. This can wash out the point-like appearance of the source and redistribute its power into a very extended halo.
+\end{itemize}
+Thus, observations of extended $\gamma$-ray halos and time-delayed emission from flaring sources can, in principle, constrain intergalactic magnetic fields.
+
+\paragraph{Connection to the $\gamma$-ray horizon.}
+
+From the point of view of an observer, pair production and IC cascades together define how the Universe ``filters'' and ``reprocesses'' high-energy photons:
+\begin{itemize}
+  \item At very high energies, $\gamma$ rays are efficiently absorbed ($\tau_{\gamma\gamma}\gg1$) and their energy is re-emitted at lower energies via cascades.
+  \item Near the $\gamma$-ray horizon, one sees a transition where the intrinsic source spectrum and the cascade component can both contribute.
+  \item At sufficiently low energies, the Universe is transparent and the spectrum reflects the original source plus any cascade contribution accumulated along the way.
+\end{itemize}
+In this sense, pair production and EM cascades are the $\gamma$-ray analogue of radiative transfer with absorption and re-emission: they reshape the observed spectrum and angular distribution, but the fundamental physics is again just Compton scattering and pair creation/annihilation in different guises.
+
+\end{document}
+
+\section{Pair production and Gamma-ray Absorption}
 
 \begin{figure}[t]
 \centering
@@ -59,12 +508,12 @@ The optical depth for \(\gamma\gamma\) absorption, \(\tau_{\gamma\gamma}(E_\gamm
 \tau_{\gamma\gamma}(E_\gamma) = \int_0^R \int_{4\pi} d\Omega (1-\cos\theta) \int_{\epsilon_{\rm th}}^\infty d\epsilon n_\gamma(\epsilon, \Omega, x) \sigma_{\gamma\gamma}(E_\gamma, \epsilon, \cos\theta)
 \]
 
+\subsection{Electromagnetic cascades}
+
+TO BE DONE
+
 %%% PLOT WITH BACKGROUND FIELDS
 
 %%% PLOT WITH SIGMA(X)
 
 %%% PLOT WITH OPTICAL DEPTH
-
-\subsection{Electromagnetic cascades}
-
-TO BE DONE
