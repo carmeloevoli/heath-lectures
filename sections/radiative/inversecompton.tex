@@ -319,7 +319,9 @@ Since $f$ is invariant, $n_\gamma(\epsilon)\, d\epsilon$ must transform in the s
 \label{eq:n-over-epsilon-invariant}
 \end{equation}
 %
-i.e.\ $n/\epsilon$ is invariant under Lorentz transformations.%\footnote{This is closely related to the invariance of $I_\nu/\nu^3$ in radiative transfer.}
+i.e.\ $n/\epsilon$ is invariant under Lorentz transformations.
+
+\TODO{add a formal derivation of this?} 
 
 Next we use the transformation law for photon energy. For a photon of LAB-frame energy $\epsilon_i$ propagating at angle $\theta$ with respect to the electron velocity $\beta$, the energy in the electron rest frame is
 %
@@ -332,7 +334,7 @@ where $\gamma = (1-\beta^2)^{-1/2}$ as usual. Combining~\eqref{eq:Uprime-basic}â
 
 \paragraph{Step 3: Expressing $U'_{\rm rad}$ in terms of $U_{\rm rad}$.}
 
-Starting from Eq.~\eqref{eq:Uprime-basic}, we use Eq.~\eqref{eq:n-over-epsilon-invariant} to replace $n'_\gamma(\epsilon'_i)\, d\epsilon'_i$:
+Starting from~\eqref{eq:Uprime-basic}, we use~\eqref{eq:n-over-epsilon-invariant} to replace $n'_\gamma(\epsilon'_i)\, d\epsilon'_i$:
 %
 \[
 n'_\gamma(\epsilon'_i)\, d\epsilon'_i 
@@ -395,7 +397,7 @@ Physically, this reflects the fact that, in its rest frame, the electron sees th
 
 \paragraph{Step 4: The IC power and its synchrotron twin.}
 
-Plugging this result into Eq.~\eqref{eq:P-lab-equal-Pprime}, the angle-averaged Compton-scattered power (in the LAB frame) is
+Plugging this result into~\eqref{eq:P-lab-equal-Pprime}, the angle-averaged Compton-scattered power (in the LAB frame) is
 %
 \begin{equation}
 \frac{dE}{dt} 
@@ -403,7 +405,7 @@ Plugging this result into Eq.~\eqref{eq:P-lab-equal-Pprime}, the angle-averaged 
 = \sigma_{\rm T}\, c\, \gamma^2 \left( 1 + \frac{\beta^2}{3} \right) U_{\rm rad} \, .
 \end{equation}
 
-However, this is still not quite the \emph{net} power lost by the electron. Part of this power corresponds to the \emph{scattered} radiation that would have existed even if the photon energies had not changed (i.e.\ if scattering were strictly elastic in the LAB). The actual energy lost by the electron equals the increase in the photon energy flux:
+However, this is still not quite the \emphit{net} power lost by the electron. Part of this power corresponds to the \emphit{scattered} radiation that would have existed even if the photon energies had not changed (i.e.\ if scattering were strictly elastic in the LAB). The actual energy lost by the electron equals the increase in the photon energy flux:
 %
 \[
 \frac{dE_e}{dt} 

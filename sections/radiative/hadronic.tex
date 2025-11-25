@@ -1,44 +1,148 @@
-% !TEX root = ../lectures.tex
-\section{Nuclei-Proton Interactions}
+% !TEX root = ../../lectures.tex
+\section{Nuclei--Proton Interactions}
 \label{sec:nucleiproton}
 
-Understanding interactions between nucleons (protons and neutrons) and nuclei is critical for high-energy astrophysics. These interactions are primarily governed by the \emph{strong nuclear force}, a fundamental interaction responsible for binding protons and neutrons within atomic nuclei. This force is characterized by being short-ranged as it operates only over distances comparable to the size of a nucleus (\( \sim 1~\text{fm}\)). 
+%Understanding interactions between nucleons (protons and neutrons) and nuclei is critical for high-energy astrophysics. These interactions are primarily governed by the \emph{strong nuclear force}, a fundamental interaction responsible for binding protons and neutrons within atomic nuclei. This force is characterized by being short-ranged as it operates only over distances comparable to the size of a nucleus (\( \sim 1~\text{fm}\)). 
+%
+%Unlike point-like elementary particles such as leptons (e.g., electrons) or photons, nucleons and nuclei have an extended spatial structure. The effective size of a nucleus can be approximated by its radius, given by:
+%\begin{equation}
+%R_N \sim 1.2 \, A^{1/3} \, \text{fm},
+%\end{equation}
+%where \(A\) is the mass number (the total number of protons and neutrons). 
+%
+%The \emph{geometrical cross-section} is a measure of the probability of interaction between two colliding nuclei or nucleons, based on their physical size:
+%\(
+%\sigma_{\rm geom} \simeq \pi R_N^2.
+%\)
+%
+%Substituting \(R_N \sim 1.2 \, A^{1/3}~\text{fm}\), we find:
+%\begin{equation}\label{eq:sgeo}
+%\sigma_{\rm geom} \simeq \pi (1.2 A^{1/3})^2~\text{fm}^2 \simeq 45 \, A^{2/3}~\text{mb},
+%\end{equation}
+%where \(1~\text{mb} = 10^{-27}~\text{cm}^2\). This result implies that larger nuclei (higher \(A\)) have significantly larger cross-sections, increasing their likelihood of undergoing interactions. This approximation provides a useful rule of thumb for estimating nuclear interaction cross-sections~\cite{Letaw1983apjs}. 
+%
+%The \emph{interaction timescale} is the average time a high-energy particle will travel before interacting with the ambient medium. For a particle propagating through a gas of target particles with number density \(n_{\rm target}\), the timescale is inversely proportional to the product of the cross-section and the speed of the particle:
+%\begin{equation}
+%\tau \simeq \frac{1}{n_{\rm target} \sigma_{\rm geom} c}.
+%\end{equation}
+%
+%For cosmic-ray protons interacting with hydrogen gas (\(n_{\rm H}\) in \(\text{cm}^{-3}\)), this becomes:
+%\begin{equation}
+%\tau \simeq 25 \, A^{-2/3} \left( \frac{n_{\rm H}}{\text{cm}^{-3}} \right)^{-1}~\text{Myr}.
+%\end{equation}
+%
+%This equation highlights that in regions with enhanced gas density, such as the inner regions of starburst galaxies or galactic molecular clouds, this interaction timescale becomes comparable to or shorter than other competing processes, such as cosmic-ray escape or energy losses. 
+%Moreover, \emph{heavier nuclei} have shorter timescales due to their higher cross-sections.
+%
+%\subsection{Pion Production in Proton-Proton Collisions}
+%
+%When high-energy protons collide with other protons, the energy in the collision can generate new particles, including pions (\(\pi\)), the lightest mesons. These collisions are the main source of gamma rays and neutrinos in astrophysical environments. 
+%
+%The primary interactions of high-energy protons with ambient protons produce the following outcomes:
+%\begin{equation}
+%p + p \rightarrow 
+%\begin{cases}
+%p + p + \pi^0 \\
+%p + n + \pi^+  \\
+%p + p + \pi^+ + \pi^-
+%\end{cases}
+%\end{equation}
+%These reactions depend on the energy of the incoming proton. Pions (\(\pi^0, \pi^+, \pi^-\)) are unstable and decay rapidly, leading to secondary particles:
+%
+%- \emph{Neutral pions} (\(\pi^0\)) decay into gamma rays:
+%\begin{equation}
+%\pi^0 \rightarrow \gamma + \gamma.
+%\end{equation}
+%
+%- \emph{Charged pions} (\(\pi^\pm\)) decay into muons (\(\mu^\pm\)) and neutrinos:
+%\begin{equation}
+%\pi^+ \rightarrow \mu^+ + \nu_\mu, \quad \mu^+ \rightarrow e^+ + \bar{\nu}_\mu + \nu_e,
+%\end{equation}
+%\begin{equation}
+%\pi^- \rightarrow \mu^- + \bar{\nu}_\mu, \quad \mu^- \rightarrow e^- + \nu_\mu + \bar{\nu}_e.
+%\end{equation}
+%
+%Thus, each charged pion decay produces \emph{three neutrinos}, while each neutral pion decay produces \emph{two gamma rays}. This simultaneous production of gamma rays and neutrinos is a \emph{distinctive feature of hadronic interactions}.
+%
+%For pion production to occur, the colliding protons must supply enough energy to create the mass of the pion and satisfy conservation laws. In the LAB frame, the energy threshold \(E_p^{\rm th}\) is determined by~\TODO{add an appendix on thresholds}:
+%%
+%\begin{equation}
+%2 m_p^2 + 2 E^{\rm th}_p m_p = \left(2 m_p + m_{\pi^0} \right)^2,
+%\end{equation}
+%%
+%where \(m_p\) and \(m_{\pi^0}\) are the masses of the proton and neutral pion, respectively. Solving for \(E_p^{\rm th}\), we find:
+%%
+%\begin{equation}
+%E_p^{\rm th} = \frac{(2 m_p + m_{\pi^0})^2 - 2 m_p^2}{2 m_p}.
+%\end{equation}
+%
+%Using \(m_p \simeq 0.938~\text{GeV}\) and \(m_{\pi^0} \simeq 0.135~\text{GeV}\), this yields:
+%\begin{equation}
+%E_p^{\rm th} \simeq 1.22~\text{GeV}.
+%\end{equation}
+%
+%The corresponding \emph{kinetic energy threshold} is:
+%\begin{equation}
+%T_p^{\rm th} = E_p^{\rm th} - m_p \simeq 280~\text{MeV}.
+%\end{equation}
+%
+%\subsection{Cross-Sections for Proton-Proton Collisions}
+%
+%\begin{figure}[t] \centering \includegraphics[width=0.5\textwidth]{figures/KelnerAharonian11.pdf} \caption{The energy dependence of the inelastic cross-section for proton-proton collisions, based on the parameterization by Kelner and Aharonian~\cite{Kelner2006prd}.} \label{fig:ppin} \end{figure}
+%
+%The \emph{inelastic cross-section} \(\sigma_{\rm inel}\) for proton-proton collisions quantifies the probability of interactions where the colliding protons undergo a transformation that produces additional particles, such as pions, in the final state. These interactions typically involve the redistribution of a significant fraction of the initial proton energy among the newly created particles.
+%%
+%Experimental measurements indicate that the \emph{inelastic cross-section} \(\sigma_{\rm inel}\) increases rapidly near the pion production threshold (\(T_p \sim 280~\text{MeV}\)) as new particle production becomes possible. It reaches a plateau at several tens of millibarns (\(\sim 30~\text{mb}\)) for proton energies in the GeV range. Beyond a few TeV, \(\sigma_{\rm inel}\) grows more gradually, approximately doubling to \(\sim 60~\text{mb}\) at proton energies on the order of a few PeV.
+%
+%A useful expression for \(\sigma_{\rm inel}\), valid for \(T_p \gtrsim 1~\text{GeV}\), is given by~\cite{Kelner2006prd}:
+%\begin{equation}
+%\sigma_{\rm inel} = (34.3 + 1.88~L + 0.25~L^2) \left[ 1 - \left( \frac{E^{\rm th}_p}{E_p} \right)^4 \right]^2 \, \text{mb},
+%\end{equation}
+%where \(L = \ln(E_p / \text{TeV})\). 
 
-Unlike point-like elementary particles such as leptons (e.g., electrons) or photons, nucleons and nuclei have an extended spatial structure. The effective size of a nucleus can be approximated by its radius, given by:
+Cosmic particles streaming through the interstellar and intergalactic medium constantly interact with ambient gas and radiation. In this section we focus on collisions between nucleons (protons and neutrons) and nuclei, which are the building blocks of hadronic interactions in astrophysical environments.
+
+These interactions are primarily governed by the \emph{strong nuclear force}, the fundamental interaction responsible for binding protons and neutrons inside atomic nuclei. The strong force is short-ranged: it operates efficiently only over distances comparable to the nuclear size (\(\sim 1~\text{fm}\)). At the same time, unlike point-like elementary particles such as leptons (e.g.\ electrons) or photons, nucleons and nuclei possess an extended spatial structure.
+
+A convenient way to encode this is through an effective nuclear radius, which scales with the mass number \(A\) as
 \begin{equation}
-R_N \sim 1.2 \, A^{1/3} \, \text{fm},
+R_N \simeq 1.2 \, A^{1/3} \, \text{fm},
 \end{equation}
-where \(A\) is the mass number (the total number of protons and neutrons). 
-
-The \emph{geometrical cross-section} is a measure of the probability of interaction between two colliding nuclei or nucleons, based on their physical size:
+where \(A\) is the total number of protons and neutrons. This immediately suggests a simple ``black disk'' estimate for the \emph{geometrical cross-section}, i.e.\ the interaction area associated with two colliding objects:
 \(
 \sigma_{\rm geom} \simeq \pi R_N^2.
 \)
 
-Substituting \(R_N \sim 1.2 \, A^{1/3}~\text{fm}\), we find:
+Substituting \(R_N \simeq 1.2 \, A^{1/3}~\text{fm}\), we obtain
 \begin{equation}\label{eq:sgeo}
 \sigma_{\rm geom} \simeq \pi (1.2 A^{1/3})^2~\text{fm}^2 \simeq 45 \, A^{2/3}~\text{mb},
 \end{equation}
-where \(1~\text{mb} = 10^{-27}~\text{cm}^2\). This result implies that larger nuclei (higher \(A\)) have significantly larger cross-sections, increasing their likelihood of undergoing interactions. This approximation provides a useful rule of thumb for estimating nuclear interaction cross-sections~\cite{Letaw1983apjs}. 
+where \(1~\text{mb} = 10^{-27}~\text{cm}^2\). In this simple picture, larger nuclei (larger \(A\)) correspond to larger effective areas and therefore larger interaction cross-sections: heavier nuclei are more likely to undergo hadronic interactions. Although real cross-sections deviate from this pure geometric estimate, Eq.~\eqref{eq:sgeo} provides a remarkably useful rule of thumb for nuclear interactions in astrophysics~\cite{Letaw1983apjs}. 
 
-The \emph{interaction timescale} is the average time a high-energy particle will travel before interacting with the ambient medium. For a particle propagating through a gas of target particles with number density \(n_{\rm target}\), the timescale is inversely proportional to the product of the cross-section and the speed of the particle:
+\medskip
+
+The same geometric intuition carries over to interaction timescales. The \emph{interaction timescale} is the average time a high-energy particle travels before undergoing a collision with targets of number density \(n_{\rm target}\). For a particle moving at speed \(\simeq c\), one finds
 \begin{equation}
-\tau \simeq \frac{1}{n_{\rm target} \sigma_{\rm geom} c}.
+\tau \simeq \frac{1}{n_{\rm target} \, \sigma_{\rm geom} \, c}.
 \end{equation}
 
-For cosmic-ray protons interacting with hydrogen gas (\(n_{\rm H}\) in \(\text{cm}^{-3}\)), this becomes:
+Specializing to cosmic-ray nuclei colliding with hydrogen gas of density \(n_{\rm H}\) (in \(\text{cm}^{-3}\)), and inserting Eq.~\eqref{eq:sgeo}, this becomes
 \begin{equation}
-\tau \simeq 25 \, A^{-2/3} \left( \frac{n_{\rm H}}{\text{cm}^{-3}} \right)^{-1}~\text{Myr}.
+\tau \simeq 25 \, A^{-2/3} 
+\left( \frac{n_{\rm H}}{\text{cm}^{-3}} \right)^{-1}~\text{Myr}.
 \end{equation}
+This expression makes two important points explicit:
+\begin{itemize}
+  \item In dense environments (e.g.\ molecular clouds, central regions of starburst galaxies) the interaction timescale can become comparable to, or shorter than, other relevant timescales such as escape or radiative cooling.
+  \item Heavier nuclei, with their larger cross-sections \(\propto A^{2/3}\), interact more frequently and therefore have shorter interaction timescales \(\propto A^{-2/3}\).
+\end{itemize}
+These simple scaling relations already give a first feeling for when and where hadronic interactions become efficient in astrophysical sources.
 
-This equation highlights that in regions with enhanced gas density, such as the inner regions of starburst galaxies or galactic molecular clouds, this interaction timescale becomes comparable to or shorter than other competing processes, such as cosmic-ray escape or energy losses. 
-Moreover, \emph{heavier nuclei} have shorter timescales due to their higher cross-sections.
+\subsection{Pion Production in Proton--Proton Collisions}
 
-\subsection{Pion Production in Proton-Proton Collisions}
+A particularly important class of hadronic processes for high-energy astrophysics is \emph{pion production} in proton--proton collisions. When a high-energy cosmic-ray proton hits a proton at rest in the interstellar medium, the available energy in the center-of-mass frame can be sufficient to create new particles. The lightest of these are the pions (\(\pi\)), and their production provides the main channel for generating high-energy gamma rays and neutrinos in hadronic scenarios.
 
-When high-energy protons collide with other protons, the energy in the collision can generate new particles, including pions (\(\pi\)), the lightest mesons. These collisions are the main source of gamma rays and neutrinos in astrophysical environments. 
-
-The primary interactions of high-energy protons with ambient protons produce the following outcomes:
+At the level of dominant channels, high-energy proton--proton interactions can be schematically written as
 \begin{equation}
 p + p \rightarrow 
 \begin{cases}
@@ -47,247 +151,495 @@ p + n + \pi^+  \\
 p + p + \pi^+ + \pi^-
 \end{cases}
 \end{equation}
-These reactions depend on the energy of the incoming proton. Pions (\(\pi^0, \pi^+, \pi^-\)) are unstable and decay rapidly, leading to secondary particles:
+with many more complex final states opening up at higher energies. The produced pions (\(\pi^0, \pi^+, \pi^-\)) are unstable and decay rapidly, feeding electromagnetic and neutrino channels.
 
-- \emph{Neutral pions} (\(\pi^0\)) decay into gamma rays:
+Neutral pions decay into gamma rays:
 \begin{equation}
 \pi^0 \rightarrow \gamma + \gamma.
 \end{equation}
 
-- \emph{Charged pions} (\(\pi^\pm\)) decay into muons (\(\mu^\pm\)) and neutrinos:
+Charged pions decay into muons and (anti)neutrinos:
 \begin{equation}
-\pi^+ \rightarrow \mu^+ + \nu_\mu, \quad \mu^+ \rightarrow e^+ + \bar{\nu}_\mu + \nu_e,
+\pi^+ \rightarrow \mu^+ + \nu_\mu, 
+\qquad 
+\mu^+ \rightarrow e^+ + \bar{\nu}_\mu + \nu_e,
 \end{equation}
 \begin{equation}
-\pi^- \rightarrow \mu^- + \bar{\nu}_\mu, \quad \mu^- \rightarrow e^- + \nu_\mu + \bar{\nu}_e.
+\pi^- \rightarrow \mu^- + \bar{\nu}_\mu, 
+\qquad 
+\mu^- \rightarrow e^- + \nu_\mu + \bar{\nu}_e.
 \end{equation}
 
-Thus, each charged pion decay produces \emph{three neutrinos}, while each neutral pion decay produces \emph{two gamma rays}. This simultaneous production of gamma rays and neutrinos is a \emph{distinctive feature of hadronic interactions}.
+Thus, each charged pion produces \emph{three} neutrinos along its decay chain, while each neutral pion produces \emph{two} gamma rays. The joint production of gamma rays and neutrinos, with comparable energy budgets, is a \emph{distinctive fingerprint of hadronic interactions} and underpins the multi-messenger connection between gamma-ray and neutrino observations.
 
-For pion production to occur, the colliding protons must supply enough energy to create the mass of the pion and satisfy conservation laws. In the LAB frame, the energy threshold \(E_p^{\rm th}\) is determined by~\TODO{add an appendix on thresholds}:
+\medskip
+
+For pion production to occur, the collision must have enough energy to create at least one pion while satisfying energy--momentum conservation. Consider the astrophysically relevant configuration of a high-energy proton colliding with a proton at rest in the LAB frame (the rest frame of the interstellar gas). The threshold proton energy \(E_p^{\rm th}\) is obtained by imposing that the center-of-mass energy \(\sqrt{s}\) equals the rest-mass energy of the lightest allowed final state:\footnote{A derivation based on kinematics in the center-of-mass frame is given in Appendix~\ref{sec:thresholds}.}
 %
 \begin{equation}
 2 m_p^2 + 2 E^{\rm th}_p m_p = \left(2 m_p + m_{\pi^0} \right)^2,
 \end{equation}
 %
-where \(m_p\) and \(m_{\pi^0}\) are the masses of the proton and neutral pion, respectively. Solving for \(E_p^{\rm th}\), we find:
+where \(m_p\) and \(m_{\pi^0}\) are the proton and neutral pion masses. Solving for \(E_p^{\rm th}\), we obtain
 %
 \begin{equation}
 E_p^{\rm th} = \frac{(2 m_p + m_{\pi^0})^2 - 2 m_p^2}{2 m_p}.
 \end{equation}
 
-Using \(m_p \simeq 0.938~\text{GeV}\) and \(m_{\pi^0} \simeq 0.135~\text{GeV}\), this yields:
+Inserting \(m_p \simeq 0.938~\text{GeV}\) and \(m_{\pi^0} \simeq 0.135~\text{GeV}\) yields
 \begin{equation}
-E_p^{\rm th} \simeq 1.22~\text{GeV}.
+E_p^{\rm th} \simeq 1.22~\text{GeV},
 \end{equation}
-
-The corresponding \emph{kinetic energy threshold} is:
+corresponding to a \emph{kinetic} energy threshold
 \begin{equation}
 T_p^{\rm th} = E_p^{\rm th} - m_p \simeq 280~\text{MeV}.
 \end{equation}
+In other words, even mildly relativistic protons are already energetic enough to produce pions in collisions with ambient protons.
 
-\subsection{Cross-Sections for Proton-Proton Collisions}
+\subsection{Cross-Sections for Proton--Proton Collisions}
 
-\begin{figure}[t] \centering \includegraphics[width=0.5\textwidth]{figures/KelnerAharonian11.pdf} \caption{The energy dependence of the inelastic cross-section for proton-proton collisions, based on the parameterization by Kelner and Aharonian~\cite{Kelner2006prd}.} \label{fig:ppin} \end{figure}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/KelnerAharonian11.pdf}
+  \caption{Energy dependence of the inelastic cross-section for proton--proton collisions, based on the parameterization by Kelner and Aharonian~\cite{Kelner2006prd}.}
+  \label{fig:ppin}
+\end{figure}
 
-The \emph{inelastic cross-section} \(\sigma_{\rm inel}\) for proton-proton collisions quantifies the probability of interactions where the colliding protons undergo a transformation that produces additional particles, such as pions, in the final state. These interactions typically involve the redistribution of a significant fraction of the initial proton energy among the newly created particles.
-%
-Experimental measurements indicate that the \emph{inelastic cross-section} \(\sigma_{\rm inel}\) increases rapidly near the pion production threshold (\(T_p \sim 280~\text{MeV}\)) as new particle production becomes possible. It reaches a plateau at several tens of millibarns (\(\sim 30~\text{mb}\)) for proton energies in the GeV range. Beyond a few TeV, \(\sigma_{\rm inel}\) grows more gradually, approximately doubling to \(\sim 60~\text{mb}\) at proton energies on the order of a few PeV.
+The \emph{inelastic cross-section} \(\sigma_{\rm inel}\) for proton--proton collisions quantifies the probability that a collision leads to a final state with new particles (such as pions), rather than leaving the two protons intact apart from elastic scattering. In such inelastic events, a significant fraction of the initial proton energy is redistributed among the secondaries.
 
-A useful expression for \(\sigma_{\rm inel}\), valid for \(T_p \gtrsim 1~\text{GeV}\), is given by~\cite{Kelner2006prd}:
+Experimentally, \(\sigma_{\rm inel}\) rises quickly once the pion production threshold at \(T_p \sim 280~\text{MeV}\) is crossed, reflecting the opening of inelastic channels. It then reaches a quasi-plateau at \(\sim 30~\text{mb}\) in the GeV range. At still higher proton energies, beyond a few TeV, the inelastic cross-section increases only slowly, approximately doubling to \(\sim 60~\text{mb}\) at proton energies of order a few PeV (see Fig.~\ref{fig:ppin}). 
+
+For practical calculations in astrophysics, it is convenient to use a smooth analytical fit. A widely used parameterization, valid for \(T_p \gtrsim 1~\text{GeV}\), is given by~\cite{Kelner2006prd}
 \begin{equation}
-\sigma_{\rm inel} = (34.3 + 1.88~L + 0.25~L^2) \left[ 1 - \left( \frac{E^{\rm th}_p}{E_p} \right)^4 \right]^2 \, \text{mb},
+\sigma_{\rm inel}(E_p) = \bigl(34.3 + 1.88\,L + 0.25\,L^2\bigr) 
+\left[ 1 - \left( \frac{E^{\rm th}_p}{E_p} \right)^4 \right]^2 \, \text{mb},
 \end{equation}
-where \(L = \ln(E_p / \text{TeV})\). 
+where 
+\[
+L = \ln\!\left(\frac{E_p}{\text{TeV}}\right),
+\]
+and \(E^{\rm th}_p\) is the threshold energy derived above. This expression smoothly interpolates between the rapid onset of inelasticity near threshold and the slow logarithmic growth of the cross-section at very high energies, and will be our workhorse in computing hadronic gamma-ray and neutrino yields in the following sections.
 
-\subsection{Inclusive Cross-Sections for Pion Production }
+%\subsection{Inclusive Cross-Sections for Pion Production }
+%
+%\begin{figure}[t]
+%\centering
+%\includegraphics[width=0.5\textwidth]{figures/pion_production.pdf}
+%\caption{Parameterized inclusive cross sections for pion production in proton-proton collisions~\cite{Norbury2009nimpb}.}
+%\label{fig:pionprod}
+%\end{figure}
+%
+%To describe pion production in proton-proton collisions, \cite{Norbury2009nimpb} provides parameterizations for the \emph{inclusive} cross-sections of \(\pi^+\), \(\pi^-\), and \(\pi^0\) production as functions of the kinetic energy of the incoming proton, \(T_p\), in the LAB frame (in GeV). These parameterizations are expressed as follows:  
+%\begin{equation}
+%\sigma_{pp \rightarrow \pi^+ X} = \left( 0.00717 + 0.0652 \frac{\log T_p}{T_p} + \frac{0.162}{T_p^2} \right)^{-1}~\text{mb}, 
+%\end{equation}
+%\begin{equation}
+%\sigma_{pp \rightarrow \pi^- X} = \left( 0.00456 + \frac{0.0846}{T_p^{0.5}} + \frac{0.577}{T_p^{1.5}} \right)^{-1}~\text{mb}, 
+%\end{equation}
+%\begin{equation}
+%\sigma_{pp \rightarrow \pi^0 X} = \left( 0.007 + 0.1 \frac{\log T_p}{T_p} + \frac{0.3}{T_p^2} \right)^{-1}~\text{mb}.
+%\end{equation}  
+%
+%These equations provide approximate fits to experimental data and are particularly useful for modeling pion production in astrophysical scenarios. The cross-sections are plotted in~\ref{fig:pionprod}, as a function of \(p_{\rm lab}\), the momentum of the incoming proton in the LAB frame~\TODO{rifare il plot}.  
+%
+%The term \emph{inclusive cross-section} refers to the total probability of a specific outcome in a reaction, summed over all possible accompanying final states. In the context of proton-proton collisions, an inclusive cross-section for pion production, such as \(\sigma_{pp \rightarrow \pi^+ X}\), represents the cross-section for producing a \(\pi^+\) meson, regardless of what other particles (\(X\)) may also be produced in the final state.  
+%
+%This is in contrast to \emph{exclusive cross-sections}, which describe the probability of a very specific final state, such as \(p + p \rightarrow p + n + \pi^+\). Exclusive cross-sections require detailed knowledge of all the final particles and their properties, whereas inclusive cross-sections provide a comprehensive description of a particular secondary particle's production.  
+%
+%A key feature of the parameterized cross-sections is their threshold behavior. The production of charged pions, such as \(\pi^+\) and \(\pi^-\), requires a minimum proton kinetic energy, \(T_p\), to satisfy conservation of energy and momentum. For example, the threshold for \(\pi^+\) production is \(T_p \simeq 289~\text{MeV}\). Notably, the threshold for \(\pi^-\) production is higher, \(T_p \simeq 600~\text{MeV}\), due to the presence of two new particles in the final state (e.g., \(\pi^-\) and \(\pi^+\)).  
+%%
+%This difference in thresholds leads to a consistently larger cross-section for \(\pi^+\) compared to \(\pi^-\) at all energies above the threshold.  
+%
+%Neutral pions (\(\pi^0\)), which decay into gamma rays, have a cross-section \(\sigma_{pp \rightarrow \pi^0 X}\) that satisfies the approximate relationship:
+%%
+%\begin{equation}
+%\sigma_{pp \rightarrow \pi^0 X} \simeq \frac{1}{2} \left( \sigma_{pp \rightarrow \pi^+ X} + \sigma_{pp \rightarrow \pi^- X} \right).
+%\end{equation}
+%%
+%This relationship is a reflection of the isospin symmetry of the strong interaction, which predicts a balanced production of charged and neutral pions at high energies.  
+%
+%The asymmetry in the production cross-sections of \(\pi^+\) and \(\pi^-\) has significant astrophysical consequences. Charged pion decays ultimately lead to the production of secondary leptons, as \(\pi^+ \) (\(\pi^- \)) decays produce positrons (electrons) via \(\mu^+\) (\(\mu^-\)) decay.  
+%%
+%Because \(\pi^+\) production dominates over \(\pi^-\) production, cosmic-ray interactions result in an excess of secondary positrons compared to electrons. This excess is an important diagnostic for understanding hadronic processes in astrophysical environments~\cite{Moskalenko1998apj}.  
+
+\subsection{Inclusive Cross-Sections for Pion Production}
+\label{subsec:inclusive_pion_xsec}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.5\textwidth]{figures/pion_production.pdf}
-\caption{Parameterized inclusive cross sections for pion production in proton-proton collisions~\cite{Norbury2009nimpb}.}
+\caption{Parameterized inclusive cross-sections for pion production in proton--proton collisions~\cite{Norbury2009nimpb}.}
 \label{fig:pionprod}
 \end{figure}
 
-To describe pion production in proton-proton collisions, \cite{Norbury2009nimpb} provides parameterizations for the \emph{inclusive} cross-sections of \(\pi^+\), \(\pi^-\), and \(\pi^0\) production as functions of the kinetic energy of the incoming proton, \(T_p\), in the LAB frame (in GeV). These parameterizations are expressed as follows:  
+In realistic astrophysical environments, we are rarely interested in a single, perfectly specified reaction channel such as
+\(p + p \to p + n + \pi^+\). Instead, we want to know \emph{how many pions of a given charge are produced in total}, summing over all possible accompanying secondaries. This motivates the use of \emph{inclusive} cross-sections for pion production in proton--proton collisions.
+
+Norbury and Townsend~\cite{Norbury2009nimpb} provide convenient parameterizations for the inclusive cross-sections of \(\pi^+\), \(\pi^-\), and \(\pi^0\) production as functions of the proton kinetic energy \(T_p\) in the LAB frame (measured in GeV). For \(T_p\) in the appropriate range, their fits can be written as
 \begin{equation}
-\sigma_{pp \rightarrow \pi^+ X} = \left( 0.00717 + 0.0652 \frac{\log T_p}{T_p} + \frac{0.162}{T_p^2} \right)^{-1}~\text{mb}, 
+\sigma_{pp \rightarrow \pi^+ X}(T_p) = \left( 0.00717 
++ 0.0652 \,\frac{\log T_p}{T_p} 
++ \frac{0.162}{T_p^2} \right)^{-1}~\text{mb},
 \end{equation}
 \begin{equation}
-\sigma_{pp \rightarrow \pi^- X} = \left( 0.00456 + \frac{0.0846}{T_p^{0.5}} + \frac{0.577}{T_p^{1.5}} \right)^{-1}~\text{mb}, 
+\sigma_{pp \rightarrow \pi^- X}(T_p) = \left( 0.00456 
++ \frac{0.0846}{T_p^{0.5}} 
++ \frac{0.577}{T_p^{1.5}} \right)^{-1}~\text{mb},
 \end{equation}
 \begin{equation}
-\sigma_{pp \rightarrow \pi^0 X} = \left( 0.007 + 0.1 \frac{\log T_p}{T_p} + \frac{0.3}{T_p^2} \right)^{-1}~\text{mb}.
-\end{equation}  
-
-These equations provide approximate fits to experimental data and are particularly useful for modeling pion production in astrophysical scenarios. The cross-sections are plotted in~\ref{fig:pionprod}, as a function of \(p_{\rm lab}\), the momentum of the incoming proton in the LAB frame~\TODO{rifare il plot}.  
-
-The term \emph{inclusive cross-section} refers to the total probability of a specific outcome in a reaction, summed over all possible accompanying final states. In the context of proton-proton collisions, an inclusive cross-section for pion production, such as \(\sigma_{pp \rightarrow \pi^+ X}\), represents the cross-section for producing a \(\pi^+\) meson, regardless of what other particles (\(X\)) may also be produced in the final state.  
-
-This is in contrast to \emph{exclusive cross-sections}, which describe the probability of a very specific final state, such as \(p + p \rightarrow p + n + \pi^+\). Exclusive cross-sections require detailed knowledge of all the final particles and their properties, whereas inclusive cross-sections provide a comprehensive description of a particular secondary particle's production.  
-
-A key feature of the parameterized cross-sections is their threshold behavior. The production of charged pions, such as \(\pi^+\) and \(\pi^-\), requires a minimum proton kinetic energy, \(T_p\), to satisfy conservation of energy and momentum. For example, the threshold for \(\pi^+\) production is \(T_p \simeq 289~\text{MeV}\). Notably, the threshold for \(\pi^-\) production is higher, \(T_p \simeq 600~\text{MeV}\), due to the presence of two new particles in the final state (e.g., \(\pi^-\) and \(\pi^+\)).  
-%
-This difference in thresholds leads to a consistently larger cross-section for \(\pi^+\) compared to \(\pi^-\) at all energies above the threshold.  
-
-Neutral pions (\(\pi^0\)), which decay into gamma rays, have a cross-section \(\sigma_{pp \rightarrow \pi^0 X}\) that satisfies the approximate relationship:
-%
-\begin{equation}
-\sigma_{pp \rightarrow \pi^0 X} \simeq \frac{1}{2} \left( \sigma_{pp \rightarrow \pi^+ X} + \sigma_{pp \rightarrow \pi^- X} \right).
+\sigma_{pp \rightarrow \pi^0 X}(T_p) = \left( 0.007 
++ 0.1 \,\frac{\log T_p}{T_p} 
++ \frac{0.3}{T_p^2} \right)^{-1}~\text{mb}.
 \end{equation}
-%
-This relationship is a reflection of the isospin symmetry of the strong interaction, which predicts a balanced production of charged and neutral pions at high energies.  
+These expressions provide smooth fits to accelerator data and are particularly useful for semi-analytic modeling of pion production in cosmic-ray transport codes. In Fig.~\ref{fig:pionprod} the corresponding cross-sections are shown as a function of the proton momentum in the LAB frame, \(p_{\rm lab}\), obtained by converting from \(T_p\).\footnote{%
+\textbf{Note:} The current plot is based on the original parameterization; it should be updated using the formulas given here. \TODO{rifare il plot}.
+}
 
-The asymmetry in the production cross-sections of \(\pi^+\) and \(\pi^-\) has significant astrophysical consequences. Charged pion decays ultimately lead to the production of secondary leptons, as \(\pi^+ \) (\(\pi^- \)) decays produce positrons (electrons) via \(\mu^+\) (\(\mu^-\)) decay.  
+\medskip
+
+It is worth pausing to clarify the terminology. An \emph{inclusive cross-section} such as \(\sigma_{pp \rightarrow \pi^+ X}\) measures the probability that the reaction produces at least one \(\pi^+\) in the final state, regardless of what other particles (collectively denoted by \(X\)) are produced. In other words, all channels of the form
+\[
+p + p \to \pi^+ + X
+\]
+are included and summed over.
+
+This is in contrast to an \emph{exclusive} cross-section, which refers to a very specific final state, for example
+\[
+p + p \rightarrow p + n + \pi^+,
+\]
+with fixed particle content (and possibly fixed kinematics). While exclusive cross-sections are important for detailed hadronic physics, inclusive cross-sections are much more directly connected to the total yields of secondary pions, and therefore to the production of gamma rays and neutrinos in astrophysical sources.
+
+\medskip
+
+A key feature encoded in these parameterizations is the \emph{threshold behavior}. The production of charged pions requires a minimum proton kinetic energy \(T_p\) to satisfy energy and momentum conservation:
+\begin{itemize}
+  \item For \(\pi^+\) production, the threshold is \(T_p \simeq 289~\text{MeV}\).
+  \item For \(\pi^-\) production, the threshold is significantly higher, \(T_p \simeq 600~\text{MeV}\), because the simplest allowed final states involve two newly created pions (e.g.\ \(\pi^+\) and \(\pi^-\)) in addition to the nucleons.
+\end{itemize}
+As a consequence, the \(\pi^+\) cross-section switches on earlier and remains larger than the \(\pi^-\) cross-section at all proton energies above threshold. This systematic asymmetry is clearly visible in Fig.~\ref{fig:pionprod}.
+
+Neutral pions, which promptly decay into gamma rays, are described by the inclusive cross-section \(\sigma_{pp \rightarrow \pi^0 X}\). At sufficiently high energies, isospin symmetry of the strong interaction implies an approximate relation
+\begin{equation}
+\sigma_{pp \rightarrow \pi^0 X} \simeq \frac{1}{2} 
+\left( \sigma_{pp \rightarrow \pi^+ X} 
+     + \sigma_{pp \rightarrow \pi^- X} \right),
+\end{equation}
+reflecting the tendency of the strong interaction to produce charged and neutral pions in roughly comparable amounts.
+
+\medskip
+
+The charge asymmetry in the pion yields has important astrophysical implications. Charged pion decays feed the lepton and neutrino channels:
+\(\pi^+ \to \mu^+ \to e^+\) and \(\pi^- \to \mu^- \to e^-\).
+Because \(\pi^+\) production dominates over \(\pi^-\) production, cosmic-ray interactions in ordinary matter generate more secondary positrons than electrons. This positron excess is an important diagnostic of hadronic processes and is routinely used to interpret cosmic-ray measurements and diffuse emission data~\cite{Moskalenko1998apj}.
+
+%\subsection{Pion Emissivity and Gamma-Ray Spectrum}
 %
-Because \(\pi^+\) production dominates over \(\pi^-\) production, cosmic-ray interactions result in an excess of secondary positrons compared to electrons. This excess is an important diagnostic for understanding hadronic processes in astrophysical environments~\cite{Moskalenko1998apj}.  
+%%Pion emissivity is critical for understanding secondary particle production, as the decay of these pions generates gamma rays and neutrinos, key observables in high-energy astrophysics.  
+%
+%The \emph{pion emissivity}, \(q_\pi(E_\pi)\), represents the number of pions produced per unit volume, time, and energy in a given astrophysical environment.
+%%
+%In a medium with a target number density \(n_{\rm H}\), the emissivity can be expressed as:
+%\begin{equation}\label{eq:qpi}
+%q_\pi(E_\pi) = c n_{\rm H} \int \delta(T_\pi - K_\pi T_p) \, \sigma_{pp}(E_p) \, N_p(E_p) \, dE_p,
+%\end{equation}
+%%
+%where \(N_p(E_p)\) is differential number density of protons as a function of energy \(E_p\).
+%%
+%The factor \(K_\pi\) is a dimensionless constant called the \emph{inelasticity}. It quantifies the \emph{average} fraction of the initial proton's energy lost during the interaction and transferred to the produced pions. For pion production in proton-proton collisions in the GeV-TeV range, the inelasticity is approximately \( K_\pi \simeq 0.17 \)~.
+%
+%% and \(K_\pi\) is the \emph{inelasticity factor}, representing the fraction of the proton's kinetic energy transferred to the pion.
+%
+%The delta function, \(\delta(T_\pi - K_\pi T_p)\), is used to approximate the relationship between the energy of the outgoing pion (\(T_\pi\)) and the energy of the incoming proton (\(T_p\)) assuming that the kinetic energy of the outgoing pion is a \emph{fixed} fraction (\(K_\pi\)) of the kinetic energy of the incoming proton:
+%\( T_\pi \simeq K_\pi T_p \).
+%
+%Performing the integration in~\ref{eq:qpi} yields:
+%%
+%\begin{equation}
+%q_\pi (E_\pi) \simeq \frac{c n_{\rm H}}{K_\pi} \sigma_{pp} \left(\frac{T_\pi}{K_\pi} + m_p \right) N_p \! \left(\frac{T_\pi}{K_\pi} + m_p \right).
+%\end{equation}
+%
+%In the high-energy limit, where the energy of the pion significantly exceeds its rest mass (\(E_\pi \gg m_\pi\)), the contribution of the pion’s mass can be neglected. In this regime, the expression for the pion emissivity simplifies to:
+%%
+%\begin{equation}
+%q_\pi (E_\pi) \simeq \frac{c n_{\rm H}}{K_\pi} \sigma_{pp} \left( \frac{E_\pi}{K_\pi} \right) N_p \left( \frac{E_\pi}{K_\pi} \right).
+%\end{equation}
+%
+%From the above result, it becomes evident that the spectrum of the produced pions closely resembles the spectrum of the parent protons, but with a characteristic energy shift by a factor of \(K_\pi\).  
+%
+%This behavior can be summarized as:
+%%
+%\begin{itemize}
+%\item The pion energy is proportional to the proton energy, scaled by \(K_\pi\).  
+%\item If the proton spectrum follows a power-law form, \(N_p(E_p) \propto E_p^{-\alpha}\), the pion spectrum will also follow a power law with the same spectral index as \( q_\pi(E_\pi) \propto E_\pi^{-\alpha} \).
+%\end{itemize}
+%
+%\subsection{The \(\pi^0\) Gamma-Ray Spectrum }
+%
+%The decay of a neutral pion (\(\pi^0\)) into two gamma photons is an essential process in high-energy astrophysics, as it provides a direct link between hadronic interactions and observable gamma-ray spectra. The decay occurs via the reaction:  
+%\begin{equation}
+%\pi^0 \rightarrow \gamma + \gamma.
+%\end{equation}  
+%This decay is extremely fast, with a mean lifetime of approximately \(8.4 \times 10^{-17}\) seconds, meaning the pion effectively decays immediately after production.  
+%
+%In the \emph{CoM frame} of the pion, momentum conservation ensures that the two photons are emitted in opposite directions (back-to-back). Energy conservation dictates that the energy of each photon is half the rest energy of the pion:
+%\begin{equation}
+%E_\gamma^\prime = \frac{m_\pi}{2},
+%\end{equation}
+%where \(m_\pi \simeq 135~\text{MeV}\) is the rest mass of the neutral pion.  
+%
+%In the \emph{LAB frame}, where the pion is moving with velocity \(\beta_\pi = v_\pi / c\), the energies of the photons are modified due to relativistic effects. The photon energy in the LAB frame, \(E_\gamma\), depends on the angle \(\theta^\prime\) between the photon direction in the CoM frame and the direction of the pion's motion. 
+%%
+%Using relativistic energy transformations, we find:
+%\begin{equation}\label{eq:egammaboost}
+%E_\gamma = \frac{m_\pi}{2} \gamma_\pi (1 + \beta_\pi \cos \theta^\prime),
+%\end{equation}
+%where \(\gamma_\pi = (1 - \beta_\pi^2)^{-1/2}\) is the Lorentz factor of the moving pion,  and \(\theta^\prime\) is the angle of emission in the pion’s CoM frame.  
+%%
+%This equation captures the fact that photons emitted in the direction of the pion's motion (\(\cos \theta^\prime = +1\)) are blueshifted, while those emitted in the opposite direction (\(\cos \theta^\prime = -1\)) are redshifted.  
+%
+%To find the range of photon energies in the LAB frame, we vary \(\cos \theta^\prime\) from \(-1\) to \(+1\). This gives the extreme photon energies as:
+%\begin{equation}\label{eq:gammaminmax}
+%E_\gamma^{\rm min/max} = \frac{m_\pi}{2} \gamma_\pi (1 \mp \beta_\pi),
+%\end{equation}
+%
+%In the non-relativistic limit, the pion’s motion is negligible (\(\gamma_\pi \simeq 1\)), and the photon energies converge to the same value 
+%\begin{equation} 
+%E_\gamma^{\rm min} \simeq E_\gamma^{\rm max} \simeq \frac{m_\pi}{2}.
+%\end{equation}
+%
+%Conversely, in the ultra-relativistic limit, the pion moves close to the speed of light, and \(\gamma_\pi \gg 1\). In this case the maximum photon energy approaches the total pion energy \( E_\gamma^{\rm max} \simeq E_\pi \), while the minimum photon energy becomes arbitrarily small \( E_\gamma^{\rm min} \simeq 0 \)~.
+%
+%%These behaviors reflect the highly anisotropic photon distribution in the LAB frame for ultra-relativistic pions, with most photon energy concentrated in the forward direction.
+%
+%The relationship between the photon energy and the emission angle in the LAB frame can be further analyzed. From the LAB-frame energy in~\ref{eq:egammaboost}, we can compute the differential relationship between photon energy and the cosine of the angle:
+%\begin{equation}\label{eq:degamma}
+%dE_\gamma = \frac{m_\pi}{2} \gamma_\pi \beta_\pi \, d\!\cos \theta^\prime.
+%\end{equation}
+%
+%Since the pion is a scalar particle (spin-0), its decay products are emitted isotropically in the pion’s rest frame. This isotropic emission is expressed mathematically as:
+%\begin{equation}
+%\int d\Omega \frac{dN_\gamma}{d\Omega} = 1,
+%\end{equation}
+%where \(\frac{dN_\gamma}{d\Omega}\) represents the probability distribution of photon emission over solid angle \(d\Omega\).  
+%%
+%Thus, the isotropic photon distribution becomes
+%\begin{equation}
+%\frac{dN_\gamma}{d\Omega} = \frac{1}{4\pi},
+%\end{equation}
+%%
+%and the differential number of photons emitted in a given angular range \(d\cos\theta^\prime\) is~\footnote{Using the relation \(d\Omega = \sin \theta d\theta d\phi\) and averaging over the azimuthal angle \(\phi\), the solid angle simplifies to \(\langle d\Omega \rangle_\phi = 2\pi d\cos\theta\).}:
+%\begin{equation}\label{eq:dngammadcos}
+%dN_\gamma = \frac{1}{2} \, d\cos\theta^\prime.
+%\end{equation}
+%
+%Combining the derivative of \(E_\gamma\) with respect to \(\cos \theta^\prime\) from~\ref{eq:degamma} with the isotropic emission result in~\ref{eq:dngammadcos}, the photon energy distribution can be expressed as:
+%%
+%\begin{remark}
+%\begin{equation}
+%\frac{dN_\gamma}{dE_\gamma} = \frac{1}{m_\pi \gamma_\pi \beta_\pi} = \frac{1}{(E_\pi^2 - m_\pi^2)^{1/2}}~.
+%\end{equation}
+%\end{remark}
+%%
+%Thus, for fixed pion energy, the photon energies are \emph{uniformly} distributed between \(E_\gamma^{\rm min}\) and \(E_\gamma^{\rm max}\), leading to a \emph{box-like spectrum} of gamma rays.  
+%
+%To characterize this box-like distribution, we calculate the central energy in logarithmic space:
+%\begin{equation}
+%\langle \log E_\gamma \rangle = \frac{1}{2} \left( \log E_{\gamma, \rm min} + \log E_{\gamma, \rm max} \right).
+%\end{equation}
+%
+%Substituting~\ref{eq:gammaminmax}, and simplifying using \(\gamma_\pi^2 - 1 = \beta_\pi^2 \gamma_\pi^2\), we find:
+%\begin{remark}
+%\begin{equation}
+%\langle \log E_\gamma \rangle 
+%= \log \left[ \frac{E_\pi^2}{4} (1-\beta_\pi^2) \right]^{1/2} 
+%=\log \left( \frac{m_\pi}{2} \right).
+%\end{equation}
+%\end{remark}
+%
+%This result shows that the logarithmic central energy of the spectrum is fixed at half the pion mass (\(m_\pi / 2 \simeq 67.5~\text{MeV}\)), independent of the pion's energy \(E_\pi\).
+%
+%\begin{figure}[t]
+%\centering
+%\includegraphics[width=0.5\textwidth]{figures/pion_bump.png}
+%\caption{Pion bump~\TODO{add credits}.}
+%\label{fig:pionbump}
+%\end{figure}
+%
+%Assuming a distribution of pion energies, the resulting gamma-ray spectrum is composed of a weighted sum of individual \emph{box-like} distributions. Each box-like distribution is symmetrically centered in logarithmic space around \(m_\pi / 2\), which corresponds to the logarithmic central energy of the photons produced in the pion's rest frame. As a result, the combined gamma-ray spectrum exhibits a clear peak at \( \log E_\gamma \simeq \log \left(\frac{m_\pi}{2}\right) \)~(see \ref{fig:pionbump}).  
+%
+%This spectral feature, often referred to as the \emph{pion bump}, is a prominent characteristic of gamma rays originating from hadronic processes. The bump appears at \(\sim 70~\text{MeV}\), followed by a decline at higher energies, and is largely independent of the underlying pion spectrum or the spectrum of the parent protons.  
+%
+%Such a bump-like structure in the gamma-ray spectrum, combined with its distinct position and shape, provides a strong diagnostic tool for identifying gamma rays resulting from hadronic interactions (see \ref{fig:pionbumpfermi}).  
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=0.45\textwidth]{figures/1231160fig2a.pdf}
+%\includegraphics[width=0.45\textwidth]{figures/1231160fig2b.pdf}
+%\caption{In 2013 FERMI detected a feature compatible with the pion-bump in two old SNRs in interaction with Molecular Cloud~\cite{Ackermann2013sci}}
+%\label{fig:pionbumpfermi}
+%\end{figure}
 
 \subsection{Pion Emissivity and Gamma-Ray Spectrum}
 
-%Pion emissivity is critical for understanding secondary particle production, as the decay of these pions generates gamma rays and neutrinos, key observables in high-energy astrophysics.  
+The \emph{pion emissivity}, \(q_\pi(E_\pi)\), describes how many pions are produced per unit volume, time, and energy in a given astrophysical environment. It is the natural bridge between the spectrum of primary cosmic-ray protons and the secondary gamma rays and neutrinos that we observe.
 
-The \emph{pion emissivity}, \(q_\pi(E_\pi)\), represents the number of pions produced per unit volume, time, and energy in a given astrophysical environment.
-%
-In a medium with a target number density \(n_{\rm H}\), the emissivity can be expressed as:
+Consider a homogeneous medium of hydrogen targets with number density \(n_{\rm H}\). The emissivity of pions with energy \(E_\pi\) can be written schematically as
 \begin{equation}\label{eq:qpi}
-q_\pi(E_\pi) = c n_{\rm H} \int \delta(T_\pi - K_\pi T_p) \, \sigma_{pp}(E_p) \, N_p(E_p) \, dE_p,
+q_\pi(E_\pi) 
+= c\,n_{\rm H} \int \delta(T_\pi - K_\pi T_p)\,
+\sigma_{pp}(E_p)\,N_p(E_p)\,dE_p,
 \end{equation}
-%
-where \(N_p(E_p)\) is differential number density of protons as a function of energy \(E_p\).
-%
-The factor \(K_\pi\) is a dimensionless constant called the \emph{inelasticity}. It quantifies the \emph{average} fraction of the initial proton's energy lost during the interaction and transferred to the produced pions. For pion production in proton-proton collisions in the GeV-TeV range, the inelasticity is approximately \( K_\pi \simeq 0.17 \)~.
+where \(N_p(E_p)\) is the differential number density of protons as a function of energy, and \(\sigma_{pp}\) is the inelastic proton--proton cross-section. Here we are implicitly working with kinetic energies \(T_p\) and \(T_\pi\); for highly relativistic particles one can safely identify \(E \simeq T\).
 
-% and \(K_\pi\) is the \emph{inelasticity factor}, representing the fraction of the proton's kinetic energy transferred to the pion.
+The dimensionless parameter \(K_\pi\) is the \emph{inelasticity}: it quantifies the \emph{average} fraction of the proton kinetic energy transferred to a single pion in the interaction. For proton--proton collisions in the GeV--TeV range, a typical value is
+\[
+K_\pi \simeq 0.17.
+\]
+The delta function \(\delta(T_\pi - K_\pi T_p)\) embodies the so-called \emph{delta-functional approximation}: we assume that, on average, the outgoing pion carries a fixed fraction of the incoming proton energy,
+\[
+T_\pi \simeq K_\pi\,T_p.
+\]
+This is of course a simplification, but it captures the main scaling of the secondary spectrum with the primary one and is widely used for analytic estimates.
 
-The delta function, \(\delta(T_\pi - K_\pi T_p)\), is used to approximate the relationship between the energy of the outgoing pion (\(T_\pi\)) and the energy of the incoming proton (\(T_p\)) assuming that the kinetic energy of the outgoing pion is a \emph{fixed} fraction (\(K_\pi\)) of the kinetic energy of the incoming proton:
-\( T_\pi \simeq K_\pi T_p \).
-
-Performing the integration in~\ref{eq:qpi} yields:
-%
+Performing the integration in Eq.~\eqref{eq:qpi} is now straightforward:
 \begin{equation}
-q_\pi (E_\pi) \simeq \frac{c n_{\rm H}}{K_\pi} \sigma_{pp} \left(\frac{T_\pi}{K_\pi} + m_p \right) N_p \! \left(\frac{T_\pi}{K_\pi} + m_p \right).
+q_\pi(E_\pi) \simeq \frac{c\,n_{\rm H}}{K_\pi}\,
+\sigma_{pp}\!\left(\frac{T_\pi}{K_\pi} + m_p \right)\,
+N_p\!\left(\frac{T_\pi}{K_\pi} + m_p \right).
 \end{equation}
-
-In the high-energy limit, where the energy of the pion significantly exceeds its rest mass (\(E_\pi \gg m_\pi\)), the contribution of the pion’s mass can be neglected. In this regime, the expression for the pion emissivity simplifies to:
-%
+In the high-energy limit, where the pion energy is much larger than its rest mass (\(E_\pi \gg m_\pi\)) and the proton is also ultra-relativistic, we can neglect rest-mass terms and write
 \begin{equation}
-q_\pi (E_\pi) \simeq \frac{c n_{\rm H}}{K_\pi} \sigma_{pp} \left( \frac{E_\pi}{K_\pi} \right) N_p \left( \frac{E_\pi}{K_\pi} \right).
+q_\pi(E_\pi) \simeq \frac{c\,n_{\rm H}}{K_\pi}\,
+\sigma_{pp}\!\left(\frac{E_\pi}{K_\pi}\right)\,
+N_p\!\left(\frac{E_\pi}{K_\pi}\right).
 \end{equation}
 
-From the above result, it becomes evident that the spectrum of the produced pions closely resembles the spectrum of the parent protons, but with a characteristic energy shift by a factor of \(K_\pi\).  
-
-This behavior can be summarized as:
-%
+This expression makes two key points transparent:
 \begin{itemize}
-\item The pion energy is proportional to the proton energy, scaled by \(K_\pi\).  
-\item If the proton spectrum follows a power-law form, \(N_p(E_p) \propto E_p^{-\alpha}\), the pion spectrum will also follow a power law with the same spectral index as \( q_\pi(E_\pi) \propto E_\pi^{-\alpha} \).
+  \item The typical pion energy scales with the proton energy as \(E_\pi \sim K_\pi E_p\). Pions inherit a fixed fraction of the parent proton energy.
+  \item If the proton spectrum follows a power law
+  \(
+  N_p(E_p) \propto E_p^{-\alpha},
+  \)
+  then, up to the slow energy dependence of \(\sigma_{pp}\), the pion emissivity also follows a power law with essentially the same slope:
+  \[
+  q_\pi(E_\pi) \propto E_\pi^{-\alpha}.
+  \]
 \end{itemize}
+In other words, hadronic interactions \emph{map} the primary proton spectrum onto a secondary pion spectrum with almost unchanged spectral index, just shifted in energy by the inelasticity factor \(K_\pi\). The resulting gamma-ray and neutrino spectra will therefore carry a very direct imprint of the parent cosmic-ray population.
 
-\subsection{The \(\pi^0\) Gamma-Ray Spectrum }
+\subsection{The \texorpdfstring{\(\pi^0\)}{pi0} Gamma-Ray Spectrum}
 
-The decay of a neutral pion (\(\pi^0\)) into two gamma photons is an essential process in high-energy astrophysics, as it provides a direct link between hadronic interactions and observable gamma-ray spectra. The decay occurs via the reaction:  
+Neutral pion decay provides a clean and direct connection between hadronic interactions and observable gamma rays. The decay proceeds via
 \begin{equation}
-\pi^0 \rightarrow \gamma + \gamma.
-\end{equation}  
-This decay is extremely fast, with a mean lifetime of approximately \(8.4 \times 10^{-17}\) seconds, meaning the pion effectively decays immediately after production.  
+\pi^0 \rightarrow \gamma + \gamma,
+\end{equation}
+with an extremely short mean lifetime,
+\(
+\tau_{\pi^0} \simeq 8.4 \times 10^{-17}~\text{s},
+\)
+so that the pion essentially decays \emph{at the production site}.
 
-In the \emph{CoM frame} of the pion, momentum conservation ensures that the two photons are emitted in opposite directions (back-to-back). Energy conservation dictates that the energy of each photon is half the rest energy of the pion:
+In the pion \emph{rest frame} (its center-of-mass frame), momentum conservation enforces back-to-back emission of the two photons. Energy conservation then fixes the photon energies to be equal:
 \begin{equation}
 E_\gamma^\prime = \frac{m_\pi}{2},
 \end{equation}
-where \(m_\pi \simeq 135~\text{MeV}\) is the rest mass of the neutral pion.  
+where \(m_\pi \simeq 135~\text{MeV}\) is the neutral pion mass and primes denote quantities in the pion rest frame.
 
-In the \emph{LAB frame}, where the pion is moving with velocity \(\beta_\pi = v_\pi / c\), the energies of the photons are modified due to relativistic effects. The photon energy in the LAB frame, \(E_\gamma\), depends on the angle \(\theta^\prime\) between the photon direction in the CoM frame and the direction of the pion's motion. 
-%
-Using relativistic energy transformations, we find:
+In the \emph{LAB frame}, the pion is moving with velocity \(\beta_\pi = v_\pi / c\), and the photon energies are Doppler shifted. The photon energy \(E_\gamma\) depends on the angle \(\theta^\prime\) between the photon direction in the pion rest frame and the direction of the pion’s motion. A standard Lorentz transformation yields
 \begin{equation}\label{eq:egammaboost}
-E_\gamma = \frac{m_\pi}{2} \gamma_\pi (1 + \beta_\pi \cos \theta^\prime),
+E_\gamma = \frac{m_\pi}{2}\,\gamma_\pi (1 + \beta_\pi \cos \theta^\prime),
 \end{equation}
-where \(\gamma_\pi = (1 - \beta_\pi^2)^{-1/2}\) is the Lorentz factor of the moving pion,  and \(\theta^\prime\) is the angle of emission in the pion’s CoM frame.  
-%
-This equation captures the fact that photons emitted in the direction of the pion's motion (\(\cos \theta^\prime = +1\)) are blueshifted, while those emitted in the opposite direction (\(\cos \theta^\prime = -1\)) are redshifted.  
+where \(\gamma_\pi = (1 - \beta_\pi^2)^{-1/2}\) is the pion Lorentz factor. Photons emitted in the forward direction (\(\cos\theta^\prime = +1\)) are blueshifted, while those emitted backward (\(\cos\theta^\prime = -1\)) are redshifted.
 
-To find the range of photon energies in the LAB frame, we vary \(\cos \theta^\prime\) from \(-1\) to \(+1\). This gives the extreme photon energies as:
+Allowing \(\cos\theta^\prime\) to vary between \(-1\) and \(+1\), we obtain the minimum and maximum photon energies in the LAB frame:
 \begin{equation}\label{eq:gammaminmax}
-E_\gamma^{\rm min/max} = \frac{m_\pi}{2} \gamma_\pi (1 \mp \beta_\pi),
+E_\gamma^{\rm min/max} = \frac{m_\pi}{2}\,\gamma_\pi (1 \mp \beta_\pi).
 \end{equation}
 
-In the non-relativistic limit, the pion’s motion is negligible (\(\gamma_\pi \simeq 1\)), and the photon energies converge to the same value 
-\begin{equation} 
-E_\gamma^{\rm min} \simeq E_\gamma^{\rm max} \simeq \frac{m_\pi}{2}.
-\end{equation}
+Two interesting limits are worth highlighting:
+\begin{itemize}
+  \item \textbf{Non-relativistic pions.} For \(\gamma_\pi \simeq 1\) (\(\beta_\pi \ll 1\)), the motion of the pion is negligible and
+  \[
+  E_\gamma^{\rm min} \simeq E_\gamma^{\rm max} \simeq \frac{m_\pi}{2}.
+  \]
+  The two photons have essentially identical energies.
+  \item \textbf{Ultra-relativistic pions.} For \(\gamma_\pi \gg 1\), the maximum photon energy approaches the pion energy itself,
+  \(
+  E_\gamma^{\rm max} \simeq E_\pi,
+  \)
+  while the minimum energy tends to zero,
+  \(
+  E_\gamma^{\rm min} \to 0.
+  \)
+  Most of the photon energy is then concentrated in a narrow cone around the direction of motion of the pion.
+\end{itemize}
 
-Conversely, in the ultra-relativistic limit, the pion moves close to the speed of light, and \(\gamma_\pi \gg 1\). In this case the maximum photon energy approaches the total pion energy \( E_\gamma^{\rm max} \simeq E_\pi \), while the minimum photon energy becomes arbitrarily small \( E_\gamma^{\rm min} \simeq 0 \)~.
-
-%These behaviors reflect the highly anisotropic photon distribution in the LAB frame for ultra-relativistic pions, with most photon energy concentrated in the forward direction.
-
-The relationship between the photon energy and the emission angle in the LAB frame can be further analyzed. From the LAB-frame energy in~\ref{eq:egammaboost}, we can compute the differential relationship between photon energy and the cosine of the angle:
+To determine the shape of the photon spectrum from a single pion, we relate the distribution in emission angle to the distribution in photon energy. Differentiating Eq.~\eqref{eq:egammaboost} gives
 \begin{equation}\label{eq:degamma}
-dE_\gamma = \frac{m_\pi}{2} \gamma_\pi \beta_\pi \, d\!\cos \theta^\prime.
+dE_\gamma = \frac{m_\pi}{2}\,\gamma_\pi \beta_\pi \, d\!\cos \theta^\prime.
 \end{equation}
 
-Since the pion is a scalar particle (spin-0), its decay products are emitted isotropically in the pion’s rest frame. This isotropic emission is expressed mathematically as:
+Because the pion is a spin-0 particle, its decay is isotropic in its rest frame:
 \begin{equation}
-\int d\Omega \frac{dN_\gamma}{d\Omega} = 1,
+\int d\Omega \,\frac{dN_\gamma}{d\Omega} = 1,
+\qquad
+\frac{dN_\gamma}{d\Omega} = \frac{1}{4\pi}.
 \end{equation}
-where \(\frac{dN_\gamma}{d\Omega}\) represents the probability distribution of photon emission over solid angle \(d\Omega\).  
-%
-Thus, the isotropic photon distribution becomes
-\begin{equation}
-\frac{dN_\gamma}{d\Omega} = \frac{1}{4\pi},
-\end{equation}
-%
-and the differential number of photons emitted in a given angular range \(d\cos\theta^\prime\) is~\footnote{Using the relation \(d\Omega = \sin \theta d\theta d\phi\) and averaging over the azimuthal angle \(\phi\), the solid angle simplifies to \(\langle d\Omega \rangle_\phi = 2\pi d\cos\theta\).}:
+Averaging over the azimuthal angle and using \(d\Omega = 2\pi\,d\cos\theta^\prime\), the differential number of photons in a given interval \(d\cos\theta^\prime\) becomes\footnote{Using \(d\Omega = \sin\theta\,d\theta\,d\phi\) and integrating over \(\phi\), one finds \(d\Omega = 2\pi\,d\cos\theta\).}
 \begin{equation}\label{eq:dngammadcos}
-dN_\gamma = \frac{1}{2} \, d\cos\theta^\prime.
+dN_\gamma = \frac{1}{2}\,d\cos\theta^\prime.
 \end{equation}
 
-Combining the derivative of \(E_\gamma\) with respect to \(\cos \theta^\prime\) from~\ref{eq:degamma} with the isotropic emission result in~\ref{eq:dngammadcos}, the photon energy distribution can be expressed as:
-%
-\begin{remark}
+Combining Eqs.~\eqref{eq:degamma} and \eqref{eq:dngammadcos}, we obtain the photon energy distribution from the decay of a pion with fixed energy \(E_\pi\):
+\begin{tcolorbox}
 \begin{equation}
-\frac{dN_\gamma}{dE_\gamma} = \frac{1}{m_\pi \gamma_\pi \beta_\pi} = \frac{1}{(E_\pi^2 - m_\pi^2)^{1/2}}~.
+\frac{dN_\gamma}{dE_\gamma} 
+= \frac{1}{m_\pi \gamma_\pi \beta_\pi}
+= \frac{1}{\sqrt{E_\pi^2 - m_\pi^2}}~.
 \end{equation}
-\end{remark}
-%
-Thus, for fixed pion energy, the photon energies are \emph{uniformly} distributed between \(E_\gamma^{\rm min}\) and \(E_\gamma^{\rm max}\), leading to a \emph{box-like spectrum} of gamma rays.  
+\end{tcolorbox}
+This result is \emph{independent} of \(E_\gamma\). For a given \(E_\pi\), the two photons are therefore \emph{uniformly} distributed in energy between \(E_\gamma^{\rm min}\) and \(E_\gamma^{\rm max}\), forming a characteristic \emph{box-like} spectrum.
 
-To characterize this box-like distribution, we calculate the central energy in logarithmic space:
+To characterize this box in logarithmic energy, we can compute its central energy:
 \begin{equation}
-\langle \log E_\gamma \rangle = \frac{1}{2} \left( \log E_{\gamma, \rm min} + \log E_{\gamma, \rm max} \right).
+\langle \log E_\gamma \rangle 
+= \frac{1}{2}\left( \log E_{\gamma,\rm min} + \log E_{\gamma,\rm max} \right).
 \end{equation}
-
-Substituting~\ref{eq:gammaminmax}, and simplifying using \(\gamma_\pi^2 - 1 = \beta_\pi^2 \gamma_\pi^2\), we find:
+Using Eq.~\eqref{eq:gammaminmax} and the identity \(\gamma_\pi^2 - 1 = \beta_\pi^2 \gamma_\pi^2\), one finds
 \begin{remark}
 \begin{equation}
 \langle \log E_\gamma \rangle 
-= \log \left[ \frac{E_\pi^2}{4} (1-\beta_\pi^2) \right]^{1/2} 
-=\log \left( \frac{m_\pi}{2} \right).
+= \log \left[ \frac{E_\pi^2}{4}\,(1-\beta_\pi^2) \right]^{1/2}
+= \log\left(\frac{m_\pi}{2}\right).
 \end{equation}
 \end{remark}
+The logarithmic midpoint of the box is thus \emph{fixed} at \(E_\gamma = m_\pi/2 \simeq 67.5~\text{MeV}\), independent of the pion’s energy.
 
-This result shows that the logarithmic central energy of the spectrum is fixed at half the pion mass (\(m_\pi / 2 \simeq 67.5~\text{MeV}\)), independent of the pion's energy \(E_\pi\).
-
-\begin{figure}[t]
+\begin{figure}[!t]	
 \centering
-\includegraphics[width=0.5\textwidth]{figures/pion_bump.png}
-\caption{Pion bump~\TODO{add credits}.}
+\includegraphics[width=0.85\textwidth]{pion_bump.pdf}
+\caption{Illustration of how the pion bump arises from neutral-pion decay. 
+\emph{Left:} Box-like gamma-ray spectra produced by the decay of \(\pi^0\) mesons with different energies \(E_\pi\). Each box corresponds to a flat distribution in \(E_\gamma\) between \(E_\gamma^{\rm min}\) and \(E_\gamma^{\rm max}\), but all share the same logarithmic midpoint at \(E_\gamma = m_\pi/2\), indicated by the vertical dashed line. 
+\emph{Right:} Superposition of many such boxes, assuming a power-law distribution of pion energies, yielding a broad excess in \(E_\gamma^2\,dN_\gamma/dE_\gamma\) around \(E_\gamma \simeq m_\pi/2\): the characteristic \emph{pion bump}.}
 \label{fig:pionbump}
 \end{figure}
 
-Assuming a distribution of pion energies, the resulting gamma-ray spectrum is composed of a weighted sum of individual \emph{box-like} distributions. Each box-like distribution is symmetrically centered in logarithmic space around \(m_\pi / 2\), which corresponds to the logarithmic central energy of the photons produced in the pion's rest frame. As a result, the combined gamma-ray spectrum exhibits a clear peak at \( \log E_\gamma \simeq \log \left(\frac{m_\pi}{2}\right) \)~(see \ref{fig:pionbump}).  
+In a realistic source, pions are produced with a broad distribution of energies. The observable gamma-ray spectrum is then a superposition of many such box-like components, each centered (in \(\log E_\gamma\)) around \(m_\pi/2\). The result is a characteristic spectral feature---the \emph{pion bump}---peaking at \(E_\gamma \sim 70~\text{MeV}\) and declining on either side (see Fig.~\ref{fig:pionbump}).
 
-This spectral feature, often referred to as the \emph{pion bump}, is a prominent characteristic of gamma rays originating from hadronic processes. The bump appears at \(\sim 70~\text{MeV}\), followed by a decline at higher energies, and is largely independent of the underlying pion spectrum or the spectrum of the parent protons.  
-
-Such a bump-like structure in the gamma-ray spectrum, combined with its distinct position and shape, provides a strong diagnostic tool for identifying gamma rays resulting from hadronic interactions (see \ref{fig:pionbumpfermi}).  
+This feature is remarkably robust: its position and general shape depend only weakly on the exact pion spectrum or on the proton spectral index. For this reason, the detection of a pion bump in the gamma-ray spectrum is widely regarded as a smoking gun for hadronic gamma-ray production.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.45\textwidth]{figures/1231160fig2a.pdf}
 \includegraphics[width=0.45\textwidth]{figures/1231160fig2b.pdf}
-\caption{In 2013 FERMI detected a feature compatible with the pion-bump in two old SNRs in interaction with Molecular Cloud~\cite{Ackermann2013sci}}
+\caption{Evidence for a pion bump in two middle-aged supernova remnants interacting with molecular clouds, as observed by \emph{Fermi}-LAT in 2013~\cite{Ackermann2013sci}.}
 \label{fig:pionbumpfermi}
 \end{figure}
+
+A celebrated example is provided by the \emph{Fermi}-LAT observations reported in Ref.~\cite{Ackermann2013sci}, where a spectral feature consistent with the pion bump was detected in the gamma-ray emission from two old supernova remnants interacting with molecular clouds (Fig.~\ref{fig:pionbumpfermi}). This measurement offered one of the clearest pieces of evidence that at least some supernova remnants accelerate hadronic cosmic rays efficiently.
+
+\end{document}
 
 \subsection{Gamma-Ray Emissivity}
 
