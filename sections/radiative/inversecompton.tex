@@ -93,11 +93,9 @@ This quantity,
 \sigma_{\rm T} \simeq 6.652 \times 10^{-25}~\text{cm}^2 \, ,
 \end{equation*}
 %
-is the well-known \emph{Thomson cross-section}. In words: the electron intercepts and re-radiates the power corresponding to the flux crossing an effective area $\sigma_{\rm T}$, redistributing it over the familiar doughnut-shaped pattern given by the Larmor radiation.
+is the well-known \emphit{Thomson cross-section}. In words: the electron intercepts and re-radiates the power corresponding to the flux crossing an effective area $\sigma_{\rm T}$, redistributing it over the familiar doughnut-shaped pattern given by the Larmor radiation.
 
-\medskip
-\noindent
-Once the Thomson cross-section is known, the time-averaged power scattered by a \emph{single} electron in an isotropic radiation field of energy density $U_{\rm rad}$ follows immediately:
+Once the Thomson cross-section is known, the time-averaged power scattered by a \emphit{single} electron in an isotropic radiation field of energy density $U_{\rm rad}$ follows immediately:
 %
 \[
 P = \sigma_{\rm T} c U_{\rm rad} \, ,
@@ -176,6 +174,12 @@ It is useful to rewrite this as a fractional energy change:
 \]
 %
 This is the essence of \emph{Compton scattering}: a photon collides with an electron and transfers some of its energy to the electron, emerging with a lower energy $\epsilon_f < \epsilon_i$. The key point is that, unless the photon energy in the electron rest frame is comparable to or larger than the electron rest mass, the fractional energy change remains small.
+
+At this stage we can also refine our interpretation of the Thomson formula~\ref{}. Previously we viewed $U_{\rm rad}$ as the energy density of the \emphit{incoming} radiation field. The Compton formula reminds us, however, that what really matters for the energy balance is the energy carried away by the \emphit{scattered} photons. For a given bin of incoming photons with energy $\epsilon_i$, the number density is $n_\gamma(\epsilon_i)\,d\epsilon_i$, but after scattering each of those photons emerges with energy $\epsilon_f(\epsilon_i,\theta)$. The total energy density in the scattered field is therefore
+\begin{equation}\label{eq:uradf}
+U_{\rm rad} = \int n_\gamma(\epsilon_i)\,\epsilon_f(\epsilon_i,\theta)\,d\epsilon_i.
+\end{equation}
+In the Thomson limit one has $\epsilon_f \simeq \epsilon_i$ in the electron rest frame, so $U_{\rm rad}$ reduces to the familiar incident energy density. Writing the integrand with $\epsilon_f$ simply anticipates the more general situation: once we go beyond Thomson, the photon energy does change in the electron frame, and it is this \emphit{final} energy that determines how much energy is gained by the radiation field and lost by the electron.
 
 \paragraph{Klein–Nishina regime.} We can now clearly distinguish the \emph{Thomson regime} from the \emph{Compton (Klein–Nishina) regime}:
 \begin{itemize}
@@ -270,13 +274,15 @@ as the working relation. The non-trivial part is therefore to compute $U'_{\rm r
 
 \paragraph{Step 2: Transforming the radiation field to the electron frame.}
 
-The radiation field in the LAB frame is described by a photon number density spectrum $n_\gamma(\epsilon)$, such that $n_\gamma(\epsilon)\,d\epsilon$ is the number density of photons with energy in $[\epsilon, \epsilon + d\epsilon]$. The total energy density in the LAB is
+%The radiation field in the LAB frame is described by~\eqref{eq:uradf} 
 %
-\[
-U_{\rm rad} = \int n_\gamma(\epsilon)\,\epsilon\, d\epsilon \, .
-\]
+%a photon number density spectrum $n_\gamma(\epsilon)$, such that $n_\gamma(\epsilon)\,d\epsilon$ is the number density of photons with energy in $[\epsilon, \epsilon + d\epsilon]$. The total energy density in the LAB is
+%%
+%\[
+%U_{\rm rad} = \int n_\gamma(\epsilon)\,\epsilon\, d\epsilon \, .
+%\]
 
-In the electron rest frame, the corresponding quantity is
+In the electron rest frame, the radiation field is described by~\eqref{eq:uradf}:%
 %
 \begin{equation}
 U'_{\rm rad} 
@@ -349,7 +355,7 @@ U'_{\rm rad}
 = \int \epsilon'_i \left[ n_\gamma(\epsilon_i)\, d\epsilon_i\, \frac{\epsilon'_i}{\epsilon_i} \right] 
 = \int \epsilon_i^{\prime 2}\, \frac{n_\gamma(\epsilon_i)}{\epsilon_i}\, d\epsilon_i \, .
 \end{equation}
-Using Eq.~\eqref{eq:eps-prime-transform}, we have
+Using~\eqref{eq:eps-prime-transform}, we have
 %
 \[
 \epsilon'_i = \gamma\,\epsilon_i\, (1 - \beta \cos\theta)

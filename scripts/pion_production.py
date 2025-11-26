@@ -19,7 +19,7 @@ def plot_sigmaMinus_data(ax, color):
     sigma_err = [0.01 , 1.2 , 0.6 , 0.4 , 0.6, 0.6,1.0 , 1.3 , 2, 3.0]
     ax.errorbar(Tlab, sigma, yerr=sigma_err,
         fmt='o', color=color, markeredgecolor=color,
-        markersize=7, elinewidth=2, capsize=4, capthick=2, zorder=1)
+        markersize=7, elinewidth=2, capsize=4, capthick=2, zorder=2)
 
 def plot_sigmaNo_data(ax, color):
     Tlab = [0.4, 11.1 , 18.1 , 23.1 , 68.1 , 101.1 , 204.1 , 299.1, 302.1, 399.1]
@@ -27,7 +27,7 @@ def plot_sigmaNo_data(ax, color):
     sigma_err = [0.007 , 2.6 , 3.5 , 3.1 , 4, 8,  6.8 , 5, 12, 6.2]
     ax.errorbar(Tlab, sigma, yerr=sigma_err,
         fmt='o', color=color, markeredgecolor=color,
-        markersize=7, elinewidth=2, capsize=4, capthick=2, zorder=1)
+        markersize=7, elinewidth=2, capsize=4, capthick=2, zorder=3)
 
 fig = plt.figure(figsize=(11.5, 8.0))
 ax = fig.add_subplot(111)
@@ -43,21 +43,18 @@ Tlab = np.linspace(0, 500, 1000)
 Tlab2 = Tlab * Tlab
 
 sigmaPlus = 1. / (0.00717 + 0.0652 * np.log(Tlab) / Tlab + 0.162 / Tlab2)
-ax.plot(Tlab, sigmaPlus, color='g', label=r'$\pi^+$')
+ax.plot(Tlab, sigmaPlus, color='g', label=r'$\sigma_{\pi^+}$', zorder=1)
 plot_sigmaPlus_data(ax, 'g')
 
 sigmaMinus = 1. / (0.00456 + 0.0846 / np.power(Tlab, 0.5) + 0.577 / np.power(Tlab, 1.5))
-ax.plot(Tlab, sigmaMinus, color='b', label=r'$\pi^-$')
+ax.plot(Tlab, sigmaMinus, color='b', label=r'$\sigma_{\pi^-}$', zorder=2)
 plot_sigmaMinus_data(ax, 'b')
 
 sigmaNo = 1. / (0.007 + 0.1 * np.log(Tlab) / Tlab + 0.3 / Tlab2)
-ax.plot(Tlab, sigmaNo, color='r', label=r'$\sigma_{\pi^0}$')
+ax.plot(Tlab, sigmaNo, color='r', label=r'$\sigma_{\pi^0}$', zorder=3)
 plot_sigmaNo_data(ax, 'r')
 
-ax.plot(Tlab, 0.5 * (sigmaPlus + sigmaMinus), color='tab:gray', linestyle='--', label=r'$\frac{1}{2}$')
-
-#ax.plot(plab, sigmaMinus)
-#ax.plot(plab, sigmaNeutral)
+ax.plot(Tlab, 0.5 * (sigmaPlus + sigmaMinus), color='tab:gray', linestyle='--', label=r'$\frac{1}{2}(\sigma_{\pi^-} + \sigma_{\pi^+})$', zorder=10)
 
 ax.legend(fontsize=24)
 plt.savefig('pion_production.pdf')
