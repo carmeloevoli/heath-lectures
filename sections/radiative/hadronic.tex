@@ -117,20 +117,21 @@ Substituting \(R_N \simeq 1.2 \, A^{1/3}~\text{fm}\), we obtain
 \begin{equation}\label{eq:sgeo}
 \sigma_{\rm geom} \simeq \pi (1.2 A^{1/3})^2~\text{fm}^2 \simeq 45 \, A^{2/3}~\text{mb},
 \end{equation}
-where \(1~\text{mb} = 10^{-27}~\text{cm}^2\). In this simple picture, larger nuclei (larger \(A\)) correspond to larger effective areas and therefore larger interaction cross-sections: heavier nuclei are more likely to undergo hadronic interactions. Although real cross-sections deviate from this pure geometric estimate, Eq.~\eqref{eq:sgeo} provides a remarkably useful rule of thumb for nuclear interactions in astrophysics~\cite{Letaw1983apjs}. 
+where \(1~\text{mb} = 10^{-27}~\text{cm}^2\). In this simple picture, larger nuclei (larger \(A\)) correspond to larger effective areas and therefore larger interaction cross-sections: heavier nuclei are more likely to undergo hadronic interactions. Although real cross-sections deviate from this pure geometric estimate,~\eqref{eq:sgeo} provides a remarkably useful rule of thumb for nuclear interactions in astrophysics~\cite{Letaw1983apjs}. 
 
-\medskip
-
-The same geometric intuition carries over to interaction timescales. The \emph{interaction timescale} is the average time a high-energy particle travels before undergoing a collision with targets of number density \(n_{\rm target}\). For a particle moving at speed \(\simeq c\), one finds
+The \emph{interaction timescale} is the average time a high-energy particle travels before undergoing a collision with targets of number density \(n_{\rm target}\). For a particle moving at speed \(\simeq c\), one finds
 \begin{equation}
 \tau \simeq \frac{1}{n_{\rm target} \, \sigma_{\rm geom} \, c}.
 \end{equation}
 
 Specializing to cosmic-ray nuclei colliding with hydrogen gas of density \(n_{\rm H}\) (in \(\text{cm}^{-3}\)), and inserting Eq.~\eqref{eq:sgeo}, this becomes
+\begin{tcolorbox}
 \begin{equation}
 \tau \simeq 25 \, A^{-2/3} 
 \left( \frac{n_{\rm H}}{\text{cm}^{-3}} \right)^{-1}~\text{Myr}.
 \end{equation}
+\end{tcolorbox}
+
 This expression makes two important points explicit:
 \begin{itemize}
   \item In dense environments (e.g.\ molecular clouds, central regions of starburst galaxies) the interaction timescale can become comparable to, or shorter than, other relevant timescales such as escape or radiative cooling.
@@ -138,24 +139,24 @@ This expression makes two important points explicit:
 \end{itemize}
 These simple scaling relations already give a first feeling for when and where hadronic interactions become efficient in astrophysical sources.
 
-\subsection{Pion Production in Proton--Proton Collisions}
+\paragraph{Pion Production in Proton--Proton Collisions.}
 
-A particularly important class of hadronic processes for high-energy astrophysics is \emph{pion production} in proton--proton collisions. When a high-energy cosmic-ray proton hits a proton at rest in the interstellar medium, the available energy in the center-of-mass frame can be sufficient to create new particles. The lightest of these are the pions (\(\pi\)), and their production provides the main channel for generating high-energy gamma rays and neutrinos in hadronic scenarios.
+A particularly important class of hadronic processes for high-energy astrophysics is \emphit{pion production} in proton--proton collisions. When a high-energy cosmic-ray proton hits a proton at rest in the interstellar medium, the available energy in the center-of-mass frame can be sufficient to create new particles. The lightest of these are the pions (\(\pi\)), and their production provides the main channel for generating \emphit{high-energy gamma rays and neutrinos in hadronic scenarios}.
 
 At the level of dominant channels, high-energy proton--proton interactions can be schematically written as
 \begin{equation}
 p + p \rightarrow 
 \begin{cases}
-p + p + \pi^0 \\
-p + n + \pi^+  \\
-p + p + \pi^+ + \pi^-
+p + p + {\color{PineGreen}\pi^0} \\
+p + n + {\color{OrangeRed}\pi^+}  \\
+p + p + {\color{OrangeRed}\pi^+} + {\color{RoyalBlue}\pi^-}
 \end{cases}
 \end{equation}
 with many more complex final states opening up at higher energies. The produced pions (\(\pi^0, \pi^+, \pi^-\)) are unstable and decay rapidly, feeding electromagnetic and neutrino channels.
 
 Neutral pions decay into gamma rays:
 \begin{equation}
-\pi^0 \rightarrow \gamma + \gamma.
+\pi^0 \rightarrow {\color{\gamma + \gamma.
 \end{equation}
 
 Charged pions decay into muons and (anti)neutrinos:
@@ -212,13 +213,10 @@ Experimentally, \(\sigma_{\rm inel}\) rises quickly once the pion production thr
 For practical calculations in astrophysics, it is convenient to use a smooth analytical fit. A widely used parameterization, valid for \(T_p \gtrsim 1~\text{GeV}\), is given by~\cite{Kelner2006prd}
 \begin{equation}
 \sigma_{\rm inel}(E_p) = \bigl(34.3 + 1.88\,L + 0.25\,L^2\bigr) 
-\left[ 1 - \left( \frac{E^{\rm th}_p}{E_p} \right)^4 \right]^2 \, \text{mb},
+\left[ 1 - \left( \frac{E^{\rm th}_p}{E_p} \right)^4 \right]^2 \, \text{mb} \, \quad \, \text{where} \,\, L = \ln\!\left(\frac{E_p}{\text{TeV}}\right),
 \end{equation}
-where 
-\[
-L = \ln\!\left(\frac{E_p}{\text{TeV}}\right),
-\]
-and \(E^{\rm th}_p\) is the threshold energy derived above. This expression smoothly interpolates between the rapid onset of inelasticity near threshold and the slow logarithmic growth of the cross-section at very high energies, and will be our workhorse in computing hadronic gamma-ray and neutrino yields in the following sections.
+%
+and \(E^{\rm th}_p\) is the threshold energy derived above. This expression smoothly interpolates between the rapid onset of inelasticity near threshold and the slow logarithmic growth of the cross-section at very high energies, and will be useful in computing hadronic gamma-ray and neutrino yields in the following sections.
 
 %\subsection{Inclusive Cross-Sections for Pion Production }
 %
@@ -607,13 +605,13 @@ To characterize this box in logarithmic energy, we can compute its central energ
 = \frac{1}{2}\left( \log E_{\gamma,\rm min} + \log E_{\gamma,\rm max} \right).
 \end{equation}
 Using Eq.~\eqref{eq:gammaminmax} and the identity \(\gamma_\pi^2 - 1 = \beta_\pi^2 \gamma_\pi^2\), one finds
-\begin{remark}
+\begin{tcolorbox}
 \begin{equation}
 \langle \log E_\gamma \rangle 
 = \log \left[ \frac{E_\pi^2}{4}\,(1-\beta_\pi^2) \right]^{1/2}
 = \log\left(\frac{m_\pi}{2}\right).
 \end{equation}
-\end{remark}
+\end{tcolorbox}
 The logarithmic midpoint of the box is thus \emph{fixed} at \(E_\gamma = m_\pi/2 \simeq 67.5~\text{MeV}\), independent of the pion’s energy.
 
 \begin{figure}[!t]	
@@ -639,139 +637,358 @@ This feature is remarkably robust: its position and general shape depend only we
 
 A celebrated example is provided by the \emph{Fermi}-LAT observations reported in Ref.~\cite{Ackermann2013sci}, where a spectral feature consistent with the pion bump was detected in the gamma-ray emission from two old supernova remnants interacting with molecular clouds (Fig.~\ref{fig:pionbumpfermi}). This measurement offered one of the clearest pieces of evidence that at least some supernova remnants accelerate hadronic cosmic rays efficiently.
 
-\end{document}
+%\subsection{Gamma-Ray Emissivity}
+%
+%The gamma-ray emissivity, \(q_\gamma(E_\gamma)\), describes the production rate of gamma rays with energy \(E_\gamma\) per unit time, volume, and energy. It is derived from the pion emissivity, \(q_\pi(E_\pi)\), by summing the contributions from all pions capable of producing gamma photons with energy \(E_\gamma\). This is expressed as:
+%\begin{equation}
+%q_\gamma(E_\gamma) = 2 \int_{E_{\pi, \rm min}}^\infty dE_\pi \, q_\pi(E_\pi) \frac{dN}{dE_\gamma},
+%\end{equation}
+%where the factor of 2 accounts for the two photons emitted in each \(\pi^0\) decay,  \(E_{\pi, \rm min}\) is the minimum pion energy required to produce a photon of energy \(E_\gamma\), and \(\frac{dN}{dE_\gamma}\) represents the energy distribution of photons from a pion of energy \(E_\pi\).  
+%
+%To determine the minimum pion energy \(E_{\pi, \rm min}\) needed to produce a photon of energy \(E_\gamma\), we notice that the photon energies in the LAB frame are bounded by \( E_{\gamma, \rm min} + E_{\gamma, \rm max} = E_\pi \), and \( E_{\gamma, \rm min} E_{\gamma, \rm max} = \frac{m_\pi^2}{4} \).
+%
+%These two relations can be combined to express the pion energy in terms of \(E_{\gamma, \rm max}\):
+%\begin{equation}
+%E_\pi = E_{\gamma, \rm min} + E_{\gamma, \rm max} = \frac{m_\pi^2}{4 E_{\gamma, \rm max}} + E_{\gamma, \rm max}.
+%\end{equation}
+%
+%For a photon of energy \(E_\gamma\), the minimum pion energy \(E_{\pi, \rm min}\) occurs when \(E_{\gamma, \rm max} = E_\gamma\), as this corresponds to the highest-energy photon being emitted directly along the pion’s direction of motion. Therefore, we find:
+%%
+%\begin{equation}
+%E_{\pi, \rm min} = E_\gamma + \frac{m_\pi^2}{4 E_\gamma}.
+%\end{equation}
+%
+%Using this, the gamma-ray emissivity becomes:
+%%
+%\begin{remark}
+%\begin{equation}\label{eq:qgamma2}
+%q_\gamma(E_\gamma) = 2 \int_{E_\gamma + \frac{m_\pi^2}{4 E_\gamma}}^\infty dE_\pi \frac{q(E_\pi)}{(E_\pi^2 - m_\pi^2)^{1/2}} \oset{E_\gamma \gg m_\pi}{\simeq} 2 \int_{E_\gamma}^\infty \frac{dE_\pi}{E_\pi} q_\pi(E_\pi)
+%\end{equation}
+%\end{remark}
+%%
+%where the final expression holds true at high energies where the pion mass can be considered negligible.
+%
+%This simplified expression highlights an important feature of the gamma-ray spectrum at high energies! The gamma-ray spectrum \( q_\gamma(E_\gamma) \) is directly linked to the pion spectrum, retaining the same spectral index.
+%Since the pion spectrum itself mirrors the parent proton spectrum at high energies, the gamma-ray spectrum ultimately inherits the spectral index of the cosmic-ray protons, \( E_\gamma^{-\alpha_p} \).
+%
+%The only modification is a shift in energy due to the inelasticity factor, with gamma rays appearing at an energy scale approximately \( K_\gamma = K_\pi / 2 \) times the energy of the parent protons.
+%
+%This behavior contrasts sharply with that of gamma rays generated by IC scattering, where the spectral index of the gamma rays reflects a different scaling relative to the parent electron spectrum. In particular, for IC scattering, the gamma-ray spectrum tends to exhibit a comparatively flatter dependence on energy, scaling approximately as \(E_\gamma^{-(\alpha_e+1)/2}\), where \(\alpha_e\) is the spectral index of the electron spectrum.  
+%
+%This distinction is crucial for disentangling the origin of high-energy gamma rays in astrophysical observations. While gamma rays from hadronic processes closely mirror the spectral index of cosmic-ray protons, those produced via IC scattering from relativistic electrons typically show a softer or flatter spectrum.
 
 \subsection{Gamma-Ray Emissivity}
+\label{subsec:gamma_emissivity}
 
-The gamma-ray emissivity, \(q_\gamma(E_\gamma)\), describes the production rate of gamma rays with energy \(E_\gamma\) per unit time, volume, and energy. It is derived from the pion emissivity, \(q_\pi(E_\pi)\), by summing the contributions from all pions capable of producing gamma photons with energy \(E_\gamma\). This is expressed as:
+The \emph{gamma-ray emissivity}, \(q_\gamma(E_\gamma)\), describes the production rate of photons with energy \(E_\gamma\) per unit time, volume, and energy. For hadronic gamma rays from neutral-pion decay, \(q_\gamma\) is directly inherited from the pion emissivity \(q_\pi(E_\pi)\): for each pion energy \(E_\pi\), we add the contribution of the two photons produced in the decay and then sum over all relevant pion energies.
+
+This can be written as
 \begin{equation}
-q_\gamma(E_\gamma) = 2 \int_{E_{\pi, \rm min}}^\infty dE_\pi \, q_\pi(E_\pi) \frac{dN}{dE_\gamma},
+q_\gamma(E_\gamma) 
+= 2 \int_{E_{\pi,\rm min}}^\infty dE_\pi\, q_\pi(E_\pi)\,\frac{dN}{dE_\gamma},
 \end{equation}
-where the factor of 2 accounts for the two photons emitted in each \(\pi^0\) decay,  \(E_{\pi, \rm min}\) is the minimum pion energy required to produce a photon of energy \(E_\gamma\), and \(\frac{dN}{dE_\gamma}\) represents the energy distribution of photons from a pion of energy \(E_\pi\).  
+where the factor of 2 accounts for the two photons emitted in each \(\pi^0\) decay, \(E_{\pi,\rm min}\) is the minimum pion energy that can produce a photon with energy \(E_\gamma\), and \(\frac{dN}{dE_\gamma}\) is the photon energy distribution from a single pion of energy \(E_\pi\) (derived in the previous subsection).
 
-To determine the minimum pion energy \(E_{\pi, \rm min}\) needed to produce a photon of energy \(E_\gamma\), we notice that the photon energies in the LAB frame are bounded by \( E_{\gamma, \rm min} + E_{\gamma, \rm max} = E_\pi \), and \( E_{\gamma, \rm min} E_{\gamma, \rm max} = \frac{m_\pi^2}{4} \).
+\medskip
 
-These two relations can be combined to express the pion energy in terms of \(E_{\gamma, \rm max}\):
+To determine \(E_{\pi,\rm min}\), we recall that in the LAB frame the two photon energies are bounded between \(E_{\gamma,\rm min}\) and \(E_{\gamma,\rm max}\), and they satisfy
 \begin{equation}
-E_\pi = E_{\gamma, \rm min} + E_{\gamma, \rm max} = \frac{m_\pi^2}{4 E_{\gamma, \rm max}} + E_{\gamma, \rm max}.
+E_{\gamma,\rm min} + E_{\gamma,\rm max} = E_\pi,
+\qquad
+E_{\gamma,\rm min} E_{\gamma,\rm max} = \frac{m_\pi^2}{4}.
 \end{equation}
-
-For a photon of energy \(E_\gamma\), the minimum pion energy \(E_{\pi, \rm min}\) occurs when \(E_{\gamma, \rm max} = E_\gamma\), as this corresponds to the highest-energy photon being emitted directly along the pion’s direction of motion. Therefore, we find:
-%
+Combining these relations, one can express the pion energy in terms of, say, the maximum photon energy:
 \begin{equation}
-E_{\pi, \rm min} = E_\gamma + \frac{m_\pi^2}{4 E_\gamma}.
+E_\pi = E_{\gamma,\rm min} + E_{\gamma,\rm max}
+      = \frac{m_\pi^2}{4 E_{\gamma,\rm max}} + E_{\gamma,\rm max}.
 \end{equation}
 
-Using this, the gamma-ray emissivity becomes:
-%
-\begin{remark}
+For a given observed photon energy \(E_\gamma\), the \emph{minimum} pion energy \(E_{\pi,\rm min}\) is obtained by setting \(E_{\gamma,\rm max} = E_\gamma\), i.e.\ by assuming that the photon is produced in the most favorable configuration, emitted along the direction of motion of the pion. This gives
+\begin{equation}
+E_{\pi,\rm min} = E_\gamma + \frac{m_\pi^2}{4 E_\gamma}.
+\end{equation}
+
+Using the box-like photon spectrum from a single pion,
+\(
+\frac{dN}{dE_\gamma} = \bigl(E_\pi^2 - m_\pi^2\bigr)^{-1/2}
+\)
+for \(E_\gamma \in [E_{\gamma,\rm min},E_{\gamma,\rm max}]\), the gamma-ray emissivity can then be written as
+\begin{tcolorbox}
 \begin{equation}\label{eq:qgamma2}
-q_\gamma(E_\gamma) = 2 \int_{E_\gamma + \frac{m_\pi^2}{4 E_\gamma}}^\infty dE_\pi \frac{q(E_\pi)}{(E_\pi^2 - m_\pi^2)^{1/2}} \oset{E_\gamma \gg m_\pi}{\simeq} 2 \int_{E_\gamma}^\infty \frac{dE_\pi}{E_\pi} q_\pi(E_\pi)
+q_\gamma(E_\gamma) 
+= 2 \int_{E_\gamma + \frac{m_\pi^2}{4 E_\gamma}}^\infty 
+dE_\pi \,\frac{q_\pi(E_\pi)}{\sqrt{E_\pi^2 - m_\pi^2}}
+\;\oset{E_\gamma \gg m_\pi}{\simeq}\;
+2 \int_{E_\gamma}^\infty \frac{dE_\pi}{E_\pi}\, q_\pi(E_\pi),
 \end{equation}
-\end{remark}
-%
-where the final expression holds true at high energies where the pion mass can be considered negligible.
+\end{tcolorbox}
+where in the last step we have used \(E_{\pi,\rm min} \simeq E_\gamma\) and \(\sqrt{E_\pi^2 - m_\pi^2} \simeq E_\pi\) for ultra-relativistic pions.
 
-This simplified expression highlights an important feature of the gamma-ray spectrum at high energies! The gamma-ray spectrum \( q_\gamma(E_\gamma) \) is directly linked to the pion spectrum, retaining the same spectral index.
-Since the pion spectrum itself mirrors the parent proton spectrum at high energies, the gamma-ray spectrum ultimately inherits the spectral index of the cosmic-ray protons, \( E_\gamma^{-\alpha_p} \).
+\medskip
 
-The only modification is a shift in energy due to the inelasticity factor, with gamma rays appearing at an energy scale approximately \( K_\gamma = K_\pi / 2 \) times the energy of the parent protons.
+This simplified expression highlights a very important point: at high energies, the gamma-ray spectrum \emph{tracks} the pion spectrum. If the pion emissivity follows a power law
+\[
+q_\pi(E_\pi) \propto E_\pi^{-\alpha_\pi},
+\]
+then, up to logarithmic corrections from the integral, the gamma-ray emissivity scales as
+\[
+q_\gamma(E_\gamma) \propto E_\gamma^{-\alpha_\pi}.
+\]
+In turn, we have already seen that at high energies \(q_\pi(E_\pi)\) essentially mirrors the spectrum of the parent protons, \(N_p(E_p) \propto E_p^{-\alpha_p}\). As a result, the hadronic gamma-ray spectrum inherits (to very good approximation) the same spectral index as the cosmic-ray protons:
+\[
+q_\gamma(E_\gamma) \propto E_\gamma^{-\alpha_p}.
+\]
 
-This behavior contrasts sharply with that of gamma rays generated by IC scattering, where the spectral index of the gamma rays reflects a different scaling relative to the parent electron spectrum. In particular, for IC scattering, the gamma-ray spectrum tends to exhibit a comparatively flatter dependence on energy, scaling approximately as \(E_\gamma^{-(\alpha_e+1)/2}\), where \(\alpha_e\) is the spectral index of the electron spectrum.  
+The overall energy scale is shifted with respect to the parent protons by the inelasticity: pions carry a fraction \(K_\pi\) of the parent proton energy, and each photon roughly half of the pion energy. Thus hadronic gamma rays appear around an energy scale
+\[
+E_\gamma \sim K_\gamma E_p,
+\qquad
+K_\gamma \simeq \frac{K_\pi}{2}.
+\]
 
-This distinction is crucial for disentangling the origin of high-energy gamma rays in astrophysical observations. While gamma rays from hadronic processes closely mirror the spectral index of cosmic-ray protons, those produced via IC scattering from relativistic electrons typically show a softer or flatter spectrum.
+\medskip
 
+This behavior is in sharp contrast with inverse Compton (IC) scattering by relativistic electrons. For an electron spectrum \(N_e(E_e) \propto E_e^{-\alpha_e}\), the IC gamma-ray spectrum in the Thomson regime typically scales as
+\[
+q_\gamma^{\rm IC}(E_\gamma) \propto E_\gamma^{-(\alpha_e+1)/2},
+\]
+i.e.\ with a different relation between the photon index and the index of the parent particles. 
+
+This difference in spectral mapping is crucial in practice: while hadronic gamma rays tend to \emph{inherit} the proton spectral index, leptonic gamma rays from IC scattering reflect a different, often flatter dependence on energy. Observationally, comparing the measured gamma-ray spectrum with these theoretical expectations provides a powerful diagnostic for disentangling hadronic and leptonic contributions in high-energy sources.
+
+Here’s a smoother, more narrative version of the section, keeping all your physics and equations intact and just tightening the flow and pedagogy a bit.
+
+```latex
 \subsection{Diffuse Galactic Gamma-Ray Emission}
+\label{subsec:diffuse_gal_gamma}
 
-In this section, we explore a significant application of the gamma-ray emissivity calculation by addressing the diffuse gamma-ray emission resulting from galactic cosmic rays interacting with interstellar matter. Cosmic rays, primarily protons, traverse the interstellar medium and interact with ambient gas, producing pions that decay into gamma rays. By moving beyond the delta-function approximation, we calculate the pion emissivity as follows:  
+We are now in a position to apply the general formalism for pion and gamma-ray emissivity to a key observable in high-energy astrophysics: the \emph{diffuse Galactic gamma-ray emission}. As Galactic cosmic rays, predominantly protons, propagate through the interstellar medium, they interact with ambient gas and produce pions, which in turn decay into gamma rays and neutrinos. The superposition of these interactions along all lines of sight through the Galactic disk gives rise to the diffuse gamma-ray glow measured, for example, by \emph{Fermi}-LAT.
+
+In this section we move beyond the delta-functional approximation and make use of a more realistic description of the pion energy distribution. The pion emissivity can be written as
 %
 \begin{equation}
-q(E_\pi) = c n_{\rm H} \int_{E_\pi}^\infty dE_p \, N_p(E_p) \frac{d\sigma}{dE_\pi}(E_p, E_\pi) = 4 \pi n_{\rm H} \int_{E_\pi}^\infty dE_p \, I_p(E_p) \frac{d\sigma}{dE_\pi}(E_p, E_\pi),
+q(E_\pi) = c\,n_{\rm H} \int_{E_\pi}^\infty dE_p \, N_p(E_p)\,
+\frac{d\sigma}{dE_\pi}(E_p, E_\pi)
+= 4\pi\,n_{\rm H} \int_{E_\pi}^\infty dE_p \, I_p(E_p)\,
+\frac{d\sigma}{dE_\pi}(E_p, E_\pi),
 \end{equation}
 %
-where \(\frac{d\sigma}{dE_\pi}(E_p, E_\pi)\) is the \emph{differential pion production cross-section}, and \(N_p(E_p) \) is the proton density per unit of energy.  
-%
-We conveniently convert the proton density \(N_p(E_p) \) to the proton intensity \( I_p(E_p) \) defined as \( I_p(E_p) =  \frac{c}{4\pi} N_p(E_p) \) as this is the quantity typically provided by measurements.
+where \(\frac{d\sigma}{dE_\pi}(E_p, E_\pi)\) is the \emph{differential pion production cross-section}, \(N_p(E_p)\) is the proton density per unit energy, and \(I_p(E_p)\) is the isotropic proton intensity, related by
+\[
+I_p(E_p) = \frac{c}{4\pi} N_p(E_p).
+\]
+Using the intensity is convenient because it is directly measured by cosmic-ray experiments.
 
-The differential cross-section \(\frac{d\sigma}{dE_\pi}\) for pion production in proton-proton interactions can be parameterized in terms of the \emph{total inclusive cross-section} \(\sigma_{pp}\) and a normalized auxiliary function \(f(E_p, E_\pi)\), designed to fit experimental data:  
+\medskip
+
+The differential cross-section \(\frac{d\sigma}{dE_\pi}\) for pion production in proton--proton interactions can be factorized in terms of the \emph{total inclusive cross-section} \(\sigma_{pp}(E_p)\) and a normalized auxiliary function \(f(E_p,E_\pi)\) that encodes the pion energy distribution and is fitted to accelerator data:
 \begin{equation}
-\frac{d\sigma}{dE_\pi}(E_p, E_\pi) = \sigma_{pp}(E_p) \frac{f(E_p, E_\pi)}{E_\pi} \simeq \sigma_0 \frac{f(E_p, E_\pi)}{E_\pi}.
+\frac{d\sigma}{dE_\pi}(E_p, E_\pi) 
+= \sigma_{pp}(E_p)\,\frac{f(E_p, E_\pi)}{E_\pi}
+\simeq \sigma_0\,\frac{f(E_p, E_\pi)}{E_\pi}.
 \end{equation}
-
-The function \(f(E_p, E_\pi)\) describes the energy distribution of the produced pions, and it has been observed that it primarily depends on the ratio \(x = E_\pi / E_p\).
-%
-A widely used parameterization of \(f(x)\) is given by~\cite{Berezinskii1988sal}:
+The function \(f(E_p, E_\pi)\) is found empirically to depend mainly on the ratio
+\[
+x \equiv \frac{E_\pi}{E_p},
+\]
+rather than on \(E_p\) and \(E_\pi\) separately. A widely used parameterization is~\cite{Berezinskii1988sal}
 \begin{equation}
-f(x) = 0.67 (1-x)^{3.5} + 0.5 \exp(-18x),
+f(x) = 0.67\,(1-x)^{3.5} + 0.5\,\exp(-18x),
+\qquad x \in [0,1].
 \end{equation}
-where \(x \in [0, 1]\).  
+Finally, we approximate the inelastic cross-section by its plateau value at \(\gtrsim\)GeV energies,
+\[
+\sigma_{pp}(E_p) \simeq \sigma_0 \simeq 30~\text{mb},
+\]
+which is sufficient for our order-of-magnitude estimates.
 
-Finally, we approximate the inelastic cross-section as a constant, using its plateau value at \( \gtrsim \)~GeV energy: \( \sigma_{pp} \sim \sigma_0 \simeq 30 \)~mbarn.
+\medskip
 
-%with the normalization condition:
-%\begin{equation}
-%\int_{E_{\pi, \rm min}}^{E_{\pi, \rm max}} \frac{dE_\pi}{E_\pi} f(E_p, E_\pi) = 1.
-%\end{equation}
-
-The observed proton intensity in cosmic rays, \(I_p(E_p)\), is generally well-represented by a power-law spectrum:
+The observed proton intensity in Galactic cosmic rays is well described, over a broad range of energies, by a power law:
 \begin{equation}
-I_p(E_p) = I_{10} \left(\frac{E_p}{E_{10}}\right)^{-\alpha},
+I_p(E_p) = I_{10}\left(\frac{E_p}{E_{10}}\right)^{-\alpha},
 \end{equation}
-where \(I_{10}\) is the proton intensity at a reference energy \(E_{10} = 10~\text{GeV}\), and \(\alpha \sim 2.7\) is the spectral index.  
+where \(E_{10} = 10~\text{GeV}\) is a reference energy, \(I_{10} \equiv I_p(E_{10})\), and \(\alpha \simeq 2.7\) is the local spectral index.
 
-Substituting this form and the parameterization for \(\frac{d\sigma}{dE_\pi}\) into the expression for \(q(E_\pi)\), we obtain:
+Substituting this form and the parameterization of \(\frac{d\sigma}{dE_\pi}\) into the expression for \(q(E_\pi)\), we obtain
 \begin{equation}
-q(E_\pi) \simeq 4 \pi n_{\rm H} I_{10} \sigma_0 \int_{E_\pi}^\infty \frac{dE_p}{E_\pi} \left(\frac{E_p}{E_{10}} \right)^{-\alpha} f(x).
+q(E_\pi) \simeq 4\pi\,n_{\rm H}\,I_{10}\,\sigma_0
+\int_{E_\pi}^\infty \frac{dE_p}{E_\pi}
+\left(\frac{E_p}{E_{10}}\right)^{-\alpha} f(x).
 \end{equation}
-
-Changing the integration variable to \(x = E_\pi / E_p\), the emissivity simplifies to:
+Changing integration variable to \(x = E_\pi/E_p\), so that
+\(
+E_p = E_\pi/x
+\)
+and
+\(
+dE_p = -E_\pi x^{-2}\,dx,
+\)
+the emissivity simplifies to
 \begin{equation}
-q(E_\pi) = 4 \pi n_{\rm H} I_{10} \sigma_0 \left(\frac{E_\pi}{E_{10}} \right)^{-\alpha} \underbrace{\int_0^1 dx \, x^{\alpha-2} f(x)}_{Y(\alpha)},
+q(E_\pi) 
+= 4\pi\,n_{\rm H}\,I_{10}\,\sigma_0
+\left(\frac{E_\pi}{E_{10}} \right)^{-\alpha}
+\underbrace{\int_0^1 dx\,x^{\alpha-2}\,f(x)}_{Y(\alpha)},
 \end{equation}
-where \(Y(\alpha)\) is the \emph{spectrum-weighted yield of pions} produced from a proton population with a power-law spectral index \(\alpha\).  
+where
+\[
+Y(\alpha) \equiv \int_0^1 dx\,x^{\alpha-2}\,f(x)
+\]
+is the \emph{spectrum-weighted yield} of pions produced by a proton population with spectral index \(\alpha\). All the details of the hadronic physics and kinematics are encapsulated in this single dimensionless factor.
 
-The photon emissivity \(q_\gamma(E_\gamma)\) can now be calculated from~\ref{eq:qgamma2}:  
+\medskip
+
+The photon emissivity \(q_\gamma(E_\gamma)\) can now be computed using~\eqref{eq:qgamma2}. In the high-energy limit (\(E_\gamma \gg m_\pi\)) we have
 \begin{equation}
-q_\gamma(E_\gamma) = 8 \pi n_{\rm H} \sigma_0 Y(\alpha) I_{10} \int_{E_\gamma}^\infty \frac{dE_\pi}{E_\pi} \left(\frac{E_\pi}{E_{10}}\right)^{-\alpha}.
+q_\gamma(E_\gamma) \simeq 
+8\pi\,n_{\rm H}\,\sigma_0\,Y(\alpha)\,I_{10}
+\int_{E_\gamma}^\infty \frac{dE_\pi}{E_\pi}
+\left(\frac{E_\pi}{E_{10}}\right)^{-\alpha}.
 \end{equation}
-
-Performing the integration yields:
+Carrying out the integral gives
 \begin{equation}
-E_\gamma^2 q_\gamma(E_\gamma) = \frac{8 \pi}{\alpha} n_{\rm H} \sigma_0 Y(\alpha) E_{10}^2 I_{10} \left(\frac{E_\gamma}{E_{10}}\right)^{2-\alpha}.
+E_\gamma^2 q_\gamma(E_\gamma) 
+= \frac{8\pi}{\alpha}\,
+n_{\rm H}\,\sigma_0\,Y(\alpha)\,
+E_{10}^2\,I_{10}
+\left(\frac{E_\gamma}{E_{10}}\right)^{2-\alpha}.
 \end{equation}
+We thus recover the scaling anticipated earlier: apart from the slowly varying prefactors, the gamma-ray spectrum reflects the underlying proton index, with
+\[
+q_\gamma(E_\gamma) \propto E_\gamma^{-\alpha}.
+\]
 
-Using the gamma-ray emissivity \(q_\gamma(E_\gamma)\), we can estimate the diffuse gamma-ray intensity arising from proton-proton interactions in the Galactic plane. Assuming a uniform distribution of cosmic rays and interstellar gas, the gamma-ray intensity along a line of sight (los) is given by:
+\medskip
+
+To connect with observations, we now compute the \emph{diffuse gamma-ray intensity} along a given line of sight. Assuming that cosmic rays and gas are uniformly mixed, the intensity is
 \begin{equation}
-I_\gamma(E_\gamma) = \frac{1}{4\pi} \int_{\rm los} ds \, q_\gamma(E_\gamma).
+I_\gamma(E_\gamma) = \frac{1}{4\pi} \int_{\rm los} ds\,q_\gamma(E_\gamma).
 \end{equation}
-
-Substituting \(q_\gamma(E_\gamma)\) and defining the gas column density as \(N_{\rm H} = \int_{\rm los} ds \, n_{\rm H}\), we find:
-\begin{remark}
+Defining the gas column density along the line of sight as
+\(
+N_{\rm H} = \int_{\rm los} ds\,n_{\rm H},
+\)
+we obtain
+\begin{tcolorbox}
 \begin{equation}
-E_\gamma^2 I_\gamma = \frac{2}{\alpha} N_{\rm H} \sigma_0 Y(\alpha) E_{10}^2 I_p(E_{10}) \left(\frac{E_\gamma}{E_{10}}\right)^{2-\alpha}.
+E_\gamma^2 I_\gamma(E_\gamma)
+= \frac{2}{\alpha}\,
+N_{\rm H}\,\sigma_0\,Y(\alpha)\,
+E_{10}^2\,I_p(E_{10})
+\left(\frac{E_\gamma}{E_{10}}\right)^{2-\alpha}.
 \end{equation}
-\end{remark}
+\end{tcolorbox}
 
-To estimate the gamma-ray intensity at \(E_\gamma = 1~\text{GeV}\) we adopt:  
-%
+Let us now make a concrete estimate at \(E_\gamma = 1~\text{GeV}\). We adopt:
 \begin{itemize}
-\item The gas column density along the Galactic plane is approximately \(N_{\rm H} \simeq 10^{22}~\text{cm}^{-2}\)~\cite{addref}.  
-\item The observed proton intensity at \(E_p = 10~\text{GeV}\) is \(E_{10}^2 I_p(E_{10}) \simeq 0.2~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}\)~\cite{crdb} 
-\item For \(\alpha \simeq 2.7\), we compute the yield as \(Y(\alpha) \simeq 4 \times 10^{-2}\).
+\item A characteristic gas column density along the inner Galactic plane,
+      \(N_{\rm H} \simeq 10^{22}~\text{cm}^{-2}\)~\cite{addref}.
+\item The observed proton intensity at \(E_{10}=10~\text{GeV}\),
+      \(E_{10}^2 I_p(E_{10}) \simeq 0.2~\text{GeV}~
+      \text{cm}^{-2}\,\text{s}^{-1}\,\text{sr}^{-1}\)~\cite{crdb}.
+\item A local proton spectral index \(\alpha \simeq 2.7\), for which the
+      spectrum-weighted yield evaluates to \(Y(\alpha) \simeq 4 \times 10^{-2}\).
 \end{itemize}
-
-Substituting these values, we find:
+Inserting these values into the expression above, one finds
 \begin{equation}
-E_\gamma^2 I_\gamma \simeq 10^{-5}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
+E_\gamma^2 I_\gamma(E_\gamma \!=\! 1~\text{GeV})
+\simeq 10^{-5}~\text{GeV}~
+\text{cm}^{-2}\,\text{s}^{-1}\,\text{sr}^{-1}.
 \end{equation}
 
-This value aligns well with observations of the diffuse gamma-ray emission measured by Fermi-LAT along the Galactic plane (\(|b| < 5^\circ\)) at \(E_\gamma \simeq 1~\text{GeV}\)~\cite{addref}.  
+This estimate is in good agreement with the diffuse gamma-ray intensity measured by \emph{Fermi}-LAT along the Galactic plane (\(|b| < 5^\circ\)) at \(E_\gamma \simeq 1~\text{GeV}\)~\cite{addref}. 
 
-This result strongly supports the hypothesis that the diffuse galactic gamma-ray emission originates from the interactions of the (approximately uniform) cosmic rays  with interstellar gas, predominantly through proton-proton collisions, with a spectrum reflecting the underlying cosmic-ray proton spectrum.
+The success of this simple calculation, based on locally measured cosmic-ray protons and a reasonable gas column density, provides strong support for the standard picture: the bulk of the diffuse Galactic gamma-ray emission is produced by interactions of an approximately uniform cosmic-ray population with interstellar gas, predominantly through proton--proton collisions, and its spectrum largely reflects the spectrum of the underlying cosmic-ray protons.
 
-\begin{problem}
-Compute the shape of $q_\gamma(E_\gamma)$ using the fitting formula of Eq.~(1) in 1302.3307 and using the $\delta$-function approximation. Plot $q_\gamma(E_\gamma)$ in linear scale and $E_\gamma^2q_\gamma(E_\gamma)$ in log-log one. 
-\end{problem}
+%\subsection{Diffuse Galactic Gamma-Ray Emission}
+%
+%In this section, we explore a significant application of the gamma-ray emissivity calculation by addressing the diffuse gamma-ray emission resulting from galactic cosmic rays interacting with interstellar matter. Cosmic rays, primarily protons, traverse the interstellar medium and interact with ambient gas, producing pions that decay into gamma rays. By moving beyond the delta-function approximation, we calculate the pion emissivity as follows:  
+%%
+%\begin{equation}
+%q(E_\pi) = c n_{\rm H} \int_{E_\pi}^\infty dE_p \, N_p(E_p) \frac{d\sigma}{dE_\pi}(E_p, E_\pi) = 4 \pi n_{\rm H} \int_{E_\pi}^\infty dE_p \, I_p(E_p) \frac{d\sigma}{dE_\pi}(E_p, E_\pi),
+%\end{equation}
+%%
+%where \(\frac{d\sigma}{dE_\pi}(E_p, E_\pi)\) is the \emph{differential pion production cross-section}, and \(N_p(E_p) \) is the proton density per unit of energy.  
+%%
+%We conveniently convert the proton density \(N_p(E_p) \) to the proton intensity \( I_p(E_p) \) defined as \( I_p(E_p) =  \frac{c}{4\pi} N_p(E_p) \) as this is the quantity typically provided by measurements.
+%
+%The differential cross-section \(\frac{d\sigma}{dE_\pi}\) for pion production in proton-proton interactions can be parameterized in terms of the \emph{total inclusive cross-section} \(\sigma_{pp}\) and a normalized auxiliary function \(f(E_p, E_\pi)\), designed to fit experimental data:  
+%\begin{equation}
+%\frac{d\sigma}{dE_\pi}(E_p, E_\pi) = \sigma_{pp}(E_p) \frac{f(E_p, E_\pi)}{E_\pi} \simeq \sigma_0 \frac{f(E_p, E_\pi)}{E_\pi}.
+%\end{equation}
+%
+%The function \(f(E_p, E_\pi)\) describes the energy distribution of the produced pions, and it has been observed that it primarily depends on the ratio \(x = E_\pi / E_p\).
+%%
+%A widely used parameterization of \(f(x)\) is given by~\cite{Berezinskii1988sal}:
+%\begin{equation}
+%f(x) = 0.67 (1-x)^{3.5} + 0.5 \exp(-18x),
+%\end{equation}
+%where \(x \in [0, 1]\).  
+%
+%Finally, we approximate the inelastic cross-section as a constant, using its plateau value at \( \gtrsim \)~GeV energy: \( \sigma_{pp} \sim \sigma_0 \simeq 30 \)~mbarn.
+%
+%
+%
+%The observed proton intensity in cosmic rays, \(I_p(E_p)\), is generally well-represented by a power-law spectrum:
+%\begin{equation}
+%I_p(E_p) = I_{10} \left(\frac{E_p}{E_{10}}\right)^{-\alpha},
+%\end{equation}
+%where \(I_{10}\) is the proton intensity at a reference energy \(E_{10} = 10~\text{GeV}\), and \(\alpha \sim 2.7\) is the spectral index.  
+%
+%Substituting this form and the parameterization for \(\frac{d\sigma}{dE_\pi}\) into the expression for \(q(E_\pi)\), we obtain:
+%\begin{equation}
+%q(E_\pi) \simeq 4 \pi n_{\rm H} I_{10} \sigma_0 \int_{E_\pi}^\infty \frac{dE_p}{E_\pi} \left(\frac{E_p}{E_{10}} \right)^{-\alpha} f(x).
+%\end{equation}
+%
+%Changing the integration variable to \(x = E_\pi / E_p\), the emissivity simplifies to:
+%\begin{equation}
+%q(E_\pi) = 4 \pi n_{\rm H} I_{10} \sigma_0 \left(\frac{E_\pi}{E_{10}} \right)^{-\alpha} \underbrace{\int_0^1 dx \, x^{\alpha-2} f(x)}_{Y(\alpha)},
+%\end{equation}
+%where \(Y(\alpha)\) is the \emph{spectrum-weighted yield of pions} produced from a proton population with a power-law spectral index \(\alpha\).  
+%
+%The photon emissivity \(q_\gamma(E_\gamma)\) can now be calculated from~\ref{eq:qgamma2}:  
+%\begin{equation}
+%q_\gamma(E_\gamma) = 8 \pi n_{\rm H} \sigma_0 Y(\alpha) I_{10} \int_{E_\gamma}^\infty \frac{dE_\pi}{E_\pi} \left(\frac{E_\pi}{E_{10}}\right)^{-\alpha}.
+%\end{equation}
+%
+%Performing the integration yields:
+%\begin{equation}
+%E_\gamma^2 q_\gamma(E_\gamma) = \frac{8 \pi}{\alpha} n_{\rm H} \sigma_0 Y(\alpha) E_{10}^2 I_{10} \left(\frac{E_\gamma}{E_{10}}\right)^{2-\alpha}.
+%\end{equation}
+%
+%Using the gamma-ray emissivity \(q_\gamma(E_\gamma)\), we can estimate the diffuse gamma-ray intensity arising from proton-proton interactions in the Galactic plane. Assuming a uniform distribution of cosmic rays and interstellar gas, the gamma-ray intensity along a line of sight (los) is given by:
+%\begin{equation}
+%I_\gamma(E_\gamma) = \frac{1}{4\pi} \int_{\rm los} ds \, q_\gamma(E_\gamma).
+%\end{equation}
+%
+%Substituting \(q_\gamma(E_\gamma)\) and defining the gas column density as \(N_{\rm H} = \int_{\rm los} ds \, n_{\rm H}\), we find:
+%\begin{remark}
+%\begin{equation}
+%E_\gamma^2 I_\gamma = \frac{2}{\alpha} N_{\rm H} \sigma_0 Y(\alpha) E_{10}^2 I_p(E_{10}) \left(\frac{E_\gamma}{E_{10}}\right)^{2-\alpha}.
+%\end{equation}
+%\end{remark}
+%
+%To estimate the gamma-ray intensity at \(E_\gamma = 1~\text{GeV}\) we adopt:  
+%%
+%\begin{itemize}
+%\item The gas column density along the Galactic plane is approximately \(N_{\rm H} \simeq 10^{22}~\text{cm}^{-2}\)~\cite{addref}.  
+%\item The observed proton intensity at \(E_p = 10~\text{GeV}\) is \(E_{10}^2 I_p(E_{10}) \simeq 0.2~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}\)~\cite{crdb} 
+%\item For \(\alpha \simeq 2.7\), we compute the yield as \(Y(\alpha) \simeq 4 \times 10^{-2}\).
+%\end{itemize}
+%
+%Substituting these values, we find:
+%\begin{equation}
+%E_\gamma^2 I_\gamma \simeq 10^{-5}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
+%\end{equation}
+%
+%This value aligns well with observations of the diffuse gamma-ray emission measured by Fermi-LAT along the Galactic plane (\(|b| < 5^\circ\)) at \(E_\gamma \simeq 1~\text{GeV}\)~\cite{addref}.  
+%
+%This result strongly supports the hypothesis that the diffuse galactic gamma-ray emission originates from the interactions of the (approximately uniform) cosmic rays  with interstellar gas, predominantly through proton-proton collisions, with a spectrum reflecting the underlying cosmic-ray proton spectrum.
+
+%\begin{problem}
+%Compute the shape of $q_\gamma(E_\gamma)$ using the fitting formula of Eq.~(1) in 1302.3307 and using the $\delta$-function approximation. Plot $q_\gamma(E_\gamma)$ in linear scale and $E_\gamma^2q_\gamma(E_\gamma)$ in log-log one. 
+%\end{problem}
 
 \section{Nuclei-\(\gamma\) Interactions}
 
@@ -867,173 +1084,381 @@ This expression highlights that the cooling timescale for the case of the CMB ra
 
 At the highest proton energies, photo-pion production becomes the dominant energy-loss mechanism. This leads to the Greisen-Zatsepin-Kuzmin (GZK) cutoff, a sharp suppression in the cosmic-ray flux above \( 10^{19.5} \) eV, setting a natural limit on the distance these particles can propagate through extragalactic space.
 
+\TODO{interaction rate}
+
+%\section{Neutrinos from Cosmic Accelerators}
+%
+%Astrophysical sources capable of accelerating particles to ultra-high energies, such as gamma-ray bursts (GRBs), active galactic nuclei (AGNs), and starburst galaxies, are promising candidates for high-energy neutrino production. This connection provides a basis for estimating the expected upper limits of high-energy neutrino flux from these cosmic accelerators.  
+%
+%The dominant mechanism for high-energy pion production in extragalactic environments is \(p\)-\(\gamma\) interactions, as discussed earlier. When high-energy protons interact with dense radiation fields, they produce pions through the \(\Delta^+\)-resonance as in~\ref{eq:deltares}.
+%
+%Due to \emph{isospin symmetry}, the decay of the \(\Delta^+\)-resonance preferentially produces protons over neutrons in a ratio of 2:1. Similarly, analogous processes involving neutrons can lead to the production of \(\pi^-\) mesons.
+%
+%The average energy transferred to a pion in such interactions is approximately:
+%\begin{equation}
+%\left\langle \frac{E_\pi}{E_p} \right\rangle \simeq \frac{1}{5},
+%\end{equation}
+%where \(E_\pi\) is the energy of the pion, and \(E_p\) is the energy of the parent proton.
+%
+%Regardless of the specific production mechanism, pions decay into photons, neutrinos, and leptons as follows:  
+%\begin{itemize}
+%\item Neutral pion decay:  
+%\begin{equation} \pi^0 \rightarrow \gamma + \gamma~, \end{equation}
+%producing two photons, each carrying approximately half of the pion's energy.
+%\item Charged pion decay:  
+%\begin{equation} \pi^+ \rightarrow \nu_\mu + \mu^+ \rightarrow \nu_\mu + e^+ + \nu_e + \bar{\nu}_\mu~, \end{equation}
+%where the energy is shared among multiple neutrinos and a positron.
+%\end{itemize}
+%
+%The average energy fractions for photons and neutrinos are as follows:
+%%
+%\begin{itemize}
+%\item For photons:  
+%\begin{equation}
+%\left\langle \frac{E_\gamma}{E_\pi} \right\rangle \simeq \frac{1}{2}, \quad \text{and thus} \quad \left\langle \frac{E_\gamma}{E_p} \right\rangle \simeq \frac{1}{10}.
+%\end{equation}
+%Each photon receives half the pion's energy, and since the pion itself carries \(\sim 1/5\) of the parent proton's energy, photons inherit \(\sim 1/10\) of the proton’s energy.
+%
+%\item For neutrinos:  
+%\begin{equation}
+%\left\langle \frac{E_\nu}{E_\pi} \right\rangle \simeq \frac{1}{4}, \quad \text{and thus} \quad \left\langle \frac{E_\nu}{E_p} \right\rangle \simeq \frac{1}{20}.
+%\end{equation}
+%Each neutrino receives \(\sim 1/4\) of the pion's energy, and since the pion carries \(\sim 1/5\) of the proton’s energy, neutrinos inherit \(\sim 1/20\) of the proton's energy.
+%\end{itemize}
+%
+%An additional channel for neutrino production is through neutron decay, represented by the process:
+%%
+%\begin{equation}
+%n \rightarrow p + e^- + \bar\nu_e
+%\end{equation}
+%%
+%However, neutrinos generated from neutron decay characteristically possess much lower energies, approximately on the order of \(10^{-2}\) times the energy of neutrinos produced from muon decays.
+%
+%\subsection{Neutrino and Gamma-Ray Production Rates}
+%
+%Consider \( Q_i(E) = \frac{dN}{dE \, dt} \), the \emph{production rate} of a particle type \(i\). This function represents the number of particles produced per unit time within the energy range \(E\) to \(E + dE\). Using this framework, we can derive the relationships between neutrino and gamma-ray production rates.  
+%
+%For neutrinos produced in charged pion decays, the total energy production rate across all neutrino flavors is:
+%\begin{equation}
+%\sum_\alpha E_\nu Q_{\nu_\alpha}(E_\nu) = 3 \left[ E_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \right]_{E_{\pi^+} \simeq 4 E_\nu}.
+%\end{equation}
+%Here the factor of 3 accounts for the three neutrinos (two \(\nu_\mu\) and one \(\nu_e\)) produced in the charged pion decay chain, and the pion energy is approximately related to the neutrino energy by \(E_{\pi^+} \simeq 4 E_\nu\).  
+%
+%For gamma rays produced in neutral pion decays, the energy production rate is:  
+%\begin{equation}
+%E_\gamma Q_\gamma(E_\gamma) \simeq 2 \left[ E_{\pi^0} Q_{\pi^0}(E_{\pi^0}) \right]_{E_{\pi^0} \simeq 2 E_\gamma}.
+%\end{equation}
+%Here the factor of 2 accounts for the two gamma photons produced in each \(\pi^0\) decay,  and the neutral pion energy relates to the photon energy as \(E_{\pi^0} \simeq 2 E_\gamma\).  
+%
+%Assuming that \(E_{\pi^+} \simeq E_{\pi^0}\) and the production rates of charged and neutral pions are related by \(Q_{\pi^+} \simeq R_\pi Q_{\pi^0}\) (where \(R_\pi\) is the charged-to-neutral pion production ratio), we find:  
+%\begin{equation}
+%\frac{1}{3} \sum_\alpha E_\nu Q_{\nu_\alpha}(E_\nu) \simeq R_\pi \left[ E_{\pi^0} Q_{\pi^0}(E_{\pi^0}) \right]_{E_{\pi^0} \simeq 4 E_\nu}.
+%\end{equation}
+%
+%Substituting the gamma-ray production rate, the relation between neutrino and gamma-ray production rates becomes:
+%\begin{equation}
+%\frac{1}{3} \sum_\alpha E_\nu^2 Q_{\nu_\alpha}(E_\nu) \simeq \frac{R_\pi}{4} \left[ E_\gamma^2 Q_\gamma(E_\gamma) \right]_{E_\gamma \simeq 2 E_\nu}.
+%\end{equation}
+%%
+%This equation explicitly connects neutrino and gamma-ray production, enabling \emph{multi-messenger} studies of astrophysical sources.  
+%
+%\subsection{Diffuse Neutrino Intensity}
+%
+%For a population of identical neutrino sources, each with a luminosity \(\mathcal{L}_\nu\) and a number density \(n_s\), the total neutrino production rate per unit volume is:  
+%\begin{equation}
+%E_\nu^2 \frac{dQ}{dV} \simeq \mathcal{L}_\nu n_s.
+%\end{equation}
+%
+%The resulting local neutrino intensity, after accounting for cosmological redshift effects and propagation, is given by:
+%\begin{equation}
+%E_\nu^2 I_\nu \simeq \frac{c t_{\rm H}}{4\pi} \xi_z \mathcal{L}_\nu n_s,
+%\end{equation}
+%where \(t_{\rm H} \sim 1/H_0\) is the Hubble-Lemaître time, representing the age of the universe, and \(\xi_z \sim \mathcal{O}(1)\) accounts for the redshift evolution of source density and luminosity. 
+%
+%The IceCube observatory has measured a diffuse neutrino flux characterized by~\cite{}:
+%\begin{equation}
+%E_\nu^2 I_\nu^{\rm IC} \simeq 2.8 \times 10^{-8}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
+%\end{equation}
+%
+%By comparing the observed flux with theoretical predictions, we can constrain the properties of the neutrino sources. Substituting the observed IceCube flux into the expression for \(E_\nu^2 I_\nu\), the upper limit on the product of the source luminosity and number density is:
+%\begin{equation}
+%\mathcal{L}_\nu n_s \simeq \frac{4\pi}{\xi_z R_{\rm H}} E_\nu^2 I_\nu^{\rm IC} \simeq 4 \times 10^{43}~\text{erg}~\text{Mpc}^{-3}~\text{yr}^{-1},
+%\end{equation}
+%having used \(R_{\rm H} = c H_0^{-1} \simeq 4420~\text{Mpc}\). 
+%
+%This result provides a benchmark for the energy density of high-energy neutrino sources in the universe. Comparing this upper limit with the energy density of known astrophysical objects, such as gamma-ray bursts, active galactic nuclei, or starburst galaxies, can help identify the dominant contributors to the diffuse neutrino background (see~\ref{fig:nuluminosity}). 
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=0.5\textwidth]{figures/luminosityDISCOVERY.pdf}
+%\caption{Alhers Halzen~\cite{Ahlers2018ppnp}}
+%\label{fig:nuluminosity}
+%\end{figure}
+%
+%\subsection{Cosmic Ray Intensity and Pion Production Rate} 
+%
+%Measurements of ultra-high-energy cosmic rays (UHECRs) provide a key benchmark for understanding the production rates of secondary particles such as pions, neutrinos, and gamma rays. Observations estimate the UHECR intensity at proton energies \(E_p \gtrsim 10^{17}~\text{eV}\) as~\cite{add}:  
+%\begin{equation}
+%E_p^2 I^{\rm UHE}_p \simeq 10^{-7}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
+%\end{equation}
+%
+%From this, the corresponding cosmic-ray luminosity density is inferred as:
+%\begin{equation}
+%E_p^2 \frac{dQ_p}{dV} \simeq 10^{44}~\text{erg}~\text{Mpc}^{-3}~\text{yr}^{-1}.
+%\end{equation}
+%
+%Using these values, we can estimate the upper limit for the pion production rate by relating it to the cosmic-ray proton production rate. The total energy production rate of pions, including both charged (\(\pi^+\)) and neutral (\(\pi^0\)), satisfies:
+%\begin{equation}
+%E_{\pi^+} Q_{\pi^+}(E_{\pi^+}) + E_{\pi^0} Q_{\pi^0}(E_{\pi^0}) \simeq \left[E_p Q_p(E_p)\right]_{E_p \simeq E_{\pi} \left\langle \frac{E_p}{E_{\pi}} \right\rangle}.
+%\end{equation}
+%
+%To refine this relation, we use the charged-to-neutral pion production ratio \(R_\pi\), where \(Q_{\pi^+} \simeq R_\pi Q_{\pi^0}\), and the relation simplifies to:
+%\begin{equation}
+%\left(\frac{1 + R_\pi}{R_\pi}\right) E_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \simeq \left[E_p Q_p(E_p)\right]_{E_p \simeq E_{\pi} \left\langle \frac{E_p}{E_{\pi}} \right\rangle}.
+%\end{equation}
+%
+%Multiplying both sides by \(E_{\pi^+}\) gives:
+%\begin{equation}
+%\left(\frac{1 + R_\pi}{R_\pi}\right) E^2_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \simeq \frac{1}{\left\langle \frac{E_p}{E_{\pi}} \right\rangle} \left[E^2_p Q_p(E_p)\right]_{E_p \simeq E_{\pi} \left\langle \frac{E_p}{E_{\pi}} \right\rangle}.
+%\end{equation}
+%
+%Finally, we express the pion production rate as:
+%\begin{remark}
+%\begin{equation}
+%E^2_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \simeq x_\pi \frac{R_\pi}{1 + R_\pi} \left[E^2_p Q_p(E_p)\right]_{E_p \simeq E_{\pi} \left\langle \frac{E_p}{E_{\pi}} \right\rangle},
+%\end{equation}
+%\end{remark}
+%where \(x_\pi\) denotes the average fraction of proton energy transferred to pions during interactions.
+%
+%By integrating the production rates of secondary particles, we can determine the cumulative neutrino intensity across all flavors. The resulting neutrino intensity is given by:
+%\begin{equation}
+%\frac{1}{3} \sum_\alpha E_\nu^2 I_{\nu_\alpha} \lesssim 3 \times 10^{-8} x_\pi \left(\frac{\xi_z}{2.6}\right)~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
+%\end{equation}
+%Here \(x_\pi\) is the fraction of proton energy converted into pion energy, \(\xi_z \sim 2.6\) a factor accounting for redshift evolution of the sources.  
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=0.90\textwidth]{figures/panorama.pdf}
+%\caption{Alhers Halzen~\cite{Ahlers2018ppnp}}
+%\label{fig:uhemm}
+%\end{figure}
+%
+%The value \(3 \times 10^{-8}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}\) represents the \emph{Waxman-Bahcall bound}~\cite{aaa}, also known as the calorimetric limit (see~\ref{fig:uhemm}).  
+%
+%The Waxman-Bahcall bound assumes that all proton energy is efficiently converted into pions and subsequently into neutrinos. For that reason, this bound is applicable to \emph{transparent sources}, where interactions with radiation and matter inside the source allow neutrinos to escape without significant reabsorption or secondary interactions.
+%
+%In transparent sources, protons are accelerated within strong magnetic fields and interact with photons to produce pions via \(p\)-\(\gamma\) interactions. The decay of these pions produces neutrinos and gamma rays, while secondary protons and neutrons may remain confined within the source. 
+%%
+%For such sources, the neutrino flux is closely tied to the gamma-ray flux, reflecting the shared origin in pion production.
+%
+%Worth noticing that an important assumption in these models is that the source spectrum of accelerated particles is steeper than \(E^{-2}\). This steepness is typical of observed cosmic-ray spectra and theoretical predictions for diffusive shock acceleration in astrophysical sources. 
+%
+%In more complex astrophysical environments, the local conditions—such as photon density, magnetic field strength, and matter density—can affect the overall neutrino production and escape mechanisms. For example in opaque sources, as the recently detected NGC1068 galaxy, or if additional processes, such as \(e^+\)-\(e^-\) pair production or synchrotron cooling, can redistribute energy among secondary particles.
+%
+%The connection between UHECRs, neutrinos, and gamma rays offers a compelling framework for studying the most energetic processes in the universe. Observations of the diffuse neutrino background by IceCube and measurements of UHECR intensities by Auger together place strong constraints on the properties of cosmic accelerators, advancing our understanding of multi-messenger astrophysics~\cite{}.
+
 \section{Neutrinos from Cosmic Accelerators}
+\label{sec:nu_cosmic_accelerators}
 
-Astrophysical sources capable of accelerating particles to ultra-high energies, such as gamma-ray bursts (GRBs), active galactic nuclei (AGNs), and starburst galaxies, are promising candidates for high-energy neutrino production. This connection provides a basis for estimating the expected upper limits of high-energy neutrino flux from these cosmic accelerators.  
+Astrophysical sources capable of accelerating particles to ultra-high energies---such as gamma-ray bursts (GRBs), active galactic nuclei (AGNs), and starburst galaxies---are natural candidates for the production of high-energy neutrinos. In these environments, cosmic rays interact with dense radiation and matter fields, producing pions which subsequently decay into gamma rays and neutrinos. This tight coupling between hadronic interactions and secondary messengers provides the basis for estimating the expected neutrino flux from cosmic accelerators and for comparing it with observations.
 
-The dominant mechanism for high-energy pion production in extragalactic environments is \(p\)-\(\gamma\) interactions, as discussed earlier. When high-energy protons interact with dense radiation fields, they produce pions through the \(\Delta^+\)-resonance as in~\ref{eq:deltares}.
+In extragalactic sources, the dominant mechanism for high-energy pion production is often \(p\)-\(\gamma\) interactions. When ultra-relativistic protons traverse intense radiation fields, they interact predominantly through the \(\Delta^+\)-resonance (see Eq.~\ref{eq:deltares}), which then decays into nucleons and pions.
 
-Due to \emph{isospin symmetry}, the decay of the \(\Delta^+\)-resonance preferentially produces protons over neutrons in a ratio of 2:1. Similarly, analogous processes involving neutrons can lead to the production of \(\pi^-\) mesons.
-
-The average energy transferred to a pion in such interactions is approximately:
+Due to \emph{isospin symmetry}, the decay of the \(\Delta^+\)-resonance preferentially produces protons over neutrons in a ratio of roughly \(2:1\). Similar processes involving neutrons can lead to the production of \(\pi^-\) mesons. On average, a fraction
 \begin{equation}
-\left\langle \frac{E_\pi}{E_p} \right\rangle \simeq \frac{1}{5},
+\left\langle \frac{E_\pi}{E_p} \right\rangle \simeq \frac{1}{5}
 \end{equation}
-where \(E_\pi\) is the energy of the pion, and \(E_p\) is the energy of the parent proton.
+of the parent proton energy \(E_p\) is transferred to the produced pion with energy \(E_\pi\).
 
-Regardless of the specific production mechanism, pions decay into photons, neutrinos, and leptons as follows:  
+Regardless of the detailed production mechanism, the subsequent pion decays follow the familiar chains:
 \begin{itemize}
-\item Neutral pion decay:  
-\begin{equation} \pi^0 \rightarrow \gamma + \gamma~, \end{equation}
-producing two photons, each carrying approximately half of the pion's energy.
-\item Charged pion decay:  
-\begin{equation} \pi^+ \rightarrow \nu_\mu + \mu^+ \rightarrow \nu_\mu + e^+ + \nu_e + \bar{\nu}_\mu~, \end{equation}
-where the energy is shared among multiple neutrinos and a positron.
+\item Neutral pion decay
+\begin{equation}
+\pi^0 \rightarrow \gamma + \gamma,
+\end{equation}
+produces two photons, each carrying approximately half of the pion energy.
+
+\item Charged pion decay
+\begin{equation}
+\pi^+ \rightarrow \nu_\mu + \mu^+ \rightarrow \nu_\mu + e^+ + \nu_e + \bar{\nu}_\mu,
+\end{equation}
+distributes the pion energy among three neutrinos and one charged lepton (and similarly for \(\pi^-\) with conjugated particles).
 \end{itemize}
 
-The average energy fractions for photons and neutrinos are as follows:
-%
+From these decay kinematics, one can estimate the average energy fractions carried by photons and neutrinos:
 \begin{itemize}
-\item For photons:  
+\item For photons:
 \begin{equation}
-\left\langle \frac{E_\gamma}{E_\pi} \right\rangle \simeq \frac{1}{2}, \quad \text{and thus} \quad \left\langle \frac{E_\gamma}{E_p} \right\rangle \simeq \frac{1}{10}.
+\left\langle \frac{E_\gamma}{E_\pi} \right\rangle \simeq \frac{1}{2},
+\qquad \Rightarrow \qquad
+\left\langle \frac{E_\gamma}{E_p} \right\rangle \simeq \frac{1}{10}.
 \end{equation}
-Each photon receives half the pion's energy, and since the pion itself carries \(\sim 1/5\) of the parent proton's energy, photons inherit \(\sim 1/10\) of the proton’s energy.
+Each photon receives about half the pion energy, and the pion itself carries \(\sim 1/5\) of the proton energy, so gamma rays typically inherit \(\sim 1/10\) of the parent proton energy.
 
-\item For neutrinos:  
+\item For neutrinos:
 \begin{equation}
-\left\langle \frac{E_\nu}{E_\pi} \right\rangle \simeq \frac{1}{4}, \quad \text{and thus} \quad \left\langle \frac{E_\nu}{E_p} \right\rangle \simeq \frac{1}{20}.
+\left\langle \frac{E_\nu}{E_\pi} \right\rangle \simeq \frac{1}{4},
+\qquad \Rightarrow \qquad
+\left\langle \frac{E_\nu}{E_p} \right\rangle \simeq \frac{1}{20}.
 \end{equation}
-Each neutrino receives \(\sim 1/4\) of the pion's energy, and since the pion carries \(\sim 1/5\) of the proton’s energy, neutrinos inherit \(\sim 1/20\) of the proton's energy.
+Each neutrino receives roughly one quarter of the pion energy, implying that typical neutrino energies are about \(\sim 1/20\) of the parent proton energy.
 \end{itemize}
 
-An additional channel for neutrino production is through neutron decay, represented by the process:
-%
+An additional channel for neutrino production is neutron beta decay,
 \begin{equation}
-n \rightarrow p + e^- + \bar\nu_e
+n \rightarrow p + e^- + \bar{\nu}_e,
 \end{equation}
-%
-However, neutrinos generated from neutron decay characteristically possess much lower energies, approximately on the order of \(10^{-2}\) times the energy of neutrinos produced from muon decays.
+which produces \(\bar{\nu}_e\) at much lower energies. The typical energy of these neutrinos is of order \(10^{-2}\) times the energy of neutrinos produced in the pion--muon decay chains, and therefore they contribute mainly at comparatively low energies.
 
 \subsection{Neutrino and Gamma-Ray Production Rates}
+\label{subsec:nu_gamma_Q}
 
-Consider \( Q_i(E) = \frac{dN}{dE \, dt} \), the \emph{production rate} of a particle type \(i\). This function represents the number of particles produced per unit time within the energy range \(E\) to \(E + dE\). Using this framework, we can derive the relationships between neutrino and gamma-ray production rates.  
+To connect particle production in sources with observable fluxes, it is convenient to introduce the \emph{production rate} \(Q_i(E)\) of a particle species \(i\):
+\[
+Q_i(E) \equiv \frac{dN}{dE\,dt},
+\]
+i.e.\ the number of particles of type \(i\) produced per unit time and per unit energy around \(E\). In this notation we can directly relate pion, neutrino, and gamma-ray production.
 
-For neutrinos produced in charged pion decays, the total energy production rate across all neutrino flavors is:
+For neutrinos produced in charged-pion decays, the total energy production rate summed over all flavors is
 \begin{equation}
-\sum_\alpha E_\nu Q_{\nu_\alpha}(E_\nu) = 3 \left[ E_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \right]_{E_{\pi^+} \simeq 4 E_\nu}.
+\sum_\alpha E_\nu Q_{\nu_\alpha}(E_\nu)
+= 3 \left[ E_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \right]_{E_{\pi^+} \simeq 4 E_\nu}.
 \end{equation}
-Here the factor of 3 accounts for the three neutrinos (two \(\nu_\mu\) and one \(\nu_e\)) produced in the charged pion decay chain, and the pion energy is approximately related to the neutrino energy by \(E_{\pi^+} \simeq 4 E_\nu\).  
+Here the factor of 3 accounts for the three neutrinos in the \(\pi^+ \to \mu^+ \to e^+\) decay chain (two \(\nu_\mu\) and one \(\nu_e\)), and the relation \(E_{\pi^+} \simeq 4E_\nu\) encodes the average energy sharing between the pion and its daughter neutrinos.
 
-For gamma rays produced in neutral pion decays, the energy production rate is:  
+For gamma rays from neutral-pion decay, we similarly write
 \begin{equation}
-E_\gamma Q_\gamma(E_\gamma) \simeq 2 \left[ E_{\pi^0} Q_{\pi^0}(E_{\pi^0}) \right]_{E_{\pi^0} \simeq 2 E_\gamma}.
+E_\gamma Q_\gamma(E_\gamma) 
+\simeq 2 \left[ E_{\pi^0} Q_{\pi^0}(E_{\pi^0}) \right]_{E_{\pi^0} \simeq 2 E_\gamma},
 \end{equation}
-Here the factor of 2 accounts for the two gamma photons produced in each \(\pi^0\) decay,  and the neutral pion energy relates to the photon energy as \(E_{\pi^0} \simeq 2 E_\gamma\).  
+where the factor of 2 reflects the two photons produced per \(\pi^0\), and \(E_{\pi^0} \simeq 2 E_\gamma\) corresponds to the average energy per photon.
 
-Assuming that \(E_{\pi^+} \simeq E_{\pi^0}\) and the production rates of charged and neutral pions are related by \(Q_{\pi^+} \simeq R_\pi Q_{\pi^0}\) (where \(R_\pi\) is the charged-to-neutral pion production ratio), we find:  
+Assuming that the energies of charged and neutral pions are comparable (\(E_{\pi^+} \simeq E_{\pi^0}\)) and that their production rates are related by
+\[
+Q_{\pi^+} \simeq R_\pi\,Q_{\pi^0},
+\]
+with \(R_\pi\) the charged-to-neutral pion production ratio, we obtain
 \begin{equation}
-\frac{1}{3} \sum_\alpha E_\nu Q_{\nu_\alpha}(E_\nu) \simeq R_\pi \left[ E_{\pi^0} Q_{\pi^0}(E_{\pi^0}) \right]_{E_{\pi^0} \simeq 4 E_\nu}.
+\frac{1}{3} \sum_\alpha E_\nu Q_{\nu_\alpha}(E_\nu)
+\simeq R_\pi \left[ E_{\pi^0} Q_{\pi^0}(E_{\pi^0}) \right]_{E_{\pi^0} \simeq 4 E_\nu}.
 \end{equation}
-
-Substituting the gamma-ray production rate, the relation between neutrino and gamma-ray production rates becomes:
+Substituting the gamma-ray production rate, we finally arrive at
 \begin{equation}
-\frac{1}{3} \sum_\alpha E_\nu^2 Q_{\nu_\alpha}(E_\nu) \simeq \frac{R_\pi}{4} \left[ E_\gamma^2 Q_\gamma(E_\gamma) \right]_{E_\gamma \simeq 2 E_\nu}.
+\frac{1}{3} \sum_\alpha E_\nu^2 Q_{\nu_\alpha}(E_\nu)
+\simeq \frac{R_\pi}{4}\,
+\left[ E_\gamma^2 Q_\gamma(E_\gamma) \right]_{E_\gamma \simeq 2 E_\nu}.
 \end{equation}
-%
-This equation explicitly connects neutrino and gamma-ray production, enabling \emph{multi-messenger} studies of astrophysical sources.  
+This expression makes explicit the multi-messenger link: at the source, the neutrino and gamma-ray luminosities are tightly correlated and differ essentially by simple numerical factors and an energy rescaling.
 
 \subsection{Diffuse Neutrino Intensity}
+\label{subsec:diffuse_nu_intensity}
 
-For a population of identical neutrino sources, each with a luminosity \(\mathcal{L}_\nu\) and a number density \(n_s\), the total neutrino production rate per unit volume is:  
+We now connect the source production rates to the \emph{diffuse} neutrino intensity measured at Earth. Consider a population of identical sources, each with neutrino luminosity \(\mathcal{L}_\nu\) (integrated over energy) and comoving number density \(n_s\). The total neutrino energy production rate per unit comoving volume is then
 \begin{equation}
-E_\nu^2 \frac{dQ}{dV} \simeq \mathcal{L}_\nu n_s.
+E_\nu^2 \frac{dQ}{dV} \simeq \mathcal{L}_\nu\,n_s.
 \end{equation}
 
-The resulting local neutrino intensity, after accounting for cosmological redshift effects and propagation, is given by:
+Accounting for cosmological propagation and redshift evolution of the sources, the resulting local (all-sky averaged) neutrino intensity can be written schematically as
 \begin{equation}
-E_\nu^2 I_\nu \simeq \frac{c t_{\rm H}}{4\pi} \xi_z \mathcal{L}_\nu n_s,
+E_\nu^2 I_\nu
+\simeq \frac{c t_{\rm H}}{4\pi}\,\xi_z\,\mathcal{L}_\nu n_s,
 \end{equation}
-where \(t_{\rm H} \sim 1/H_0\) is the Hubble-Lemaître time, representing the age of the universe, and \(\xi_z \sim \mathcal{O}(1)\) accounts for the redshift evolution of source density and luminosity. 
+where \(t_{\rm H} \sim 1/H_0\) is the Hubble--Lemaître time (the age of the Universe), and \(\xi_z \sim \mathcal{O}(1)\) encapsulates the redshift evolution of the source density and luminosity.
 
-The IceCube observatory has measured a diffuse neutrino flux characterized by~\cite{}:
+The IceCube observatory has measured a diffuse flux of high-energy neutrinos characterized by~\cite{}
 \begin{equation}
-E_\nu^2 I_\nu^{\rm IC} \simeq 2.8 \times 10^{-8}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
+E_\nu^2 I_\nu^{\rm IC}
+\simeq 2.8 \times 10^{-8}~
+\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
 \end{equation}
-
-By comparing the observed flux with theoretical predictions, we can constrain the properties of the neutrino sources. Substituting the observed IceCube flux into the expression for \(E_\nu^2 I_\nu\), the upper limit on the product of the source luminosity and number density is:
+By matching this observed flux to the theoretical expression above, we infer an approximate constraint on the product of the source luminosity and number density:
 \begin{equation}
-\mathcal{L}_\nu n_s \simeq \frac{4\pi}{\xi_z R_{\rm H}} E_\nu^2 I_\nu^{\rm IC} \simeq 4 \times 10^{43}~\text{erg}~\text{Mpc}^{-3}~\text{yr}^{-1},
+\mathcal{L}_\nu n_s
+\simeq \frac{4\pi}{\xi_z R_{\rm H}}\,E_\nu^2 I_\nu^{\rm IC}
+\simeq 4 \times 10^{43}~
+\text{erg}~\text{Mpc}^{-3}~\text{yr}^{-1},
 \end{equation}
-having used \(R_{\rm H} = c H_0^{-1} \simeq 4420~\text{Mpc}\). 
+where we have used the Hubble radius \(R_{\rm H} = c H_0^{-1} \simeq 4420~\text{Mpc}\).
 
-This result provides a benchmark for the energy density of high-energy neutrino sources in the universe. Comparing this upper limit with the energy density of known astrophysical objects, such as gamma-ray bursts, active galactic nuclei, or starburst galaxies, can help identify the dominant contributors to the diffuse neutrino background (see~\ref{fig:nuluminosity}). 
+This estimate provides a benchmark for the total energy density in high-energy neutrinos produced by extragalactic sources. Comparing this scale with the energy output of known source classes---GRBs, AGNs, starburst galaxies, etc.---helps assess which populations are viable candidates for dominating the diffuse neutrino background (see Fig.~\ref{fig:nuluminosity}).
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.5\textwidth]{figures/luminosityDISCOVERY.pdf}
-\caption{Alhers Halzen~\cite{Ahlers2018ppnp}}
+\caption{Neutrino luminosity density constraints from IceCube compared with candidate source populations, adapted from Ahlers and Halzen~\cite{Ahlers2018ppnp}.}
 \label{fig:nuluminosity}
 \end{figure}
 
-\subsection{Cosmic Ray Intensity and Pion Production Rate} 
+\subsection{Cosmic Ray Intensity and Pion Production Rate}
+\label{subsec:cr_intensity_pion_rate}
 
-Measurements of ultra-high-energy cosmic rays (UHECRs) provide a key benchmark for understanding the production rates of secondary particles such as pions, neutrinos, and gamma rays. Observations estimate the UHECR intensity at proton energies \(E_p \gtrsim 10^{17}~\text{eV}\) as~\cite{add}:  
+Ultra-high-energy cosmic rays (UHECRs) provide a complementary handle on the energetics of cosmic accelerators. The observed intensity of UHECRs at proton energies \(E_p \gtrsim 10^{17}~\text{eV}\) is of order~\cite{add}
 \begin{equation}
-E_p^2 I^{\rm UHE}_p \simeq 10^{-7}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
+E_p^2 I_p^{\rm UHE}
+\simeq 10^{-7}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
 \end{equation}
+From this, one infers a cosmic-ray luminosity density of
+\begin{equation}
+E_p^2 \frac{dQ_p}{dV}
+\simeq 10^{44}~\text{erg}~\text{Mpc}^{-3}~\text{yr}^{-1}.
+\end{equation}
+This quantity sets the overall energy budget available for producing secondaries such as pions, neutrinos, and gamma rays.
 
-From this, the corresponding cosmic-ray luminosity density is inferred as:
+We can now relate the pion production rate to the proton production rate. The total energy production rate in pions (charged and neutral) satisfies
 \begin{equation}
-E_p^2 \frac{dQ_p}{dV} \simeq 10^{44}~\text{erg}~\text{Mpc}^{-3}~\text{yr}^{-1}.
+E_{\pi^+} Q_{\pi^+}(E_{\pi^+}) + E_{\pi^0} Q_{\pi^0}(E_{\pi^0})
+\simeq \left[ E_p Q_p(E_p) \right]_{E_p \simeq E_\pi \left\langle \frac{E_p}{E_\pi} \right\rangle},
 \end{equation}
+where the right-hand side is evaluated at the proton energy corresponding to a given pion energy \(E_\pi\) through the average energy ratio \(\langle E_p/E_\pi \rangle\).
 
-Using these values, we can estimate the upper limit for the pion production rate by relating it to the cosmic-ray proton production rate. The total energy production rate of pions, including both charged (\(\pi^+\)) and neutral (\(\pi^0\)), satisfies:
+Introducing again the charged-to-neutral pion production ratio \(R_\pi\) via \(Q_{\pi^+} \simeq R_\pi Q_{\pi^0}\), we can rewrite the relation as
 \begin{equation}
-E_{\pi^+} Q_{\pi^+}(E_{\pi^+}) + E_{\pi^0} Q_{\pi^0}(E_{\pi^0}) \simeq \left[E_p Q_p(E_p)\right]_{E_p \simeq E_{\pi} \left\langle \frac{E_p}{E_{\pi}} \right\rangle}.
+\left(\frac{1 + R_\pi}{R_\pi}\right)
+E_{\pi^+} Q_{\pi^+}(E_{\pi^+})
+\simeq \left[ E_p Q_p(E_p) \right]_{E_p \simeq E_\pi \left\langle \frac{E_p}{E_\pi} \right\rangle}.
 \end{equation}
+Multiplying both sides by \(E_{\pi^+}\) gives
+\begin{equation}
+\left(\frac{1 + R_\pi}{R_\pi}\right)
+E_{\pi^+}^2 Q_{\pi^+}(E_{\pi^+})
+\simeq \frac{1}{\left\langle \frac{E_p}{E_\pi} \right\rangle}
+\left[ E_p^2 Q_p(E_p) \right]_{E_p \simeq E_\pi \left\langle \frac{E_p}{E_\pi} \right\rangle}.
+\end{equation}
+We can then express the charged-pion production rate as
+\begin{tcolorbox}
+\begin{equation}
+E_{\pi^+}^2 Q_{\pi^+}(E_{\pi^+})
+\simeq x_\pi \frac{R_\pi}{1 + R_\pi}
+\left[ E_p^2 Q_p(E_p) \right]_{E_p \simeq E_\pi \left\langle \frac{E_p}{E_\pi} \right\rangle},
+\end{equation}
+\end{tcolorbox}
+where \(x_\pi \equiv \langle E_\pi / E_p \rangle\) denotes the average fraction of proton energy converted into pion energy during interactions.
 
-To refine this relation, we use the charged-to-neutral pion production ratio \(R_\pi\), where \(Q_{\pi^+} \simeq R_\pi Q_{\pi^0}\), and the relation simplifies to:
+Integrating the production rates of secondaries, we obtain an upper bound on the diffuse neutrino intensity summed over flavors:
 \begin{equation}
-\left(\frac{1 + R_\pi}{R_\pi}\right) E_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \simeq \left[E_p Q_p(E_p)\right]_{E_p \simeq E_{\pi} \left\langle \frac{E_p}{E_{\pi}} \right\rangle}.
+\frac{1}{3} \sum_\alpha E_\nu^2 I_{\nu_\alpha}
+\lesssim 3 \times 10^{-8}\,x_\pi
+\left(\frac{\xi_z}{2.6}\right)
+~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1},
 \end{equation}
-
-Multiplying both sides by \(E_{\pi^+}\) gives:
-\begin{equation}
-\left(\frac{1 + R_\pi}{R_\pi}\right) E^2_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \simeq \frac{1}{\left\langle \frac{E_p}{E_{\pi}} \right\rangle} \left[E^2_p Q_p(E_p)\right]_{E_p \simeq E_{\pi} \left\langle \frac{E_p}{E_{\pi}} \right\rangle}.
-\end{equation}
-
-Finally, we express the pion production rate as:
-\begin{remark}
-\begin{equation}
-E^2_{\pi^+} Q_{\pi^+}(E_{\pi^+}) \simeq x_\pi \frac{R_\pi}{1 + R_\pi} \left[E^2_p Q_p(E_p)\right]_{E_p \simeq E_{\pi} \left\langle \frac{E_p}{E_{\pi}} \right\rangle},
-\end{equation}
-\end{remark}
-where \(x_\pi\) denotes the average fraction of proton energy transferred to pions during interactions.
-
-By integrating the production rates of secondary particles, we can determine the cumulative neutrino intensity across all flavors. The resulting neutrino intensity is given by:
-\begin{equation}
-\frac{1}{3} \sum_\alpha E_\nu^2 I_{\nu_\alpha} \lesssim 3 \times 10^{-8} x_\pi \left(\frac{\xi_z}{2.6}\right)~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}.
-\end{equation}
-Here \(x_\pi\) is the fraction of proton energy converted into pion energy, \(\xi_z \sim 2.6\) a factor accounting for redshift evolution of the sources.  
+where \(x_\pi\) is the pion-production efficiency and \(\xi_z \sim 2.6\) describes the redshift evolution of the sources.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.90\textwidth]{figures/panorama.pdf}
-\caption{Alhers Halzen~\cite{Ahlers2018ppnp}}
+\caption{Multi-messenger panorama of cosmic rays, gamma rays, and neutrinos, adapted from Ahlers and Halzen~\cite{Ahlers2018ppnp}.}
 \label{fig:uhemm}
 \end{figure}
 
-The value \(3 \times 10^{-8}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}\) represents the \emph{Waxman-Bahcall bound}~\cite{aaa}, also known as the calorimetric limit (see~\ref{fig:uhemm}).  
+The characteristic value
+\[
+\sim 3 \times 10^{-8}~
+\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}
+\]
+is known as the \emph{Waxman--Bahcall bound}~\cite{aaa}, or calorimetric limit (see Fig.~\ref{fig:uhemm}). It corresponds to the idealized scenario in which UHECR sources are efficient \emph{calorimeters}: essentially all the energy injected into cosmic-ray protons is converted into pions (and hence neutrinos).
 
-The Waxman-Bahcall bound assumes that all proton energy is efficiently converted into pions and subsequently into neutrinos. For that reason, this bound is applicable to \emph{transparent sources}, where interactions with radiation and matter inside the source allow neutrinos to escape without significant reabsorption or secondary interactions.
+This bound is most directly applicable to \emph{transparent} sources, in which protons interact with radiation and matter inside the source, but the resulting neutrinos escape freely without significant reabsorption or secondary interactions. In such environments, protons accelerated in strong magnetic fields undergo \(p\)-\(\gamma\) interactions, producing pions whose decays yield both neutrinos and gamma rays, while many of the charged secondaries remain confined.
 
-In transparent sources, protons are accelerated within strong magnetic fields and interact with photons to produce pions via \(p\)-\(\gamma\) interactions. The decay of these pions produces neutrinos and gamma rays, while secondary protons and neutrons may remain confined within the source. 
-%
-For such sources, the neutrino flux is closely tied to the gamma-ray flux, reflecting the shared origin in pion production.
+In more complex or \emph{opaque} sources (such as the recently identified neutrino-bright galaxy NGC~1068), high photon and matter densities, as well as strong magnetic fields, can significantly modify the fate of secondaries. Additional processes such as \(e^+e^-\) pair production, synchrotron cooling, and cascading can redistribute energy between neutrinos, gamma rays, and leptons, causing deviations from the simple calorimetric picture.
 
-Worth noticing that an important assumption in these models is that the source spectrum of accelerated particles is steeper than \(E^{-2}\). This steepness is typical of observed cosmic-ray spectra and theoretical predictions for diffusive shock acceleration in astrophysical sources. 
-
-In more complex astrophysical environments, the local conditions—such as photon density, magnetic field strength, and matter density—can affect the overall neutrino production and escape mechanisms. For example in opaque sources, as the recently detected NGC1068 galaxy, or if additional processes, such as \(e^+\)-\(e^-\) pair production or synchrotron cooling, can redistribute energy among secondary particles.
-
-The connection between UHECRs, neutrinos, and gamma rays offers a compelling framework for studying the most energetic processes in the universe. Observations of the diffuse neutrino background by IceCube and measurements of UHECR intensities by Auger together place strong constraints on the properties of cosmic accelerators, advancing our understanding of multi-messenger astrophysics~\cite{}.
+Nevertheless, the combined observations of the diffuse neutrino background by IceCube and of UHECRs by facilities such as the Pierre Auger Observatory provide powerful, complementary constraints on the properties of cosmic accelerators. Together, they define a multi-messenger framework within which candidate source classes must fit, and they guide our understanding of the most energetic processes in the Universe~\cite{}.
