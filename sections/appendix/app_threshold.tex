@@ -1,0 +1,186 @@
+% !TEX root = ../../lectures.tex
+\section{Threshold kinematics in special relativity}
+\label{sec:app_threshold}
+
+Many processes in high-energy astrophysics are only allowed once the available center-of-mass (CoM) energy exceeds some threshold: pair production, pion production, nuclear spallation, etc. It is therefore very useful to have a
+compact reference to compute threshold energies.
+
+\paragraph{General invariant threshold condition.}
+
+Consider a reaction
+\[
+a + b \;\rightarrow\; 1 + 2 + \dots + n,
+\]
+where $a$ and $b$ are the initial particles, and $1,\dots,n$ are the final particles with rest masses $m_1, \dots, m_n$. 
+%
+Let $P_a^\mu$, $P_b^\mu$ be the incoming 4-momenta, and $P_i^\mu$ the outgoing ones.
+
+The squared CoM energy is the Lorentz-invariant quantity
+\[
+s \equiv (P_a + P_b)^2.
+\]
+In any frame,
+\[
+s = (E_a + E_b)^2 - (\vb p_a + \vb p_b)^2,
+\]
+and, in particular, in the CoM frame one has $\vb p_a + \vb p_b = 0$ so that
+\[
+s = E_{\rm cm}^2,
+\]
+where $E_{\rm cm}$ is the total energy in the CoM frame.
+
+At threshold, by definition, the reaction proceeds with the \emph{minimum} possible CoM energy. This corresponds to all final-state particles being produced \emph{at rest in the CoM frame} (no kinetic energy to spare). In that
+configuration
+\[
+E_{\rm cm}^{\rm (thr)} = \sum_{i=1}^n m_i c^2,
+\]
+hence
+\begin{equation}
+s_{\rm thr} = \left(\sum_{i=1}^n m_i c^2\right)^2.
+\label{eq:sth-general}
+\end{equation}
+
+The strategy is always:
+\begin{enumerate}
+\item Compute $s_{\rm thr}$ from the final-state masses using~\eqref{eq:sth-general}.
+\item Express the invariant $s$ in the chosen LAB frame in terms of the incoming energies and momenta.
+\item Set $s = s_{\rm thr}$ and solve for the desired threshold energy.
+\end{enumerate}
+
+\paragraph{General $2 \to n$ threshold for a fixed target.}
+
+A very common situation in cosmic-ray physics is a projectile $a$ hitting a stationary target $b$ in the LAB frame. Let $m_a$ and $m_b$ be their rest masses, and assume particle $b$ is at rest in the LAB:
+\[
+P_a = (E_a,\vb p_a), \qquad P_b = (m_b c^2,\vb 0).
+\]
+Then
+\[
+s = (P_a + P_b)^2 = m_a^2 c^4 + m_b^2 c^4 + 2 m_b c^2 E_a.
+\]
+Equating this to $s_{\rm thr}$, one finds the threshold energy of the projectile in the LAB:
+\begin{equation}
+E_a^{\rm (thr)} = \frac{s_{\rm thr} - m_a^2 c^4 - m_b^2 c^4}{2 m_b c^2}.
+\label{eq:fixed-target-thr}
+\end{equation}
+This is the master formula for threshold energies in fixed-target collisions.
+
+\paragraph{Example: $p+p\rightarrow p+p+\pi^0$.}
+
+For proton–proton collisions producing a single neutral pion,
+\[
+p + p \rightarrow p + p + \pi^0,
+\]
+one has $m_a = m_b = m_p$ and the final-state masses are $m_p, m_p, m_{\pi^0}$,
+so
+\[
+s_{\rm thr} = (2m_p + m_{\pi^0})^2 c^4.
+\]
+Inserting into Eq.~\eqref{eq:fixed-target-thr} gives $E_p^{\rm (thr)}$ for pion production on a hydrogen target:
+\[
+E_p^{\rm (thr)} = \dots
+\]
+
+\paragraph{Threshold for head-on collisions.}
+
+In many radiative processes (e.g.\ $\gamma\gamma\to e^+e^-$) the particles move at (or close to) the speed of light and what matters is the angle $\theta$ between their momenta. For two particles with 4-momenta $P_a$ and $P_b$, masses
+$m_a$, $m_b$, and energies $E_a$, $E_b$, one can show that
+\begin{equation}
+s = m_a^2 c^4 + m_b^2 c^4 
++ 2 E_a E_b \left(1 - \beta_a \beta_b \cos\theta\right),
+\label{eq:s-angle}
+\end{equation}
+where $\beta_a = v_a/c$, $\beta_b = v_b/c$ and $\theta$ is the angle between $\vb p_a$ and $\vb p_b$. 
+%
+This form makes the angular dependence explicit:
+\begin{itemize}
+  \item \emph{Head-on} collisions: $\theta = \pi \Rightarrow \cos\theta=-1$,
+  \item \emph{Parallel} motion: $\theta = 0 \Rightarrow \cos\theta=+1$.
+\end{itemize}
+
+For ultra-relativistic particles ($\beta_a\simeq\beta_b\simeq 1$) this simplifies to
+\[
+s \simeq m_a^2 c^4 + m_b^2 c^4 
++ 2 E_a E_b (1 - \cos\theta).
+\]
+Head-on collisions maximize $s$ for given $E_a$, $E_b$, and are therefore most
+effective for reaching threshold.
+
+\paragraph{Example: photon–photon pair production.}
+
+Consider
+\[
+\gamma + \gamma \rightarrow e^+ + e^-,
+\]
+where both initial particles are photons ($m_a=m_b=0$) with energies $E_\gamma$ and $\epsilon$, and angle $\theta$ between them. Using~\eqref{eq:s-angle} with $\beta_a=\beta_b=1$,
+\[
+s = 2 E_\gamma \epsilon (1 - \cos\theta).
+\]
+The final-state masses are $m_1=m_2=m_e$, so
+\[
+s_{\rm thr} = (2 m_e c^2)^2 = 4 m_e^2 c^4.
+\]
+The threshold condition is therefore
+\[
+2 E_\gamma \epsilon (1 - \cos\theta) \;\ge\; 4 m_e^2 c^4.
+\]
+For head-on collisions ($\theta = \pi$, $1-\cos\theta=2$) this reduces to
+\begin{equation}
+E_\gamma\,\epsilon \;\ge\; (m_e c^2)^2,
+\end{equation}
+or
+\[
+E_\gamma^{\rm (thr)} = \frac{(m_e c^2)^2}{\epsilon} \simeq \dots
+\]
+This is the relation used in the main text to connect TeV $\gamma$ rays with
+optical/IR background photons.
+
+\paragraph{Collider vs fixed-target.}
+
+It is instructive to compare fixed-target and collider configurations for symmetric $a+a$ reactions. Consider two identical particles of mass $m$ and energy $E$ colliding head-on. In the CoM frame, their 4-momenta are
+\[
+P_1 = (E,\vb p), \qquad P_2 = (E,-\vb p),
+\]
+so
+\[
+s = (P_1 + P_2)^2 = (2E)^2 - \vb 0^2 = 4 E^2.
+\]
+Thus, to reach a given $s_{\rm thr}$ one needs a beam energy
+\[
+E_{\rm beam}^{\rm (collider)} = \frac{1}{2}\sqrt{s_{\rm thr}}.
+\]
+
+By contrast, for a fixed-target experiment with the same projectile and target
+mass $m$, Eq.~\eqref{eq:fixed-target-thr} gives
+\[
+E_{\rm proj}^{\rm (thr)} = \frac{s_{\rm thr} - 2 m^2 c^4}{2 m c^2}
+\simeq \frac{s_{\rm thr}}{2 m c^2} \quad (s_{\rm thr} \gg m^2 c^4).
+\]
+For large $s_{\rm thr}$, the required projectile energy scales linearly with $s_{\rm thr}$, whereas in a collider it scales like $\sqrt{s_{\rm thr}}$. This is why colliders are vastly more efficient than fixed-target setups at reaching very high CoM energies!
+
+Cosmic rays are measured at extremely high \emph{LAB} energies, and new particles are produced when they collide with nuclei (or protons) at rest in the atmosphere. A natural question is then:
+\emph{What cosmic-ray energy $E_{\rm CR}$ is required to produce a CoM energy comparable to that of the LHC in a fixed-target collision with a proton at rest?}
+
+ The CERN Large Hadron Collider (LHC) is the most powerful terrestrial particle accelerator in operation today, which accelerates proton beams to energies of up to
+\[
+E_{\rm beam} \simeq 7~{\rm TeV}~,
+\]
+per beam. For symmetric proton–proton collisions in a collider, Eq.~\eqref{eq:sym-collider} gives
+\[
+\sqrt{s_{\rm LHC}} = 2 E_{\rm beam} \simeq 14~{\rm TeV}.
+\]
+This is the CoM energy available for new particle production in LHC collisions.
+
+For a cosmic-ray proton of energy $E_{\rm CR}$ colliding with a proton at rest, Eq.~\eqref{eq:s-fixed-target} yields
+\[
+s = m_p^2 c^4 + m_p^2 c^4 + 2 m_p c^2 E_{\rm CR}
+\simeq 2 m_p c^2 E_{\rm CR} \quad (E_{\rm CR} \gg m_p c^2).
+\]
+Equating this to $s_{\rm LHC}$ and using $m_p c^2 \simeq 1~{\rm GeV}$, we find
+\[
+E_{\rm CR} \simeq \frac{s_{\rm LHC}}{2 m_p c^2}
+\sim \frac{(1.4\times 10^4~{\rm GeV})^2}{2~{\rm GeV}}
+\sim 10^8~{\rm GeV}.
+\]
+
+Thus, only cosmic rays with energies $\gtrsim 10^{17}$~eV colliding with a proton at rest have a center-of-mass energy comparable to that produced in proton–proton collisions at the LHC.
+
