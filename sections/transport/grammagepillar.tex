@@ -9,102 +9,214 @@
 \label{fig:composition}
 \end{figure}
 
-The nuclear composition of cosmic rays (CRs) provides compelling evidence that GeV-TeV cosmic rays do not travel in straight lines but instead undergo a \emph{diffusive propagation} process. This conclusion arises from a detailed comparison between the isotopic composition of local CRs and that of the interstellar medium (ISM). This discovery\footnote{To the best of my knowledge, this idea was first introduced by Bradt and Peters in their 1950 paper published in \emph{Physical Review}.} is so fundamental to our understanding of CR propagation that it has been elevated to the status of a \emph{pillar} of cosmic ray physics.  
+The nuclear composition of cosmic rays (CRs) provides compelling evidence that GeV--TeV CRs do not travel in straight lines through the Galaxy, but instead undergo a \emph{diffusive} propagation. This conclusion emerges from a detailed comparison between the isotopic composition of local CRs and that of the interstellar medium (ISM). The key idea\footnote{To the best of my knowledge, this idea was first introduced by Bradt and Peters in their 1950 paper published in \emph{Physical Review}.} is so fundamental to our understanding of CR transport that it has been elevated to the status of a true \emph{pillar} of cosmic-ray physics.  
 
-Figure~\ref{fig:composition} compares the isotopic composition of CRs observed locally~\cite{} with the abundances measured in the ISM surrounding the solar system (e.g., via absorption lines~\cite{}). While the overall isotopic abundances are broadly similar - suggesting that most CRs originate from the average ISM - some striking differences stand out. 
-%
-These differences are most evident for:  
+Figure~\ref{fig:composition} compares the isotopic composition of CRs observed locally~\cite{} with the abundances measured in the ISM surrounding the solar system (e.g. via absorption lines~\cite{}). At a qualitative level, the two patterns look similar: most nuclei follow the same general trend as in the ISM, indicating that CRs are predominantly accelerated from material with an \emph{average} ISM composition. However, some striking deviations immediately stand out. They concern
 %
 \begin{itemize}
 \item \emph{Light elements}: lithium (Li), beryllium (Be), and boron (B),  
 \item \emph{Sub-iron elements}: scandium (Sc), titanium (Ti), and vanadium (V),  
-\item Other anomalous species as nitrogen (N) and fluorine (F).  
+\item Other anomalous species such as nitrogen (N) and fluorine (F).  
 \end{itemize}
-
-In the ISM, these elements are present in negligible amounts compared to heavier nuclei like carbon (C) and oxygen (O). Specifically, Li, Be, and B are almost absent for two main reasons:  
+%
+In the ISM, these elements are present only in trace amounts compared to heavier nuclei like carbon (C) and oxygen (O). In particular, Li, Be and B are almost absent. This has two main reasons:  
 \begin{itemize}
-\item They are not efficiently produced in stars, as no stable nucleosynthesis pathways exist for these elements in stellar interiors, or during Big-Bang nucleosynthesis.  
-\item They are fragile and are easily destroyed in high-temperature stellar environments through nuclear reactions such as \(\alpha\)-capture.  
+\item They are not efficiently synthesized in stars: there are no stable nucleosynthesis pathways producing these elements in stellar interiors, nor during Big-Bang nucleosynthesis.  
+\item They are \emph{fragile} and are easily destroyed in high-temperature stellar environments through nuclear reactions such as \(\alpha\)-capture.  
 \end{itemize}
 
-However, the situation changes dramatically when looking at CRs where the abundances of Li, Be, and B in CRs are comparable to those of C and O. This discrepancy points to the existence of a \emph{secondary component}, which plays a key role in shaping the observed CR composition.  
+By contrast, in CRs the situation changes dramatically: the abundances of Li, Be and B become comparable to those of C and O. Such an enhancement cannot be explained by any plausible modification of the source composition, and instead points to the existence of a \emph{secondary component} that is produced \emph{during} propagation rather than at the sources.  
 
-This secondary component arises from the fragmentation of heavier primary nuclei (like C and O) into lighter nuclei (like Li, Be, and B) through \emph{spallation interactions} with the ISM gas. This process occurs as CRs propagate through the ISM and provides critical insight into their transport history.  
+This secondary component arises from the fragmentation of heavier primary nuclei (such as C and O) into lighter nuclei (such as Li, Be and B) through \emph{spallation interactions} with ISM gas. As CRs propagate through the ISM, they repeatedly collide with ambient nuclei, and a fraction of these collisions leads to the breakup of the projectile into lighter fragments. The resulting secondaries thus carry a direct imprint of the amount of matter traversed by CRs.  
 
-In fact, the observed ratios of secondary to primary nuclei, such as the boron-to-carbon (B/C) ratio, serve as \emph{tracers} of the cumulative amount of ISM material CRs have traversed. This material is quantified as the \emph{grammage} \(\chi\), which is the integrated column density of ISM along the CRs’ path:  
+A convenient way to quantify this is through the \emph{grammage} \(\chi\), defined as the integrated column density of ISM material encountered along the CR trajectory:
 \begin{equation}
 \chi = \int \! dl \, \rho(l),
 \end{equation}
-where \(\rho(l)\) is the ISM density along the trajectory \(l\).  
+where \(\rho(l)\) is the ISM mass density along the path \(l\).  
+%
+The observed ratios of secondary to primary nuclei, such as the boron-to-carbon (B/C) ratio, are then powerful \emph{tracers} of the grammage and hence of the CR transport history.
 
-\subsection{Primary and Secondary Evolution Along the Grammage Path}
+%\subsection{Primary and secondary evolution along the grammage path}
 
-To clarify the interplay between primary and secondary nuclei, let us consider a simplified scenario involving one primary species (\(n_p\)) and one secondary species (\(n_s\)). Their abundances evolve along the grammage path \(\chi\), which reflects the cumulative amount of material traversed by CRs. Specifically:  
+To make the connection more explicit, let us consider a simplified ``slab'' picture in which we follow the evolution of one primary species, with density \(n_p\), and one secondary species, with density \(n_s\), as a function of grammage \(\chi\). We neglect energy losses and decays, and assume that the ISM is homogeneous so that all interaction probabilities can be expressed per unit grammage.  
 
-\begin{itemize}
-\item The abundance of primary nuclei decreases due to inelastic collisions with ISM targets:  
+In this picture, the abundance of primary nuclei decreases because of inelastic interactions with ISM targets:
 \[
 \frac{dn_p}{d\chi} = - \frac{n_p}{\lambda_p},
 \]
-where \(\lambda_p = m / \sigma_p\) is the \emph{interaction length} for the primary nuclei, \(m\) is the ISM target mass, and \(\sigma_p\) is the inelastic cross-section of the primary nuclei with ISM particles.  
+where \(\lambda_p = m / \sigma_p\) is the \emph{interaction length} of the primary nuclei in units of g\,cm\(^{-2}\), \(m\) is the mean mass of the ISM target, and \(\sigma_p\) is the total inelastic cross-section of the primary with ISM particles.  
 
-\item Secondary nuclei are produced through spallation of the primary nuclei and are also depleted through their own interactions:  
+The secondaries are produced via spallation of primaries and are, in turn, removed by their own inelastic interactions:
 \[
 \frac{dn_s}{d\chi} = - \frac{n_s}{\lambda_s} + P_{p \rightarrow s} \frac{n_p}{\lambda_p},
 \]
-where \(P_{p \rightarrow s} = \sigma_{p \rightarrow s} / \sigma_p\) is the spallation probability for producing secondaries (\(s\)) from primaries (\(p\)).  
-\end{itemize}
+where \(P_{p \rightarrow s} = \sigma_{p \rightarrow s} / \sigma_p\) is the probability that an inelastic interaction of a primary \(p\) produces a secondary \(s\).  
 
-Assuming that no secondary nuclei are present initially (\(n_s = 0\) at \(\chi = 0\)), the secondary-to-primary ratio evolves with the grammage as:  
-\begin{remark}
+Assuming that no secondary nuclei are present initially, \(n_s(\chi=0) = 0\), and that the primary density at \(\chi=0\) is \(n_p(0)\), one can solve this system explicitly. The primary density simply decays exponentially, \(n_p(\chi) = n_p(0) \exp(-\chi/\lambda_p)\), while the secondary-to-primary ratio evolves with grammage as
+\begin{tcolorbox}
 \begin{equation}\label{eq:grammagesimple}
-\frac{n_s}{n_p} = P_{p \rightarrow s} \frac{\lambda_s}{\lambda_s - \lambda_p} \left[ \exp\left( -\frac{\chi}{\lambda_s} + \frac{\chi}{\lambda_p} \right) - 1 \right].
+\frac{n_s}{n_p}(\chi) =
+P_{p \rightarrow s}\,\frac{\lambda_s}{\lambda_s - \lambda_p}
+\left[
+\exp\!\left(-\frac{\chi}{\lambda_s} + \frac{\chi}{\lambda_p} \right) - 1
+\right].
 \end{equation}
-\end{remark}  
+\end{tcolorbox}
+This expression depends only on measurable quantities: the interaction lengths \(\lambda_p\), \(\lambda_s\) and the spallation probability \(P_{p \rightarrow s}\). For small grammages (\(\chi \ll \lambda_p,\lambda_s\)), Eq.~\eqref{eq:grammagesimple} simplifies to
+\[
+\frac{n_s}{n_p} \simeq P_{p \rightarrow s}\,\frac{\chi}{\lambda_p},
+\]
+i.e. the secondary-to-primary ratio is simply proportional to the traversed grammage.
 
-This expression depends on measurable quantities, including the interaction lengths (\(\lambda_p\), \(\lambda_s\)) and the spallation probability (\(P_{p \rightarrow s}\)).
-
-Among the secondary-to-primary ratios, the boron-to-carbon (B/C) ratio is the best-measured and provides the most precise constraints on CR propagation. Measurements by the AMS-02 experiment indicate a B/C ratio of approximately 0.3 for CRs with rigidities \(R \sim 10~\text{GV}\).  
+Among all secondary-to-primary ratios, the boron-to-carbon (B/C) ratio is the best measured and provides the tightest constraints on Galactic CR propagation. Measurements by the AMS-02 experiment indicate a B/C ratio of approximately \(n_{\rm B}/n_{\rm C} \simeq 0.3\) at rigidities \(R \sim 10~\text{GV}\).  
 %
-On the other hand, laboratory measurements of the interaction lengths provides \( \lambda_{\rm C} \sim 9.1~\text{g/cm}^2 \), and \( \lambda_{\rm B} \sim 10.4~\text{g/cm}^2 \). Moreover, the spallation probability for carbon fragmenting into boron is estimated as \( P_{\rm C \rightarrow B} \sim 0.25 \)~\cite{}.
+On the other hand, laboratory measurements of nuclear cross-sections give interaction lengths
+\(\lambda_{\rm C} \sim 9.1~\text{g\,cm}^{-2}\) and \(\lambda_{\rm B} \sim 10.4~\text{g\,cm}^{-2}\), while the spallation probability for carbon fragmenting into boron is estimated as \(P_{{\rm C} \rightarrow {\rm B}} \sim 0.25\)~\cite{}.  
 
-By combining these laboratory measurements with the AMS-02 observations, we deduce that CRs with rigidities \(R \sim 10~\text{GV}\) must have traversed a grammage of approximately:
+Combining these numbers with Eq.~\eqref{eq:grammagesimple}, or using the small-\(\chi\) approximation, we infer that CRs with \(R \sim 10~\text{GV}\) must have traversed a grammage of order
 \begin{equation}
-\chi_{\rm ISM} \sim 10~\text{g/cm}^2.
+\chi_{\rm ISM} \sim 10~\text{g\,cm}^{-2}.
 \end{equation}
+
+%\paragraph{Take-home message.}  
+%The overabundance of LiBeB and sub-Fe nuclei in CRs is a direct consequence of spallation during propagation through the ISM. The measured B/C ratio then provides a quantitative estimate of the grammage, \(\chi_{\rm ISM} \sim 10~\text{g\,cm}^{-2}\) at \(R \sim 10~\text{GV}\), implying that CRs must spend a long time and follow highly non-rectilinear, \emph{diffusive} trajectories in the Galactic magnetic field. In the next section we will translate this grammage-based picture into a full diffusion model for CR transport in the Galaxy.
+
+%The nuclear composition of cosmic rays (CRs) provides compelling evidence that GeV-TeV cosmic rays do not travel in straight lines but instead undergo a \emph{diffusive propagation} process. This conclusion arises from a detailed comparison between the isotopic composition of local CRs and that of the interstellar medium (ISM). This discovery\footnote{To the best of my knowledge, this idea was first introduced by Bradt and Peters in their 1950 paper published in \emph{Physical Review}.} is so fundamental to our understanding of CR propagation that it has been elevated to the status of a \emph{pillar} of cosmic ray physics.  
+%
+%Figure~\ref{fig:composition} compares the isotopic composition of CRs observed locally~\cite{} with the abundances measured in the ISM surrounding the solar system (e.g., via absorption lines~\cite{}). While the overall isotopic abundances are broadly similar - suggesting that most CRs originate from the average ISM - some striking differences stand out. 
+%%
+%These differences are most evident for:  
+%%
+%\begin{itemize}
+%\item \emph{Light elements}: lithium (Li), beryllium (Be), and boron (B),  
+%\item \emph{Sub-iron elements}: scandium (Sc), titanium (Ti), and vanadium (V),  
+%\item Other anomalous species as nitrogen (N) and fluorine (F).  
+%\end{itemize}
+%
+%In the ISM, these elements are present in negligible amounts compared to heavier nuclei like carbon (C) and oxygen (O). Specifically, Li, Be, and B are almost absent for two main reasons:  
+%\begin{itemize}
+%\item They are not efficiently produced in stars, as no stable nucleosynthesis pathways exist for these elements in stellar interiors, or during Big-Bang nucleosynthesis.  
+%\item They are fragile and are easily destroyed in high-temperature stellar environments through nuclear reactions such as \(\alpha\)-capture.  
+%\end{itemize}
+%
+%However, the situation changes dramatically when looking at CRs where the abundances of Li, Be, and B in CRs are comparable to those of C and O. This discrepancy points to the existence of a \emph{secondary component}, which plays a key role in shaping the observed CR composition.  
+%
+%This secondary component arises from the fragmentation of heavier primary nuclei (like C and O) into lighter nuclei (like Li, Be, and B) through \emph{spallation interactions} with the ISM gas. This process occurs as CRs propagate through the ISM and provides critical insight into their transport history.  
+%
+%In fact, the observed ratios of secondary to primary nuclei, such as the boron-to-carbon (B/C) ratio, serve as \emph{tracers} of the cumulative amount of ISM material CRs have traversed. This material is quantified as the \emph{grammage} \(\chi\), which is the integrated column density of ISM along the CRs’ path:  
+%\begin{equation}
+%\chi = \int \! dl \, \rho(l),
+%\end{equation}
+%where \(\rho(l)\) is the ISM density along the trajectory \(l\).  
+%
+%\subsection{Primary and Secondary Evolution Along the Grammage Path}
+%
+%To clarify the interplay between primary and secondary nuclei, let us consider a simplified scenario involving one primary species (\(n_p\)) and one secondary species (\(n_s\)). Their abundances evolve along the grammage path \(\chi\), which reflects the cumulative amount of material traversed by CRs. Specifically:  
+%
+%\begin{itemize}
+%\item The abundance of primary nuclei decreases due to inelastic collisions with ISM targets:  
+%\[
+%\frac{dn_p}{d\chi} = - \frac{n_p}{\lambda_p},
+%\]
+%where \(\lambda_p = m / \sigma_p\) is the \emph{interaction length} for the primary nuclei, \(m\) is the ISM target mass, and \(\sigma_p\) is the inelastic cross-section of the primary nuclei with ISM particles.  
+%
+%\item Secondary nuclei are produced through spallation of the primary nuclei and are also depleted through their own interactions:  
+%\[
+%\frac{dn_s}{d\chi} = - \frac{n_s}{\lambda_s} + P_{p \rightarrow s} \frac{n_p}{\lambda_p},
+%\]
+%where \(P_{p \rightarrow s} = \sigma_{p \rightarrow s} / \sigma_p\) is the spallation probability for producing secondaries (\(s\)) from primaries (\(p\)).  
+%\end{itemize}
+%
+%Assuming that no secondary nuclei are present initially (\(n_s = 0\) at \(\chi = 0\)), the secondary-to-primary ratio evolves with the grammage as:  
+%\begin{remark}
+%\begin{equation}\label{eq:grammagesimple}
+%\frac{n_s}{n_p} = P_{p \rightarrow s} \frac{\lambda_s}{\lambda_s - \lambda_p} \left[ \exp\left( -\frac{\chi}{\lambda_s} + \frac{\chi}{\lambda_p} \right) - 1 \right].
+%\end{equation}
+%\end{remark}  
+%
+%This expression depends on measurable quantities, including the interaction lengths (\(\lambda_p\), \(\lambda_s\)) and the spallation probability (\(P_{p \rightarrow s}\)).
+%
+%Among the secondary-to-primary ratios, the boron-to-carbon (B/C) ratio is the best-measured and provides the most precise constraints on CR propagation. Measurements by the AMS-02 experiment indicate a B/C ratio of approximately 0.3 for CRs with rigidities \(R \sim 10~\text{GV}\).  
+%%
+%On the other hand, laboratory measurements of the interaction lengths provides \( \lambda_{\rm C} \sim 9.1~\text{g/cm}^2 \), and \( \lambda_{\rm B} \sim 10.4~\text{g/cm}^2 \). Moreover, the spallation probability for carbon fragmenting into boron is estimated as \( P_{\rm C \rightarrow B} \sim 0.25 \)~\cite{}.
+%
+%By combining these laboratory measurements with the AMS-02 observations, we deduce that CRs with rigidities \(R \sim 10~\text{GV}\) must have traversed a grammage of approximately:
+%\begin{equation}
+%\chi_{\rm ISM} \sim 10~\text{g/cm}^2.
+%\end{equation}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.6\textwidth]{figures/grammage_simple.pdf} 
-\caption{The ratio of secondary to primary cosmic rays (B/C) as a function of grammage as in equation~\eqref{eq:grammagesimple}. The dotted blue line show the measurement by AMS-02 for CRs with rigidities \(R \sim 10~\text{GV}\).}
+\caption{The ratio of secondary to primary cosmic rays (B/C) as a function of grammage as in Eq.~\eqref{eq:grammagesimple}. The dotted blue line show the measurement by AMS-02 for CRs with rigidities \(R \sim 10~\text{GV}\).}
 \label{fig:grammage10}
 \end{figure}
 
-\subsection{Galactic Disk Grammage and Confinement Time}
+%\subsection{Galactic Disk Grammage and Confinement Time}
+%
+%To estimate the grammage accumulated by CRs as they propagate, let us first compute the grammage associated with a single crossing of the Galactic gas disk, \(\chi_d\). This grammage is approximately the average surface density of the Galactic disk: \(\mu_d \sim 2.3 \times 10^{-3}~\text{g/cm}^2\).  
+%
+%However, this value is significantly smaller than the \(\sim 10~\text{g/cm}^2\) inferred from the B/C ratio. This stark discrepancy indicates that CRs must traverse the disk \emph{multiple times} to accumulate the observed grammage.  
+%
+%As such, to quantify the confinement time, we calculate the total time CRs need to cross the disk to accumulate the required grammage. This timescale is given by the number of crossings multiplied by the time for a single crossing:  
+%\[
+%\tau_{\rm conf} \gtrsim \frac{\chi_{\rm ISM}}{\chi_d} \frac{2h}{v} \sim 3 \times 10^6~\text{yr},
+%\]
+%where \(h \sim 100~\text{pc}\) is the half-thickness of the Galactic disk, and \(v \sim c\) is the approximate velocity of CRs.  
+%
+%This \emph{minimum confinement timescale}, \(\tau_{\rm conf} \sim 3 \times 10^6~\text{yr}\), is several orders of magnitude longer than the time required for a CR to traverse the Galaxy in a straight line at the speed of light (a few tens of kiloyears for \(\sim 10~\text{kpc}\)). This vast difference provides compelling evidence for \emph{efficient confinement mechanisms} that cause CRs to propagate diffusively rather than ballistically through the Galaxy.  
+%
+%The total residence time of CRs in the Galaxy can be independently estimated using radioactive isotopes such as \(^{10}\text{Be}\), which has a decay lifetime comparable to the timescale for CR leakage from the Galaxy. The ratio of radioactive \(^{10}\text{Be}\) to stable \(^{9}\text{Be}\) measured in CRs suggests a mean residence time of:  
+%\[
+%\tau_H \sim 10^8~\text{yr}.
+%\]  
+%
+%Combining this estimate with the B/C ratio provides additional insights into CR propagation. To avoid exceeding the observed grammage, CRs must spend most of their time in the \emph{low-density Galactic halo}, where the density is much lower than in the disk. This requirement can be expressed as:  
+%\[
+%\langle \rho \rangle \lesssim \frac{\mu_d}{2h} \frac{\tau_h}{\tau_H}.
+%\]  
+%Here, \(\tau_h\) is the confinement time in the disk, and \(\tau_H\) is the total residence time in the Galaxy. This inequality implies that CRs interact predominantly with the disk during their brief crossings but spend the majority of their residence time in the halo.  
+%
+%In conclusion, the composition of CRs, particularly the observed ratios of secondaries to primaries (e.g., B/C), provides robust evidence for efficient confinement mechanisms that ensure CRs propagate diffusively through the Galaxy. This confinement allows CRs to \emph{repeatedly return to the disk}, producing the observed secondary components, while spending most of their time in the low-density Galactic halo.
+%
+%In the remainder of this chapter, we will explore transport models that explain these observations in terms of phenomenological quantities such as the diffusion coefficient and the size of the halo.  
 
-To estimate the grammage accumulated by CRs as they propagate, let us first compute the grammage associated with a single crossing of the Galactic gas disk, \(\chi_d\). This grammage is approximately the average surface density of the Galactic disk: \(\mu_d \sim 2.3 \times 10^{-3}~\text{g/cm}^2\).  
+\paragraph{Galactic Disk Grammage and Confinement Time.}
 
-However, this value is significantly smaller than the \(\sim 10~\text{g/cm}^2\) inferred from the B/C ratio. This stark discrepancy indicates that CRs must traverse the disk \emph{multiple times} to accumulate the observed grammage.  
+In the previous subsection we inferred from the B/C ratio that CRs with rigidities \(R \sim 10~\text{GV}\) must have traversed a grammage of order
+\(\chi_{\rm ISM} \sim 10~\text{g\,cm}^{-2}\). A natural question now is: \emph{where} is this matter located, and \emph{how long} must CRs be confined in the Galaxy in order to accumulate such a grammage?
 
-As such, to quantify the confinement time, we calculate the total time CRs need to cross the disk to accumulate the required grammage. This timescale is given by the number of crossings multiplied by the time for a single crossing:  
+As a first step, let us estimate the grammage associated with a single crossing of the Galactic gas disk, \(\chi_d\). To a good approximation, this is just the average surface density of the Galactic disk,
 \[
-\tau_{\rm conf} \gtrsim \frac{\chi_{\rm ISM}}{\chi_d} \frac{2h}{v} \sim 3 \times 10^6~\text{yr},
+\chi_d \simeq \mu_d \sim 2.3 \times 10^{-3}~\text{g\,cm}^{-2}.
 \]
-where \(h \sim 100~\text{pc}\) is the half-thickness of the Galactic disk, and \(v \sim c\) is the approximate velocity of CRs.  
+This value is almost four orders of magnitude smaller than the \(\sim 10~\text{g\,cm}^{-2}\) inferred from the B/C ratio. The implication is immediate: CRs cannot be just ``one-shot'' particles crossing the disk once on rectilinear trajectories. Instead, they must traverse the disk \emph{many} times, accumulating grammage little by little.
 
-This \emph{minimum confinement timescale}, \(\tau_{\rm conf} \sim 3 \times 10^6~\text{yr}\), is several orders of magnitude longer than the time required for a CR to traverse the Galaxy in a straight line at the speed of light (a few tens of kiloyears for \(\sim 10~\text{kpc}\)). This vast difference provides compelling evidence for \emph{efficient confinement mechanisms} that cause CRs to propagate diffusively rather than ballistically through the Galaxy.  
-
-The total residence time of CRs in the Galaxy can be independently estimated using radioactive isotopes such as \(^{10}\text{Be}\), which has a decay lifetime comparable to the timescale for CR leakage from the Galaxy. The ratio of radioactive \(^{10}\text{Be}\) to stable \(^{9}\text{Be}\) measured in CRs suggests a mean residence time of:  
+A crude estimate of the time required to accumulate the observed grammage can be obtained by multiplying the number of disk crossings by the time for a single crossing. If the disk has half-thickness \(h \sim 100~\text{pc}\), the geometrical path length across the disk is \(2h\), so the time for one crossing at speed \(v \simeq c\) is
 \[
-\tau_H \sim 10^8~\text{yr}.
-\]  
-
-Combining this estimate with the B/C ratio provides additional insights into CR propagation. To avoid exceeding the observed grammage, CRs must spend most of their time in the \emph{low-density Galactic halo}, where the density is much lower than in the disk. This requirement can be expressed as:  
+\tau_{\rm cross} \sim \frac{2h}{v}.
+\]
+To reach a total grammage \(\chi_{\rm ISM}\), the required number of crossings is roughly \(\chi_{\rm ISM}/\chi_d\). Hence, a \emph{minimum confinement time} is
 \[
-\langle \rho \rangle \lesssim \frac{\mu_d}{2h} \frac{\tau_h}{\tau_H}.
-\]  
-Here, \(\tau_h\) is the confinement time in the disk, and \(\tau_H\) is the total residence time in the Galaxy. This inequality implies that CRs interact predominantly with the disk during their brief crossings but spend the majority of their residence time in the halo.  
+\tau_{\rm conf} \gtrsim \frac{\chi_{\rm ISM}}{\chi_d} \,\frac{2h}{v}
+\sim 3 \times 10^6~\text{yr},
+\]
+where we have used \(\chi_{\rm ISM} \sim 10~\text{g\,cm}^{-2}\), \(\chi_d \sim 2.3 \times 10^{-3}~\text{g\,cm}^{-2}\), \(h \sim 100~\text{pc}\) and \(v \sim c\).
 
-In conclusion, the composition of CRs, particularly the observed ratios of secondaries to primaries (e.g., B/C), provides robust evidence for efficient confinement mechanisms that ensure CRs propagate diffusively through the Galaxy. This confinement allows CRs to \emph{repeatedly return to the disk}, producing the observed secondary components, while spending most of their time in the low-density Galactic halo.
+This timescale is several orders of magnitude longer than the time needed for a CR to cross the Galaxy \emph{once} ballistically at the speed of light, which is only a few \(\times 10^4\)~yr for a Galactic size of order \(\sim 10~\text{kpc}\). The contrast between \(\tau_{\rm conf} \sim 10^6\)~yr and the light-crossing time is a powerful indication that CRs are \emph{efficiently confined} and propagate diffusively, rather than streaming freely through the Galactic magnetic field.
 
-In the remainder of this chapter, we will explore transport models that explain these observations in terms of phenomenological quantities such as the diffusion coefficient and the size of the halo.  
+An independent handle on the CR residence time comes from radioactive isotopes, such as \(^{10}\text{Be}\), whose decay lifetime is comparable to the leakage time of CRs from the Galaxy. The ratio of radioactive \(^{10}\text{Be}\) to stable \(^{9}\text{Be}\) measured in CRs indicates a mean residence time of order
+\[
+\tau_H \sim 10^8~\text{yr},
+\]
+which we take here as a representative value. This total residence time is substantially longer than the minimum confinement time inferred from the disk grammage alone, reinforcing the picture of long-lived, diffusive CR propagation.
+
+However, if CRs were confined for \(\sim 10^8\)~yr in regions with the typical density of the Galactic disk, the accumulated grammage would be enormous, vastly exceeding the \(\sim 10~\text{g\,cm}^{-2}\) inferred from B/C. The only way to reconcile a \emph{long} residence time with a \emph{moderate} grammage is for CRs to spend most of their time in a \emph{low-density halo}, interacting with the dense disk only during relatively brief crossings.
+
+This requirement can be expressed in terms of the average density sampled by CRs along their trajectories,
+\[
+\langle \rho \rangle \lesssim \frac{\mu_d}{2h} \,\frac{\tau_h}{\tau_H}.
+\]
+Here, \(\mu_d/(2h)\) is of the order of the mid-plane gas density in the disk, \(\tau_h\) is the total time that CRs spend in the disk, and \(\tau_H\) is their total residence time in the Galaxy. Since the observed grammage constrains \(\tau_h\) to be much smaller than \(\tau_H\), it follows that
+\(\langle \rho \rangle\) must be well below the disk density: CRs sample the dense disk only intermittently, but reside predominantly in the rarefied Galactic halo.
